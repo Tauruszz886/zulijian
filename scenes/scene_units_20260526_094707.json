@@ -1,0 +1,863 @@
+{
+  "errors": [],
+  "exported_at_unix": 1779788816,
+  "ids": [
+    1,
+    1681499584,
+    1401993508,
+    1146983526,
+    1881392724,
+    2004435032,
+    1931411198,
+    1001,
+    1003,
+    1002,
+    1405863766,
+    2032411407,
+    1745608455,
+    1312346180
+  ],
+  "schema": "egg_editor_scene_units.v2",
+  "selected_unit_ids": [
+    1312346180
+  ],
+  "source": {
+    "data_api": "EditorAPI.get_scene_unit_data",
+    "ids_api": "EditorAPI.get_all_unit_ids"
+  },
+  "unit_count": 14,
+  "unit_tree": [
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1,
+        "unit_type": 128
+      },
+      "id": 1
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "model_id": 90004,
+        "name": "地砖0",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -14.759,
+          0.0,
+          12.5
+        ],
+        "prefab_id": 1201010,
+        "scale": [
+          4.4987810717712,
+          1.0,
+          6.5
+        ],
+        "unit_eid": 1201010,
+        "unit_id": 1681499584,
+        "unit_type": 256,
+        "unit_uid": "floor_3",
+        "world_position": [
+          -14.759,
+          0.0,
+          12.5
+        ]
+      },
+      "id": 1681499584
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 90007,
+        "name": "分阵营出生点1",
+        "parent_unit_id": 0,
+        "position": [
+          -5.0,
+          2.0,
+          0.0
+        ],
+        "prefab_id": 600005,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 600005,
+        "unit_id": 1401993508,
+        "unit_type": 16384,
+        "unit_uid": "600005_uid",
+        "world_position": [
+          -5.0,
+          2.0,
+          0.0
+        ]
+      },
+      "id": 1401993508
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "model_id": 90006,
+        "name": "胜利区域1",
+        "parent_unit_id": 0,
+        "position": [
+          -42.5,
+          5.0,
+          0.5
+        ],
+        "prefab_id": 31010102,
+        "scale": [
+          8.9999998092651,
+          7.5,
+          23.799999237061
+        ],
+        "unit_eid": 31010102,
+        "unit_id": 1146983526,
+        "unit_type": 8,
+        "unit_uid": "31010102_uid",
+        "world_position": [
+          -42.5,
+          5.0,
+          0.5
+        ]
+      },
+      "id": 1146983526
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 40290,
+        "name": "终点胜利000",
+        "parent_unit_id": 0,
+        "position": [
+          -37.75,
+          4.06,
+          0.496
+        ],
+        "prefab_id": 1501430,
+        "scale": [
+          0.49999982118607,
+          0.5,
+          0.99999964237213
+        ],
+        "unit_eid": 1501430,
+        "unit_id": 1881392724,
+        "unit_type": 256,
+        "unit_uid": "tree_a_48",
+        "world_position": [
+          -37.75,
+          4.06,
+          0.496
+        ]
+      },
+      "id": 1881392724
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 40291,
+        "name": "终点胜利背景100",
+        "parent_unit_id": 0,
+        "position": [
+          -37.75,
+          4.06,
+          0.482
+        ],
+        "prefab_id": 1501440,
+        "scale": [
+          1.1595000267029,
+          0.5,
+          0.49999982118607
+        ],
+        "unit_eid": 1501440,
+        "unit_id": 2004435032,
+        "unit_type": 256,
+        "unit_uid": "tree_a_49",
+        "world_position": [
+          -37.75,
+          4.06,
+          0.482
+        ]
+      },
+      "id": 2004435032
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_id": 90002,
+        "name": "相机路径0",
+        "parent_unit_id": 0,
+        "position": [
+          99999.0,
+          99999.0,
+          99999.0
+        ],
+        "prefab_id": 3201063,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3201063,
+        "unit_id": 1931411198,
+        "unit_type": 2048,
+        "unit_uid": "3201063_uid",
+        "world_position": [
+          99999.0,
+          99999.0,
+          99999.0
+        ]
+      },
+      "id": 1931411198
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1001,
+        "unit_type": 0
+      },
+      "id": 1001
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1003,
+        "unit_type": 0
+      },
+      "id": 1003
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1002,
+        "unit_type": 0
+      },
+      "id": 1002
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "boundary_wall_1681499584_front_h50",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -13.251,
+          1.0,
+          -28.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          67.481716076378,
+          5.0,
+          0.099999999860302
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1405863766,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -13.251,
+          1.0,
+          -28.0
+        ]
+      },
+      "id": 1405863766
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "boundary_wall_1681499584_back_h50",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -13.251,
+          1.0,
+          37.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          67.481716076378,
+          5.0,
+          0.099999999860302
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2032411407,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -13.251,
+          1.0,
+          37.0
+        ]
+      },
+      "id": 2032411407
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "boundary_wall_1681499584_left_h50",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -46.992,
+          1.0,
+          4.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          5.0,
+          6.5
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1745608455,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -46.992,
+          1.0,
+          4.5
+        ]
+      },
+      "id": 1745608455
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "boundary_wall_1681499584_right_h50",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          20.49,
+          1.0,
+          4.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          5.0,
+          6.5
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1312346180,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          20.49,
+          1.0,
+          4.5
+        ]
+      },
+      "id": 1312346180
+    }
+  ],
+  "units_by_id": {
+    "1": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1,
+      "unit_type": 128
+    },
+    "1001": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1001,
+      "unit_type": 0
+    },
+    "1002": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1002,
+      "unit_type": 0
+    },
+    "1003": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1003,
+      "unit_type": 0
+    },
+    "1146983526": {
+      "model_angle": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "model_id": 90006,
+      "name": "胜利区域1",
+      "parent_unit_id": 0,
+      "position": [
+        -42.5,
+        5.0,
+        0.5
+      ],
+      "prefab_id": 31010102,
+      "scale": [
+        8.9999998092651,
+        7.5,
+        23.799999237061
+      ],
+      "unit_eid": 31010102,
+      "unit_id": 1146983526,
+      "unit_type": 8,
+      "unit_uid": "31010102_uid",
+      "world_position": [
+        -42.5,
+        5.0,
+        0.5
+      ]
+    },
+    "1312346180": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "boundary_wall_1681499584_right_h50",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        20.49,
+        1.0,
+        4.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        5.0,
+        6.5
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1312346180,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        20.49,
+        1.0,
+        4.5
+      ]
+    },
+    "1401993508": {
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 90007,
+      "name": "分阵营出生点1",
+      "parent_unit_id": 0,
+      "position": [
+        -5.0,
+        2.0,
+        0.0
+      ],
+      "prefab_id": 600005,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 600005,
+      "unit_id": 1401993508,
+      "unit_type": 16384,
+      "unit_uid": "600005_uid",
+      "world_position": [
+        -5.0,
+        2.0,
+        0.0
+      ]
+    },
+    "1405863766": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "boundary_wall_1681499584_front_h50",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -13.251,
+        1.0,
+        -28.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        67.481716076378,
+        5.0,
+        0.099999999860302
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1405863766,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -13.251,
+        1.0,
+        -28.0
+      ]
+    },
+    "1681499584": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "model_id": 90004,
+      "name": "地砖0",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -14.759,
+        0.0,
+        12.5
+      ],
+      "prefab_id": 1201010,
+      "scale": [
+        4.4987810717712,
+        1.0,
+        6.5
+      ],
+      "unit_eid": 1201010,
+      "unit_id": 1681499584,
+      "unit_type": 256,
+      "unit_uid": "floor_3",
+      "world_position": [
+        -14.759,
+        0.0,
+        12.5
+      ]
+    },
+    "1745608455": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "boundary_wall_1681499584_left_h50",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -46.992,
+        1.0,
+        4.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        5.0,
+        6.5
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1745608455,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -46.992,
+        1.0,
+        4.5
+      ]
+    },
+    "1881392724": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 40290,
+      "name": "终点胜利000",
+      "parent_unit_id": 0,
+      "position": [
+        -37.75,
+        4.06,
+        0.496
+      ],
+      "prefab_id": 1501430,
+      "scale": [
+        0.49999982118607,
+        0.5,
+        0.99999964237213
+      ],
+      "unit_eid": 1501430,
+      "unit_id": 1881392724,
+      "unit_type": 256,
+      "unit_uid": "tree_a_48",
+      "world_position": [
+        -37.75,
+        4.06,
+        0.496
+      ]
+    },
+    "1931411198": {
+      "model_angle": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_id": 90002,
+      "name": "相机路径0",
+      "parent_unit_id": 0,
+      "position": [
+        99999.0,
+        99999.0,
+        99999.0
+      ],
+      "prefab_id": 3201063,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3201063,
+      "unit_id": 1931411198,
+      "unit_type": 2048,
+      "unit_uid": "3201063_uid",
+      "world_position": [
+        99999.0,
+        99999.0,
+        99999.0
+      ]
+    },
+    "2004435032": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 40291,
+      "name": "终点胜利背景100",
+      "parent_unit_id": 0,
+      "position": [
+        -37.75,
+        4.06,
+        0.482
+      ],
+      "prefab_id": 1501440,
+      "scale": [
+        1.1595000267029,
+        0.5,
+        0.49999982118607
+      ],
+      "unit_eid": 1501440,
+      "unit_id": 2004435032,
+      "unit_type": 256,
+      "unit_uid": "tree_a_49",
+      "world_position": [
+        -37.75,
+        4.06,
+        0.482
+      ]
+    },
+    "2032411407": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "boundary_wall_1681499584_back_h50",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -13.251,
+        1.0,
+        37.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        67.481716076378,
+        5.0,
+        0.099999999860302
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2032411407,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -13.251,
+        1.0,
+        37.0
+      ]
+    }
+  }
+}

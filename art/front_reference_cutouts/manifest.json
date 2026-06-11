@@ -1,0 +1,384 @@
+{
+  "source": "/tmp/codex-web-uploads/f-VAYdfS/image.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "note": "这些 PNG 从用户提供的正视图原图裁切；多边形构件外部已置透明，保留原图透视、阴影和质感。",
+  "components": [
+    {
+      "file": "00_00_full_building_shell.png",
+      "description": "完整建筑外壳，去掉上方标题和大白边",
+      "box_xywh": [
+        86,
+        153,
+        1334,
+        698
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "01_01_top_front_perforated_beam.png",
+      "description": "最上方正面长梁，带一排方孔",
+      "box_xywh": [
+        142,
+        158,
+        1216,
+        58
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "02_02_bottom_front_base_beam.png",
+      "description": "底部正面基座长梁",
+      "box_xywh": [
+        141,
+        801,
+        1218,
+        51
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "03_03_left_front_perforated_column.png",
+      "description": "左前竖向打孔立柱",
+      "box_xywh": [
+        89,
+        199,
+        59,
+        606
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "04_04_right_front_perforated_column.png",
+      "description": "右前竖向打孔立柱",
+      "box_xywh": [
+        1358,
+        199,
+        60,
+        606
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "05_05_top_left_corner_cube.png",
+      "description": "左上角方块节点",
+      "box_xywh": [
+        88,
+        154,
+        61,
+        51
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "06_06_top_right_corner_cube.png",
+      "description": "右上角方块节点",
+      "box_xywh": [
+        1357,
+        154,
+        63,
+        51
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "07_07_bottom_left_corner_cube.png",
+      "description": "左下角方块节点",
+      "box_xywh": [
+        88,
+        798,
+        61,
+        53
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "08_08_bottom_right_corner_cube.png",
+      "description": "右下角方块节点",
+      "box_xywh": [
+        1357,
+        798,
+        63,
+        53
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "09_09_floor_panel_perspective.png",
+      "description": "透视地板面",
+      "box_xywh": [
+        145,
+        706,
+        1214,
+        100
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "10_10_back_wall_panel.png",
+      "description": "背面蓝色圆点墙板",
+      "box_xywh": [
+        439,
+        389,
+        644,
+        326
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "11_11_left_side_wall_panel.png",
+      "description": "左侧墙面透视墙板",
+      "box_xywh": [
+        148,
+        203,
+        304,
+        585
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "12_12_right_side_wall_panel.png",
+      "description": "右侧墙面透视墙板",
+      "box_xywh": [
+        1080,
+        203,
+        281,
+        585
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "13_13_ceiling_panel_perspective.png",
+      "description": "顶部内侧天花板透视面",
+      "box_xywh": [
+        217,
+        212,
+        1073,
+        177
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "14_14_ceiling_back_horizontal_beam.png",
+      "description": "天花后侧深蓝横梁",
+      "box_xywh": [
+        315,
+        291,
+        879,
+        31
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "15_15_ceiling_front_horizontal_beam.png",
+      "description": "天花前侧深蓝横梁",
+      "box_xywh": [
+        318,
+        315,
+        875,
+        32
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "16_16_ceiling_center_vertical_spine.png",
+      "description": "天花中心竖向脊梁",
+      "box_xywh": [
+        735,
+        211,
+        38,
+        198
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "17_17_left_ceiling_diagonal_beam.png",
+      "description": "左上斜向边梁",
+      "box_xywh": [
+        148,
+        203,
+        296,
+        186
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "18_18_right_ceiling_diagonal_beam.png",
+      "description": "右上斜向边梁",
+      "box_xywh": [
+        1081,
+        203,
+        279,
+        186
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "19_19_left_white_ceiling_light.png",
+      "description": "左侧白色吊顶灯",
+      "box_xywh": [
+        410,
+        315,
+        180,
+        23
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "20_20_right_white_ceiling_light.png",
+      "description": "右侧白色吊顶灯",
+      "box_xywh": [
+        914,
+        315,
+        177,
+        23
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "21_21_left_cyan_vertical_light_strip.png",
+      "description": "左侧青色竖向灯带",
+      "box_xywh": [
+        421,
+        388,
+        31,
+        326
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "22_22_right_cyan_vertical_light_strip.png",
+      "description": "右侧青色竖向灯带",
+      "box_xywh": [
+        1055,
+        388,
+        30,
+        326
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "23_23_left_blue_shoes_sign.png",
+      "description": "左墙蓝色运动鞋标牌",
+      "box_xywh": [
+        206,
+        395,
+        151,
+        144
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "24_24_center_purple_track_sign.png",
+      "description": "背墙紫色轨迹标牌",
+      "box_xywh": [
+        642,
+        484,
+        220,
+        88
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "25_25_right_green_wallet_sign.png",
+      "description": "右墙绿色钱包标牌",
+      "box_xywh": [
+        1151,
+        417,
+        163,
+        138
+      ],
+      "polygon_mask": true
+    },
+    {
+      "file": "26_26_left_shelf_full.png",
+      "description": "左侧货架整体，含上下层和物品",
+      "box_xywh": [
+        168,
+        586,
+        256,
+        141
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "27_27_right_shelf_full.png",
+      "description": "右侧货架整体，含上下层和物品",
+      "box_xywh": [
+        1096,
+        589,
+        237,
+        137
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "28_28_left_upper_goods_row.png",
+      "description": "左货架上层彩色物品",
+      "box_xywh": [
+        190,
+        587,
+        211,
+        43
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "29_29_left_lower_goods_row.png",
+      "description": "左货架下层彩色物品",
+      "box_xywh": [
+        191,
+        651,
+        225,
+        39
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "30_30_right_upper_goods_row.png",
+      "description": "右货架上层彩色物品",
+      "box_xywh": [
+        1101,
+        590,
+        213,
+        43
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "31_31_right_lower_goods_row.png",
+      "description": "右货架下层彩色物品",
+      "box_xywh": [
+        1099,
+        653,
+        226,
+        39
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "32_32_left_green_shelf_planks.png",
+      "description": "左侧两条绿色货架板",
+      "box_xywh": [
+        169,
+        619,
+        256,
+        106
+      ],
+      "polygon_mask": false
+    },
+    {
+      "file": "33_33_right_green_shelf_planks.png",
+      "description": "右侧两条绿色货架板",
+      "box_xywh": [
+        1097,
+        620,
+        236,
+        105
+      ],
+      "polygon_mask": false
+    }
+  ]
+}

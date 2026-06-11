@@ -1,0 +1,250 @@
+{
+  "source": "/tmp/codex-web-uploads/f-VAYdfS/image.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "note": "只拆建筑结构相关局部：梁、柱子、墙体、天花板、地板。所有输出为白底放大 PNG，重点是看清样式。",
+  "components": [
+    {
+      "file": "01_outer_top_beam_style.png",
+      "title": "顶部外框长梁",
+      "description": "顶部正面长梁，包含方孔、深蓝底边和上方高光，用来看外框梁样式。",
+      "source_box_xywh": [
+        137,
+        154,
+        1230,
+        78
+      ],
+      "scale": 2,
+      "output_size": [
+        2508,
+        204
+      ]
+    },
+    {
+      "file": "02_outer_bottom_beam_style.png",
+      "title": "底部基座长梁",
+      "description": "底部正面基座梁，包含厚蓝色横梁和两端节点衔接。",
+      "source_box_xywh": [
+        135,
+        780,
+        1238,
+        82
+      ],
+      "scale": 2,
+      "output_size": [
+        2524,
+        212
+      ]
+    },
+    {
+      "file": "03_left_column_style.png",
+      "title": "左前立柱",
+      "description": "左侧前立柱，包含上下角块、竖向打孔柱和底座。",
+      "source_box_xywh": [
+        82,
+        148,
+        92,
+        720
+      ],
+      "scale": 2,
+      "output_size": [
+        232,
+        1488
+      ]
+    },
+    {
+      "file": "04_right_column_style.png",
+      "title": "右前立柱",
+      "description": "右侧前立柱，包含上下角块、竖向打孔柱和底座。",
+      "source_box_xywh": [
+        1336,
+        148,
+        94,
+        720
+      ],
+      "scale": 2,
+      "output_size": [
+        236,
+        1488
+      ]
+    },
+    {
+      "file": "05_corner_cube_style.png",
+      "title": "角部方块节点",
+      "description": "外框角部方块节点局部，展示倒角、高光和描边。",
+      "source_box_xywh": [
+        80,
+        145,
+        82,
+        74
+      ],
+      "scale": 3,
+      "output_size": [
+        294,
+        270
+      ]
+    },
+    {
+      "file": "06_back_wall_panel_style.png",
+      "title": "背墙墙体",
+      "description": "背面主墙体，保留圆点墙板、底部深蓝踢脚线和两侧边缘。",
+      "source_box_xywh": [
+        410,
+        360,
+        710,
+        380
+      ],
+      "scale": 2,
+      "output_size": [
+        1468,
+        808
+      ]
+    },
+    {
+      "file": "07_left_wall_panel_style.png",
+      "title": "左侧墙体",
+      "description": "左侧透视墙体，展示圆点墙面、内角和墙脚。",
+      "source_box_xywh": [
+        135,
+        205,
+        350,
+        595
+      ],
+      "scale": 2,
+      "output_size": [
+        748,
+        1238
+      ]
+    },
+    {
+      "file": "08_right_wall_panel_style.png",
+      "title": "右侧墙体",
+      "description": "右侧透视墙体，展示圆点墙面、内角和墙脚。",
+      "source_box_xywh": [
+        1045,
+        205,
+        335,
+        595
+      ],
+      "scale": 2,
+      "output_size": [
+        718,
+        1238
+      ]
+    },
+    {
+      "file": "09_ceiling_panel_style.png",
+      "title": "天花板",
+      "description": "顶部天花板整体局部，包含浅蓝圆点顶板、斜边和中间竖梁。",
+      "source_box_xywh": [
+        190,
+        205,
+        1130,
+        205
+      ],
+      "scale": 2,
+      "output_size": [
+        2308,
+        458
+      ]
+    },
+    {
+      "file": "10_ceiling_cross_beam_style.png",
+      "title": "天花横梁",
+      "description": "天花前后横梁局部，包含两条深蓝横梁和灯所在的结构层。",
+      "source_box_xywh": [
+        300,
+        280,
+        925,
+        86
+      ],
+      "scale": 2,
+      "output_size": [
+        1898,
+        220
+      ]
+    },
+    {
+      "file": "11_ceiling_center_spine_style.png",
+      "title": "天花中脊梁",
+      "description": "中间竖向脊梁局部，展示梁厚度和节点。",
+      "source_box_xywh": [
+        710,
+        205,
+        90,
+        220
+      ],
+      "scale": 3,
+      "output_size": [
+        318,
+        708
+      ]
+    },
+    {
+      "file": "12_floor_panel_style.png",
+      "title": "地板",
+      "description": "地板透视面，展示蓝色圆点地砖、后缘和前方基座交接。",
+      "source_box_xywh": [
+        130,
+        690,
+        1250,
+        135
+      ],
+      "scale": 2,
+      "output_size": [
+        2548,
+        318
+      ]
+    },
+    {
+      "file": "13_floor_texture_closeup.png",
+      "title": "地板圆点纹理近景",
+      "description": "地板圆点纹理放大局部，只看材质和排列。",
+      "source_box_xywh": [
+        550,
+        715,
+        340,
+        95
+      ],
+      "scale": 4,
+      "output_size": [
+        1408,
+        428
+      ]
+    },
+    {
+      "file": "14_wall_texture_closeup.png",
+      "title": "墙体圆点纹理近景",
+      "description": "背墙圆点纹理放大局部，只看墙体材质和颜色层次。",
+      "source_box_xywh": [
+        525,
+        410,
+        340,
+        170
+      ],
+      "scale": 3,
+      "output_size": [
+        1068,
+        558
+      ]
+    },
+    {
+      "file": "15_ceiling_texture_closeup.png",
+      "title": "天花圆点纹理近景",
+      "description": "天花浅蓝圆点纹理放大局部。",
+      "source_box_xywh": [
+        500,
+        220,
+        360,
+        90
+      ],
+      "scale": 4,
+      "output_size": [
+        1488,
+        408
+      ]
+    }
+  ]
+}

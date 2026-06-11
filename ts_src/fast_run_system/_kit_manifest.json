@@ -1,0 +1,13 @@
+{
+  "kit": "fast_run_system",
+  "version": "0.1.0",
+  "platformCommit": "4d50994febbef74045f851643a10f5b55378ee03",
+  "source": "platform/gameplay-kits/fast_run_system",
+  "sourceDir": "src/fast_run_system",
+  "targetDir": "ts_src/fast_run_system",
+  "files": {
+    "FastRunSystem.ts": "283179a593c7f9646c21ef89d51d9cb08b41d4081848136b92bf4ac4ae4a6e6a",
+    "index.ts": "4d3103172da9e756e72d425afc16f8708e3b05786cba35ad75fc4099df803ed7"
+  },
+  "installedAt": "2026-06-11T09:21:34.878855+00:00"
+}

@@ -1,0 +1,77 @@
+{
+  "source_reference": [
+    "/tmp/codex-web-uploads/f-9KNC2Y/image.png",
+    "/tmp/codex-web-uploads/f-djhKtJ/image.png"
+  ],
+  "note": "参考图为透视渲染图；本批 PNG 是按三视图结构意图重绘的正投影/平面构件，透明背景。",
+  "components": [
+    {
+      "file": "01_floor_panel_top.png",
+      "description": "蓝色带圆点地板平面"
+    },
+    {
+      "file": "02_back_wall_panel_front.png",
+      "description": "背墙正投影墙板"
+    },
+    {
+      "file": "03_side_wall_panel_side.png",
+      "description": "侧墙正投影墙板"
+    },
+    {
+      "file": "04_ceiling_panel_top.png",
+      "description": "顶板平面"
+    },
+    {
+      "file": "05_outer_frame_long_beam.png",
+      "description": "长向外框梁/上下边框"
+    },
+    {
+      "file": "06_outer_frame_side_column.png",
+      "description": "侧向外框柱"
+    },
+    {
+      "file": "07_corner_cube.png",
+      "description": "四角方块节点"
+    },
+    {
+      "file": "08_ceiling_cross_beam.png",
+      "description": "顶面横梁"
+    },
+    {
+      "file": "09_ceiling_center_spine.png",
+      "description": "顶面中脊梁"
+    },
+    {
+      "file": "10_white_ceiling_light_panel.png",
+      "description": "白色吊顶灯"
+    },
+    {
+      "file": "11_cyan_vertical_light_strip.png",
+      "description": "青色竖向灯带"
+    },
+    {
+      "file": "12_green_double_shelf_front.png",
+      "description": "绿色双层货架"
+    },
+    {
+      "file": "13_shelf_goods_blocks.png",
+      "description": "货架彩色物品块"
+    },
+    {
+      "file": "14_blue_shoes_sign_plate.png",
+      "description": "蓝色运动鞋标牌平面"
+    },
+    {
+      "file": "15_purple_track_sign_plate.png",
+      "description": "紫色轨迹标牌平面"
+    },
+    {
+      "file": "16_green_wallet_sign_plate.png",
+      "description": "绿色钱包标牌平面"
+    },
+    {
+      "file": "20_reference_full_top_plan.png",
+      "description": "完整结构顶视平面参考"
+    }
+  ]
+}
