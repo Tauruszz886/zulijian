@@ -4,7 +4,9 @@ import { startFastRunSystem, type FastRunSystem } from "./fast_run_system"
 
 const TAG = "ZLJ_MAIN"
 const SPEED_TAG = "ZLJ_SPEED_UI"
+const FLOOR_TAG = "ZLJ_RUNTIME_FLOOR"
 const WALL_TAG = "ZLJ_RUNTIME_WALL"
+const CEILING_TAG = "ZLJ_RUNTIME_CEILING"
 
 const SPEED_DISPLAY_ID_TEXT = "1506247873"
 const SPEED_DISPLAY_TARGETS = [
@@ -16,12 +18,36 @@ const SPEED_DISPLAY_TARGETS = [
 ] as const
 const TOUCH_TYPES: ENodeTouchEventType[] = [0 as integer, 1 as integer, 2 as integer, 3 as integer]
 const DEFAULT_SPEED = 40
+const FLOOR_PREFAB_ID = 1201010
 const WALL_PREFAB_ID = 105205
+const FLOOR_BASE_Y = 0
 const WALL_BASE_Y = 2
-const WALL_HEIGHT = 5
+const WALL_HEIGHT = 25
+const CEILING_BASE_Y = 26.5
+const MODULE_STEP_X = -100
+const RUNTIME_COPY_COUNT = 11
+
+type RuntimeFloor = {
+  name: string
+  x: number
+  z: number
+  sx: number
+  sy: number
+  sz: number
+}
+
+type RuntimeCeiling = {
+  name: string
+  x: number
+  z: number
+  sx: number
+  sy: number
+  sz: number
+}
 
 type RuntimeWall = {
   name: string
+  side: "north" | "east" | "south" | "west"
   x: number
   z: number
   sx: number
@@ -96,9 +122,19 @@ const SPEED_BUTTONS: SpeedButton[] = [
   },
 ]
 
+const RUNTIME_FLOOR: RuntimeFloor = {
+  name: "runtime_floor_2134777966",
+  x: 949,
+  z: -36,
+  sx: 100,
+  sy: 2,
+  sz: 80,
+}
+
 const RUNTIME_WALLS: RuntimeWall[] = [
   {
     name: "runtime_wall_north_2134777966",
+    side: "north",
     x: 949,
     z: -75.5,
     sx: 99,
@@ -106,6 +142,7 @@ const RUNTIME_WALLS: RuntimeWall[] = [
   },
   {
     name: "runtime_wall_east_2134777966",
+    side: "east",
     x: 998.5,
     z: -36,
     sx: 2,
@@ -113,6 +150,7 @@ const RUNTIME_WALLS: RuntimeWall[] = [
   },
   {
     name: "runtime_wall_south_2134777966",
+    side: "south",
     x: 949,
     z: 3.5,
     sx: 99,
@@ -120,6 +158,7 @@ const RUNTIME_WALLS: RuntimeWall[] = [
   },
   {
     name: "runtime_wall_west_nw_to_gap_2134777966",
+    side: "west",
     x: 899.5,
     z: -60.5,
     sx: 2,
@@ -127,6 +166,7 @@ const RUNTIME_WALLS: RuntimeWall[] = [
   },
   {
     name: "runtime_wall_west_gap_to_sw_2134777966",
+    side: "west",
     x: 899.5,
     z: -11.5,
     sx: 2,
@@ -134,9 +174,20 @@ const RUNTIME_WALLS: RuntimeWall[] = [
   },
 ]
 
+const RUNTIME_CEILING: RuntimeCeiling = {
+  name: "runtime_ceiling_2134777966",
+  x: 949,
+  z: -36,
+  sx: 100,
+  sy: 1.5,
+  sz: 80,
+}
+
 let fastRunSystem: FastRunSystem | undefined
 let registered = false
+let runtimeFloorsCreated = false
 let runtimeWallsCreated = false
+let runtimeCeilingCreated = false
 let currentSpeedValue = DEFAULT_SPEED
 let displayTargetsLogged = false
 const enabledRoles = new Map<string, boolean>()
@@ -152,25 +203,87 @@ function fastRunLogger(...args: unknown[]): void {
   print(text)
 }
 
+function runtimeModuleName(name: string, moduleIndex: number): string {
+  return moduleIndex === 0 ? name : `${name}_copy_${moduleIndex}`
+}
+
+function createRuntimeFloorCopies(): void {
+  if (runtimeFloorsCreated) {
+    return
+  }
+  runtimeFloorsCreated = true
+
+  const floor = RUNTIME_FLOOR
+  print(
+    `[${FLOOR_TAG}] create begin copies=${RUNTIME_COPY_COUNT} prefab=${FLOOR_PREFAB_ID} base_y=${FLOOR_BASE_Y} step_x=${MODULE_STEP_X}`
+  )
+  for (let moduleIndex = 1; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
+    const x = floor.x + MODULE_STEP_X * moduleIndex
+    const unit = safeCreateObstacle(
+      FLOOR_PREFAB_ID,
+      math.Vector3(x as Fixed, FLOOR_BASE_Y as Fixed, floor.z as Fixed),
+      math.Vector3(floor.sx as Fixed, floor.sy as Fixed, floor.sz as Fixed),
+      { tag: `runtime_floor_create_${runtimeModuleName(floor.name, moduleIndex)}`, logger: print }
+    )
+    print(
+      `[${FLOOR_TAG}] created name=${runtimeModuleName(floor.name, moduleIndex)} unit=${tostring(unit)} base=(${x},${FLOOR_BASE_Y},${floor.z}) scale=(${floor.sx},${floor.sy},${floor.sz})`
+    )
+  }
+}
+
 function createRuntimeWalls(): void {
   if (runtimeWallsCreated) {
     return
   }
   runtimeWallsCreated = true
 
+  const wallCount = RUNTIME_WALLS.length * (RUNTIME_COPY_COUNT + 1) - RUNTIME_COPY_COUNT
   print(
-    `[${WALL_TAG}] create begin count=${RUNTIME_WALLS.length} prefab=${WALL_PREFAB_ID} base_y=${WALL_BASE_Y} height=${WALL_HEIGHT}`
+    `[${WALL_TAG}] create begin count=${wallCount} modules=${RUNTIME_COPY_COUNT + 1} prefab=${WALL_PREFAB_ID} base_y=${WALL_BASE_Y} height=${WALL_HEIGHT} step_x=${MODULE_STEP_X} shared_opening=west_gap`
   )
-  for (let i = 0; i < RUNTIME_WALLS.length; i++) {
-    const wall = RUNTIME_WALLS[i]!
+  for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
+    const offsetX = MODULE_STEP_X * moduleIndex
+    for (let i = 0; i < RUNTIME_WALLS.length; i++) {
+      const wall = RUNTIME_WALLS[i]!
+      if (wall.side === "east" && moduleIndex > 0) {
+        continue
+      }
+      const x = wall.x + offsetX
+      const name = runtimeModuleName(wall.name, moduleIndex)
+      const unit = safeCreateObstacle(
+        WALL_PREFAB_ID,
+        math.Vector3(x as Fixed, WALL_BASE_Y as Fixed, wall.z as Fixed),
+        math.Vector3(wall.sx as Fixed, WALL_HEIGHT as Fixed, wall.sz as Fixed),
+        { tag: `runtime_wall_create_${name}`, logger: print }
+      )
+      print(
+        `[${WALL_TAG}] created name=${name} unit=${tostring(unit)} pos=(${x},${WALL_BASE_Y},${wall.z}) scale=(${wall.sx},${WALL_HEIGHT},${wall.sz})`
+      )
+    }
+  }
+}
+
+function createRuntimeCeiling(): void {
+  if (runtimeCeilingCreated) {
+    return
+  }
+  runtimeCeilingCreated = true
+
+  const ceiling = RUNTIME_CEILING
+  print(
+    `[${CEILING_TAG}] create begin count=${RUNTIME_COPY_COUNT + 1} prefab=${WALL_PREFAB_ID} base_y=${CEILING_BASE_Y} step_x=${MODULE_STEP_X}`
+  )
+  for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
+    const x = ceiling.x + MODULE_STEP_X * moduleIndex
+    const name = runtimeModuleName(ceiling.name, moduleIndex)
     const unit = safeCreateObstacle(
       WALL_PREFAB_ID,
-      math.Vector3(wall.x as Fixed, WALL_BASE_Y as Fixed, wall.z as Fixed),
-      math.Vector3(wall.sx as Fixed, WALL_HEIGHT as Fixed, wall.sz as Fixed),
-      { tag: `runtime_wall_create_${wall.name}`, logger: print }
+      math.Vector3(x as Fixed, CEILING_BASE_Y as Fixed, ceiling.z as Fixed),
+      math.Vector3(ceiling.sx as Fixed, ceiling.sy as Fixed, ceiling.sz as Fixed),
+      { tag: `runtime_ceiling_create_${name}`, logger: print }
     )
     print(
-      `[${WALL_TAG}] created name=${wall.name} unit=${tostring(unit)} pos=(${wall.x},${WALL_BASE_Y},${wall.z}) scale=(${wall.sx},${WALL_HEIGHT},${wall.sz})`
+      `[${CEILING_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${CEILING_BASE_Y},${ceiling.z}) scale=(${ceiling.sx},${ceiling.sy},${ceiling.sz})`
     )
   }
 }
@@ -617,7 +730,9 @@ print(`[${TAG}] loaded`)
 
 LuaAPI.global_register_trigger_event([EVENT.GAME_INIT], () => {
   print(`[${TAG}] game init`)
+  createRuntimeFloorCopies()
   createRuntimeWalls()
+  createRuntimeCeiling()
   startSystems()
   registerSpeedUiEvents()
   enableUiForOnlineRoles()
