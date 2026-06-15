@@ -1,0 +1,1752 @@
+{
+  "schema": "zulijian.dxf_level_data.v1",
+  "source": {
+    "path": "/tmp/codex-web-uploads/f-N9TT8v/第七关.dxf",
+    "filename": "第七关.dxf",
+    "acad_version": "AC1032"
+  },
+  "options": {
+    "round_digits": 6,
+    "z_mode": "cad-y",
+    "coordinate_mapping": "cad_x_to_local_x__cad_y_to_local_z"
+  },
+  "summary": {
+    "entity_counts": {
+      "3DSOLID": 7,
+      "DIMENSION": 7,
+      "LINE": 24,
+      "LWPOLYLINE": 1
+    },
+    "layers": {
+      "0": {
+        "LWPOLYLINE": 1,
+        "LINE": 24,
+        "DIMENSION": 7,
+        "3DSOLID": 7
+      }
+    },
+    "geometry_bounds": {
+      "min_x": 9.09856,
+      "min_y": -42.118176,
+      "max_x": 109.09856,
+      "max_y": 37.881824,
+      "width": 100.0,
+      "height": 80.0
+    },
+    "drawing_bounds": {
+      "min_x": -17.11993,
+      "min_y": -42.118176,
+      "max_x": 115.513585,
+      "max_y": 48.270083,
+      "width": 132.633515,
+      "height": 90.388259
+    }
+  },
+  "frame": {
+    "source": "largest_closed_lwpolyline",
+    "entity_index": 0,
+    "handle": "1CE",
+    "cad_bounds": {
+      "min_x": 9.09856,
+      "min_y": -42.118176,
+      "max_x": 109.09856,
+      "max_y": 37.881824,
+      "width": 100.0,
+      "height": 80.0
+    },
+    "local_bounds": {
+      "startX": 0.0,
+      "startZ": 0.0,
+      "sx": 100.0,
+      "sz": 80.0
+    },
+    "points": [
+      {
+        "x": 9.09856,
+        "y": -42.118176
+      },
+      {
+        "x": 109.09856,
+        "y": -42.118176
+      },
+      {
+        "x": 109.09856,
+        "y": 37.881824
+      },
+      {
+        "x": 9.09856,
+        "y": 37.881824
+      }
+    ],
+    "points_local": [
+      {
+        "x": 0.0,
+        "z": 0.0
+      },
+      {
+        "x": 100.0,
+        "z": 0.0
+      },
+      {
+        "x": 100.0,
+        "z": 80.0
+      },
+      {
+        "x": 0.0,
+        "z": 80.0
+      }
+    ]
+  },
+  "entities": {
+    "lines": [
+      {
+        "type": "LINE",
+        "handle": "1CF",
+        "layer": "0",
+        "start": {
+          "x": 9.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 9.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 80.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 0.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 0.0,
+          "z": 0.0
+        },
+        "index": 1
+      },
+      {
+        "type": "LINE",
+        "handle": "1D0",
+        "layer": "0",
+        "start": {
+          "x": 9.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 100.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 0.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 0.0
+        },
+        "index": 2
+      },
+      {
+        "type": "LINE",
+        "handle": "1D1",
+        "layer": "0",
+        "start": {
+          "x": 9.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 19.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 10.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 0.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 10.0,
+          "z": 0.0
+        },
+        "index": 3
+      },
+      {
+        "type": "LINE",
+        "handle": "1D9",
+        "layer": "0",
+        "start": {
+          "x": 19.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 24.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 5.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 10.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 15.0,
+          "z": 0.0
+        },
+        "index": 4
+      },
+      {
+        "type": "LINE",
+        "handle": "1DB",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 59.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 50.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 100.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 50.0,
+          "z": 0.0
+        },
+        "index": 5
+      },
+      {
+        "type": "LINE",
+        "handle": "1DD",
+        "layer": "0",
+        "start": {
+          "x": 59.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 69.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 10.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 50.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 60.0,
+          "z": 0.0
+        },
+        "index": 6
+      },
+      {
+        "type": "LINE",
+        "handle": "2CE",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": -22.118176,
+          "z": 0.0
+        },
+        "length": 20.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 100.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 20.0
+        },
+        "index": 9
+      },
+      {
+        "type": "LINE",
+        "handle": "2CF",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": 17.881824,
+          "z": 0.0
+        },
+        "length": 20.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 100.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 60.0
+        },
+        "index": 10
+      },
+      {
+        "type": "LINE",
+        "handle": "2EE",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": 17.881824,
+          "z": 0.0
+        },
+        "length": 20.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 100.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 60.0
+        },
+        "index": 11
+      },
+      {
+        "type": "LINE",
+        "handle": "33F",
+        "layer": "0",
+        "start": {
+          "x": 9.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 9.09856,
+          "y": -12.118176,
+          "z": 0.0
+        },
+        "length": 30.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 0.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 0.0,
+          "z": 30.0
+        },
+        "index": 12
+      },
+      {
+        "type": "LINE",
+        "handle": "340",
+        "layer": "0",
+        "start": {
+          "x": 9.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 9.09856,
+          "y": 7.881824,
+          "z": 0.0
+        },
+        "length": 30.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 0.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 0.0,
+          "z": 50.0
+        },
+        "index": 13
+      },
+      {
+        "type": "LINE",
+        "handle": "345",
+        "layer": "0",
+        "start": {
+          "x": 9.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 9.09856,
+          "y": -17.118176,
+          "z": 0.0
+        },
+        "length": 25.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 0.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 0.0,
+          "z": 25.0
+        },
+        "index": 14
+      },
+      {
+        "type": "LINE",
+        "handle": "3D8",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": -22.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": 16.993005,
+          "z": 0.0
+        },
+        "length": 39.111181,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 100.0,
+          "z": 20.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 59.111181
+        },
+        "index": 16
+      },
+      {
+        "type": "LINE",
+        "handle": "3DA",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": 17.881824,
+          "z": 0.0
+        },
+        "length": 20.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 100.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 60.0
+        },
+        "index": 17
+      },
+      {
+        "type": "LINE",
+        "handle": "401",
+        "layer": "0",
+        "start": {
+          "x": 109.09856,
+          "y": 17.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 109.09856,
+          "y": -22.118176,
+          "z": 0.0
+        },
+        "length": 40.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 100.0,
+          "z": 60.0
+        },
+        "end_local": {
+          "x": 100.0,
+          "z": 20.0
+        },
+        "index": 18
+      },
+      {
+        "type": "LINE",
+        "handle": "432",
+        "layer": "0",
+        "start": {
+          "x": 19.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 26.59856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "length": 7.5,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 10.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 17.5,
+          "z": 80.0
+        },
+        "index": 21
+      },
+      {
+        "type": "LINE",
+        "handle": "53E",
+        "layer": "0",
+        "start": {
+          "x": 49.09856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 49.09856,
+          "y": -9.118176,
+          "z": 0.0
+        },
+        "length": 14.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 40.0,
+          "z": 47.0
+        },
+        "end_local": {
+          "x": 40.0,
+          "z": 33.0
+        },
+        "index": 23
+      },
+      {
+        "type": "LINE",
+        "handle": "541",
+        "layer": "0",
+        "start": {
+          "x": 14.09856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 19.09856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "length": 5.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 5.0,
+          "z": 47.0
+        },
+        "end_local": {
+          "x": 10.0,
+          "z": 47.0
+        },
+        "index": 24
+      },
+      {
+        "type": "LINE",
+        "handle": "542",
+        "layer": "0",
+        "start": {
+          "x": 19.09856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 19.09856,
+          "y": -9.118176,
+          "z": 0.0
+        },
+        "length": 14.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 10.0,
+          "z": 47.0
+        },
+        "end_local": {
+          "x": 10.0,
+          "z": 33.0
+        },
+        "index": 25
+      },
+      {
+        "type": "LINE",
+        "handle": "543",
+        "layer": "0",
+        "start": {
+          "x": 19.09856,
+          "y": -9.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 14.09856,
+          "y": -9.118176,
+          "z": 0.0
+        },
+        "length": 5.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 10.0,
+          "z": 33.0
+        },
+        "end_local": {
+          "x": 5.0,
+          "z": 33.0
+        },
+        "index": 26
+      },
+      {
+        "type": "LINE",
+        "handle": "54D",
+        "layer": "0",
+        "start": {
+          "x": 79.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "end": {
+          "x": 74.09856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "length": 5.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 70.0,
+          "z": 80.0
+        },
+        "end_local": {
+          "x": 65.0,
+          "z": 80.0
+        },
+        "index": 29
+      },
+      {
+        "type": "LINE",
+        "handle": "573",
+        "layer": "0",
+        "start": {
+          "x": 59.09856,
+          "y": -29.618176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 59.09856,
+          "y": -37.118176,
+          "z": 0.0
+        },
+        "length": 7.5,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 50.0,
+          "z": 12.5
+        },
+        "end_local": {
+          "x": 50.0,
+          "z": 5.0
+        },
+        "index": 30
+      },
+      {
+        "type": "LINE",
+        "handle": "59F",
+        "layer": "0",
+        "start": {
+          "x": 84.09856,
+          "y": -9.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 84.09856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "length": 33.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 75.0,
+          "z": 33.0
+        },
+        "end_local": {
+          "x": 75.0,
+          "z": 0.0
+        },
+        "index": 33
+      },
+      {
+        "type": "LINE",
+        "handle": "5A1",
+        "layer": "0",
+        "start": {
+          "x": 62.59856,
+          "y": -27.118176,
+          "z": 0.0
+        },
+        "end": {
+          "x": 84.09856,
+          "y": -27.118176,
+          "z": 0.0
+        },
+        "length": 21.5,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 53.5,
+          "z": 15.0
+        },
+        "end_local": {
+          "x": 75.0,
+          "z": 15.0
+        },
+        "index": 34
+      }
+    ],
+    "polylines": [
+      {
+        "type": "LWPOLYLINE",
+        "handle": "1CE",
+        "layer": "0",
+        "closed": true,
+        "flags": 1,
+        "vertex_count": 4,
+        "vertices": [
+          {
+            "x": 9.09856,
+            "y": -42.118176
+          },
+          {
+            "x": 109.09856,
+            "y": -42.118176
+          },
+          {
+            "x": 109.09856,
+            "y": 37.881824
+          },
+          {
+            "x": 9.09856,
+            "y": 37.881824
+          }
+        ],
+        "vertices_local": [
+          {
+            "x": 0.0,
+            "z": 0.0
+          },
+          {
+            "x": 100.0,
+            "z": 0.0
+          },
+          {
+            "x": 100.0,
+            "z": 80.0
+          },
+          {
+            "x": 0.0,
+            "z": 80.0
+          }
+        ],
+        "index": 0
+      }
+    ],
+    "dimensions": [
+      {
+        "type": "DIMENSION",
+        "handle": "224",
+        "layer": "0",
+        "name": "*D1",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 80.0,
+        "definition_start": {
+          "x": 109.09856,
+          "y": -42.118176,
+          "z": 1.5
+        },
+        "definition_end": {
+          "x": 109.09856,
+          "y": 37.881824,
+          "z": 1.5
+        },
+        "dimension_line_point": {
+          "x": 115.513585,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 113.638585,
+          "y": -2.118176,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 100.0,
+          "z": 0.0
+        },
+        "definition_end_local": {
+          "x": 100.0,
+          "z": 80.0
+        },
+        "index": 7
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "23A",
+        "layer": "0",
+        "name": "*D2",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 100.0,
+        "definition_start": {
+          "x": 109.09856,
+          "y": 37.881824,
+          "z": 1.5
+        },
+        "definition_end": {
+          "x": 9.09856,
+          "y": 37.881824,
+          "z": 1.5
+        },
+        "dimension_line_point": {
+          "x": 9.09856,
+          "y": 46.395083,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 59.09856,
+          "y": 48.270083,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 100.0,
+          "z": 80.0
+        },
+        "definition_end_local": {
+          "x": 0.0,
+          "z": 80.0
+        },
+        "index": 8
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "44C",
+        "layer": "0",
+        "name": "*D3",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 80.0,
+        "definition_start": {
+          "x": 26.59856,
+          "y": -42.118176,
+          "z": 0.0
+        },
+        "definition_end": {
+          "x": 26.59856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": -15.24493,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": -17.11993,
+          "y": -2.118176,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 17.5,
+          "z": 0.0
+        },
+        "definition_end_local": {
+          "x": 17.5,
+          "z": 80.0
+        },
+        "index": 22
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "5A2",
+        "layer": "0",
+        "name": "*D5",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 21.5,
+        "definition_start": {
+          "x": 84.09856,
+          "y": -27.118176,
+          "z": 0.0
+        },
+        "definition_end": {
+          "x": 62.59856,
+          "y": -27.118176,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": 62.59856,
+          "y": -22.660092,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 73.34856,
+          "y": -20.576758,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 75.0,
+          "z": 15.0
+        },
+        "definition_end_local": {
+          "x": 53.5,
+          "z": 15.0
+        },
+        "index": 35
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "5BC",
+        "layer": "0",
+        "name": "*D6",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 14.02424,
+        "definition_start": {
+          "x": 23.1228,
+          "y": 34.381824,
+          "z": 0.0
+        },
+        "definition_end": {
+          "x": 9.09856,
+          "y": 34.381824,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": 9.09856,
+          "y": 30.996806,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 16.11068,
+          "y": 33.08014,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 14.02424,
+          "z": 76.5
+        },
+        "definition_end_local": {
+          "x": 0.0,
+          "z": 76.5
+        },
+        "index": 36
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "5D2",
+        "layer": "0",
+        "name": "*D7",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 32.5,
+        "definition_start": {
+          "x": 84.09856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "definition_end": {
+          "x": 51.59856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": 51.59856,
+          "y": 6.288251,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 67.84856,
+          "y": 8.371584,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 75.0,
+          "z": 47.0
+        },
+        "definition_end_local": {
+          "x": 42.5,
+          "z": 47.0
+        },
+        "index": 37
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "5E8",
+        "layer": "0",
+        "name": "*D8",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 33.0,
+        "definition_start": {
+          "x": 41.59856,
+          "y": 4.881824,
+          "z": 0.0
+        },
+        "definition_end": {
+          "x": 41.59856,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": 42.185881,
+          "y": 37.881824,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 40.310881,
+          "y": 21.381824,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 32.5,
+          "z": 47.0
+        },
+        "definition_end_local": {
+          "x": 32.5,
+          "z": 80.0
+        },
+        "index": 38
+      }
+    ],
+    "solids3d": [
+      {
+        "type": "3DSOLID",
+        "handle": "34A",
+        "layer": "0",
+        "persistent_id": "{28caf132-b141-234b-a871-37a5eeda0c25}",
+        "history_handle": "34D",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 15
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "406",
+        "layer": "0",
+        "persistent_id": "{d7a69c83-0a5e-0448-92c9-85188429b99a}",
+        "history_handle": "409",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 19
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "40F",
+        "layer": "0",
+        "persistent_id": "{a69d6563-b104-9a46-9ac1-4e543ffd92cc}",
+        "history_handle": "412",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 20
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "544",
+        "layer": "0",
+        "persistent_id": "{c5873bd4-f39f-6a42-94e3-035f6f813f59}",
+        "history_handle": "547",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 27
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "548",
+        "layer": "0",
+        "persistent_id": "{9e80d808-a3e9-7f45-96eb-76ea4aa49495}",
+        "history_handle": "54B",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 28
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "575",
+        "layer": "0",
+        "persistent_id": "{6b83cf3d-c057-0c4b-a698-b16a5f13c011}",
+        "history_handle": "578",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 31
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "585",
+        "layer": "0",
+        "persistent_id": "{745180ab-6cef-0144-a3d5-e356ef755187}",
+        "history_handle": "586",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 32
+      }
+    ],
+    "circles": [],
+    "arcs": [],
+    "unsupported": []
+  },
+  "processed": {
+    "axis_segments": [
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 19.09856,
+            "y": -42.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 10.0,
+            "z": 0.0
+          }
+        },
+        "length": 10.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 109.09856,
+            "y": -42.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 0.0
+          }
+        },
+        "length": 100.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": 37.881824
+          },
+          "end": {
+            "x": 109.09856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 80.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 80.0
+          }
+        },
+        "length": 100.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 14.09856,
+            "y": -9.118176
+          },
+          "end": {
+            "x": 19.09856,
+            "y": -9.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 5.0,
+            "z": 33.0
+          },
+          "end": {
+            "x": 10.0,
+            "z": 33.0
+          }
+        },
+        "length": 5.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 14.09856,
+            "y": 4.881824
+          },
+          "end": {
+            "x": 19.09856,
+            "y": 4.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 5.0,
+            "z": 47.0
+          },
+          "end": {
+            "x": 10.0,
+            "z": 47.0
+          }
+        },
+        "length": 5.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 19.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 24.09856,
+            "y": -42.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 10.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 15.0,
+            "z": 0.0
+          }
+        },
+        "length": 5.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 19.09856,
+            "y": 37.881824
+          },
+          "end": {
+            "x": 26.59856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 10.0,
+            "z": 80.0
+          },
+          "end": {
+            "x": 17.5,
+            "z": 80.0
+          }
+        },
+        "length": 7.5
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 59.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 69.09856,
+            "y": -42.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 50.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 60.0,
+            "z": 0.0
+          }
+        },
+        "length": 10.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 59.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 109.09856,
+            "y": -42.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 50.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 0.0
+          }
+        },
+        "length": 50.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 62.59856,
+            "y": -27.118176
+          },
+          "end": {
+            "x": 84.09856,
+            "y": -27.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 53.5,
+            "z": 15.0
+          },
+          "end": {
+            "x": 75.0,
+            "z": 15.0
+          }
+        },
+        "length": 21.5
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 74.09856,
+            "y": 37.881824
+          },
+          "end": {
+            "x": 79.09856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 65.0,
+            "z": 80.0
+          },
+          "end": {
+            "x": 70.0,
+            "z": 80.0
+          }
+        },
+        "length": 5.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 9.09856,
+            "y": -17.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 0.0,
+            "z": 25.0
+          }
+        },
+        "length": 25.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 9.09856,
+            "y": -12.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 0.0,
+            "z": 30.0
+          }
+        },
+        "length": 30.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 9.09856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 0.0,
+            "z": 80.0
+          }
+        },
+        "length": 80.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 9.09856,
+            "y": 7.881824
+          },
+          "end": {
+            "x": 9.09856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 50.0
+          },
+          "end": {
+            "x": 0.0,
+            "z": 80.0
+          }
+        },
+        "length": 30.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 19.09856,
+            "y": -9.118176
+          },
+          "end": {
+            "x": 19.09856,
+            "y": 4.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 10.0,
+            "z": 33.0
+          },
+          "end": {
+            "x": 10.0,
+            "z": 47.0
+          }
+        },
+        "length": 14.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 49.09856,
+            "y": -9.118176
+          },
+          "end": {
+            "x": 49.09856,
+            "y": 4.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 40.0,
+            "z": 33.0
+          },
+          "end": {
+            "x": 40.0,
+            "z": 47.0
+          }
+        },
+        "length": 14.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 59.09856,
+            "y": -37.118176
+          },
+          "end": {
+            "x": 59.09856,
+            "y": -29.618176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 50.0,
+            "z": 5.0
+          },
+          "end": {
+            "x": 50.0,
+            "z": 12.5
+          }
+        },
+        "length": 7.5
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 84.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 84.09856,
+            "y": -9.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 75.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 75.0,
+            "z": 33.0
+          }
+        },
+        "length": 33.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 109.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 109.09856,
+            "y": -22.118176
+          }
+        },
+        "local": {
+          "start": {
+            "x": 100.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 20.0
+          }
+        },
+        "length": 20.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 109.09856,
+            "y": -42.118176
+          },
+          "end": {
+            "x": 109.09856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 100.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 80.0
+          }
+        },
+        "length": 80.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 109.09856,
+            "y": -22.118176
+          },
+          "end": {
+            "x": 109.09856,
+            "y": 16.993005
+          }
+        },
+        "local": {
+          "start": {
+            "x": 100.0,
+            "z": 20.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 59.111181
+          }
+        },
+        "length": 39.111181
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 109.09856,
+            "y": -22.118176
+          },
+          "end": {
+            "x": 109.09856,
+            "y": 17.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 100.0,
+            "z": 20.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 60.0
+          }
+        },
+        "length": 40.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 109.09856,
+            "y": 17.881824
+          },
+          "end": {
+            "x": 109.09856,
+            "y": 37.881824
+          }
+        },
+        "local": {
+          "start": {
+            "x": 100.0,
+            "z": 60.0
+          },
+          "end": {
+            "x": 100.0,
+            "z": 80.0
+          }
+        },
+        "length": 20.0
+      }
+    ],
+    "rectangle_candidates": [
+      {
+        "cad_bounds": {
+          "min_x": 9.09856,
+          "min_y": -42.118176,
+          "max_x": 109.09856,
+          "max_y": 37.881824,
+          "width": 100.0,
+          "height": 80.0
+        },
+        "local_rect": {
+          "startX": 0.0,
+          "startZ": 0.0,
+          "sx": 100.0,
+          "sz": 80.0
+        },
+        "area": 8000.0,
+        "is_frame": true,
+        "source": "closed_axis_aligned_segments"
+      }
+    ],
+    "runtime_terrain_piece_candidates": [],
+    "notes": [
+      "rectangle_candidates 只来自闭合的轴对齐线段边界。",
+      "3DSOLID 在当前 DXF 中没有可直接读取的 mesh/vertex，已保留句柄但不参与矩形推导。"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "kit": "fast_run_system",
   "version": "0.1.0",
-  "platformCommit": "d9f9a905b38cb5f3456e802f398bc3180a2380fa",
+  "platformCommit": "474e2813a62ba372f0a357f1ac39695983221f01",
   "source": "platform/gameplay-kits/fast_run_system",
   "sourceDir": "src",
   "targetDir": "ts_src/fast_run_system",
@@ -9,10 +9,11 @@
     "runtime_ui"
   ],
   "files": {
-    "FastRunComponent.ts": "afa9323e3fc1ca027b1c779ad3aee2db1ffceebf6c85b9dbb1b795b92420153e",
-    "FastRunSystem.ts": "6d8311fdfa32f4df177dc59c8ab1d5d2a9da67d6f2412f4449452932afa64489",
-    "FastRunTestDashboard.ts": "44fac78d66f5fe22ca36a4c4b66b2444801d4cc0237b79aa04e19194cbf24265",
-    "index.ts": "7e58b328bc6fba329a3b0a2c38a4459d767f6727194b544a839a4e0a22e58417"
+    "FastRunComponent.ts": "7aeb6a5f7a6babcf805fb1fff3cafb0b829dbf9392f15ac4a272650d096c9f1b",
+    "FastRunExpression.ts": "3f39ecaa38b8be34e04cae71a87648d618922726ffc32551d6b8182c71d0a2a8",
+    "FastRunSystem.ts": "db2132cdafc5948b68e71cbf387c954ecbb5402e754df68f41ca080f6519e02f",
+    "FastRunTestDashboard.ts": "4faa9496139297366eef82d7fb8cbf313834b854af37efe7ed9e66c69fbafb01",
+    "index.ts": "13eaaf19a4ed297ade145b8f18eed7dbe3498d01a4d5d07c04d0f91e29e917c6"
   },
-  "installedAt": "2026-06-12T11:53:40.861461+00:00"
+  "installedAt": "2026-06-15T09:41:09.898570+00:00"
 }

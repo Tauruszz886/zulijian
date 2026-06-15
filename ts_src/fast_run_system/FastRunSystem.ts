@@ -75,18 +75,34 @@ export class FastRunSystem {
         options?.groundAcceleration !== undefined
           ? options.groundAcceleration
           : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.groundAcceleration,
+      groundAccelerationExpression:
+        options?.groundAccelerationExpression !== undefined
+          ? options.groundAccelerationExpression
+          : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.groundAccelerationExpression,
       groundDeceleration:
         options?.groundDeceleration !== undefined
           ? options.groundDeceleration
           : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.groundDeceleration,
+      groundDecelerationExpression:
+        options?.groundDecelerationExpression !== undefined
+          ? options.groundDecelerationExpression
+          : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.groundDecelerationExpression,
       airAcceleration:
         options?.airAcceleration !== undefined
           ? options.airAcceleration
           : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.airAcceleration,
+      airAccelerationExpression:
+        options?.airAccelerationExpression !== undefined
+          ? options.airAccelerationExpression
+          : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.airAccelerationExpression,
       airDeceleration:
         options?.airDeceleration !== undefined
           ? options.airDeceleration
           : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.airDeceleration,
+      airDecelerationExpression:
+        options?.airDecelerationExpression !== undefined
+          ? options.airDecelerationExpression
+          : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.airDecelerationExpression,
       joystickDeadZone:
         options?.joystickDeadZone !== undefined
           ? options.joystickDeadZone
@@ -242,6 +258,19 @@ export class FastRunSystem {
     return component !== null ? component.getGroundAcceleration() : 0
   }
 
+  getGroundAccelerationExpression(): string {
+    const component = this.getDashboardComponent()
+    return component !== null ? component.getGroundAccelerationExpression() : "0"
+  }
+
+  setGroundAccelerationExpression(expression: string): boolean {
+    const component = this.getDashboardComponent()
+    if (component === null) return false
+    const ok = component.setGroundAccelerationExpression(expression)
+    this.updateDashboardValues()
+    return ok
+  }
+
   setGroundAcceleration(groundAcceleration: number): void {
     const component = this.getDashboardComponent()
     if (component === null) return
@@ -259,6 +288,19 @@ export class FastRunSystem {
   getGroundDeceleration(): number {
     const component = this.getDashboardComponent()
     return component !== null ? component.getGroundDeceleration() : 0
+  }
+
+  getGroundDecelerationExpression(): string {
+    const component = this.getDashboardComponent()
+    return component !== null ? component.getGroundDecelerationExpression() : "0"
+  }
+
+  setGroundDecelerationExpression(expression: string): boolean {
+    const component = this.getDashboardComponent()
+    if (component === null) return false
+    const ok = component.setGroundDecelerationExpression(expression)
+    this.updateDashboardValues()
+    return ok
   }
 
   setGroundDeceleration(groundDeceleration: number): void {
@@ -280,6 +322,19 @@ export class FastRunSystem {
     return component !== null ? component.getAirAcceleration() : 0
   }
 
+  getAirAccelerationExpression(): string {
+    const component = this.getDashboardComponent()
+    return component !== null ? component.getAirAccelerationExpression() : "0"
+  }
+
+  setAirAccelerationExpression(expression: string): boolean {
+    const component = this.getDashboardComponent()
+    if (component === null) return false
+    const ok = component.setAirAccelerationExpression(expression)
+    this.updateDashboardValues()
+    return ok
+  }
+
   setAirAcceleration(airAcceleration: number): void {
     const component = this.getDashboardComponent()
     if (component === null) return
@@ -297,6 +352,19 @@ export class FastRunSystem {
   getAirDeceleration(): number {
     const component = this.getDashboardComponent()
     return component !== null ? component.getAirDeceleration() : 0
+  }
+
+  getAirDecelerationExpression(): string {
+    const component = this.getDashboardComponent()
+    return component !== null ? component.getAirDecelerationExpression() : "0"
+  }
+
+  setAirDecelerationExpression(expression: string): boolean {
+    const component = this.getDashboardComponent()
+    if (component === null) return false
+    const ok = component.setAirDecelerationExpression(expression)
+    this.updateDashboardValues()
+    return ok
   }
 
   setAirDeceleration(airDeceleration: number): void {
@@ -363,11 +431,23 @@ export class FastRunSystem {
       setGroundAcceleration: (groundAcceleration: number) => {
         this.setGroundAcceleration(groundAcceleration)
       },
+      getGroundAccelerationExpression: () => {
+        return this.getGroundAccelerationExpression()
+      },
+      setGroundAccelerationExpression: (expression: string) => {
+        return this.setGroundAccelerationExpression(expression)
+      },
       getGroundDeceleration: () => {
         return this.getGroundDeceleration()
       },
       setGroundDeceleration: (groundDeceleration: number) => {
         this.setGroundDeceleration(groundDeceleration)
+      },
+      getGroundDecelerationExpression: () => {
+        return this.getGroundDecelerationExpression()
+      },
+      setGroundDecelerationExpression: (expression: string) => {
+        return this.setGroundDecelerationExpression(expression)
       },
       getAirAcceleration: () => {
         return this.getAirAcceleration()
@@ -375,11 +455,23 @@ export class FastRunSystem {
       setAirAcceleration: (airAcceleration: number) => {
         this.setAirAcceleration(airAcceleration)
       },
+      getAirAccelerationExpression: () => {
+        return this.getAirAccelerationExpression()
+      },
+      setAirAccelerationExpression: (expression: string) => {
+        return this.setAirAccelerationExpression(expression)
+      },
       getAirDeceleration: () => {
         return this.getAirDeceleration()
       },
       setAirDeceleration: (airDeceleration: number) => {
         this.setAirDeceleration(airDeceleration)
+      },
+      getAirDecelerationExpression: () => {
+        return this.getAirDecelerationExpression()
+      },
+      setAirDecelerationExpression: (expression: string) => {
+        return this.setAirDecelerationExpression(expression)
       },
       isRayDebugEnabled: () => {
         return this.isRayDebugEnabled()

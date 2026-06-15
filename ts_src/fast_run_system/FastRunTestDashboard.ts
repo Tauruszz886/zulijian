@@ -9,6 +9,20 @@ import {
   type RuntimeLabelStyle,
 } from "../runtime_ui"
 
+type FastRunExpressionTarget = "groundAcceleration" | "groundDeceleration" | "airAcceleration" | "airDeceleration"
+
+type FastRunExpressionButton = {
+  target: FastRunExpressionTarget
+  button: RuntimeButton
+}
+
+type FastRunKeypadButtonSpec = {
+  tag: string
+  text: string
+  action: "append" | "backspace" | "clear" | "confirm"
+  value?: string
+}
+
 export type FastRunDashboardComponents = {
   group: RuntimeUiGroup
   background: RuntimeImage
@@ -21,30 +35,17 @@ export type FastRunDashboardComponents = {
   speedValueLabel: RuntimeLabel
   speedPlus1Button: RuntimeButton
   speedPlus10Button: RuntimeButton
+  activeExpressionLabel: RuntimeLabel
   groundAccelerationLabel: RuntimeLabel
-  groundAccelerationMinus10Button: RuntimeButton
-  groundAccelerationMinus1Button: RuntimeButton
-  groundAccelerationValueLabel: RuntimeLabel
-  groundAccelerationPlus1Button: RuntimeButton
-  groundAccelerationPlus10Button: RuntimeButton
+  groundAccelerationButton: RuntimeButton
   groundDecelerationLabel: RuntimeLabel
-  groundDecelerationMinus10Button: RuntimeButton
-  groundDecelerationMinus1Button: RuntimeButton
-  groundDecelerationValueLabel: RuntimeLabel
-  groundDecelerationPlus1Button: RuntimeButton
-  groundDecelerationPlus10Button: RuntimeButton
+  groundDecelerationButton: RuntimeButton
   airAccelerationLabel: RuntimeLabel
-  airAccelerationMinus10Button: RuntimeButton
-  airAccelerationMinus1Button: RuntimeButton
-  airAccelerationValueLabel: RuntimeLabel
-  airAccelerationPlus1Button: RuntimeButton
-  airAccelerationPlus10Button: RuntimeButton
+  airAccelerationButton: RuntimeButton
   airDecelerationLabel: RuntimeLabel
-  airDecelerationMinus10Button: RuntimeButton
-  airDecelerationMinus1Button: RuntimeButton
-  airDecelerationValueLabel: RuntimeLabel
-  airDecelerationPlus1Button: RuntimeButton
-  airDecelerationPlus10Button: RuntimeButton
+  airDecelerationButton: RuntimeButton
+  expressionButtons: FastRunExpressionButton[]
+  keypadButtons: RuntimeButton[]
 }
 
 export type FastRunTestDashboardCallbacks = {
@@ -53,12 +54,20 @@ export type FastRunTestDashboardCallbacks = {
   setMaxSpeed: (this: void, speed: number) => void
   getGroundAcceleration: (this: void) => number
   setGroundAcceleration: (this: void, groundAcceleration: number) => void
+  getGroundAccelerationExpression: (this: void) => string
+  setGroundAccelerationExpression: (this: void, expression: string) => boolean
   getGroundDeceleration: (this: void) => number
   setGroundDeceleration: (this: void, groundDeceleration: number) => void
+  getGroundDecelerationExpression: (this: void) => string
+  setGroundDecelerationExpression: (this: void, expression: string) => boolean
   getAirAcceleration: (this: void) => number
   setAirAcceleration: (this: void, airAcceleration: number) => void
+  getAirAccelerationExpression: (this: void) => string
+  setAirAccelerationExpression: (this: void, expression: string) => boolean
   getAirDeceleration: (this: void) => number
   setAirDeceleration: (this: void, airDeceleration: number) => void
+  getAirDecelerationExpression: (this: void) => string
+  setAirDecelerationExpression: (this: void, expression: string) => boolean
   isRayDebugEnabled: (this: void) => boolean
   setRayDebugEnabled: (this: void, enabled: boolean) => void
   logger: (this: void, msg: string) => void
@@ -98,22 +107,6 @@ export type FastRunSystemTestModeOptions = {
   minSpeed?: number
   /** 测试面板允许设置的最大速度上限。 */
   maxSpeed?: number
-  /** 测试面板允许设置的地面加速度下限。 */
-  minGroundAcceleration?: number
-  /** 测试面板允许设置的地面加速度上限。 */
-  maxGroundAcceleration?: number
-  /** 测试面板允许设置的地面减速度下限。 */
-  minGroundDeceleration?: number
-  /** 测试面板允许设置的地面减速度上限。 */
-  maxGroundDeceleration?: number
-  /** 测试面板允许设置的空中加速度下限。 */
-  minAirAcceleration?: number
-  /** 测试面板允许设置的空中加速度上限。 */
-  maxAirAcceleration?: number
-  /** 测试面板允许设置的空中减速度下限。 */
-  minAirDeceleration?: number
-  /** 测试面板允许设置的空中减速度上限。 */
-  maxAirDeceleration?: number
 }
 
 export const DEFAULT_FAST_RUN_TEST_MODE_OPTIONS: FastRunSystemTestModeOptions = {
@@ -122,37 +115,32 @@ export const DEFAULT_FAST_RUN_TEST_MODE_OPTIONS: FastRunSystemTestModeOptions = 
   labelStyleKey: 0 as LabelStyleKey,
   backgroundImageKey: 16941 as ImageKey,
   touchEventType: 1 as ENodeTouchEventType,
-  x: 250,
+  x: 960,
   y: 920,
   titleFontSize: 24 as integer,
   bodyFontSize: 18 as integer,
   buttonFontSize: 20,
   minSpeed: 0,
   maxSpeed: 60,
-  minGroundAcceleration: 0,
-  maxGroundAcceleration: 200,
-  minGroundDeceleration: 0,
-  maxGroundDeceleration: 200,
-  minAirAcceleration: 0,
-  maxAirAcceleration: 200,
-  minAirDeceleration: 0,
-  maxAirDeceleration: 200,
 }
 
 let nextDashboardId: integer = 1
 
 const TITLE_TEXT = "快速跑调试"
 const PANEL_WIDTH = 620
-const PANEL_HEIGHT = 530
-const TITLE_OFFSET_Y = 184
+const PANEL_HEIGHT = 680
+const TITLE_OFFSET_Y = 260
 const RAY_BUTTON_OFFSET_X = 190
-const RAY_BUTTON_OFFSET_Y = 184
-const CURRENT_SPEED_OFFSET_Y = 144
-const SPEED_ROW_OFFSET_Y = 96
-const GROUND_ACCELERATION_ROW_OFFSET_Y = 34
-const GROUND_DECELERATION_ROW_OFFSET_Y = -28
-const AIR_ACCELERATION_ROW_OFFSET_Y = -90
-const AIR_DECELERATION_ROW_OFFSET_Y = -152
+const RAY_BUTTON_OFFSET_Y = 260
+const CURRENT_SPEED_OFFSET_Y = 222
+const SPEED_ROW_OFFSET_Y = 176
+const GROUND_ACCELERATION_ROW_OFFSET_Y = 118
+const GROUND_DECELERATION_ROW_OFFSET_Y = 72
+const AIR_ACCELERATION_ROW_OFFSET_Y = 26
+const AIR_DECELERATION_ROW_OFFSET_Y = -20
+const ACTIVE_EXPRESSION_OFFSET_Y = -66
+const KEYPAD_FIRST_ROW_OFFSET_Y = -118
+const KEYPAD_ROW_GAP = 46
 const CAPTION_OFFSET_X = -244
 const MINUS_10_OFFSET_X = -142
 const MINUS_1_OFFSET_X = -82
@@ -165,8 +153,44 @@ const VALUE_WIDTH = 94
 const VALUE_HEIGHT = 40
 const STEP_BUTTON_WIDTH = 52
 const STEP_BUTTON_HEIGHT = 42
+const EXPRESSION_BUTTON_OFFSET_X = 36
+const EXPRESSION_BUTTON_WIDTH = 360
+const EXPRESSION_BUTTON_HEIGHT = 38
+const KEYPAD_BUTTON_WIDTH = 72
+const KEYPAD_BUTTON_HEIGHT = 38
+const KEYPAD_COLUMN_GAP = 78
+const MAX_EXPRESSION_LENGTH = 28
 const UI_TEXT_WHITE = 0xffffff as Color
 const UI_TEXT_BLACK = 0x000000 as Color
+
+const KEYPAD_BUTTONS: FastRunKeypadButtonSpec[] = [
+  { tag: "s", text: "s", action: "append", value: "s" },
+  { tag: "7", text: "7", action: "append", value: "7" },
+  { tag: "8", text: "8", action: "append", value: "8" },
+  { tag: "9", text: "9", action: "append", value: "9" },
+  { tag: "divide", text: "/", action: "append", value: "/" },
+  { tag: "4", text: "4", action: "append", value: "4" },
+  { tag: "5", text: "5", action: "append", value: "5" },
+  { tag: "6", text: "6", action: "append", value: "6" },
+  { tag: "multiply", text: "*", action: "append", value: "*" },
+  { tag: "1", text: "1", action: "append", value: "1" },
+  { tag: "2", text: "2", action: "append", value: "2" },
+  { tag: "3", text: "3", action: "append", value: "3" },
+  { tag: "minus", text: "-", action: "append", value: "-" },
+  { tag: "plus", text: "+", action: "append", value: "+" },
+  { tag: "dot", text: ".", action: "append", value: "." },
+  { tag: "0", text: "0", action: "append", value: "0" },
+  { tag: "backspace", text: "退格", action: "backspace" },
+  { tag: "clear", text: "清空", action: "clear" },
+  { tag: "confirm", text: "确认", action: "confirm" },
+]
+
+const EXPRESSION_TARGET_NAMES: Record<FastRunExpressionTarget, string> = {
+  groundAcceleration: "地面加速",
+  groundDeceleration: "地面减速",
+  airAcceleration: "空中加速",
+  airDeceleration: "空中减速",
+}
 
 function clampNumber(value: number, minValue: number, maxValue: number): number {
   if (value < minValue) return minValue
@@ -193,22 +217,6 @@ export function resolveFastRunTestModeOptions(options?: FastRunSystemTestModeOpt
     buttonFontSize: options?.buttonFontSize !== undefined ? options.buttonFontSize : base.buttonFontSize,
     minSpeed: options?.minSpeed !== undefined ? options.minSpeed : base.minSpeed,
     maxSpeed: options?.maxSpeed !== undefined ? options.maxSpeed : base.maxSpeed,
-    minGroundAcceleration:
-      options?.minGroundAcceleration !== undefined ? options.minGroundAcceleration : base.minGroundAcceleration,
-    maxGroundAcceleration:
-      options?.maxGroundAcceleration !== undefined ? options.maxGroundAcceleration : base.maxGroundAcceleration,
-    minGroundDeceleration:
-      options?.minGroundDeceleration !== undefined ? options.minGroundDeceleration : base.minGroundDeceleration,
-    maxGroundDeceleration:
-      options?.maxGroundDeceleration !== undefined ? options.maxGroundDeceleration : base.maxGroundDeceleration,
-    minAirAcceleration:
-      options?.minAirAcceleration !== undefined ? options.minAirAcceleration : base.minAirAcceleration,
-    maxAirAcceleration:
-      options?.maxAirAcceleration !== undefined ? options.maxAirAcceleration : base.maxAirAcceleration,
-    minAirDeceleration:
-      options?.minAirDeceleration !== undefined ? options.minAirDeceleration : base.minAirDeceleration,
-    maxAirDeceleration:
-      options?.maxAirDeceleration !== undefined ? options.maxAirDeceleration : base.maxAirDeceleration,
   }
 }
 
@@ -218,6 +226,11 @@ export class FastRunTestDashboard {
   private scopeId: number | null = null
   private components: FastRunDashboardComponents | null = null
   private uiScope: RuntimeUiScope | null = null
+  private selectedExpressionTarget: FastRunExpressionTarget = "groundAcceleration"
+  private groundAccelerationDraft = ""
+  private groundDecelerationDraft = ""
+  private airAccelerationDraft = ""
+  private airDecelerationDraft = ""
 
   constructor(options: FastRunSystemTestModeOptions, callbacks: FastRunTestDashboardCallbacks) {
     this.options = options
@@ -247,7 +260,7 @@ export class FastRunTestDashboard {
     if (created === null) return
     this.components = created
     this.log(
-      `[FastRunSystemTestMode] dashboard created bg=${tostring(created.background.node)} speed_value=${tostring(created.speedValueLabel.node)} ground_accel_value=${tostring(created.groundAccelerationValueLabel.node)} air_decel_value=${tostring(created.airDecelerationValueLabel.node)}`,
+      `[FastRunSystemTestMode] dashboard created bg=${tostring(created.background.node)} speed_value=${tostring(created.speedValueLabel.node)} keypad_count=${tostring(created.keypadButtons.length)}`,
     )
     this.updateValues()
     this.setVisible(true)
@@ -274,18 +287,11 @@ export class FastRunTestDashboard {
 
     const currentSpeedText = this.formatNumber(this.callbacks.getCurrentSpeed())
     const maxSpeedText = this.formatNumber(this.callbacks.getMaxSpeed())
-    const groundAccelerationText = this.formatNumber(this.callbacks.getGroundAcceleration())
-    const groundDecelerationText = this.formatNumber(this.callbacks.getGroundDeceleration())
-    const airAccelerationText = this.formatNumber(this.callbacks.getAirAcceleration())
-    const airDecelerationText = this.formatNumber(this.callbacks.getAirDeceleration())
     components.titleLabel.setText(TITLE_TEXT)
     components.rayDebugButton.setText(this.callbacks.isRayDebugEnabled() ? "射线开" : "射线关")
     components.currentSpeedLabel.setText(`当前速度 ${currentSpeedText}`)
     components.speedValueLabel.setText(maxSpeedText)
-    components.groundAccelerationValueLabel.setText(groundAccelerationText)
-    components.groundDecelerationValueLabel.setText(groundDecelerationText)
-    components.airAccelerationValueLabel.setText(airAccelerationText)
-    components.airDecelerationValueLabel.setText(airDecelerationText)
+    this.updateExpressionDisplays(components)
   }
 
   private createComponents(): FastRunDashboardComponents | null {
@@ -372,40 +378,28 @@ export class FastRunTestDashboard {
       "+10",
       buttonStyle,
     )
+    const activeExpressionLabel = uiScope.createLabel(
+      `fast_run_dashboard_active_expression_${suffix}`,
+      { x, y: y + ACTIVE_EXPRESSION_OFFSET_Y, width: 420, height: 34 },
+      this.createActiveExpressionText(),
+      bodyStyle,
+    )
     const groundAccelerationLabel = uiScope.createLabel(
       `fast_run_dashboard_ground_accel_label_${suffix}`,
       { x: x + CAPTION_OFFSET_X, y: y + GROUND_ACCELERATION_ROW_OFFSET_Y, width: CAPTION_WIDTH, height: CAPTION_HEIGHT },
       "地面加速",
       bodyStyle,
     )
-    const groundAccelerationMinus10Button = uiScope.createButton(
-      `fast_run_dashboard_ground_accel_minus_10_${suffix}`,
-      { x: x + MINUS_10_OFFSET_X, y: y + GROUND_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-10",
-      buttonStyle,
-    )
-    const groundAccelerationMinus1Button = uiScope.createButton(
-      `fast_run_dashboard_ground_accel_minus_1_${suffix}`,
-      { x: x + MINUS_1_OFFSET_X, y: y + GROUND_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-1",
-      buttonStyle,
-    )
-    const groundAccelerationValueLabel = uiScope.createLabel(
+    this.groundAccelerationDraft = this.callbacks.getGroundAccelerationExpression()
+    const groundAccelerationButton = uiScope.createButton(
       `fast_run_dashboard_ground_accel_value_${suffix}`,
-      { x: x + VALUE_OFFSET_X, y: y + GROUND_ACCELERATION_ROW_OFFSET_Y, width: VALUE_WIDTH, height: VALUE_HEIGHT },
-      this.formatNumber(this.callbacks.getGroundAcceleration()),
-      bodyStyle,
-    )
-    const groundAccelerationPlus1Button = uiScope.createButton(
-      `fast_run_dashboard_ground_accel_plus_1_${suffix}`,
-      { x: x + PLUS_1_OFFSET_X, y: y + GROUND_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+1",
-      buttonStyle,
-    )
-    const groundAccelerationPlus10Button = uiScope.createButton(
-      `fast_run_dashboard_ground_accel_plus_10_${suffix}`,
-      { x: x + PLUS_10_OFFSET_X, y: y + GROUND_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+10",
+      {
+        x: x + EXPRESSION_BUTTON_OFFSET_X,
+        y: y + GROUND_ACCELERATION_ROW_OFFSET_Y,
+        width: EXPRESSION_BUTTON_WIDTH,
+        height: EXPRESSION_BUTTON_HEIGHT,
+      },
+      this.createExpressionButtonText("groundAcceleration"),
       buttonStyle,
     )
     const groundDecelerationLabel = uiScope.createLabel(
@@ -414,34 +408,16 @@ export class FastRunTestDashboard {
       "地面减速",
       bodyStyle,
     )
-    const groundDecelerationMinus10Button = uiScope.createButton(
-      `fast_run_dashboard_ground_decel_minus_10_${suffix}`,
-      { x: x + MINUS_10_OFFSET_X, y: y + GROUND_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-10",
-      buttonStyle,
-    )
-    const groundDecelerationMinus1Button = uiScope.createButton(
-      `fast_run_dashboard_ground_decel_minus_1_${suffix}`,
-      { x: x + MINUS_1_OFFSET_X, y: y + GROUND_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-1",
-      buttonStyle,
-    )
-    const groundDecelerationValueLabel = uiScope.createLabel(
+    this.groundDecelerationDraft = this.callbacks.getGroundDecelerationExpression()
+    const groundDecelerationButton = uiScope.createButton(
       `fast_run_dashboard_ground_decel_value_${suffix}`,
-      { x: x + VALUE_OFFSET_X, y: y + GROUND_DECELERATION_ROW_OFFSET_Y, width: VALUE_WIDTH, height: VALUE_HEIGHT },
-      this.formatNumber(this.callbacks.getGroundDeceleration()),
-      bodyStyle,
-    )
-    const groundDecelerationPlus1Button = uiScope.createButton(
-      `fast_run_dashboard_ground_decel_plus_1_${suffix}`,
-      { x: x + PLUS_1_OFFSET_X, y: y + GROUND_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+1",
-      buttonStyle,
-    )
-    const groundDecelerationPlus10Button = uiScope.createButton(
-      `fast_run_dashboard_ground_decel_plus_10_${suffix}`,
-      { x: x + PLUS_10_OFFSET_X, y: y + GROUND_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+10",
+      {
+        x: x + EXPRESSION_BUTTON_OFFSET_X,
+        y: y + GROUND_DECELERATION_ROW_OFFSET_Y,
+        width: EXPRESSION_BUTTON_WIDTH,
+        height: EXPRESSION_BUTTON_HEIGHT,
+      },
+      this.createExpressionButtonText("groundDeceleration"),
       buttonStyle,
     )
     const airAccelerationLabel = uiScope.createLabel(
@@ -450,34 +426,16 @@ export class FastRunTestDashboard {
       "空中加速",
       bodyStyle,
     )
-    const airAccelerationMinus10Button = uiScope.createButton(
-      `fast_run_dashboard_air_accel_minus_10_${suffix}`,
-      { x: x + MINUS_10_OFFSET_X, y: y + AIR_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-10",
-      buttonStyle,
-    )
-    const airAccelerationMinus1Button = uiScope.createButton(
-      `fast_run_dashboard_air_accel_minus_1_${suffix}`,
-      { x: x + MINUS_1_OFFSET_X, y: y + AIR_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-1",
-      buttonStyle,
-    )
-    const airAccelerationValueLabel = uiScope.createLabel(
+    this.airAccelerationDraft = this.callbacks.getAirAccelerationExpression()
+    const airAccelerationButton = uiScope.createButton(
       `fast_run_dashboard_air_accel_value_${suffix}`,
-      { x: x + VALUE_OFFSET_X, y: y + AIR_ACCELERATION_ROW_OFFSET_Y, width: VALUE_WIDTH, height: VALUE_HEIGHT },
-      this.formatNumber(this.callbacks.getAirAcceleration()),
-      bodyStyle,
-    )
-    const airAccelerationPlus1Button = uiScope.createButton(
-      `fast_run_dashboard_air_accel_plus_1_${suffix}`,
-      { x: x + PLUS_1_OFFSET_X, y: y + AIR_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+1",
-      buttonStyle,
-    )
-    const airAccelerationPlus10Button = uiScope.createButton(
-      `fast_run_dashboard_air_accel_plus_10_${suffix}`,
-      { x: x + PLUS_10_OFFSET_X, y: y + AIR_ACCELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+10",
+      {
+        x: x + EXPRESSION_BUTTON_OFFSET_X,
+        y: y + AIR_ACCELERATION_ROW_OFFSET_Y,
+        width: EXPRESSION_BUTTON_WIDTH,
+        height: EXPRESSION_BUTTON_HEIGHT,
+      },
+      this.createExpressionButtonText("airAcceleration"),
       buttonStyle,
     )
     const airDecelerationLabel = uiScope.createLabel(
@@ -486,36 +444,50 @@ export class FastRunTestDashboard {
       "空中减速",
       bodyStyle,
     )
-    const airDecelerationMinus10Button = uiScope.createButton(
-      `fast_run_dashboard_air_decel_minus_10_${suffix}`,
-      { x: x + MINUS_10_OFFSET_X, y: y + AIR_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-10",
-      buttonStyle,
-    )
-    const airDecelerationMinus1Button = uiScope.createButton(
-      `fast_run_dashboard_air_decel_minus_1_${suffix}`,
-      { x: x + MINUS_1_OFFSET_X, y: y + AIR_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "-1",
-      buttonStyle,
-    )
-    const airDecelerationValueLabel = uiScope.createLabel(
+    this.airDecelerationDraft = this.callbacks.getAirDecelerationExpression()
+    const airDecelerationButton = uiScope.createButton(
       `fast_run_dashboard_air_decel_value_${suffix}`,
-      { x: x + VALUE_OFFSET_X, y: y + AIR_DECELERATION_ROW_OFFSET_Y, width: VALUE_WIDTH, height: VALUE_HEIGHT },
-      this.formatNumber(this.callbacks.getAirDeceleration()),
-      bodyStyle,
-    )
-    const airDecelerationPlus1Button = uiScope.createButton(
-      `fast_run_dashboard_air_decel_plus_1_${suffix}`,
-      { x: x + PLUS_1_OFFSET_X, y: y + AIR_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+1",
+      {
+        x: x + EXPRESSION_BUTTON_OFFSET_X,
+        y: y + AIR_DECELERATION_ROW_OFFSET_Y,
+        width: EXPRESSION_BUTTON_WIDTH,
+        height: EXPRESSION_BUTTON_HEIGHT,
+      },
+      this.createExpressionButtonText("airDeceleration"),
       buttonStyle,
     )
-    const airDecelerationPlus10Button = uiScope.createButton(
-      `fast_run_dashboard_air_decel_plus_10_${suffix}`,
-      { x: x + PLUS_10_OFFSET_X, y: y + AIR_DECELERATION_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
-      "+10",
-      buttonStyle,
-    )
+
+    const keypadButtons: RuntimeButton[] = []
+    for (let i = 0; i < KEYPAD_BUTTONS.length; i++) {
+      const spec = KEYPAD_BUTTONS[i]
+      const col = i % 4
+      const row = math.floor(i / 4)
+      const width = spec.action === "confirm" ? KEYPAD_BUTTON_WIDTH * 2 + 6 : KEYPAD_BUTTON_WIDTH
+      const offsetX = -117 + col * KEYPAD_COLUMN_GAP + (spec.action === "confirm" ? KEYPAD_COLUMN_GAP / 2 : 0)
+      const button = uiScope.createButton(
+        `fast_run_dashboard_key_${spec.tag}_${suffix}`,
+        {
+          x: x + offsetX,
+          y: y + KEYPAD_FIRST_ROW_OFFSET_Y - row * KEYPAD_ROW_GAP,
+          width,
+          height: KEYPAD_BUTTON_HEIGHT,
+        },
+        spec.text,
+        buttonStyle,
+      )
+      if (button === null) {
+        this.log(`[FastRunSystemTestMode] create keypad button failed tag=${spec.tag}`)
+        return null
+      }
+      keypadButtons.push(button)
+    }
+
+    const expressionButtons: FastRunExpressionButton[] = [
+      { target: "groundAcceleration", button: groundAccelerationButton as RuntimeButton },
+      { target: "groundDeceleration", button: groundDecelerationButton as RuntimeButton },
+      { target: "airAcceleration", button: airAccelerationButton as RuntimeButton },
+      { target: "airDeceleration", button: airDecelerationButton as RuntimeButton },
+    ]
 
     if (
       background === null ||
@@ -528,38 +500,23 @@ export class FastRunTestDashboard {
       speedValueLabel === null ||
       speedPlus1Button === null ||
       speedPlus10Button === null ||
+      activeExpressionLabel === null ||
       groundAccelerationLabel === null ||
-      groundAccelerationMinus10Button === null ||
-      groundAccelerationMinus1Button === null ||
-      groundAccelerationValueLabel === null ||
-      groundAccelerationPlus1Button === null ||
-      groundAccelerationPlus10Button === null ||
+      groundAccelerationButton === null ||
       groundDecelerationLabel === null ||
-      groundDecelerationMinus10Button === null ||
-      groundDecelerationMinus1Button === null ||
-      groundDecelerationValueLabel === null ||
-      groundDecelerationPlus1Button === null ||
-      groundDecelerationPlus10Button === null ||
+      groundDecelerationButton === null ||
       airAccelerationLabel === null ||
-      airAccelerationMinus10Button === null ||
-      airAccelerationMinus1Button === null ||
-      airAccelerationValueLabel === null ||
-      airAccelerationPlus1Button === null ||
-      airAccelerationPlus10Button === null ||
+      airAccelerationButton === null ||
       airDecelerationLabel === null ||
-      airDecelerationMinus10Button === null ||
-      airDecelerationMinus1Button === null ||
-      airDecelerationValueLabel === null ||
-      airDecelerationPlus1Button === null ||
-      airDecelerationPlus10Button === null
+      airDecelerationButton === null
     ) {
       this.log(
-        `[FastRunSystemTestMode] create dashboard failed bg=${tostring(background)} title=${tostring(titleLabel)} ray=${tostring(rayDebugButton)} current=${tostring(currentSpeedLabel)} speed_label=${tostring(speedLabel)} speed_value=${tostring(speedValueLabel)} ground_accel=${tostring(groundAccelerationValueLabel)} ground_decel=${tostring(groundDecelerationValueLabel)} air_accel=${tostring(airAccelerationValueLabel)} air_decel=${tostring(airDecelerationValueLabel)}`,
+        `[FastRunSystemTestMode] create dashboard failed bg=${tostring(background)} title=${tostring(titleLabel)} ray=${tostring(rayDebugButton)} current=${tostring(currentSpeedLabel)} speed_label=${tostring(speedLabel)} speed_value=${tostring(speedValueLabel)} ground_accel_button=${tostring(groundAccelerationButton)} ground_decel_button=${tostring(groundDecelerationButton)} air_accel_button=${tostring(airAccelerationButton)} air_decel_button=${tostring(airDecelerationButton)}`,
       )
       return null
     }
 
-    const group = new RuntimeUiGroup([
+    const groupChildren = [
       background,
       titleLabel,
       rayDebugButton,
@@ -570,31 +527,21 @@ export class FastRunTestDashboard {
       speedValueLabel,
       speedPlus1Button,
       speedPlus10Button,
+      activeExpressionLabel,
       groundAccelerationLabel,
-      groundAccelerationMinus10Button,
-      groundAccelerationMinus1Button,
-      groundAccelerationValueLabel,
-      groundAccelerationPlus1Button,
-      groundAccelerationPlus10Button,
+      groundAccelerationButton,
       groundDecelerationLabel,
-      groundDecelerationMinus10Button,
-      groundDecelerationMinus1Button,
-      groundDecelerationValueLabel,
-      groundDecelerationPlus1Button,
-      groundDecelerationPlus10Button,
+      groundDecelerationButton,
       airAccelerationLabel,
-      airAccelerationMinus10Button,
-      airAccelerationMinus1Button,
-      airAccelerationValueLabel,
-      airAccelerationPlus1Button,
-      airAccelerationPlus10Button,
+      airAccelerationButton,
       airDecelerationLabel,
-      airDecelerationMinus10Button,
-      airDecelerationMinus1Button,
-      airDecelerationValueLabel,
-      airDecelerationPlus1Button,
-      airDecelerationPlus10Button,
-    ])
+      airDecelerationButton,
+    ]
+    const group = new RuntimeUiGroup(groupChildren)
+    for (const button of keypadButtons) {
+      group.add(button)
+    }
+
     return {
       group,
       background,
@@ -607,30 +554,17 @@ export class FastRunTestDashboard {
       speedValueLabel,
       speedPlus1Button,
       speedPlus10Button,
+      activeExpressionLabel,
       groundAccelerationLabel,
-      groundAccelerationMinus10Button,
-      groundAccelerationMinus1Button,
-      groundAccelerationValueLabel,
-      groundAccelerationPlus1Button,
-      groundAccelerationPlus10Button,
+      groundAccelerationButton,
       groundDecelerationLabel,
-      groundDecelerationMinus10Button,
-      groundDecelerationMinus1Button,
-      groundDecelerationValueLabel,
-      groundDecelerationPlus1Button,
-      groundDecelerationPlus10Button,
+      groundDecelerationButton,
       airAccelerationLabel,
-      airAccelerationMinus10Button,
-      airAccelerationMinus1Button,
-      airAccelerationValueLabel,
-      airAccelerationPlus1Button,
-      airAccelerationPlus10Button,
+      airAccelerationButton,
       airDecelerationLabel,
-      airDecelerationMinus10Button,
-      airDecelerationMinus1Button,
-      airDecelerationValueLabel,
-      airDecelerationPlus1Button,
-      airDecelerationPlus10Button,
+      airDecelerationButton,
+      expressionButtons,
+      keypadButtons,
     }
   }
 
@@ -650,40 +584,74 @@ export class FastRunTestDashboard {
     this.callbacks.setMaxSpeed(clampNumber(this.callbacks.getMaxSpeed() + delta, minSpeed, maxSpeed))
   }
 
-  private changeGroundAcceleration(delta: number): void {
-    const minValue = this.options.minGroundAcceleration !== undefined ? this.options.minGroundAcceleration : 0
-    const maxValue = this.options.maxGroundAcceleration !== undefined ? this.options.maxGroundAcceleration : 200
-    this.callbacks.setGroundAcceleration(
-      clampNumber(this.callbacks.getGroundAcceleration() + delta, minValue, maxValue),
-    )
-  }
-
-  private changeGroundDeceleration(delta: number): void {
-    const minValue = this.options.minGroundDeceleration !== undefined ? this.options.minGroundDeceleration : 0
-    const maxValue = this.options.maxGroundDeceleration !== undefined ? this.options.maxGroundDeceleration : 200
-    this.callbacks.setGroundDeceleration(
-      clampNumber(this.callbacks.getGroundDeceleration() + delta, minValue, maxValue),
-    )
-  }
-
-  private changeAirAcceleration(delta: number): void {
-    const minAirAcceleration = this.options.minAirAcceleration !== undefined ? this.options.minAirAcceleration : 0
-    const maxAirAcceleration = this.options.maxAirAcceleration !== undefined ? this.options.maxAirAcceleration : 200
-    this.callbacks.setAirAcceleration(
-      clampNumber(this.callbacks.getAirAcceleration() + delta, minAirAcceleration, maxAirAcceleration),
-    )
-  }
-
-  private changeAirDeceleration(delta: number): void {
-    const minAirDeceleration = this.options.minAirDeceleration !== undefined ? this.options.minAirDeceleration : 0
-    const maxAirDeceleration = this.options.maxAirDeceleration !== undefined ? this.options.maxAirDeceleration : 200
-    this.callbacks.setAirDeceleration(
-      clampNumber(this.callbacks.getAirDeceleration() + delta, minAirDeceleration, maxAirDeceleration),
-    )
-  }
-
   private toggleRayDebug(): void {
     this.callbacks.setRayDebugEnabled(!this.callbacks.isRayDebugEnabled())
+  }
+
+  private applyGroundAccelerationExpression(components: FastRunDashboardComponents): void {
+    this.applyExpression(
+      "ground_acceleration",
+      this.groundAccelerationDraft,
+      () => this.callbacks.getGroundAccelerationExpression(),
+      (expression) => this.callbacks.setGroundAccelerationExpression(expression),
+      (expression) => {
+        this.groundAccelerationDraft = expression
+      },
+    )
+  }
+
+  private applyGroundDecelerationExpression(components: FastRunDashboardComponents): void {
+    this.applyExpression(
+      "ground_deceleration",
+      this.groundDecelerationDraft,
+      () => this.callbacks.getGroundDecelerationExpression(),
+      (expression) => this.callbacks.setGroundDecelerationExpression(expression),
+      (expression) => {
+        this.groundDecelerationDraft = expression
+      },
+    )
+  }
+
+  private applyAirAccelerationExpression(components: FastRunDashboardComponents): void {
+    this.applyExpression(
+      "air_acceleration",
+      this.airAccelerationDraft,
+      () => this.callbacks.getAirAccelerationExpression(),
+      (expression) => this.callbacks.setAirAccelerationExpression(expression),
+      (expression) => {
+        this.airAccelerationDraft = expression
+      },
+    )
+  }
+
+  private applyAirDecelerationExpression(components: FastRunDashboardComponents): void {
+    this.applyExpression(
+      "air_deceleration",
+      this.airDecelerationDraft,
+      () => this.callbacks.getAirDecelerationExpression(),
+      (expression) => this.callbacks.setAirDecelerationExpression(expression),
+      (expression) => {
+        this.airDecelerationDraft = expression
+      },
+    )
+  }
+
+  private applyExpression(
+    tag: string,
+    draft: string,
+    getCurrent: () => string,
+    setExpression: (expression: string) => boolean,
+    setDraft: (expression: string) => void,
+  ): void {
+    const ok = setExpression(draft)
+    const current = getCurrent()
+    setDraft(current)
+    const components = this.components
+    if (components !== null) {
+      this.updateExpressionDisplays(components)
+      components.activeExpressionLabel.setText(ok ? `${this.createActiveExpressionText()} 已应用` : "表达式无效，已还原")
+    }
+    this.log(`[FastRunSystemTestMode] expression ${ok ? "applied" : "rejected"} tag=${tag} expr=${draft}`)
   }
 
   private createLabelStyle(fontSize: integer): RuntimeLabelStyle {
@@ -716,6 +684,98 @@ export class FastRunTestDashboard {
     return tostring(math.floor(value * 100 + 0.5) / 100)
   }
 
+  private createActiveExpressionText(): string {
+    return `正在编辑 ${EXPRESSION_TARGET_NAMES[this.selectedExpressionTarget]}`
+  }
+
+  private getDraft(target: FastRunExpressionTarget): string {
+    if (target === "groundAcceleration") return this.groundAccelerationDraft
+    if (target === "groundDeceleration") return this.groundDecelerationDraft
+    if (target === "airAcceleration") return this.airAccelerationDraft
+    return this.airDecelerationDraft
+  }
+
+  private setDraft(target: FastRunExpressionTarget, value: string): void {
+    if (target === "groundAcceleration") {
+      this.groundAccelerationDraft = value
+      return
+    }
+    if (target === "groundDeceleration") {
+      this.groundDecelerationDraft = value
+      return
+    }
+    if (target === "airAcceleration") {
+      this.airAccelerationDraft = value
+      return
+    }
+    this.airDecelerationDraft = value
+  }
+
+  private createExpressionButtonText(target: FastRunExpressionTarget): string {
+    const draft = this.getDraft(target)
+    const marker = target === this.selectedExpressionTarget ? "> " : ""
+    return `${marker}${draft.length > 0 ? draft : "空"}`
+  }
+
+  private updateExpressionDisplays(components: FastRunDashboardComponents): void {
+    components.activeExpressionLabel.setText(this.createActiveExpressionText())
+    for (const entry of components.expressionButtons) {
+      entry.button.setText(this.createExpressionButtonText(entry.target))
+    }
+  }
+
+  private selectExpressionTarget(target: FastRunExpressionTarget): void {
+    this.selectedExpressionTarget = target
+    const components = this.components
+    if (components !== null) {
+      this.updateExpressionDisplays(components)
+    }
+    this.log(`[FastRunSystemTestMode] expression target selected target=${target}`)
+  }
+
+  private handleKeypadButton(spec: FastRunKeypadButtonSpec): void {
+    if (spec.action === "confirm") {
+      this.applySelectedExpression()
+      return
+    }
+
+    const target = this.selectedExpressionTarget
+    let draft = this.getDraft(target)
+    if (spec.action === "backspace") {
+      if (draft.length > 0) draft = draft.substring(0, draft.length - 1)
+    } else if (spec.action === "clear") {
+      draft = ""
+    } else if (spec.value !== undefined && draft.length < MAX_EXPRESSION_LENGTH) {
+      draft = draft + spec.value
+    }
+    this.setDraft(target, draft)
+
+    const components = this.components
+    if (components !== null) {
+      this.updateExpressionDisplays(components)
+    }
+  }
+
+  private applySelectedExpression(): void {
+    const components = this.components
+    if (components === null) return
+
+    const target = this.selectedExpressionTarget
+    if (target === "groundAcceleration") {
+      this.applyGroundAccelerationExpression(components)
+      return
+    }
+    if (target === "groundDeceleration") {
+      this.applyGroundDecelerationExpression(components)
+      return
+    }
+    if (target === "airAcceleration") {
+      this.applyAirAccelerationExpression(components)
+      return
+    }
+    this.applyAirDecelerationExpression(components)
+  }
+
   private registerEvents(components: FastRunDashboardComponents): void {
     const touchEventType = this.options.touchEventType as ENodeTouchEventType
     const scopeId = TriggerHub.createScope("fast-run-test-dashboard")
@@ -729,118 +789,20 @@ export class FastRunTestDashboard {
     this.registerButton(scopeId, components.speedMinus1Button, touchEventType, "speed-minus-1", () => this.changeSpeed(-1))
     this.registerButton(scopeId, components.speedPlus1Button, touchEventType, "speed-plus-1", () => this.changeSpeed(1))
     this.registerButton(scopeId, components.speedPlus10Button, touchEventType, "speed-plus-10", () => this.changeSpeed(10))
-    this.registerButton(
-      scopeId,
-      components.groundAccelerationMinus10Button,
-      touchEventType,
-      "ground-acceleration-minus-10",
-      () => this.changeGroundAcceleration(-10),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundAccelerationMinus1Button,
-      touchEventType,
-      "ground-acceleration-minus-1",
-      () => this.changeGroundAcceleration(-1),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundAccelerationPlus1Button,
-      touchEventType,
-      "ground-acceleration-plus-1",
-      () => this.changeGroundAcceleration(1),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundAccelerationPlus10Button,
-      touchEventType,
-      "ground-acceleration-plus-10",
-      () => this.changeGroundAcceleration(10),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundDecelerationMinus10Button,
-      touchEventType,
-      "ground-deceleration-minus-10",
-      () => this.changeGroundDeceleration(-10),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundDecelerationMinus1Button,
-      touchEventType,
-      "ground-deceleration-minus-1",
-      () => this.changeGroundDeceleration(-1),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundDecelerationPlus1Button,
-      touchEventType,
-      "ground-deceleration-plus-1",
-      () => this.changeGroundDeceleration(1),
-    )
-    this.registerButton(
-      scopeId,
-      components.groundDecelerationPlus10Button,
-      touchEventType,
-      "ground-deceleration-plus-10",
-      () => this.changeGroundDeceleration(10),
-    )
-    this.registerButton(
-      scopeId,
-      components.airAccelerationMinus10Button,
-      touchEventType,
-      "air-acceleration-minus-10",
-      () => this.changeAirAcceleration(-10),
-    )
-    this.registerButton(
-      scopeId,
-      components.airAccelerationMinus1Button,
-      touchEventType,
-      "air-acceleration-minus-1",
-      () => this.changeAirAcceleration(-1),
-    )
-    this.registerButton(
-      scopeId,
-      components.airAccelerationPlus1Button,
-      touchEventType,
-      "air-acceleration-plus-1",
-      () => this.changeAirAcceleration(1),
-    )
-    this.registerButton(
-      scopeId,
-      components.airAccelerationPlus10Button,
-      touchEventType,
-      "air-acceleration-plus-10",
-      () => this.changeAirAcceleration(10),
-    )
-    this.registerButton(
-      scopeId,
-      components.airDecelerationMinus10Button,
-      touchEventType,
-      "air-deceleration-minus-10",
-      () => this.changeAirDeceleration(-10),
-    )
-    this.registerButton(
-      scopeId,
-      components.airDecelerationMinus1Button,
-      touchEventType,
-      "air-deceleration-minus-1",
-      () => this.changeAirDeceleration(-1),
-    )
-    this.registerButton(
-      scopeId,
-      components.airDecelerationPlus1Button,
-      touchEventType,
-      "air-deceleration-plus-1",
-      () => this.changeAirDeceleration(1),
-    )
-    this.registerButton(
-      scopeId,
-      components.airDecelerationPlus10Button,
-      touchEventType,
-      "air-deceleration-plus-10",
-      () => this.changeAirDeceleration(10),
-    )
+    for (const entry of components.expressionButtons) {
+      const target = entry.target
+      this.registerButton(scopeId, entry.button, touchEventType, `select-${entry.target}`, () => {
+        this.selectExpressionTarget(target)
+      })
+    }
+    for (let i = 0; i < components.keypadButtons.length; i++) {
+      const spec = KEYPAD_BUTTONS[i]
+      const button = components.keypadButtons[i]
+      const keypadSpec = spec
+      this.registerButton(scopeId, button, touchEventType, `key-${spec.tag}`, () => {
+        this.handleKeypadButton(keypadSpec)
+      })
+    }
   }
 
   private registerButton(

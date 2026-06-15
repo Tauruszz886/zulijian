@@ -19,19 +19,46 @@ const SPEED_DISPLAY_TARGETS = [
     fullId: "1519736575|1506247873",
   },
 ] as const
+const DASHBOARD_CENTER_X = 640
+const DASHBOARD_CENTER_Y = 760
+const LEGACY_SPEED_UI_NODE_IDS = [
+  "1519736575|1883038573",
+  "1519736575|1349974473",
+  "1519736575|1506247873",
+  "1519736575|1880430446",
+  "1519736575|1453382142",
+  "1519736575|1338623457",
+  "1519736575|1013743464",
+  "1519736575|1540147645",
+  "1519736575|1680243400",
+] as const
 const TOUCH_TYPES: ENodeTouchEventType[] = [0 as integer, 1 as integer, 2 as integer, 3 as integer]
 const DEFAULT_SPEED = 40
-const FLOOR_PREFAB_ID = 1201010
 const WALL_PREFAB_ID = 105205
+const ORIGINAL_FLOOR_PREFAB_ID = 1201010
+const LEVEL_FLOOR_PREFAB_ID = WALL_PREFAB_ID
+const LEVEL_FLOOR_PAINT_AREA_COLORS = [
+  35071 as Color,
+  3795 as Color,
+  255 as Color,
+  16777215 as Color,
+] as const
 const FLOOR_BASE_Y = 0
 const TILE_BASE_Y = 3
 const TILE_HEIGHT = 3
+const BIRTH_SPAWN_X = 949
+const BIRTH_SPAWN_Y = 8
+const BIRTH_SPAWN_Z = -36
 const FIRST_LEVEL_TERRAIN_BASE_Y = 3
 const WALL_BASE_Y = 2
 const WALL_HEIGHT = 45
 const CEILING_BASE_Y = 46.5
 const MODULE_STEP_X = -100
 const RUNTIME_COPY_COUNT = 17
+const RUNTIME_FLOOR_CREATE_BATCH_SIZE = 2
+const RUNTIME_WALL_CREATE_DELAY_SECONDS = 1
+const RUNTIME_CEILING_CREATE_DELAY_SECONDS = 2
+const RUNTIME_TILE_CREATE_DELAY_SECONDS = 3
 const GRID_CELL_SIZE = 1
 const GRID_LINE_Y = TILE_BASE_Y + TILE_HEIGHT + 0.05
 const GRID_LINE_DURATION = 9999
@@ -42,16 +69,27 @@ const FIRST_LEVEL_TERRAIN_MODULE_INDEX = 1
 const SECOND_LEVEL_TERRAIN_MODULE_INDEX = 2
 const THIRD_LEVEL_TERRAIN_MODULE_INDEX = 3
 const FOURTH_LEVEL_TERRAIN_MODULE_INDEX = 4
+const FIFTH_LEVEL_TERRAIN_MODULE_INDEX = 5
+const SIXTH_LEVEL_TERRAIN_MODULE_INDEX = 6
+const SEVENTH_LEVEL_TERRAIN_MODULE_INDEX = 7
+const EIGHTH_LEVEL_TERRAIN_MODULE_INDEX = 8
 const FIRST_LEVEL_TERRAIN_HEIGHT = 3
+const RAISED_TERRAIN_BASE_Y = FIRST_LEVEL_TERRAIN_BASE_Y + FIRST_LEVEL_TERRAIN_HEIGHT
+const EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE = 8
 const FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP = 10
-const FOURTH_LEVEL_COMPRESSOR_HEIGHT = FIRST_LEVEL_TERRAIN_HEIGHT
+const FOURTH_LEVEL_COMPRESSOR_HEIGHT = 5
 const FOURTH_LEVEL_COMPRESSOR_START_Y =
   FIRST_LEVEL_TERRAIN_BASE_Y + FIRST_LEVEL_TERRAIN_HEIGHT + FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP
 const FOURTH_LEVEL_COMPRESSOR_DOWN_Y = FIRST_LEVEL_TERRAIN_BASE_Y + FIRST_LEVEL_TERRAIN_HEIGHT
-const FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS = 5
+const FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS = 3
 const FOURTH_LEVEL_COMPRESSOR_DOWN_FRAMES = 12
 const FOURTH_LEVEL_COMPRESSOR_UP_FRAMES = 18
 const FOURTH_LEVEL_COMPRESSOR_HOLD_SECONDS = 0.8
+const SIXTH_LEVEL_FLOOR_DOWN_Y = FLOOR_BASE_Y
+const SIXTH_LEVEL_FLOOR_UP_Y = TILE_BASE_Y + 0.1
+const SIXTH_LEVEL_FLOOR_MOVE_SECONDS = 2
+const SIXTH_LEVEL_FLOOR_MOVE_FRAMES = 40
+const SIXTH_LEVEL_FLOOR_HOLD_SECONDS = 0.4
 
 type RuntimeFloor = {
   name: string
@@ -102,6 +140,15 @@ type RuntimeCompressorPiece = {
   sz: number
   upY: number
   downY: number
+}
+
+type RuntimeMovingFloor = {
+  name: string
+  unit: unknown
+  x: number
+  z: number
+  downY: number
+  upY: number
 }
 
 type SpeedButton = {
@@ -468,6 +515,560 @@ const FOURTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
     sy: FIRST_LEVEL_TERRAIN_HEIGHT,
     sz: 7.5,
   },
+  {
+    name: "中间上方左压板30x20",
+    startX: 10,
+    startZ: 30,
+    sx: 30,
+    sy: FOURTH_LEVEL_COMPRESSOR_HEIGHT,
+    sz: 20,
+    baseY: FOURTH_LEVEL_COMPRESSOR_START_Y,
+    compressorDownY: FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
+    compressor: true,
+  },
+  {
+    name: "中间上方右压板35x20",
+    startX: 50,
+    startZ: 30,
+    sx: 35,
+    sy: FOURTH_LEVEL_COMPRESSOR_HEIGHT,
+    sz: 20,
+    baseY: FOURTH_LEVEL_COMPRESSOR_START_Y,
+    compressorDownY: FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
+    compressor: true,
+  },
+]
+
+const FIFTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
+  {
+    name: "上方横平台5x30",
+    startX: 0,
+    startZ: 25,
+    sx: 5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 30,
+  },
+  {
+    name: "下方横平台10x60",
+    startX: 90,
+    startZ: 10,
+    sx: 10,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 60,
+  },
+  {
+    name: "中下竖平台20x14",
+    startX: 70,
+    startZ: 33,
+    sx: 20,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "中间方块12_5x14",
+    startX: 30,
+    startZ: 33,
+    sx: 12.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "上方连接块5x14",
+    startX: 5,
+    startZ: 33,
+    sx: 5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "左侧下块7_524x10",
+    startX: 7.5,
+    startZ: 5,
+    sx: 7.523669876411105,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 10,
+  },
+  {
+    name: "左侧中块7_5x8_5",
+    startX: 27.5,
+    startZ: 5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 8.5,
+  },
+  {
+    name: "左侧上块7_5x10",
+    startX: 50,
+    startZ: 5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 10,
+  },
+  {
+    name: "右侧下块7_5x9",
+    startX: 29.024240179683595,
+    startZ: 67.5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 9,
+  },
+  {
+    name: "右侧中块7_5x9",
+    startX: 47,
+    startZ: 67.5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 9,
+  },
+  {
+    name: "右侧上块7_5x9",
+    startX: 70,
+    startZ: 67.5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 9,
+  },
+]
+
+const SIXTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
+  {
+    name: "上方横平台5x30",
+    startX: 0,
+    startZ: 25,
+    sx: 5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 30,
+  },
+  {
+    name: "下方横平台10x60",
+    startX: 90,
+    startZ: 10,
+    sx: 10,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 60,
+  },
+  {
+    name: "中下竖平台20x14",
+    startX: 70,
+    startZ: 33,
+    sx: 20,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "中间长平台60x14",
+    startX: 10,
+    startZ: 33,
+    sx: 60,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "上方连接块5x14",
+    startX: 5,
+    startZ: 33,
+    sx: 5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+]
+
+const SEVENTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
+  {
+    name: "左侧中段平台5x30",
+    startX: 0,
+    startZ: 25,
+    sx: 5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 30,
+  },
+  {
+    name: "右侧长平台10x60",
+    startX: 90,
+    startZ: 10,
+    sx: 10,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 60,
+  },
+  {
+    name: "中右平台15x14",
+    startX: 75,
+    startZ: 33,
+    sx: 15,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "中间平台10x14",
+    startX: 32.5,
+    startZ: 33,
+    sx: 10,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "左侧连接块5x14",
+    startX: 5,
+    startZ: 33,
+    sx: 5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 14,
+  },
+  {
+    name: "下方跳块7_5x10",
+    startX: 46,
+    startZ: 5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 10,
+  },
+  {
+    name: "上方跳块7_5x9",
+    startX: 14.02424017968361,
+    startZ: 67.5,
+    sx: 7.5,
+    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
+    sz: 9,
+  },
+]
+
+const EIGHTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
+  {
+    name: "实体34A_5x35",
+    startX: 0,
+    startZ: 30,
+    sx: 5,
+    sy: 3,
+    sz: 35,
+  },
+  {
+    name: "实体62D_70x20",
+    startX: 5,
+    startZ: 40,
+    sx: 70,
+    sy: 3,
+    sz: 20,
+  },
+  {
+    name: "实体632_70x4",
+    startX: 5,
+    startZ: 40,
+    sx: 70,
+    sy: 5,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体689_70x4",
+    startX: 5,
+    startZ: 56,
+    sx: 70,
+    sy: 5,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体685_27_5x1_8",
+    startX: 9.5,
+    startZ: 48,
+    sx: 27.5,
+    sy: 3,
+    sz: 1.8,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6C1_27_5x1_8",
+    startX: 9.5,
+    startZ: 50.2,
+    sx: 27.5,
+    sy: 3,
+    sz: 1.8,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体675_0_5x4",
+    startX: 10.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6B9_0_5x4",
+    startX: 10.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体626_7_5x10",
+    startX: 11,
+    startZ: 5,
+    sx: 7.5,
+    sy: 3,
+    sz: 10,
+  },
+  {
+    name: "实体671_0_5x4",
+    startX: 15.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6B5_0_5x4",
+    startX: 15.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体66D_0_5x4",
+    startX: 20.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6B1_0_5x4",
+    startX: 20.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体669_0_5x4",
+    startX: 25.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6AD_0_5x4",
+    startX: 25.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体665_0_5x4",
+    startX: 30.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6A9_0_5x4",
+    startX: 30.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体661_0_5x4",
+    startX: 35.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6A5_0_5x4",
+    startX: 35.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体575_7_5x10",
+    startX: 41,
+    startZ: 5,
+    sx: 7.5,
+    sy: 3,
+    sz: 10,
+  },
+  {
+    name: "实体681_27_5x1_8",
+    startX: 44.5,
+    startZ: 48,
+    sx: 27.5,
+    sy: 3,
+    sz: 1.8,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6BD_27_5x1_8",
+    startX: 44.5,
+    startZ: 50.2,
+    sx: 27.5,
+    sy: 3,
+    sz: 1.8,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体65D_0_5x4",
+    startX: 45.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体6A1_0_5x4",
+    startX: 45.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体659_0_5x4",
+    startX: 50.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体69D_0_5x4",
+    startX: 50.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体655_0_5x4",
+    startX: 55.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体699_0_5x4",
+    startX: 55.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体651_0_5x4",
+    startX: 60.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体695_0_5x4",
+    startX: 60.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体645_0_5x4",
+    startX: 65.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体649_0_5x4",
+    startX: 65.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体64D_0_5x4",
+    startX: 65.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体691_0_5x4",
+    startX: 65.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体640_0_5x4",
+    startX: 70.5,
+    startZ: 44,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体68D_0_5x4",
+    startX: 70.5,
+    startZ: 52,
+    sx: 0.5,
+    sy: 1,
+    sz: 4,
+    baseY: RAISED_TERRAIN_BASE_Y,
+  },
+  {
+    name: "实体40F_15x54",
+    startX: 75,
+    startZ: 13,
+    sx: 15,
+    sy: 3,
+    sz: 54,
+  },
+  {
+    name: "实体406_10x60",
+    startX: 90,
+    startZ: 10,
+    sx: 10,
+    sy: 3,
+    sz: 60,
+  },
 ]
 
 let fastRunSystem: FastRunSystem | undefined
@@ -478,12 +1079,15 @@ let runtimeWallsCreated = false
 let runtimeCeilingCreated = false
 let runtimeGridDrawStarted = false
 let runtimeCompressorStarted = false
+let runtimeSixthFloorMoveStarted = false
 let currentSpeedValue = DEFAULT_SPEED
 let displayTargetsLogged = false
 const enabledRoles = new Map<string, boolean>()
 const touchDebounce = new Map<string, boolean>()
 const registeredOverlayButtons = new Map<string, boolean>()
+const spawnAdjustedRoles = new Map<string, boolean>()
 let runtimeCompressorPieces: RuntimeCompressorPiece[] = []
+let runtimeSixthMovingFloor: RuntimeMovingFloor | undefined
 
 function fastRunLogger(...args: unknown[]): void {
   const lastArg = args.length > 0 ? args[args.length - 1] : ""
@@ -502,6 +1106,101 @@ function runtimeModuleName(name: string, moduleIndex: number): string {
   return `${runtimeModuleLabel(moduleIndex)}_${name}`
 }
 
+function applyLevelFloorAppearance(unit: unknown, name: string): void {
+  if (unit === null || unit === undefined) {
+    return
+  }
+  for (let i = 0; i < LEVEL_FLOOR_PAINT_AREA_COLORS.length; i++) {
+    const area = (i + 1) as PaintArea
+    const color = LEVEL_FLOOR_PAINT_AREA_COLORS[i]!
+    safeCall(
+      () => {
+        ;(unit as any).set_paint_area_color(area, color)
+      },
+      { tag: `runtime_level_floor_paint_${name}_${i + 1}`, fallback: undefined, logger: print }
+    )
+  }
+  safeCall(
+    () => {
+      ;(unit as any).set_mirror_reflect_enabled(false)
+    },
+    { tag: `runtime_level_floor_disable_mirror_${name}`, fallback: undefined, logger: print }
+  )
+  print(
+    `[${FLOOR_TAG}] appearance applied name=${name} prefab=${LEVEL_FLOOR_PREFAB_ID} paint_area1=${LEVEL_FLOOR_PAINT_AREA_COLORS[0]} paint_area2=${LEVEL_FLOOR_PAINT_AREA_COLORS[1]} paint_area3=${LEVEL_FLOOR_PAINT_AREA_COLORS[2]} paint_area4=${LEVEL_FLOOR_PAINT_AREA_COLORS[3]} mirror=false`
+  )
+}
+
+function setRuntimeMovingFloorPosition(floor: RuntimeMovingFloor, y: number): void {
+  safeCall(
+    () => {
+      ;(floor.unit as any).set_position(math.Vector3(floor.x as Fixed, y as Fixed, floor.z as Fixed))
+    },
+    { tag: `runtime_sixth_floor_set_position_${floor.name}`, fallback: undefined, logger: print }
+  )
+}
+
+function animateRuntimeMovingFloor(
+  floor: RuntimeMovingFloor,
+  fromY: number,
+  toY: number,
+  frames: number,
+  done?: () => void
+): void {
+  let frame = 0
+  const stepSeconds = SIXTH_LEVEL_FLOOR_MOVE_SECONDS / frames
+  const step = (): void => {
+    frame += 1
+    const t = frame / frames
+    const y = fromY + (toY - fromY) * t
+    setRuntimeMovingFloorPosition(floor, y)
+    if (frame < frames) {
+      ;(LuaAPI as any).call_delay_time(asFixed(stepSeconds), step)
+      return
+    }
+    if (done !== undefined) {
+      done()
+    }
+  }
+  step()
+}
+
+function scheduleSixthLevelFloorCycle(): void {
+  const floor = runtimeSixthMovingFloor
+  if (floor === undefined) {
+    return
+  }
+  print(
+    `[${FLOOR_TAG}] sixth_floor_move up name=${floor.name} from_y=${floor.downY} to_y=${floor.upY} duration=${SIXTH_LEVEL_FLOOR_MOVE_SECONDS}`
+  )
+  animateRuntimeMovingFloor(floor, floor.downY, floor.upY, SIXTH_LEVEL_FLOOR_MOVE_FRAMES, () => {
+    ;(LuaAPI as any).call_delay_time(asFixed(SIXTH_LEVEL_FLOOR_HOLD_SECONDS), () => {
+      print(
+        `[${FLOOR_TAG}] sixth_floor_move down name=${floor.name} from_y=${floor.upY} to_y=${floor.downY} duration=${SIXTH_LEVEL_FLOOR_MOVE_SECONDS}`
+      )
+      animateRuntimeMovingFloor(floor, floor.upY, floor.downY, SIXTH_LEVEL_FLOOR_MOVE_FRAMES, () => {
+        ;(LuaAPI as any).call_delay_time(asFixed(SIXTH_LEVEL_FLOOR_HOLD_SECONDS), scheduleSixthLevelFloorCycle)
+      })
+    })
+  })
+}
+
+function startSixthLevelFloorMove(): void {
+  if (runtimeSixthFloorMoveStarted) {
+    return
+  }
+  runtimeSixthFloorMoveStarted = true
+  if (runtimeSixthMovingFloor === undefined) {
+    print(`[${FLOOR_TAG}] sixth_floor_move skipped floor=undefined`)
+    return
+  }
+  const floor = runtimeSixthMovingFloor
+  print(
+    `[${FLOOR_TAG}] sixth_floor_move start name=${floor.name} down_y=${floor.downY} up_y=${floor.upY} duration=${SIXTH_LEVEL_FLOOR_MOVE_SECONDS} frames=${SIXTH_LEVEL_FLOOR_MOVE_FRAMES}`
+  )
+  scheduleSixthLevelFloorCycle()
+}
+
 function createRuntimeFloorCopies(): void {
   if (runtimeFloorsCreated) {
     return
@@ -510,29 +1209,49 @@ function createRuntimeFloorCopies(): void {
 
   const floor = RUNTIME_FLOOR
   print(
-    `[${FLOOR_TAG}] create begin copies=${RUNTIME_COPY_COUNT} total_modules=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${FLOOR_PREFAB_ID} base_y=${FLOOR_BASE_Y} step_x=${MODULE_STEP_X}`
+    `[${FLOOR_TAG}] create begin copies=${RUNTIME_COPY_COUNT} total_modules=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 original_prefab=${ORIGINAL_FLOOR_PREFAB_ID} level_prefab=${LEVEL_FLOOR_PREFAB_ID} base_y=${FLOOR_BASE_Y} step_x=${MODULE_STEP_X}`
   )
   print(
     `[${FLOOR_TAG}] existing name=${runtimeModuleName(floor.name, 0)} unit=2134777966 base=(${floor.x},${FLOOR_BASE_Y},${floor.z}) scale=(${floor.sx},${floor.sy},${floor.sz}) source=editor`
   )
-  for (let moduleIndex = 1; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
-    if (isTerrainCutoutModule(moduleIndex)) {
-      print(
-        `[${FLOOR_TAG}] skipped name=${runtimeModuleName(floor.name, moduleIndex)} reason=terrain_cutout module=${runtimeModuleLabel(moduleIndex)} empty_gaps=true`
+
+  let moduleIndex = 1
+  const createBatch = (): void => {
+    let createdThisFrame = 0
+    while (moduleIndex <= RUNTIME_COPY_COUNT && createdThisFrame < RUNTIME_FLOOR_CREATE_BATCH_SIZE) {
+      const x = floor.x + MODULE_STEP_X * moduleIndex
+      const unit = safeCreateObstacle(
+        LEVEL_FLOOR_PREFAB_ID,
+        math.Vector3(x as Fixed, FLOOR_BASE_Y as Fixed, floor.z as Fixed),
+        math.Vector3(floor.sx as Fixed, floor.sy as Fixed, floor.sz as Fixed),
+        { tag: `runtime_floor_create_${runtimeModuleName(floor.name, moduleIndex)}`, logger: print }
       )
-      continue
+      const name = runtimeModuleName(floor.name, moduleIndex)
+      applyLevelFloorAppearance(unit, runtimeModuleName(floor.name, moduleIndex))
+      if (moduleIndex === SIXTH_LEVEL_TERRAIN_MODULE_INDEX && unit !== null && unit !== undefined) {
+        runtimeSixthMovingFloor = {
+          name,
+          unit,
+          x,
+          z: floor.z,
+          downY: SIXTH_LEVEL_FLOOR_DOWN_Y,
+          upY: SIXTH_LEVEL_FLOOR_UP_Y,
+        }
+        startSixthLevelFloorMove()
+      }
+      print(
+        `[${FLOOR_TAG}] created name=${name} unit=${tostring(unit)} prefab=${LEVEL_FLOOR_PREFAB_ID} base=(${x},${FLOOR_BASE_Y},${floor.z}) scale=(${floor.sx},${floor.sy},${floor.sz}) batch_size=${RUNTIME_FLOOR_CREATE_BATCH_SIZE}`
+      )
+      moduleIndex += 1
+      createdThisFrame += 1
     }
-    const x = floor.x + MODULE_STEP_X * moduleIndex
-    const unit = safeCreateObstacle(
-      FLOOR_PREFAB_ID,
-      math.Vector3(x as Fixed, FLOOR_BASE_Y as Fixed, floor.z as Fixed),
-      math.Vector3(floor.sx as Fixed, floor.sy as Fixed, floor.sz as Fixed),
-      { tag: `runtime_floor_create_${runtimeModuleName(floor.name, moduleIndex)}`, logger: print }
-    )
-    print(
-      `[${FLOOR_TAG}] created name=${runtimeModuleName(floor.name, moduleIndex)} unit=${tostring(unit)} base=(${x},${FLOOR_BASE_Y},${floor.z}) scale=(${floor.sx},${floor.sy},${floor.sz})`
-    )
+    if (moduleIndex <= RUNTIME_COPY_COUNT) {
+      ;(LuaAPI as any).call_delay_frame(1, createBatch)
+      return
+    }
+    print(`[${FLOOR_TAG}] create complete copies=${RUNTIME_COPY_COUNT} prefab=${LEVEL_FLOOR_PREFAB_ID}`)
   }
+  createBatch()
 }
 
 function createRuntimeTiles(): void {
@@ -545,9 +1264,9 @@ function createRuntimeTiles(): void {
 
   const floor = RUNTIME_FLOOR
   print(
-    `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT + 1} full_tiles=${RUNTIME_COPY_COUNT} first_level_terrain_pieces=${FIRST_LEVEL_TERRAIN_PIECES.length} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} step_x=${MODULE_STEP_X}`
+    `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT} full_tiles=${RUNTIME_COPY_COUNT} first_level_terrain_pieces=${FIRST_LEVEL_TERRAIN_PIECES.length} module_1=第1关 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} step_x=${MODULE_STEP_X} original_floor=kept birth_tile=editor`
   )
-  for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
+  for (let moduleIndex = 1; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
     const x = floor.x + MODULE_STEP_X * moduleIndex
     if (moduleIndex === FIRST_LEVEL_TERRAIN_MODULE_INDEX) {
       createRuntimeTerrain(
@@ -589,7 +1308,52 @@ function createRuntimeTiles(): void {
         FOURTH_LEVEL_TERRAIN_MODULE_INDEX,
         FOURTH_LEVEL_TERRAIN_PIECES,
         "solid_only_fourth_level2_from_dxf",
-        "solid_dims_only aux_lines_ignored dxf_outer=100x80 flat_only left=10x80 middle=75x20 right_step=15x40+7.5x10 small=10x7.5x2"
+        "solid_dims_only aux_lines_ignored dxf_outer=100x80 flat=6 press_plates=2 plates_above_middle gap_y=10 h=5 left_plate=30x20 right_plate=35x20"
+      )
+      continue
+    }
+    if (moduleIndex === FIFTH_LEVEL_TERRAIN_MODULE_INDEX) {
+      createRuntimeTerrain(
+        floor,
+        x,
+        FIFTH_LEVEL_TERRAIN_MODULE_INDEX,
+        FIFTH_LEVEL_TERRAIN_PIECES,
+        "solid_only_fifth_level_from_dxf",
+        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=11 plan_view_match=true main_path=5x30+5x14+12.5x14+20x14+10x60 side_blocks=6"
+      )
+      continue
+    }
+    if (moduleIndex === SIXTH_LEVEL_TERRAIN_MODULE_INDEX) {
+      createRuntimeTerrain(
+        floor,
+        x,
+        SIXTH_LEVEL_TERRAIN_MODULE_INDEX,
+        SIXTH_LEVEL_TERRAIN_PIECES,
+        "solid_only_sixth_level_from_dxf",
+        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=5 main_path=5x30+5x14+60x14+20x14+10x60"
+      )
+      continue
+    }
+    if (moduleIndex === SEVENTH_LEVEL_TERRAIN_MODULE_INDEX) {
+      createRuntimeTerrain(
+        floor,
+        x,
+        SEVENTH_LEVEL_TERRAIN_MODULE_INDEX,
+        SEVENTH_LEVEL_TERRAIN_PIECES,
+        "solid_only_seventh_level_from_dxf",
+        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=7 path=5x30+5x14+10x14+15x14+10x60 jump_blocks=7.5x10+7.5x9"
+      )
+      continue
+    }
+    if (moduleIndex === EIGHTH_LEVEL_TERRAIN_MODULE_INDEX) {
+      createRuntimeTerrainBatched(
+        floor,
+        x,
+        EIGHTH_LEVEL_TERRAIN_MODULE_INDEX,
+        EIGHTH_LEVEL_TERRAIN_PIECES,
+        "solid_only_eighth_level_from_dxf",
+        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=38 entry=10x60+15x54 parsed_connection=true raised_on_top=true",
+        EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE
       )
       continue
     }
@@ -634,7 +1398,11 @@ function isTerrainCutoutModule(moduleIndex: number): boolean {
     moduleIndex === FIRST_LEVEL_TERRAIN_MODULE_INDEX ||
     moduleIndex === SECOND_LEVEL_TERRAIN_MODULE_INDEX ||
     moduleIndex === THIRD_LEVEL_TERRAIN_MODULE_INDEX ||
-    moduleIndex === FOURTH_LEVEL_TERRAIN_MODULE_INDEX
+    moduleIndex === FOURTH_LEVEL_TERRAIN_MODULE_INDEX ||
+    moduleIndex === FIFTH_LEVEL_TERRAIN_MODULE_INDEX ||
+    moduleIndex === SIXTH_LEVEL_TERRAIN_MODULE_INDEX ||
+    moduleIndex === SEVENTH_LEVEL_TERRAIN_MODULE_INDEX ||
+    moduleIndex === EIGHTH_LEVEL_TERRAIN_MODULE_INDEX
   )
 }
 
@@ -682,6 +1450,55 @@ function createRuntimeTerrain(
     )
   }
   print(`[${TERRAIN_TAG}] gaps module=${runtimeModuleLabel(moduleIndex)} ${gapSummary}`)
+}
+
+function createRuntimeTerrainBatched(
+  floor: RuntimeFloor,
+  moduleCenterX: number,
+  moduleIndex: number,
+  pieces: RuntimeTerrainPiece[],
+  pattern: string,
+  gapSummary: string,
+  batchSize: number
+): void {
+  const moduleMinX = moduleCenterX - floor.sx / 2
+  const moduleMinZ = floor.z - floor.sz / 2
+  print(
+    `[${TERRAIN_TAG}] create begin module=${runtimeModuleLabel(moduleIndex)} prefab=${WALL_PREFAB_ID} module_center=(${moduleCenterX},${FIRST_LEVEL_TERRAIN_BASE_Y},${floor.z}) module_size=(${floor.sx},${floor.sz}) pieces=${pieces.length} pattern=${pattern} base_y=${FIRST_LEVEL_TERRAIN_BASE_Y} scale_y=mixed batch_size=${batchSize}`
+  )
+
+  let index = 0
+  const createBatch = (): void => {
+    let createdThisFrame = 0
+    while (index < pieces.length && createdThisFrame < batchSize) {
+      const piece = pieces[index]!
+      const y = piece.baseY === undefined ? FIRST_LEVEL_TERRAIN_BASE_Y : piece.baseY
+      const x = moduleMinX + piece.startX + piece.sx / 2
+      const z = moduleMinZ + piece.startZ + piece.sz / 2
+      const name = runtimeModuleName(piece.name, moduleIndex)
+      const unit = safeCreateObstacle(
+        WALL_PREFAB_ID,
+        math.Vector3(x as Fixed, y as Fixed, z as Fixed),
+        math.Vector3(piece.sx as Fixed, piece.sy as Fixed, piece.sz as Fixed),
+        { tag: `runtime_terrain_create_${name}`, logger: print }
+      )
+      disableMirrorReflect(unit, `runtime_terrain_disable_mirror_${name}`)
+      print(
+        `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=false batch=${math.floor(index / batchSize) + 1}`
+      )
+      index += 1
+      createdThisFrame += 1
+    }
+
+    if (index < pieces.length) {
+      ;(LuaAPI as any).call_delay_frame(1, createBatch)
+      return
+    }
+
+    print(`[${TERRAIN_TAG}] gaps module=${runtimeModuleLabel(moduleIndex)} ${gapSummary}`)
+  }
+
+  createBatch()
 }
 
 function setRuntimeCompressorPosition(piece: RuntimeCompressorPiece, y: number): void {
@@ -929,17 +1746,45 @@ function startSystems(): void {
     testMode: {
       enabled: true,
       parentNodeName: "画布1",
+      x: DASHBOARD_CENTER_X,
+      y: DASHBOARD_CENTER_Y,
       maxSpeed: 1000,
-      maxGroundAcceleration: 1000,
-      maxGroundDeceleration: 1000,
-      maxAirAcceleration: 1000,
-      maxAirDeceleration: 1000,
     },
     logger: fastRunLogger,
   })
   fastRunSystem.setEnabled(true)
   ensureFastRunComponentsForOnlineRoles()
   print(`[${SPEED_TAG}] fast_run_system started speed=${DEFAULT_SPEED}`)
+}
+
+function hideLegacySpeedUiForRole(role: Role): void {
+  for (let i = 0; i < LEGACY_SPEED_UI_NODE_IDS.length; i++) {
+    const idText = LEGACY_SPEED_UI_NODE_IDS[i]!
+    const node = idText as unknown as ENode
+    safeCall(
+      () => {
+        role.set_node_visible(node, false)
+      },
+      { tag: `legacy_speed_ui_hide_${idText}`, fallback: undefined, logger: print }
+    )
+    safeCall(
+      () => {
+        ;(role as any).set_node_touch_enabled(node, false)
+      },
+      { tag: `legacy_speed_ui_touch_off_${idText}`, fallback: undefined, logger: print }
+    )
+  }
+}
+
+function hideLegacySpeedUiForOnlineRoles(): void {
+  const roles = getOnlineRoles()
+  for (let i = 0; i < roles.length; i++) {
+    const role = roles[i]
+    if (role !== undefined) {
+      hideLegacySpeedUiForRole(role)
+    }
+  }
+  print(`[${SPEED_TAG}] legacy ui hidden nodes=${LEGACY_SPEED_UI_NODE_IDS.length} roles=${roles.length}`)
 }
 
 function ensureFastRunComponentForRole(role: Role): void {
@@ -1196,6 +2041,42 @@ function getOnlineRoles(): Role[] {
   return roles !== undefined ? roles : []
 }
 
+function adjustRoleSpawnToBirthTile(role: Role): void {
+  const key = roleKey(role)
+  if (spawnAdjustedRoles.get(key) === true) {
+    return
+  }
+  const character = safeCall(
+    () => {
+      const getCtrlUnit = (role as any).get_ctrl_unit
+      return getCtrlUnit()
+    },
+    { tag: `birth_spawn_get_ctrl_${key}`, fallback: null, logger: print }
+  ) as Character | null
+  if (character === null || character === undefined) {
+    print(`[${TAG}] birth spawn skipped role=${key} character=nil`)
+    return
+  }
+  safeCall(
+    () => {
+      ;(character as any).set_position(math.Vector3(BIRTH_SPAWN_X as Fixed, BIRTH_SPAWN_Y as Fixed, BIRTH_SPAWN_Z as Fixed))
+    },
+    { tag: `birth_spawn_set_position_${key}`, fallback: undefined, logger: print }
+  )
+  spawnAdjustedRoles.set(key, true)
+  print(`[${TAG}] birth spawn adjusted role=${key} pos=(${BIRTH_SPAWN_X},${BIRTH_SPAWN_Y},${BIRTH_SPAWN_Z})`)
+}
+
+function adjustOnlineRolesSpawnToBirthTile(): void {
+  const roles = getOnlineRoles()
+  for (let i = 0; i < roles.length; i++) {
+    const role = roles[i]
+    if (role !== undefined) {
+      adjustRoleSpawnToBirthTile(role)
+    }
+  }
+}
+
 function enableUiForOnlineRoles(): void {
   startSystems()
   ensureFastRunComponentsForOnlineRoles()
@@ -1416,21 +2297,46 @@ print(`[${TAG}] loaded`)
 LuaAPI.global_register_trigger_event([EVENT.GAME_INIT], () => {
   print(`[${TAG}] game init`)
   createRuntimeFloorCopies()
-  createRuntimeWalls()
-  createRuntimeCeiling()
-  TriggerHub.register([EVENT.TIMEOUT, 1], () => createRuntimeTiles(), {
+  TriggerHub.register([EVENT.TIMEOUT, RUNTIME_WALL_CREATE_DELAY_SECONDS], () => createRuntimeWalls(), {
+    safe: true,
+    safeCallback: true,
+    tag: "runtime_walls_create_delay",
+    logger: print,
+  })
+  TriggerHub.register([EVENT.TIMEOUT, RUNTIME_CEILING_CREATE_DELAY_SECONDS], () => createRuntimeCeiling(), {
+    safe: true,
+    safeCallback: true,
+    tag: "runtime_ceiling_create_delay",
+    logger: print,
+  })
+  TriggerHub.register([EVENT.TIMEOUT, RUNTIME_TILE_CREATE_DELAY_SECONDS], () => createRuntimeTiles(), {
     safe: true,
     safeCallback: true,
     tag: "runtime_tiles_create_delay",
     logger: print,
   })
   startSystems()
-  registerSpeedUiEvents()
-  enableUiForOnlineRoles()
-  TriggerHub.register([EVENT.TIMEOUT, 1], () => enableUiForOnlineRoles(), {
+  hideLegacySpeedUiForOnlineRoles()
+  TriggerHub.register([EVENT.TIMEOUT, 1], () => {
+    startSystems()
+    hideLegacySpeedUiForOnlineRoles()
+    adjustOnlineRolesSpawnToBirthTile()
+  }, {
     safe: true,
     safeCallback: true,
-    tag: "speed_ui_enable_delay",
+    tag: "legacy_speed_ui_hide_delay",
+    logger: print,
+  })
+  TriggerHub.register([EVENT.TIMEOUT, 0.2], () => adjustOnlineRolesSpawnToBirthTile(), {
+    safe: true,
+    safeCallback: true,
+    tag: "birth_spawn_adjust_delay_0_2",
+    logger: print,
+  })
+  TriggerHub.register([EVENT.TIMEOUT, 2], () => adjustOnlineRolesSpawnToBirthTile(), {
+    safe: true,
+    safeCallback: true,
+    tag: "birth_spawn_adjust_delay_2",
     logger: print,
   })
 })

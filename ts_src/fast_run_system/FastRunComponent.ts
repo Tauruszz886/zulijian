@@ -1,5 +1,6 @@
 import { safeCall, safeVoid } from "@common/engine_safe"
 import { drawRuntimeDebugLine } from "../runtime_ui"
+import { evaluateFastRunExpression } from "./FastRunExpression"
 
 type PhysicsCcdTarget = {
   enable_physics_ccd?: (this: void, enable: boolean) => void
@@ -96,12 +97,20 @@ export type FastRunComponentOptions = {
   initialSpeed?: number
   /** 在地面推动摇杆时，当前速度向目标速度靠近的加速度。 */
   groundAcceleration?: number
+  /** 地面加速度表达式；s 表示当前速度，支持数字和 + - * /。 */
+  groundAccelerationExpression?: string
   /** 在地面没有摇杆输入或前方受阻时，当前速度向 0 靠近的减速度。 */
   groundDeceleration?: number
+  /** 地面减速度表达式；s 表示当前速度，支持数字和 + - * /。 */
+  groundDecelerationExpression?: string
   /** 空中推动摇杆时使用的加速度；通常应小于 groundAcceleration。 */
   airAcceleration?: number
+  /** 空中加速度表达式；s 表示当前速度，支持数字和 + - * /。 */
+  airAccelerationExpression?: string
   /** 空中没有摇杆输入或前方受阻时使用的减速度。 */
   airDeceleration?: number
+  /** 空中减速度表达式；s 表示当前速度，支持数字和 + - * /。 */
+  airDecelerationExpression?: string
   /** 摇杆死区；输入长度小于等于该值时视为停止输入。 */
   joystickDeadZone?: number
   /** 角色最大线速度，用于放开引擎默认上限。 */
@@ -157,9 +166,13 @@ type ResolvedFastRunComponentOptions = {
   maxSpeed: number
   initialSpeed: number
   groundAcceleration: number
+  groundAccelerationExpression: string
   groundDeceleration: number
+  groundDecelerationExpression: string
   airAcceleration: number
+  airAccelerationExpression: string
   airDeceleration: number
+  airDecelerationExpression: string
   joystickDeadZone: number
   maxLinearVelocity: number
   enableGlobalPhysicsCcd: boolean
@@ -176,9 +189,13 @@ export const DEFAULT_FAST_RUN_COMPONENT_OPTIONS: Omit<FastRunComponentOptions, "
   maxSpeed: 20,
   initialSpeed: 0,
   groundAcceleration: 60,
+  groundAccelerationExpression: "60",
   groundDeceleration: 80,
+  groundDecelerationExpression: "80",
   airAcceleration: 20,
+  airAccelerationExpression: "20",
   airDeceleration: 20,
+  airDecelerationExpression: "20",
   joystickDeadZone: 0.05,
   maxLinearVelocity: 1000,
   enableGlobalPhysicsCcd: true,
@@ -240,6 +257,10 @@ function moveTowards(current: number, target: number, maxDelta: number): number 
   return current
 }
 
+function formatExpressionNumber(value: number): string {
+  return tostring(math.floor(value * 100 + 0.5) / 100)
+}
+
 function mergeOptions(options: FastRunComponentOptions): ResolvedFastRunComponentOptions {
   const base = DEFAULT_FAST_RUN_COMPONENT_OPTIONS
   const baseGround = base.ground!
@@ -256,10 +277,34 @@ function mergeOptions(options: FastRunComponentOptions): ResolvedFastRunComponen
     initialSpeed: options.initialSpeed !== undefined ? options.initialSpeed : base.initialSpeed!,
     groundAcceleration:
       options.groundAcceleration !== undefined ? options.groundAcceleration : base.groundAcceleration!,
+    groundAccelerationExpression:
+      options.groundAccelerationExpression !== undefined
+        ? options.groundAccelerationExpression
+        : options.groundAcceleration !== undefined
+          ? formatExpressionNumber(options.groundAcceleration)
+          : base.groundAccelerationExpression!,
     groundDeceleration:
       options.groundDeceleration !== undefined ? options.groundDeceleration : base.groundDeceleration!,
+    groundDecelerationExpression:
+      options.groundDecelerationExpression !== undefined
+        ? options.groundDecelerationExpression
+        : options.groundDeceleration !== undefined
+          ? formatExpressionNumber(options.groundDeceleration)
+          : base.groundDecelerationExpression!,
     airAcceleration: options.airAcceleration !== undefined ? options.airAcceleration : base.airAcceleration!,
+    airAccelerationExpression:
+      options.airAccelerationExpression !== undefined
+        ? options.airAccelerationExpression
+        : options.airAcceleration !== undefined
+          ? formatExpressionNumber(options.airAcceleration)
+          : base.airAccelerationExpression!,
     airDeceleration: options.airDeceleration !== undefined ? options.airDeceleration : base.airDeceleration!,
+    airDecelerationExpression:
+      options.airDecelerationExpression !== undefined
+        ? options.airDecelerationExpression
+        : options.airDeceleration !== undefined
+          ? formatExpressionNumber(options.airDeceleration)
+          : base.airDecelerationExpression!,
     joystickDeadZone:
       options.joystickDeadZone !== undefined ? options.joystickDeadZone : base.joystickDeadZone!,
     maxLinearVelocity:
@@ -386,51 +431,99 @@ export class FastRunComponent {
   }
 
   getGroundAcceleration(): number {
-    return this.options.groundAcceleration
+    return this.evaluateMotionExpression(this.options.groundAccelerationExpression, this.options.groundAcceleration, "ground_acceleration")
   }
 
   setGroundAcceleration(groundAcceleration: number): void {
     this.options.groundAcceleration = clampMin(groundAcceleration, 0)
+    this.options.groundAccelerationExpression = formatExpressionNumber(this.options.groundAcceleration)
   }
 
   increaseGroundAcceleration(delta: number): void {
-    this.setGroundAcceleration(this.options.groundAcceleration + delta)
+    this.setGroundAcceleration(this.getGroundAcceleration() + delta)
+  }
+
+  getGroundAccelerationExpression(): string {
+    return this.options.groundAccelerationExpression
+  }
+
+  setGroundAccelerationExpression(expression: string): boolean {
+    return this.setMotionExpression("ground_acceleration", expression, (value) => {
+      this.options.groundAccelerationExpression = expression
+      this.options.groundAcceleration = clampMin(value, 0)
+    })
   }
 
   getGroundDeceleration(): number {
-    return this.options.groundDeceleration
+    return this.evaluateMotionExpression(this.options.groundDecelerationExpression, this.options.groundDeceleration, "ground_deceleration")
   }
 
   setGroundDeceleration(groundDeceleration: number): void {
     this.options.groundDeceleration = clampMin(groundDeceleration, 0)
+    this.options.groundDecelerationExpression = formatExpressionNumber(this.options.groundDeceleration)
   }
 
   increaseGroundDeceleration(delta: number): void {
-    this.setGroundDeceleration(this.options.groundDeceleration + delta)
+    this.setGroundDeceleration(this.getGroundDeceleration() + delta)
+  }
+
+  getGroundDecelerationExpression(): string {
+    return this.options.groundDecelerationExpression
+  }
+
+  setGroundDecelerationExpression(expression: string): boolean {
+    return this.setMotionExpression("ground_deceleration", expression, (value) => {
+      this.options.groundDecelerationExpression = expression
+      this.options.groundDeceleration = clampMin(value, 0)
+    })
   }
 
   getAirAcceleration(): number {
-    return this.options.airAcceleration
+    return this.evaluateMotionExpression(this.options.airAccelerationExpression, this.options.airAcceleration, "air_acceleration")
   }
 
   setAirAcceleration(airAcceleration: number): void {
     this.options.airAcceleration = clampMin(airAcceleration, 0)
+    this.options.airAccelerationExpression = formatExpressionNumber(this.options.airAcceleration)
   }
 
   increaseAirAcceleration(delta: number): void {
-    this.setAirAcceleration(this.options.airAcceleration + delta)
+    this.setAirAcceleration(this.getAirAcceleration() + delta)
+  }
+
+  getAirAccelerationExpression(): string {
+    return this.options.airAccelerationExpression
+  }
+
+  setAirAccelerationExpression(expression: string): boolean {
+    return this.setMotionExpression("air_acceleration", expression, (value) => {
+      this.options.airAccelerationExpression = expression
+      this.options.airAcceleration = clampMin(value, 0)
+    })
   }
 
   getAirDeceleration(): number {
-    return this.options.airDeceleration
+    return this.evaluateMotionExpression(this.options.airDecelerationExpression, this.options.airDeceleration, "air_deceleration")
   }
 
   setAirDeceleration(airDeceleration: number): void {
     this.options.airDeceleration = clampMin(airDeceleration, 0)
+    this.options.airDecelerationExpression = formatExpressionNumber(this.options.airDeceleration)
   }
 
   increaseAirDeceleration(delta: number): void {
-    this.setAirDeceleration(this.options.airDeceleration + delta)
+    this.setAirDeceleration(this.getAirDeceleration() + delta)
+  }
+
+  getAirDecelerationExpression(): string {
+    return this.options.airDecelerationExpression
+  }
+
+  setAirDecelerationExpression(expression: string): boolean {
+    return this.setMotionExpression("air_deceleration", expression, (value) => {
+      this.options.airDecelerationExpression = expression
+      this.options.airDeceleration = clampMin(value, 0)
+    })
   }
 
   isRayDebugEnabled(): boolean {
@@ -647,6 +740,26 @@ export class FastRunComponent {
     return interval > 0 && this.tickIndex % interval === 0
   }
 
+  private evaluateMotionExpression(expression: string, fallback: number, tag: string): number {
+    const result = evaluateFastRunExpression(expression, this.currentSpeed)
+    if (!result.ok) {
+      this.options.logger(`[FastRunComponent] expression failed tag=${tag} expr=${expression} err=${result.error}`)
+      return clampMin(fallback, 0)
+    }
+    return clampMin(result.value, 0)
+  }
+
+  private setMotionExpression(tag: string, expression: string, apply: (value: number) => void): boolean {
+    const result = evaluateFastRunExpression(expression, this.currentSpeed)
+    if (!result.ok) {
+      this.options.logger(`[FastRunComponent] set expression failed tag=${tag} expr=${expression} err=${result.error}`)
+      return false
+    }
+
+    apply(result.value)
+    return true
+  }
+
   private applyJoystickLinearVelocity(character: Character): void {
     const joystick = character.get_joystick_direction()
     const inputX = joystick.x as number
@@ -657,8 +770,8 @@ export class FastRunComponent {
     const blocked = checkDirection !== null ? this.hasObstacleAhead(character, checkDirection.x, checkDirection.z) : false
     const currentVelocity = character.get_linear_velocity()
     const grounded = this.isGrounded(character)
-    const acceleration = grounded ? this.options.groundAcceleration : this.options.airAcceleration
-    const deceleration = grounded ? this.options.groundDeceleration : this.options.airDeceleration
+    const acceleration = grounded ? this.getGroundAcceleration() : this.getAirAcceleration()
+    const deceleration = grounded ? this.getGroundDeceleration() : this.getAirDeceleration()
 
     let direction = inputDirection
     if (direction !== null && !blocked) {
