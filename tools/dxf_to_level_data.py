@@ -652,6 +652,12 @@ def parse_acsh_box_class(data: list[Pair], transform: Transform, digits: int) ->
     size_x = last_float(data, 40)
     size_y = last_float(data, 41)
     size_z = last_float(data, 42)
+    projected_axes = [
+        ("x", size_x, math.hypot(m00, m10)),
+        ("y", size_y, math.hypot(m01, m11)),
+        ("z", size_z, math.hypot(m02, m12)),
+    ]
+    vertical_axis, vertical_height, _ = min(projected_axes, key=lambda item: item[2])
 
     projected_sx = abs(m00) * size_x + abs(m01) * size_y + abs(m02) * size_z
     projected_sz = abs(m10) * size_x + abs(m11) * size_y + abs(m12) * size_z
@@ -679,6 +685,8 @@ def parse_acsh_box_class(data: list[Pair], transform: Transform, digits: int) ->
             "y": round_num(size_y, digits),
             "z": round_num(size_z, digits),
         },
+        "vertical_axis": vertical_axis,
+        "vertical_height": round_num(vertical_height, digits),
         "topdown_transform": {
             "m00": round_num(m00, digits),
             "m01": round_num(m01, digits),

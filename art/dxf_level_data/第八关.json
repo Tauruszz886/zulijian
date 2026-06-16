@@ -1,7 +1,7 @@
 {
   "schema": "zulijian.dxf_level_data.v1",
   "source": {
-    "path": "/tmp/codex-web-uploads/f-zjgOCk/第八关.dxf",
+    "path": "/tmp/codex-web-uploads/f-cetfYx/第八关.dxf",
     "filename": "第八关.dxf",
     "acad_version": "AC1032"
   },
@@ -13,21 +13,20 @@
   "summary": {
     "entity_counts": {
       "3DSOLID": 38,
-      "DIMENSION": 8,
+      "DIMENSION": 4,
       "LINE": 33,
       "LWPOLYLINE": 2
     },
     "object_counts": {
       "ACAD_EVALUATION_GRAPH": 38,
-      "ACDBASSOCACTION": 5,
-      "ACDBASSOCALIGNEDDIMACTIONBODY": 5,
-      "ACDBASSOCDEPENDENCY": 5,
-      "ACDBASSOCEDGEACTIONPARAM": 1,
-      "ACDBASSOCGEOMDEPENDENCY": 9,
+      "ACDBASSOCACTION": 1,
+      "ACDBASSOCALIGNEDDIMACTIONBODY": 1,
+      "ACDBASSOCDEPENDENCY": 1,
+      "ACDBASSOCGEOMDEPENDENCY": 1,
       "ACDBASSOCNETWORK": 2,
-      "ACDBASSOCOSNAPPOINTREFACTIONPARAM": 9,
+      "ACDBASSOCOSNAPPOINTREFACTIONPARAM": 1,
       "ACDBASSOCPERSSUBENTMANAGER": 1,
-      "ACDBASSOCVERTEXACTIONPARAM": 8,
+      "ACDBASSOCVERTEXACTIONPARAM": 1,
       "ACDBDETAILVIEWSTYLE": 1,
       "ACDBDICTIONARYWDFLT": 1,
       "ACDBPERSSUBENTMANAGER": 1,
@@ -53,7 +52,7 @@
       "0": {
         "LWPOLYLINE": 2,
         "LINE": 33,
-        "DIMENSION": 8,
+        "DIMENSION": 4,
         "3DSOLID": 38
       }
     },
@@ -604,24 +603,24 @@
         "handle": "62A",
         "layer": "0",
         "start": {
-          "x": 14.09856,
-          "y": 17.881824,
+          "x": 21.59856,
+          "y": 18.765226,
           "z": 0.0
         },
         "end": {
-          "x": 84.09856,
-          "y": 17.881824,
+          "x": 91.59856,
+          "y": 18.765226,
           "z": 0.0
         },
         "length": 70.0,
         "orientation": "horizontal",
         "start_local": {
-          "x": 5.0,
-          "z": 60.0
+          "x": 12.5,
+          "z": 60.883402
         },
         "end_local": {
-          "x": 75.0,
-          "z": 60.0
+          "x": 82.5,
+          "z": 60.883402
         },
         "index": 28
       },
@@ -630,24 +629,24 @@
         "handle": "62B",
         "layer": "0",
         "start": {
-          "x": 84.09856,
-          "y": 7.881824,
+          "x": 91.59856,
+          "y": 8.765226,
           "z": 0.0
         },
         "end": {
-          "x": 84.09856,
-          "y": -12.118176,
+          "x": 91.59856,
+          "y": -11.234774,
           "z": 0.0
         },
         "length": 20.0,
         "orientation": "vertical",
         "start_local": {
-          "x": 75.0,
-          "z": 50.0
+          "x": 82.5,
+          "z": 50.883402
         },
         "end_local": {
-          "x": 75.0,
-          "z": 30.0
+          "x": 82.5,
+          "z": 30.883402
         },
         "index": 29
       },
@@ -656,24 +655,24 @@
         "handle": "62C",
         "layer": "0",
         "start": {
-          "x": 84.09856,
-          "y": -2.118176,
+          "x": 91.59856,
+          "y": -1.234774,
           "z": 0.0
         },
         "end": {
-          "x": 14.09856,
-          "y": -2.118176,
+          "x": 21.59856,
+          "y": -1.234774,
           "z": 0.0
         },
         "length": 70.0,
         "orientation": "horizontal",
         "start_local": {
-          "x": 75.0,
-          "z": 40.0
+          "x": 82.5,
+          "z": 40.883402
         },
         "end_local": {
-          "x": 5.0,
-          "z": 40.0
+          "x": 12.5,
+          "z": 40.883402
         },
         "index": 30
       },
@@ -682,24 +681,24 @@
         "handle": "636",
         "layer": "0",
         "start": {
-          "x": 84.09856,
-          "y": 1.881824,
+          "x": 91.59856,
+          "y": 2.765226,
           "z": 5.5
         },
         "end": {
-          "x": 14.09856,
-          "y": 1.881824,
+          "x": 21.59856,
+          "y": 2.765226,
           "z": 5.5
         },
         "length": 70.0,
         "orientation": "horizontal",
         "start_local": {
-          "x": 75.0,
-          "z": 44.0
+          "x": 82.5,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 5.0,
-          "z": 44.0
+          "x": 12.5,
+          "z": 44.883402
         },
         "index": 34
       },
@@ -708,24 +707,24 @@
         "handle": "637",
         "layer": "0",
         "start": {
-          "x": 84.09856,
-          "y": 1.881824,
+          "x": 91.59856,
+          "y": 2.765226,
           "z": 5.5
         },
         "end": {
-          "x": 79.09856,
-          "y": 1.881824,
+          "x": 86.59856,
+          "y": 2.765226,
           "z": 5.5
         },
         "length": 5.0,
         "orientation": "horizontal",
         "start_local": {
-          "x": 75.0,
-          "z": 44.0
+          "x": 82.5,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 70.0,
-          "z": 44.0
+          "x": 77.5,
+          "z": 44.883402
         },
         "index": 35
       },
@@ -734,24 +733,24 @@
         "handle": "638",
         "layer": "0",
         "start": {
-          "x": 79.09856,
-          "y": 1.881824,
+          "x": 86.59856,
+          "y": 2.765226,
           "z": 5.5
         },
         "end": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 5.5
         },
         "length": 0.5,
         "orientation": "horizontal",
         "start_local": {
-          "x": 70.0,
-          "z": 44.0
+          "x": 77.5,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "index": 36
       },
@@ -760,24 +759,24 @@
         "handle": "639",
         "layer": "0",
         "start": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 5.5
         },
         "end": {
-          "x": 79.59856,
-          "y": 1.381824,
+          "x": 87.09856,
+          "y": 2.265226,
           "z": 5.5
         },
         "length": 0.5,
         "orientation": "vertical",
         "start_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 70.5,
-          "z": 43.5
+          "x": 78.0,
+          "z": 44.383402
         },
         "index": 37
       },
@@ -786,24 +785,24 @@
         "handle": "63A",
         "layer": "0",
         "start": {
-          "x": 79.59856,
-          "y": 1.381824,
+          "x": 87.09856,
+          "y": 2.265226,
           "z": 5.5
         },
         "end": {
-          "x": 79.59856,
-          "y": 1.381824,
+          "x": 87.09856,
+          "y": 2.265226,
           "z": 6.0
         },
         "length": 0.0,
         "orientation": "vertical",
         "start_local": {
-          "x": 70.5,
-          "z": 43.5
+          "x": 78.0,
+          "z": 44.383402
         },
         "end_local": {
-          "x": 70.5,
-          "z": 43.5
+          "x": 78.0,
+          "z": 44.383402
         },
         "index": 38
       },
@@ -812,24 +811,24 @@
         "handle": "63B",
         "layer": "0",
         "start": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 5.5
         },
         "end": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 5.0
         },
         "length": 0.0,
         "orientation": "vertical",
         "start_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "index": 39
       },
@@ -838,24 +837,24 @@
         "handle": "63C",
         "layer": "0",
         "start": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 5.0
         },
         "end": {
-          "x": 80.09856,
-          "y": 1.881824,
+          "x": 87.59856,
+          "y": 2.765226,
           "z": 5.0
         },
         "length": 0.5,
         "orientation": "horizontal",
         "start_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 71.0,
-          "z": 44.0
+          "x": 78.5,
+          "z": 44.883402
         },
         "index": 40
       },
@@ -864,24 +863,24 @@
         "handle": "63D",
         "layer": "0",
         "start": {
-          "x": 80.09856,
-          "y": 1.881824,
+          "x": 87.59856,
+          "y": 2.765226,
           "z": 5.0
         },
         "end": {
-          "x": 80.09856,
-          "y": 1.881824,
+          "x": 87.59856,
+          "y": 2.765226,
           "z": 6.0
         },
         "length": 0.0,
         "orientation": "vertical",
         "start_local": {
-          "x": 71.0,
-          "z": 44.0
+          "x": 78.5,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 71.0,
-          "z": 44.0
+          "x": 78.5,
+          "z": 44.883402
         },
         "index": 41
       },
@@ -916,24 +915,24 @@
         "handle": "63F",
         "layer": "0",
         "start": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 6.0
         },
         "end": {
-          "x": 79.59856,
-          "y": 1.881824,
+          "x": 87.09856,
+          "y": 2.765226,
           "z": 5.5
         },
         "length": 0.0,
         "orientation": "vertical",
         "start_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "end_local": {
-          "x": 70.5,
-          "z": 44.0
+          "x": 78.0,
+          "z": 44.883402
         },
         "index": 43
       },
@@ -942,24 +941,24 @@
         "handle": "67F",
         "layer": "0",
         "start": {
-          "x": 81.09856,
-          "y": 5.881824,
+          "x": 88.59856,
+          "y": 6.765226,
           "z": 7.0
         },
         "end": {
-          "x": 53.59856,
-          "y": 5.881824,
+          "x": 61.09856,
+          "y": 6.765226,
           "z": 7.0
         },
         "length": 27.5,
         "orientation": "horizontal",
         "start_local": {
-          "x": 72.0,
-          "z": 48.0
+          "x": 79.5,
+          "z": 48.883402
         },
         "end_local": {
-          "x": 44.5,
-          "z": 48.0
+          "x": 52.0,
+          "z": 48.883402
         },
         "index": 58
       },
@@ -968,24 +967,24 @@
         "handle": "680",
         "layer": "0",
         "start": {
-          "x": 81.09856,
-          "y": 5.881824,
+          "x": 88.59856,
+          "y": 6.765226,
           "z": 4.0
         },
         "end": {
-          "x": 53.59856,
-          "y": 5.881824,
+          "x": 61.09856,
+          "y": 6.765226,
           "z": 4.0
         },
         "length": 27.5,
         "orientation": "horizontal",
         "start_local": {
-          "x": 72.0,
-          "z": 48.0
+          "x": 79.5,
+          "z": 48.883402
         },
         "end_local": {
-          "x": 44.5,
-          "z": 48.0
+          "x": 52.0,
+          "z": 48.883402
         },
         "index": 59
       }
@@ -1045,46 +1044,46 @@
         "vertex_count": 5,
         "vertices": [
           {
-            "x": 84.09856,
-            "y": -2.118176
+            "x": 91.59856,
+            "y": -1.234774
           },
           {
-            "x": 84.09856,
-            "y": 1.881824
+            "x": 91.59856,
+            "y": 2.765226
           },
           {
-            "x": 14.09856,
-            "y": 1.881824
+            "x": 21.59856,
+            "y": 2.765226
           },
           {
-            "x": 14.09856,
-            "y": -2.118176
+            "x": 21.59856,
+            "y": -1.234774
           },
           {
-            "x": 84.09856,
-            "y": -2.118176
+            "x": 91.59856,
+            "y": -1.234774
           }
         ],
         "vertices_local": [
           {
-            "x": 75.0,
-            "z": 40.0
+            "x": 82.5,
+            "z": 40.883402
           },
           {
-            "x": 75.0,
-            "z": 44.0
+            "x": 82.5,
+            "z": 44.883402
           },
           {
-            "x": 5.0,
-            "z": 44.0
+            "x": 12.5,
+            "z": 44.883402
           },
           {
-            "x": 5.0,
-            "z": 40.0
+            "x": 12.5,
+            "z": 40.883402
           },
           {
-            "x": 75.0,
-            "z": 40.0
+            "x": 82.5,
+            "z": 40.883402
           }
         ],
         "index": 32
@@ -1262,178 +1261,6 @@
           "z": 15.0
         },
         "index": 26
-      },
-      {
-        "type": "DIMENSION",
-        "handle": "6CD",
-        "layer": "0",
-        "name": "*D9",
-        "style": "ISO-25",
-        "dimension_type": 33,
-        "subclasses": [
-          "AcDbEntity",
-          "AcDbDimension",
-          "AcDbAlignedDimension"
-        ],
-        "measure": 22.5,
-        "definition_start": {
-          "x": 27.59856,
-          "y": -27.118176,
-          "z": 0.0
-        },
-        "definition_end": {
-          "x": 50.09856,
-          "y": -27.118176,
-          "z": 0.0
-        },
-        "dimension_line_point": {
-          "x": 50.09856,
-          "y": -22.580141,
-          "z": 0.0
-        },
-        "text_midpoint": {
-          "x": 38.84856,
-          "y": -20.496808,
-          "z": 0.0
-        },
-        "definition_start_local": {
-          "x": 18.5,
-          "z": 15.0
-        },
-        "definition_end_local": {
-          "x": 41.0,
-          "z": 15.0
-        },
-        "index": 77
-      },
-      {
-        "type": "DIMENSION",
-        "handle": "6E3",
-        "layer": "0",
-        "name": "*D10",
-        "style": "ISO-25",
-        "dimension_type": 33,
-        "subclasses": [
-          "AcDbEntity",
-          "AcDbDimension",
-          "AcDbAlignedDimension"
-        ],
-        "measure": 7.0,
-        "definition_start": {
-          "x": 84.09856,
-          "y": 17.881824,
-          "z": 0.0
-        },
-        "definition_end": {
-          "x": 84.09856,
-          "y": 24.881824,
-          "z": 0.0
-        },
-        "dimension_line_point": {
-          "x": 80.348106,
-          "y": 24.881824,
-          "z": 0.0
-        },
-        "text_midpoint": {
-          "x": 78.473106,
-          "y": 21.381824,
-          "z": 0.0
-        },
-        "definition_start_local": {
-          "x": 75.0,
-          "z": 60.0
-        },
-        "definition_end_local": {
-          "x": 75.0,
-          "z": 67.0
-        },
-        "index": 78
-      },
-      {
-        "type": "DIMENSION",
-        "handle": "6F9",
-        "layer": "0",
-        "name": "*D11",
-        "style": "ISO-25",
-        "dimension_type": 33,
-        "subclasses": [
-          "AcDbEntity",
-          "AcDbDimension",
-          "AcDbAlignedDimension"
-        ],
-        "measure": 27.0,
-        "definition_start": {
-          "x": 84.09856,
-          "y": -2.118176,
-          "z": 0.0
-        },
-        "definition_end": {
-          "x": 84.09856,
-          "y": -29.118176,
-          "z": 0.0
-        },
-        "dimension_line_point": {
-          "x": 79.946366,
-          "y": -29.118176,
-          "z": 0.0
-        },
-        "text_midpoint": {
-          "x": 78.071366,
-          "y": -15.618176,
-          "z": 0.0
-        },
-        "definition_start_local": {
-          "x": 75.0,
-          "z": 40.0
-        },
-        "definition_end_local": {
-          "x": 75.0,
-          "z": 13.0
-        },
-        "index": 79
-      },
-      {
-        "type": "DIMENSION",
-        "handle": "70F",
-        "layer": "0",
-        "name": "*D12",
-        "style": "ISO-25",
-        "dimension_type": 33,
-        "subclasses": [
-          "AcDbEntity",
-          "AcDbDimension",
-          "AcDbAlignedDimension"
-        ],
-        "measure": 12.0,
-        "definition_start": {
-          "x": 14.09856,
-          "y": 13.881824,
-          "z": 3.0
-        },
-        "definition_end": {
-          "x": 14.09856,
-          "y": 1.881824,
-          "z": 3.0
-        },
-        "dimension_line_point": {
-          "x": 4.353009,
-          "y": 1.881824,
-          "z": 0.0
-        },
-        "text_midpoint": {
-          "x": 2.478009,
-          "y": 7.881824,
-          "z": 0.0
-        },
-        "definition_start_local": {
-          "x": 5.0,
-          "z": 56.0
-        },
-        "definition_end_local": {
-          "x": 5.0,
-          "z": 44.0
-        },
-        "index": 80
       }
     ],
     "solids3d": [
@@ -1441,7 +1268,7 @@
         "type": "3DSOLID",
         "handle": "34A",
         "layer": "0",
-        "persistent_id": "{138bc89b-e540-4f4b-a7a3-4d6efcc4b51c}",
+        "persistent_id": "{03c8563c-eea7-4447-be10-9fd31ebeaf1a}",
         "history_handle": "34D",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 15
@@ -1459,7 +1286,7 @@
         "type": "3DSOLID",
         "handle": "40F",
         "layer": "0",
-        "persistent_id": "{63598287-dae4-d740-8228-5982bbe36543}",
+        "persistent_id": "{82953199-7c2d-244c-8bd6-402f07e836d9}",
         "history_handle": "412",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 20
@@ -1486,7 +1313,7 @@
         "type": "3DSOLID",
         "handle": "62D",
         "layer": "0",
-        "persistent_id": "{ef23027e-266c-364d-9cd8-f43830906601}",
+        "persistent_id": "{84c212c2-dc09-f94f-81af-f5a2119d6f20}",
         "history_handle": "630",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 31
@@ -1495,7 +1322,7 @@
         "type": "3DSOLID",
         "handle": "632",
         "layer": "0",
-        "persistent_id": "{f32e6cc4-320b-f040-a2b0-42c03b7e5070}",
+        "persistent_id": "{a43d72d7-95ba-364b-958c-98acc36c4837}",
         "history_handle": "635",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 33
@@ -1504,7 +1331,7 @@
         "type": "3DSOLID",
         "handle": "640",
         "layer": "0",
-        "persistent_id": "{05c45495-28a7-8c4c-8779-ddec74e15e28}",
+        "persistent_id": "{23501565-8ebf-cf40-a093-f7d3560e32ef}",
         "history_handle": "643",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 44
@@ -1513,7 +1340,7 @@
         "type": "3DSOLID",
         "handle": "645",
         "layer": "0",
-        "persistent_id": "{55357b96-ee92-7545-9b3d-23966f56cc64}",
+        "persistent_id": "{d1882d9f-38f1-e84f-9da1-1ac059965b6d}",
         "history_handle": "646",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 45
@@ -1522,7 +1349,7 @@
         "type": "3DSOLID",
         "handle": "649",
         "layer": "0",
-        "persistent_id": "{a21be323-2532-c543-a9b5-c7639121ab19}",
+        "persistent_id": "{1a0c6584-0eb5-0144-9bea-c99d1da0c59d}",
         "history_handle": "64A",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 46
@@ -1531,7 +1358,7 @@
         "type": "3DSOLID",
         "handle": "64D",
         "layer": "0",
-        "persistent_id": "{84b35f70-2b0a-dd42-8b41-1e75115a7201}",
+        "persistent_id": "{8bb6c714-3036-e940-9f26-f0541a98c3e0}",
         "history_handle": "64E",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 47
@@ -1540,7 +1367,7 @@
         "type": "3DSOLID",
         "handle": "651",
         "layer": "0",
-        "persistent_id": "{0722ea93-3748-2644-91be-86f232ed3dcb}",
+        "persistent_id": "{dc585e4b-f95c-a440-900f-215af00e2668}",
         "history_handle": "652",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 48
@@ -1549,7 +1376,7 @@
         "type": "3DSOLID",
         "handle": "655",
         "layer": "0",
-        "persistent_id": "{dc3ef7b7-e09a-7c41-84a2-a49f48806db8}",
+        "persistent_id": "{1d0a7158-fd75-b447-9a2f-e5c21af8baf2}",
         "history_handle": "656",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 49
@@ -1558,7 +1385,7 @@
         "type": "3DSOLID",
         "handle": "659",
         "layer": "0",
-        "persistent_id": "{5f090b12-1c20-5a4b-ab53-22eaebfabb34}",
+        "persistent_id": "{c844d7a6-3a41-a940-bc3e-e5889d2cbfaa}",
         "history_handle": "65A",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 50
@@ -1567,7 +1394,7 @@
         "type": "3DSOLID",
         "handle": "65D",
         "layer": "0",
-        "persistent_id": "{b47f41b4-5087-544a-9794-a7f4c880f155}",
+        "persistent_id": "{09553a1e-0b25-d846-a3d9-c745293b8e20}",
         "history_handle": "65E",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 51
@@ -1576,7 +1403,7 @@
         "type": "3DSOLID",
         "handle": "661",
         "layer": "0",
-        "persistent_id": "{6c360a5d-accd-a343-97ac-2fe5566b4fe3}",
+        "persistent_id": "{554804af-c8b0-d24b-9c18-0144fdba4534}",
         "history_handle": "662",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 52
@@ -1585,7 +1412,7 @@
         "type": "3DSOLID",
         "handle": "665",
         "layer": "0",
-        "persistent_id": "{949ba308-d992-b248-9aba-8a1e4282007d}",
+        "persistent_id": "{09278831-8048-4840-9d90-dc514b02dfb1}",
         "history_handle": "666",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 53
@@ -1594,7 +1421,7 @@
         "type": "3DSOLID",
         "handle": "669",
         "layer": "0",
-        "persistent_id": "{050a38dc-8704-bd4f-bb7a-514373dad702}",
+        "persistent_id": "{2e2b4799-9eb5-7145-83af-e6bc0e35c5cf}",
         "history_handle": "66A",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 54
@@ -1603,7 +1430,7 @@
         "type": "3DSOLID",
         "handle": "66D",
         "layer": "0",
-        "persistent_id": "{bbbcac4d-e65c-4e4a-baeb-516184454436}",
+        "persistent_id": "{9487e95b-baeb-ad4e-afee-6c87762073d7}",
         "history_handle": "66E",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 55
@@ -1612,7 +1439,7 @@
         "type": "3DSOLID",
         "handle": "671",
         "layer": "0",
-        "persistent_id": "{2096985b-2e2c-c347-8de0-f856908a10b6}",
+        "persistent_id": "{036e13d1-1286-eb4a-8f98-6e135d33bbff}",
         "history_handle": "672",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 56
@@ -1621,7 +1448,7 @@
         "type": "3DSOLID",
         "handle": "675",
         "layer": "0",
-        "persistent_id": "{5c477d80-287a-4046-9238-49984b780911}",
+        "persistent_id": "{94327f19-a5b7-d84c-8b40-df4c54e40a0f}",
         "history_handle": "676",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 57
@@ -1630,7 +1457,7 @@
         "type": "3DSOLID",
         "handle": "681",
         "layer": "0",
-        "persistent_id": "{55a9e195-f253-1042-841b-c94c5b771f15}",
+        "persistent_id": "{28aeb2a5-43a8-c547-bedd-142ca535f3d2}",
         "history_handle": "684",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 60
@@ -1639,7 +1466,7 @@
         "type": "3DSOLID",
         "handle": "685",
         "layer": "0",
-        "persistent_id": "{80f98424-3810-c047-ab96-97df08f52c63}",
+        "persistent_id": "{4d23e70c-0ac6-8047-a68e-253dc0e91167}",
         "history_handle": "686",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 61
@@ -1648,7 +1475,7 @@
         "type": "3DSOLID",
         "handle": "689",
         "layer": "0",
-        "persistent_id": "{154cdbe8-3854-9a43-b249-4c256f0cedfb}",
+        "persistent_id": "{93d68c0d-d347-8f4f-8642-c2aa39a96d4e}",
         "history_handle": "68A",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 62
@@ -1657,7 +1484,7 @@
         "type": "3DSOLID",
         "handle": "68D",
         "layer": "0",
-        "persistent_id": "{48adebfc-fb8e-4f40-b04b-e960b0a871c3}",
+        "persistent_id": "{57561eda-1909-c44b-8a65-e5f4e97e992d}",
         "history_handle": "68E",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 63
@@ -1666,7 +1493,7 @@
         "type": "3DSOLID",
         "handle": "691",
         "layer": "0",
-        "persistent_id": "{2e644f8a-4b7e-e64d-afdb-c5508fa117a9}",
+        "persistent_id": "{1dbadd7d-e04c-7340-acee-43f01ae2d720}",
         "history_handle": "692",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 64
@@ -1675,7 +1502,7 @@
         "type": "3DSOLID",
         "handle": "695",
         "layer": "0",
-        "persistent_id": "{ab1e99e0-59f5-a445-b0c3-b93083d50bdf}",
+        "persistent_id": "{752aeada-8b2c-d948-b443-d1aff8ebe311}",
         "history_handle": "696",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 65
@@ -1684,7 +1511,7 @@
         "type": "3DSOLID",
         "handle": "699",
         "layer": "0",
-        "persistent_id": "{8d484fc5-ab4c-db42-a70c-2ec401bfc95b}",
+        "persistent_id": "{08f4dc47-a45e-5845-9e81-7dc931a13f5b}",
         "history_handle": "69A",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 66
@@ -1693,7 +1520,7 @@
         "type": "3DSOLID",
         "handle": "69D",
         "layer": "0",
-        "persistent_id": "{6c7a3302-fe2a-5f40-ba35-f45e19fb0088}",
+        "persistent_id": "{7a7101ce-f6b7-164b-bfd3-5ad9376b0ca9}",
         "history_handle": "69E",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 67
@@ -1702,7 +1529,7 @@
         "type": "3DSOLID",
         "handle": "6A1",
         "layer": "0",
-        "persistent_id": "{4503b9f2-e6ce-8940-a10c-146a125f2a66}",
+        "persistent_id": "{8aac4349-486b-5546-9b12-ec1895217f18}",
         "history_handle": "6A2",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 68
@@ -1711,7 +1538,7 @@
         "type": "3DSOLID",
         "handle": "6A5",
         "layer": "0",
-        "persistent_id": "{bc3cc2ed-aef9-1a46-90de-0556668db821}",
+        "persistent_id": "{030a7bb2-07da-cf4c-8737-1c0be806b698}",
         "history_handle": "6A6",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 69
@@ -1720,7 +1547,7 @@
         "type": "3DSOLID",
         "handle": "6A9",
         "layer": "0",
-        "persistent_id": "{b07fb365-441c-234f-9bf8-e41c46a2cd47}",
+        "persistent_id": "{47420c6e-be68-0c4c-bad0-e55985f53242}",
         "history_handle": "6AA",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 70
@@ -1729,7 +1556,7 @@
         "type": "3DSOLID",
         "handle": "6AD",
         "layer": "0",
-        "persistent_id": "{bfa61a51-d42a-f54e-b954-e42d9ae64ab7}",
+        "persistent_id": "{80663273-5585-9b4c-8ae9-bb3c338651d7}",
         "history_handle": "6AE",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 71
@@ -1738,7 +1565,7 @@
         "type": "3DSOLID",
         "handle": "6B1",
         "layer": "0",
-        "persistent_id": "{b49a5985-c83b-da43-9a10-0e8eacee147c}",
+        "persistent_id": "{6f1e63aa-d84a-bd41-8172-ea2fd0d6cf99}",
         "history_handle": "6B2",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 72
@@ -1747,7 +1574,7 @@
         "type": "3DSOLID",
         "handle": "6B5",
         "layer": "0",
-        "persistent_id": "{640cdbee-baa2-d34a-a877-f370f0dae8fc}",
+        "persistent_id": "{4d78d562-0380-f545-9705-866f382c1819}",
         "history_handle": "6B6",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 73
@@ -1756,7 +1583,7 @@
         "type": "3DSOLID",
         "handle": "6B9",
         "layer": "0",
-        "persistent_id": "{cbe3fc7f-dd48-e541-ae78-21b7634c3c5d}",
+        "persistent_id": "{b19eb613-f0f1-234d-863a-5ccf7cedf05f}",
         "history_handle": "6BA",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 74
@@ -1765,7 +1592,7 @@
         "type": "3DSOLID",
         "handle": "6BD",
         "layer": "0",
-        "persistent_id": "{483ffcea-757c-0c46-af08-9f350543af7b}",
+        "persistent_id": "{df6876eb-fa2f-cf46-a208-32b83f7dea73}",
         "history_handle": "6BE",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 75
@@ -1774,7 +1601,7 @@
         "type": "3DSOLID",
         "handle": "6C1",
         "layer": "0",
-        "persistent_id": "{ba366fee-93fb-1743-bc82-28b16874a87e}",
+        "persistent_id": "{72866af2-e757-2d46-8608-2dd9f48e485b}",
         "history_handle": "6C2",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 76
@@ -1862,78 +1689,6 @@
         "orientation": "horizontal",
         "cad": {
           "start": {
-            "x": 14.09856,
-            "y": -2.118176
-          },
-          "end": {
-            "x": 84.09856,
-            "y": -2.118176
-          }
-        },
-        "local": {
-          "start": {
-            "x": 5.0,
-            "z": 40.0
-          },
-          "end": {
-            "x": 75.0,
-            "z": 40.0
-          }
-        },
-        "length": 70.0
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
-            "x": 14.09856,
-            "y": 1.881824
-          },
-          "end": {
-            "x": 84.09856,
-            "y": 1.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 5.0,
-            "z": 44.0
-          },
-          "end": {
-            "x": 75.0,
-            "z": 44.0
-          }
-        },
-        "length": 70.0
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
-            "x": 14.09856,
-            "y": 17.881824
-          },
-          "end": {
-            "x": 84.09856,
-            "y": 17.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 5.0,
-            "z": 60.0
-          },
-          "end": {
-            "x": 75.0,
-            "z": 60.0
-          }
-        },
-        "length": 70.0
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
             "x": 19.09856,
             "y": -42.118176
           },
@@ -1982,25 +1737,73 @@
         "orientation": "horizontal",
         "cad": {
           "start": {
-            "x": 53.59856,
-            "y": 5.881824
+            "x": 21.59856,
+            "y": -1.234774
           },
           "end": {
-            "x": 81.09856,
-            "y": 5.881824
+            "x": 91.59856,
+            "y": -1.234774
           }
         },
         "local": {
           "start": {
-            "x": 44.5,
-            "z": 48.0
+            "x": 12.5,
+            "z": 40.883402
           },
           "end": {
-            "x": 72.0,
-            "z": 48.0
+            "x": 82.5,
+            "z": 40.883402
           }
         },
-        "length": 27.5
+        "length": 70.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 21.59856,
+            "y": 2.765226
+          },
+          "end": {
+            "x": 91.59856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 12.5,
+            "z": 44.883402
+          },
+          "end": {
+            "x": 82.5,
+            "z": 44.883402
+          }
+        },
+        "length": 70.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 21.59856,
+            "y": 18.765226
+          },
+          "end": {
+            "x": 91.59856,
+            "y": 18.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 12.5,
+            "z": 60.883402
+          },
+          "end": {
+            "x": 82.5,
+            "z": 60.883402
+          }
+        },
+        "length": 70.0
       },
       {
         "orientation": "horizontal",
@@ -2054,6 +1857,30 @@
         "orientation": "horizontal",
         "cad": {
           "start": {
+            "x": 61.09856,
+            "y": 6.765226
+          },
+          "end": {
+            "x": 88.59856,
+            "y": 6.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 52.0,
+            "z": 48.883402
+          },
+          "end": {
+            "x": 79.5,
+            "z": 48.883402
+          }
+        },
+        "length": 27.5
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
             "x": 74.09856,
             "y": 37.881824
           },
@@ -2078,54 +1905,6 @@
         "orientation": "horizontal",
         "cad": {
           "start": {
-            "x": 79.09856,
-            "y": 1.881824
-          },
-          "end": {
-            "x": 79.59856,
-            "y": 1.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 70.0,
-            "z": 44.0
-          },
-          "end": {
-            "x": 70.5,
-            "z": 44.0
-          }
-        },
-        "length": 0.5
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
-            "x": 79.09856,
-            "y": 1.881824
-          },
-          "end": {
-            "x": 84.09856,
-            "y": 1.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 70.0,
-            "z": 44.0
-          },
-          "end": {
-            "x": 75.0,
-            "z": 44.0
-          }
-        },
-        "length": 5.0
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
             "x": 79.59856,
             "y": 1.881824
           },
@@ -2142,6 +1921,78 @@
           "end": {
             "x": 71.0,
             "z": 44.0
+          }
+        },
+        "length": 0.5
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 86.59856,
+            "y": 2.765226
+          },
+          "end": {
+            "x": 87.09856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 77.5,
+            "z": 44.883402
+          },
+          "end": {
+            "x": 78.0,
+            "z": 44.883402
+          }
+        },
+        "length": 0.5
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 86.59856,
+            "y": 2.765226
+          },
+          "end": {
+            "x": 91.59856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 77.5,
+            "z": 44.883402
+          },
+          "end": {
+            "x": 82.5,
+            "z": 44.883402
+          }
+        },
+        "length": 5.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": 87.09856,
+            "y": 2.765226
+          },
+          "end": {
+            "x": 87.59856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 78.0,
+            "z": 44.883402
+          },
+          "end": {
+            "x": 78.5,
+            "z": 44.883402
           }
         },
         "length": 0.5
@@ -2246,121 +2097,25 @@
         "orientation": "vertical",
         "cad": {
           "start": {
-            "x": 14.09856,
-            "y": -2.118176
+            "x": 21.59856,
+            "y": -1.234774
           },
           "end": {
-            "x": 14.09856,
-            "y": 1.881824
+            "x": 21.59856,
+            "y": 2.765226
           }
         },
         "local": {
           "start": {
-            "x": 5.0,
-            "z": 40.0
+            "x": 12.5,
+            "z": 40.883402
           },
           "end": {
-            "x": 5.0,
-            "z": 44.0
+            "x": 12.5,
+            "z": 44.883402
           }
         },
         "length": 4.0
-      },
-      {
-        "orientation": "vertical",
-        "cad": {
-          "start": {
-            "x": 79.59856,
-            "y": 1.381824
-          },
-          "end": {
-            "x": 79.59856,
-            "y": 1.381824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 70.5,
-            "z": 43.5
-          },
-          "end": {
-            "x": 70.5,
-            "z": 43.5
-          }
-        },
-        "length": 0.0
-      },
-      {
-        "orientation": "vertical",
-        "cad": {
-          "start": {
-            "x": 79.59856,
-            "y": 1.381824
-          },
-          "end": {
-            "x": 79.59856,
-            "y": 1.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 70.5,
-            "z": 43.5
-          },
-          "end": {
-            "x": 70.5,
-            "z": 44.0
-          }
-        },
-        "length": 0.5
-      },
-      {
-        "orientation": "vertical",
-        "cad": {
-          "start": {
-            "x": 79.59856,
-            "y": 1.881824
-          },
-          "end": {
-            "x": 79.59856,
-            "y": 1.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 70.5,
-            "z": 44.0
-          },
-          "end": {
-            "x": 70.5,
-            "z": 44.0
-          }
-        },
-        "length": 0.0
-      },
-      {
-        "orientation": "vertical",
-        "cad": {
-          "start": {
-            "x": 80.09856,
-            "y": 1.881824
-          },
-          "end": {
-            "x": 80.09856,
-            "y": 1.881824
-          }
-        },
-        "local": {
-          "start": {
-            "x": 71.0,
-            "z": 44.0
-          },
-          "end": {
-            "x": 71.0,
-            "z": 44.0
-          }
-        },
-        "length": 0.0
       },
       {
         "orientation": "vertical",
@@ -2390,22 +2145,118 @@
         "orientation": "vertical",
         "cad": {
           "start": {
-            "x": 84.09856,
-            "y": -12.118176
+            "x": 87.09856,
+            "y": 2.265226
           },
           "end": {
-            "x": 84.09856,
-            "y": 7.881824
+            "x": 87.09856,
+            "y": 2.265226
           }
         },
         "local": {
           "start": {
-            "x": 75.0,
-            "z": 30.0
+            "x": 78.0,
+            "z": 44.383402
           },
           "end": {
-            "x": 75.0,
-            "z": 50.0
+            "x": 78.0,
+            "z": 44.383402
+          }
+        },
+        "length": 0.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 87.09856,
+            "y": 2.265226
+          },
+          "end": {
+            "x": 87.09856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 78.0,
+            "z": 44.383402
+          },
+          "end": {
+            "x": 78.0,
+            "z": 44.883402
+          }
+        },
+        "length": 0.5
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 87.09856,
+            "y": 2.765226
+          },
+          "end": {
+            "x": 87.09856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 78.0,
+            "z": 44.883402
+          },
+          "end": {
+            "x": 78.0,
+            "z": 44.883402
+          }
+        },
+        "length": 0.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 87.59856,
+            "y": 2.765226
+          },
+          "end": {
+            "x": 87.59856,
+            "y": 2.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 78.5,
+            "z": 44.883402
+          },
+          "end": {
+            "x": 78.5,
+            "z": 44.883402
+          }
+        },
+        "length": 0.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 91.59856,
+            "y": -11.234774
+          },
+          "end": {
+            "x": 91.59856,
+            "y": 8.765226
+          }
+        },
+        "local": {
+          "start": {
+            "x": 82.5,
+            "z": 30.883402
+          },
+          "end": {
+            "x": 82.5,
+            "z": 50.883402
           }
         },
         "length": 20.0
@@ -2414,22 +2265,22 @@
         "orientation": "vertical",
         "cad": {
           "start": {
-            "x": 84.09856,
-            "y": -2.118176
+            "x": 91.59856,
+            "y": -1.234774
           },
           "end": {
-            "x": 84.09856,
-            "y": 1.881824
+            "x": 91.59856,
+            "y": 2.765226
           }
         },
         "local": {
           "start": {
-            "x": 75.0,
-            "z": 40.0
+            "x": 82.5,
+            "z": 40.883402
           },
           "end": {
-            "x": 75.0,
-            "z": 44.0
+            "x": 82.5,
+            "z": 44.883402
           }
         },
         "length": 4.0
@@ -2577,16 +2428,16 @@
       },
       {
         "cad_bounds": {
-          "min_x": 14.09856,
-          "min_y": -2.118176,
-          "max_x": 84.09856,
-          "max_y": 1.881824,
+          "min_x": 21.59856,
+          "min_y": -1.234774,
+          "max_x": 91.59856,
+          "max_y": 2.765226,
           "width": 70.0,
           "height": 4.0
         },
         "local_rect": {
-          "startX": 5.0,
-          "startZ": 40.0,
+          "startX": 12.5,
+          "startZ": 40.883402,
           "sx": 70.0,
           "sz": 4.0
         },
@@ -2598,8 +2449,8 @@
     "runtime_terrain_piece_candidates": [
       {
         "name": "rect_001_70x4",
-        "startX": 5.0,
-        "startZ": 40.0,
+        "startX": 12.5,
+        "startZ": 40.883402,
         "sx": 70.0,
         "sz": 4.0,
         "source": "closed_axis_aligned_segments"
@@ -2609,30 +2460,32 @@
       {
         "solid_handle": "34A",
         "history_handle": "34D",
-        "persistent_id": "{138bc89b-e540-4f4b-a7a3-4d6efcc4b51c}",
-        "name": "solid_34A_5x35",
+        "persistent_id": "{03c8563c-eea7-4447-be10-9fd31ebeaf1a}",
+        "name": "solid_34A_12_5x35",
         "box_handle": "34B",
         "graph_handle": "34C",
         "node_id": 17,
         "cad_center": {
-          "x": 11.59856,
+          "x": 15.34856,
           "y": 5.381824
         },
         "local_center": {
-          "x": 2.5,
+          "x": 6.25,
           "z": 47.5
         },
         "topdown_rect": {
           "startX": 0.0,
           "startZ": 30.0,
-          "sx": 5.0,
+          "sx": 12.5,
           "sz": 35.0
         },
         "raw_box_size": {
-          "x": 5.0,
+          "x": 12.5,
           "y": 35.0,
           "z": 3.0
         },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": 1.0,
           "m01": 0.0,
@@ -2640,265 +2493,6 @@
           "m10": 0.0,
           "m11": 1.0,
           "m12": 0.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "62D",
-        "history_handle": "630",
-        "persistent_id": "{ef23027e-266c-364d-9cd8-f43830906601}",
-        "name": "solid_62D_70x20",
-        "box_handle": "62E",
-        "graph_handle": "62F",
-        "node_id": 60,
-        "cad_center": {
-          "x": 49.09856,
-          "y": 7.881824
-        },
-        "local_center": {
-          "x": 40.0,
-          "z": 50.0
-        },
-        "topdown_rect": {
-          "startX": 5.0,
-          "startZ": 40.0,
-          "sx": 70.0,
-          "sz": 20.0
-        },
-        "raw_box_size": {
-          "x": 70.0,
-          "y": 20.0,
-          "z": 3.0
-        },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 1.0,
-          "m12": 0.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "632",
-        "history_handle": "635",
-        "persistent_id": "{f32e6cc4-320b-f040-a2b0-42c03b7e5070}",
-        "name": "solid_632_70x4",
-        "box_handle": "633",
-        "graph_handle": "634",
-        "node_id": 61,
-        "cad_center": {
-          "x": 49.09856,
-          "y": -0.118176
-        },
-        "local_center": {
-          "x": 40.0,
-          "z": 42.0
-        },
-        "topdown_rect": {
-          "startX": 5.0,
-          "startZ": 40.0,
-          "sx": 70.0,
-          "sz": 4.0
-        },
-        "raw_box_size": {
-          "x": 4.0,
-          "y": 70.0,
-          "z": 5.0
-        },
-        "topdown_transform": {
-          "m00": 0.0,
-          "m01": -1.0,
-          "m02": 0.0,
-          "m10": 1.0,
-          "m11": 0.0,
-          "m12": 0.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "689",
-        "history_handle": "68A",
-        "persistent_id": "{154cdbe8-3854-9a43-b249-4c256f0cedfb}",
-        "name": "solid_689_70x4",
-        "box_handle": "68C",
-        "graph_handle": "68B",
-        "node_id": 81,
-        "cad_center": {
-          "x": 49.09856,
-          "y": 15.881824
-        },
-        "local_center": {
-          "x": 40.0,
-          "z": 58.0
-        },
-        "topdown_rect": {
-          "startX": 5.0,
-          "startZ": 56.0,
-          "sx": 70.0,
-          "sz": 4.0
-        },
-        "raw_box_size": {
-          "x": 4.0,
-          "y": 70.0,
-          "z": 5.0
-        },
-        "topdown_transform": {
-          "m00": 0.0,
-          "m01": -1.0,
-          "m02": 0.0,
-          "m10": -1.0,
-          "m11": 0.0,
-          "m12": 0.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "685",
-        "history_handle": "686",
-        "persistent_id": "{80f98424-3810-c047-ab96-97df08f52c63}",
-        "name": "solid_685_27_5x1_8",
-        "box_handle": "688",
-        "graph_handle": "687",
-        "node_id": 78,
-        "cad_center": {
-          "x": 32.34856,
-          "y": 6.781824
-        },
-        "local_center": {
-          "x": 23.25,
-          "z": 48.9
-        },
-        "topdown_rect": {
-          "startX": 9.5,
-          "startZ": 48.0,
-          "sx": 27.5,
-          "sz": 1.8
-        },
-        "raw_box_size": {
-          "x": 27.5,
-          "y": 3.0,
-          "z": 1.8
-        },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 0.0,
-          "m12": 1.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "6C1",
-        "history_handle": "6C2",
-        "persistent_id": "{ba366fee-93fb-1743-bc82-28b16874a87e}",
-        "name": "solid_6C1_27_5x1_8",
-        "box_handle": "6C4",
-        "graph_handle": "6C3",
-        "node_id": 80,
-        "cad_center": {
-          "x": 32.34856,
-          "y": 8.981824
-        },
-        "local_center": {
-          "x": 23.25,
-          "z": 51.1
-        },
-        "topdown_rect": {
-          "startX": 9.5,
-          "startZ": 50.2,
-          "sx": 27.5,
-          "sz": 1.8
-        },
-        "raw_box_size": {
-          "x": 27.5,
-          "y": 3.0,
-          "z": 1.8
-        },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 0.0,
-          "m12": -1.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "675",
-        "history_handle": "676",
-        "persistent_id": "{5c477d80-287a-4046-9238-49984b780911}",
-        "name": "solid_675_0_5x4",
-        "box_handle": "678",
-        "graph_handle": "677",
-        "node_id": 75,
-        "cad_center": {
-          "x": 19.84856,
-          "y": 3.881824
-        },
-        "local_center": {
-          "x": 10.75,
-          "z": 46.0
-        },
-        "topdown_rect": {
-          "startX": 10.5,
-          "startZ": 44.0,
-          "sx": 0.5,
-          "sz": 4.0
-        },
-        "raw_box_size": {
-          "x": 0.5,
-          "y": 1.0,
-          "z": 4.0
-        },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 0.0,
-          "m12": 1.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "6B9",
-        "history_handle": "6BA",
-        "persistent_id": "{cbe3fc7f-dd48-e541-ae78-21b7634c3c5d}",
-        "name": "solid_6B9_0_5x4",
-        "box_handle": "6BC",
-        "graph_handle": "6BB",
-        "node_id": 93,
-        "cad_center": {
-          "x": 19.84856,
-          "y": 11.881824
-        },
-        "local_center": {
-          "x": 10.75,
-          "z": 54.0
-        },
-        "topdown_rect": {
-          "startX": 10.5,
-          "startZ": 52.0,
-          "sx": 0.5,
-          "sz": 4.0
-        },
-        "raw_box_size": {
-          "x": 0.5,
-          "y": 1.0,
-          "z": 4.0
-        },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 0.0,
-          "m12": -1.0
         },
         "source": "ACSH_BOX_CLASS"
       },
@@ -2929,6 +2523,8 @@
           "y": 10.0,
           "z": 3.0
         },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": 1.0,
           "m01": 0.0,
@@ -2940,24 +2536,219 @@
         "source": "ACSH_BOX_CLASS"
       },
       {
-        "solid_handle": "671",
-        "history_handle": "672",
-        "persistent_id": "{2096985b-2e2c-c347-8de0-f856908a10b6}",
-        "name": "solid_671_0_5x4",
-        "box_handle": "674",
-        "graph_handle": "673",
-        "node_id": 74,
+        "solid_handle": "62D",
+        "history_handle": "630",
+        "persistent_id": "{84c212c2-dc09-f94f-81af-f5a2119d6f20}",
+        "name": "solid_62D_70x20",
+        "box_handle": "62E",
+        "graph_handle": "62F",
+        "node_id": 60,
         "cad_center": {
-          "x": 24.84856,
-          "y": 3.881824
+          "x": 56.59856,
+          "y": 8.765226
         },
         "local_center": {
-          "x": 15.75,
-          "z": 46.0
+          "x": 47.5,
+          "z": 50.883402
         },
         "topdown_rect": {
-          "startX": 15.5,
-          "startZ": 44.0,
+          "startX": 12.5,
+          "startZ": 40.883402,
+          "sx": 70.0,
+          "sz": 20.0
+        },
+        "raw_box_size": {
+          "x": 70.0,
+          "y": 20.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "632",
+        "history_handle": "635",
+        "persistent_id": "{a43d72d7-95ba-364b-958c-98acc36c4837}",
+        "name": "solid_632_70x4",
+        "box_handle": "633",
+        "graph_handle": "634",
+        "node_id": 61,
+        "cad_center": {
+          "x": 56.59856,
+          "y": 0.765226
+        },
+        "local_center": {
+          "x": 47.5,
+          "z": 42.883402
+        },
+        "topdown_rect": {
+          "startX": 12.5,
+          "startZ": 40.883402,
+          "sx": 70.0,
+          "sz": 4.0
+        },
+        "raw_box_size": {
+          "x": 4.0,
+          "y": 70.0,
+          "z": 5.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 5.0,
+        "topdown_transform": {
+          "m00": 0.0,
+          "m01": -1.0,
+          "m02": 0.0,
+          "m10": 1.0,
+          "m11": 0.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "689",
+        "history_handle": "68A",
+        "persistent_id": "{93d68c0d-d347-8f4f-8642-c2aa39a96d4e}",
+        "name": "solid_689_70x4",
+        "box_handle": "68C",
+        "graph_handle": "68B",
+        "node_id": 81,
+        "cad_center": {
+          "x": 56.59856,
+          "y": 16.765226
+        },
+        "local_center": {
+          "x": 47.5,
+          "z": 58.883402
+        },
+        "topdown_rect": {
+          "startX": 12.5,
+          "startZ": 56.883402,
+          "sx": 70.0,
+          "sz": 4.0
+        },
+        "raw_box_size": {
+          "x": 4.0,
+          "y": 70.0,
+          "z": 5.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 5.0,
+        "topdown_transform": {
+          "m00": 0.0,
+          "m01": -1.0,
+          "m02": 0.0,
+          "m10": -1.0,
+          "m11": 0.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "685",
+        "history_handle": "686",
+        "persistent_id": "{4d23e70c-0ac6-8047-a68e-253dc0e91167}",
+        "name": "solid_685_27_5x1_8",
+        "box_handle": "688",
+        "graph_handle": "687",
+        "node_id": 78,
+        "cad_center": {
+          "x": 39.84856,
+          "y": 7.665226
+        },
+        "local_center": {
+          "x": 30.75,
+          "z": 49.783402
+        },
+        "topdown_rect": {
+          "startX": 17.0,
+          "startZ": 48.883402,
+          "sx": 27.5,
+          "sz": 1.8
+        },
+        "raw_box_size": {
+          "x": 27.5,
+          "y": 3.0,
+          "z": 1.8
+        },
+        "vertical_axis": "y",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 0.0,
+          "m12": 1.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "6C1",
+        "history_handle": "6C2",
+        "persistent_id": "{72866af2-e757-2d46-8608-2dd9f48e485b}",
+        "name": "solid_6C1_27_5x1_8",
+        "box_handle": "6C4",
+        "graph_handle": "6C3",
+        "node_id": 80,
+        "cad_center": {
+          "x": 39.84856,
+          "y": 9.865226
+        },
+        "local_center": {
+          "x": 30.75,
+          "z": 51.983402
+        },
+        "topdown_rect": {
+          "startX": 17.0,
+          "startZ": 51.083402,
+          "sx": 27.5,
+          "sz": 1.8
+        },
+        "raw_box_size": {
+          "x": 27.5,
+          "y": 3.0,
+          "z": 1.8
+        },
+        "vertical_axis": "y",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 0.0,
+          "m12": -1.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "675",
+        "history_handle": "676",
+        "persistent_id": "{94327f19-a5b7-d84c-8b40-df4c54e40a0f}",
+        "name": "solid_675_0_5x4",
+        "box_handle": "678",
+        "graph_handle": "677",
+        "node_id": 75,
+        "cad_center": {
+          "x": 27.34856,
+          "y": 4.765226
+        },
+        "local_center": {
+          "x": 18.25,
+          "z": 46.883402
+        },
+        "topdown_rect": {
+          "startX": 18.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -2966,6 +2757,86 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 0.0,
+          "m12": 1.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "6B9",
+        "history_handle": "6BA",
+        "persistent_id": "{b19eb613-f0f1-234d-863a-5ccf7cedf05f}",
+        "name": "solid_6B9_0_5x4",
+        "box_handle": "6BC",
+        "graph_handle": "6BB",
+        "node_id": 93,
+        "cad_center": {
+          "x": 27.34856,
+          "y": 12.765226
+        },
+        "local_center": {
+          "x": 18.25,
+          "z": 54.883402
+        },
+        "topdown_rect": {
+          "startX": 18.0,
+          "startZ": 52.883402,
+          "sx": 0.5,
+          "sz": 4.0
+        },
+        "raw_box_size": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 4.0
+        },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 0.0,
+          "m12": -1.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "671",
+        "history_handle": "672",
+        "persistent_id": "{036e13d1-1286-eb4a-8f98-6e135d33bbff}",
+        "name": "solid_671_0_5x4",
+        "box_handle": "674",
+        "graph_handle": "673",
+        "node_id": 74,
+        "cad_center": {
+          "x": 32.34856,
+          "y": 4.765226
+        },
+        "local_center": {
+          "x": 23.25,
+          "z": 46.883402
+        },
+        "topdown_rect": {
+          "startX": 23.0,
+          "startZ": 44.883402,
+          "sx": 0.5,
+          "sz": 4.0
+        },
+        "raw_box_size": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 4.0
+        },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -2979,22 +2850,22 @@
       {
         "solid_handle": "6B5",
         "history_handle": "6B6",
-        "persistent_id": "{640cdbee-baa2-d34a-a877-f370f0dae8fc}",
+        "persistent_id": "{4d78d562-0380-f545-9705-866f382c1819}",
         "name": "solid_6B5_0_5x4",
         "box_handle": "6B8",
         "graph_handle": "6B7",
         "node_id": 92,
         "cad_center": {
-          "x": 24.84856,
-          "y": 11.881824
+          "x": 32.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 15.75,
-          "z": 54.0
+          "x": 23.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 15.5,
-          "startZ": 52.0,
+          "startX": 23.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3003,6 +2874,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3016,22 +2889,22 @@
       {
         "solid_handle": "66D",
         "history_handle": "66E",
-        "persistent_id": "{bbbcac4d-e65c-4e4a-baeb-516184454436}",
+        "persistent_id": "{9487e95b-baeb-ad4e-afee-6c87762073d7}",
         "name": "solid_66D_0_5x4",
         "box_handle": "670",
         "graph_handle": "66F",
         "node_id": 73,
         "cad_center": {
-          "x": 29.84856,
-          "y": 3.881824
+          "x": 37.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 20.75,
-          "z": 46.0
+          "x": 28.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 20.5,
-          "startZ": 44.0,
+          "startX": 28.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3040,6 +2913,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3053,22 +2928,22 @@
       {
         "solid_handle": "6B1",
         "history_handle": "6B2",
-        "persistent_id": "{b49a5985-c83b-da43-9a10-0e8eacee147c}",
+        "persistent_id": "{6f1e63aa-d84a-bd41-8172-ea2fd0d6cf99}",
         "name": "solid_6B1_0_5x4",
         "box_handle": "6B4",
         "graph_handle": "6B3",
         "node_id": 91,
         "cad_center": {
-          "x": 29.84856,
-          "y": 11.881824
+          "x": 37.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 20.75,
-          "z": 54.0
+          "x": 28.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 20.5,
-          "startZ": 52.0,
+          "startX": 28.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3077,6 +2952,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3090,22 +2967,22 @@
       {
         "solid_handle": "669",
         "history_handle": "66A",
-        "persistent_id": "{050a38dc-8704-bd4f-bb7a-514373dad702}",
+        "persistent_id": "{2e2b4799-9eb5-7145-83af-e6bc0e35c5cf}",
         "name": "solid_669_0_5x4",
         "box_handle": "66C",
         "graph_handle": "66B",
         "node_id": 72,
         "cad_center": {
-          "x": 34.84856,
-          "y": 3.881824
+          "x": 42.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 25.75,
-          "z": 46.0
+          "x": 33.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 25.5,
-          "startZ": 44.0,
+          "startX": 33.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3114,6 +2991,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3127,22 +3006,22 @@
       {
         "solid_handle": "6AD",
         "history_handle": "6AE",
-        "persistent_id": "{bfa61a51-d42a-f54e-b954-e42d9ae64ab7}",
+        "persistent_id": "{80663273-5585-9b4c-8ae9-bb3c338651d7}",
         "name": "solid_6AD_0_5x4",
         "box_handle": "6B0",
         "graph_handle": "6AF",
         "node_id": 90,
         "cad_center": {
-          "x": 34.84856,
-          "y": 11.881824
+          "x": 42.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 25.75,
-          "z": 54.0
+          "x": 33.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 25.5,
-          "startZ": 52.0,
+          "startX": 33.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3151,6 +3030,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3164,22 +3045,22 @@
       {
         "solid_handle": "665",
         "history_handle": "666",
-        "persistent_id": "{949ba308-d992-b248-9aba-8a1e4282007d}",
+        "persistent_id": "{09278831-8048-4840-9d90-dc514b02dfb1}",
         "name": "solid_665_0_5x4",
         "box_handle": "668",
         "graph_handle": "667",
         "node_id": 71,
         "cad_center": {
-          "x": 39.84856,
-          "y": 3.881824
+          "x": 47.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 30.75,
-          "z": 46.0
+          "x": 38.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 30.5,
-          "startZ": 44.0,
+          "startX": 38.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3188,6 +3069,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3201,22 +3084,22 @@
       {
         "solid_handle": "6A9",
         "history_handle": "6AA",
-        "persistent_id": "{b07fb365-441c-234f-9bf8-e41c46a2cd47}",
+        "persistent_id": "{47420c6e-be68-0c4c-bad0-e55985f53242}",
         "name": "solid_6A9_0_5x4",
         "box_handle": "6AC",
         "graph_handle": "6AB",
         "node_id": 89,
         "cad_center": {
-          "x": 39.84856,
-          "y": 11.881824
+          "x": 47.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 30.75,
-          "z": 54.0
+          "x": 38.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 30.5,
-          "startZ": 52.0,
+          "startX": 38.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3225,80 +3108,8 @@
           "y": 1.0,
           "z": 4.0
         },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 0.0,
-          "m12": -1.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "661",
-        "history_handle": "662",
-        "persistent_id": "{6c360a5d-accd-a343-97ac-2fe5566b4fe3}",
-        "name": "solid_661_0_5x4",
-        "box_handle": "664",
-        "graph_handle": "663",
-        "node_id": 70,
-        "cad_center": {
-          "x": 44.84856,
-          "y": 3.881824
-        },
-        "local_center": {
-          "x": 35.75,
-          "z": 46.0
-        },
-        "topdown_rect": {
-          "startX": 35.5,
-          "startZ": 44.0,
-          "sx": 0.5,
-          "sz": 4.0
-        },
-        "raw_box_size": {
-          "x": 0.5,
-          "y": 1.0,
-          "z": 4.0
-        },
-        "topdown_transform": {
-          "m00": -1.0,
-          "m01": 0.0,
-          "m02": 0.0,
-          "m10": 0.0,
-          "m11": 0.0,
-          "m12": 1.0
-        },
-        "source": "ACSH_BOX_CLASS"
-      },
-      {
-        "solid_handle": "6A5",
-        "history_handle": "6A6",
-        "persistent_id": "{bc3cc2ed-aef9-1a46-90de-0556668db821}",
-        "name": "solid_6A5_0_5x4",
-        "box_handle": "6A8",
-        "graph_handle": "6A7",
-        "node_id": 88,
-        "cad_center": {
-          "x": 44.84856,
-          "y": 11.881824
-        },
-        "local_center": {
-          "x": 35.75,
-          "z": 54.0
-        },
-        "topdown_rect": {
-          "startX": 35.5,
-          "startZ": 52.0,
-          "sx": 0.5,
-          "sz": 4.0
-        },
-        "raw_box_size": {
-          "x": 0.5,
-          "y": 1.0,
-          "z": 4.0
-        },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3336,6 +3147,8 @@
           "y": 10.0,
           "z": 3.0
         },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": 1.0,
           "m01": 0.0,
@@ -3347,24 +3160,102 @@
         "source": "ACSH_BOX_CLASS"
       },
       {
+        "solid_handle": "661",
+        "history_handle": "662",
+        "persistent_id": "{554804af-c8b0-d24b-9c18-0144fdba4534}",
+        "name": "solid_661_0_5x4",
+        "box_handle": "664",
+        "graph_handle": "663",
+        "node_id": 70,
+        "cad_center": {
+          "x": 52.34856,
+          "y": 4.765226
+        },
+        "local_center": {
+          "x": 43.25,
+          "z": 46.883402
+        },
+        "topdown_rect": {
+          "startX": 43.0,
+          "startZ": 44.883402,
+          "sx": 0.5,
+          "sz": 4.0
+        },
+        "raw_box_size": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 4.0
+        },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 0.0,
+          "m12": 1.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "6A5",
+        "history_handle": "6A6",
+        "persistent_id": "{030a7bb2-07da-cf4c-8737-1c0be806b698}",
+        "name": "solid_6A5_0_5x4",
+        "box_handle": "6A8",
+        "graph_handle": "6A7",
+        "node_id": 88,
+        "cad_center": {
+          "x": 52.34856,
+          "y": 12.765226
+        },
+        "local_center": {
+          "x": 43.25,
+          "z": 54.883402
+        },
+        "topdown_rect": {
+          "startX": 43.0,
+          "startZ": 52.883402,
+          "sx": 0.5,
+          "sz": 4.0
+        },
+        "raw_box_size": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 4.0
+        },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 0.0,
+          "m12": -1.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
         "solid_handle": "681",
         "history_handle": "684",
-        "persistent_id": "{55a9e195-f253-1042-841b-c94c5b771f15}",
+        "persistent_id": "{28aeb2a5-43a8-c547-bedd-142ca535f3d2}",
         "name": "solid_681_27_5x1_8",
         "box_handle": "682",
         "graph_handle": "683",
         "node_id": 77,
         "cad_center": {
-          "x": 67.34856,
-          "y": 6.781824
+          "x": 74.84856,
+          "y": 7.665226
         },
         "local_center": {
-          "x": 58.25,
-          "z": 48.9
+          "x": 65.75,
+          "z": 49.783402
         },
         "topdown_rect": {
-          "startX": 44.5,
-          "startZ": 48.0,
+          "startX": 52.0,
+          "startZ": 48.883402,
           "sx": 27.5,
           "sz": 1.8
         },
@@ -3373,6 +3264,8 @@
           "y": 3.0,
           "z": 1.8
         },
+        "vertical_axis": "y",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3386,22 +3279,22 @@
       {
         "solid_handle": "6BD",
         "history_handle": "6BE",
-        "persistent_id": "{483ffcea-757c-0c46-af08-9f350543af7b}",
+        "persistent_id": "{df6876eb-fa2f-cf46-a208-32b83f7dea73}",
         "name": "solid_6BD_27_5x1_8",
         "box_handle": "6C0",
         "graph_handle": "6BF",
         "node_id": 79,
         "cad_center": {
-          "x": 67.34856,
-          "y": 8.981824
+          "x": 74.84856,
+          "y": 9.865226
         },
         "local_center": {
-          "x": 58.25,
-          "z": 51.1
+          "x": 65.75,
+          "z": 51.983402
         },
         "topdown_rect": {
-          "startX": 44.5,
-          "startZ": 50.2,
+          "startX": 52.0,
+          "startZ": 51.083402,
           "sx": 27.5,
           "sz": 1.8
         },
@@ -3410,6 +3303,8 @@
           "y": 3.0,
           "z": 1.8
         },
+        "vertical_axis": "y",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3423,22 +3318,22 @@
       {
         "solid_handle": "65D",
         "history_handle": "65E",
-        "persistent_id": "{b47f41b4-5087-544a-9794-a7f4c880f155}",
+        "persistent_id": "{09553a1e-0b25-d846-a3d9-c745293b8e20}",
         "name": "solid_65D_0_5x4",
         "box_handle": "660",
         "graph_handle": "65F",
         "node_id": 69,
         "cad_center": {
-          "x": 54.84856,
-          "y": 3.881824
+          "x": 62.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 45.75,
-          "z": 46.0
+          "x": 53.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 45.5,
-          "startZ": 44.0,
+          "startX": 53.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3447,6 +3342,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3460,22 +3357,22 @@
       {
         "solid_handle": "6A1",
         "history_handle": "6A2",
-        "persistent_id": "{4503b9f2-e6ce-8940-a10c-146a125f2a66}",
+        "persistent_id": "{8aac4349-486b-5546-9b12-ec1895217f18}",
         "name": "solid_6A1_0_5x4",
         "box_handle": "6A4",
         "graph_handle": "6A3",
         "node_id": 87,
         "cad_center": {
-          "x": 54.84856,
-          "y": 11.881824
+          "x": 62.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 45.75,
-          "z": 54.0
+          "x": 53.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 45.5,
-          "startZ": 52.0,
+          "startX": 53.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3484,6 +3381,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3497,22 +3396,22 @@
       {
         "solid_handle": "659",
         "history_handle": "65A",
-        "persistent_id": "{5f090b12-1c20-5a4b-ab53-22eaebfabb34}",
+        "persistent_id": "{c844d7a6-3a41-a940-bc3e-e5889d2cbfaa}",
         "name": "solid_659_0_5x4",
         "box_handle": "65C",
         "graph_handle": "65B",
         "node_id": 68,
         "cad_center": {
-          "x": 59.84856,
-          "y": 3.881824
+          "x": 67.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 50.75,
-          "z": 46.0
+          "x": 58.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 50.5,
-          "startZ": 44.0,
+          "startX": 58.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3521,6 +3420,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3534,22 +3435,22 @@
       {
         "solid_handle": "69D",
         "history_handle": "69E",
-        "persistent_id": "{6c7a3302-fe2a-5f40-ba35-f45e19fb0088}",
+        "persistent_id": "{7a7101ce-f6b7-164b-bfd3-5ad9376b0ca9}",
         "name": "solid_69D_0_5x4",
         "box_handle": "6A0",
         "graph_handle": "69F",
         "node_id": 86,
         "cad_center": {
-          "x": 59.84856,
-          "y": 11.881824
+          "x": 67.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 50.75,
-          "z": 54.0
+          "x": 58.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 50.5,
-          "startZ": 52.0,
+          "startX": 58.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3558,6 +3459,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3571,22 +3474,22 @@
       {
         "solid_handle": "655",
         "history_handle": "656",
-        "persistent_id": "{dc3ef7b7-e09a-7c41-84a2-a49f48806db8}",
+        "persistent_id": "{1d0a7158-fd75-b447-9a2f-e5c21af8baf2}",
         "name": "solid_655_0_5x4",
         "box_handle": "658",
         "graph_handle": "657",
         "node_id": 67,
         "cad_center": {
-          "x": 64.84856,
-          "y": 3.881824
+          "x": 72.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 55.75,
-          "z": 46.0
+          "x": 63.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 55.5,
-          "startZ": 44.0,
+          "startX": 63.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3595,6 +3498,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3608,22 +3513,22 @@
       {
         "solid_handle": "699",
         "history_handle": "69A",
-        "persistent_id": "{8d484fc5-ab4c-db42-a70c-2ec401bfc95b}",
+        "persistent_id": "{08f4dc47-a45e-5845-9e81-7dc931a13f5b}",
         "name": "solid_699_0_5x4",
         "box_handle": "69C",
         "graph_handle": "69B",
         "node_id": 85,
         "cad_center": {
-          "x": 64.84856,
-          "y": 11.881824
+          "x": 72.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 55.75,
-          "z": 54.0
+          "x": 63.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 55.5,
-          "startZ": 52.0,
+          "startX": 63.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3632,6 +3537,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3645,22 +3552,22 @@
       {
         "solid_handle": "651",
         "history_handle": "652",
-        "persistent_id": "{0722ea93-3748-2644-91be-86f232ed3dcb}",
+        "persistent_id": "{dc585e4b-f95c-a440-900f-215af00e2668}",
         "name": "solid_651_0_5x4",
         "box_handle": "654",
         "graph_handle": "653",
         "node_id": 66,
         "cad_center": {
-          "x": 69.84856,
-          "y": 3.881824
+          "x": 77.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 60.75,
-          "z": 46.0
+          "x": 68.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 60.5,
-          "startZ": 44.0,
+          "startX": 68.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3669,6 +3576,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3682,22 +3591,22 @@
       {
         "solid_handle": "695",
         "history_handle": "696",
-        "persistent_id": "{ab1e99e0-59f5-a445-b0c3-b93083d50bdf}",
+        "persistent_id": "{752aeada-8b2c-d948-b443-d1aff8ebe311}",
         "name": "solid_695_0_5x4",
         "box_handle": "698",
         "graph_handle": "697",
         "node_id": 84,
         "cad_center": {
-          "x": 69.84856,
-          "y": 11.881824
+          "x": 77.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 60.75,
-          "z": 54.0
+          "x": 68.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 60.5,
-          "startZ": 52.0,
+          "startX": 68.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3706,6 +3615,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3719,22 +3630,22 @@
       {
         "solid_handle": "645",
         "history_handle": "646",
-        "persistent_id": "{55357b96-ee92-7545-9b3d-23966f56cc64}",
+        "persistent_id": "{d1882d9f-38f1-e84f-9da1-1ac059965b6d}",
         "name": "solid_645_0_5x4",
         "box_handle": "648",
         "graph_handle": "647",
         "node_id": 63,
         "cad_center": {
-          "x": 74.84856,
-          "y": 3.881824
+          "x": 82.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 65.75,
-          "z": 46.0
+          "x": 73.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 65.5,
-          "startZ": 44.0,
+          "startX": 73.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3743,6 +3654,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3756,22 +3669,22 @@
       {
         "solid_handle": "649",
         "history_handle": "64A",
-        "persistent_id": "{a21be323-2532-c543-a9b5-c7639121ab19}",
+        "persistent_id": "{1a0c6584-0eb5-0144-9bea-c99d1da0c59d}",
         "name": "solid_649_0_5x4",
         "box_handle": "64C",
         "graph_handle": "64B",
         "node_id": 64,
         "cad_center": {
-          "x": 74.84856,
-          "y": 3.881824
+          "x": 82.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 65.75,
-          "z": 46.0
+          "x": 73.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 65.5,
-          "startZ": 44.0,
+          "startX": 73.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3780,6 +3693,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3793,22 +3708,22 @@
       {
         "solid_handle": "64D",
         "history_handle": "64E",
-        "persistent_id": "{84b35f70-2b0a-dd42-8b41-1e75115a7201}",
+        "persistent_id": "{8bb6c714-3036-e940-9f26-f0541a98c3e0}",
         "name": "solid_64D_0_5x4",
         "box_handle": "650",
         "graph_handle": "64F",
         "node_id": 65,
         "cad_center": {
-          "x": 74.84856,
-          "y": 3.881824
+          "x": 82.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 65.75,
-          "z": 46.0
+          "x": 73.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 65.5,
-          "startZ": 44.0,
+          "startX": 73.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3817,6 +3732,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3830,22 +3747,22 @@
       {
         "solid_handle": "691",
         "history_handle": "692",
-        "persistent_id": "{2e644f8a-4b7e-e64d-afdb-c5508fa117a9}",
+        "persistent_id": "{1dbadd7d-e04c-7340-acee-43f01ae2d720}",
         "name": "solid_691_0_5x4",
         "box_handle": "694",
         "graph_handle": "693",
         "node_id": 83,
         "cad_center": {
-          "x": 74.84856,
-          "y": 11.881824
+          "x": 82.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 65.75,
-          "z": 54.0
+          "x": 73.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 65.5,
-          "startZ": 52.0,
+          "startX": 73.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3854,6 +3771,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3867,22 +3786,22 @@
       {
         "solid_handle": "640",
         "history_handle": "643",
-        "persistent_id": "{05c45495-28a7-8c4c-8779-ddec74e15e28}",
+        "persistent_id": "{23501565-8ebf-cf40-a093-f7d3560e32ef}",
         "name": "solid_640_0_5x4",
         "box_handle": "641",
         "graph_handle": "642",
         "node_id": 62,
         "cad_center": {
-          "x": 79.84856,
-          "y": 3.881824
+          "x": 87.34856,
+          "y": 4.765226
         },
         "local_center": {
-          "x": 70.75,
-          "z": 46.0
+          "x": 78.25,
+          "z": 46.883402
         },
         "topdown_rect": {
-          "startX": 70.5,
-          "startZ": 44.0,
+          "startX": 78.0,
+          "startZ": 44.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3891,6 +3810,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3904,22 +3825,22 @@
       {
         "solid_handle": "68D",
         "history_handle": "68E",
-        "persistent_id": "{48adebfc-fb8e-4f40-b04b-e960b0a871c3}",
+        "persistent_id": "{57561eda-1909-c44b-8a65-e5f4e97e992d}",
         "name": "solid_68D_0_5x4",
         "box_handle": "690",
         "graph_handle": "68F",
         "node_id": 82,
         "cad_center": {
-          "x": 79.84856,
-          "y": 11.881824
+          "x": 87.34856,
+          "y": 12.765226
         },
         "local_center": {
-          "x": 70.75,
-          "z": 54.0
+          "x": 78.25,
+          "z": 54.883402
         },
         "topdown_rect": {
-          "startX": 70.5,
-          "startZ": 52.0,
+          "startX": 78.0,
+          "startZ": 52.883402,
           "sx": 0.5,
           "sz": 4.0
         },
@@ -3928,6 +3849,8 @@
           "y": 1.0,
           "z": 4.0
         },
+        "vertical_axis": "y",
+        "vertical_height": 1.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -3941,30 +3864,32 @@
       {
         "solid_handle": "40F",
         "history_handle": "412",
-        "persistent_id": "{63598287-dae4-d740-8228-5982bbe36543}",
-        "name": "solid_40F_15x54",
+        "persistent_id": "{82953199-7c2d-244c-8bd6-402f07e836d9}",
+        "name": "solid_40F_7_5x54",
         "box_handle": "410",
         "graph_handle": "411",
         "node_id": 22,
         "cad_center": {
-          "x": 91.59856,
+          "x": 95.34856,
           "y": -2.118176
         },
         "local_center": {
-          "x": 82.5,
+          "x": 86.25,
           "z": 40.0
         },
         "topdown_rect": {
-          "startX": 75.0,
+          "startX": 82.5,
           "startZ": 13.0,
-          "sx": 15.0,
+          "sx": 7.5,
           "sz": 54.0
         },
         "raw_box_size": {
-          "x": 15.0,
+          "x": 7.5,
           "y": 54.0,
           "z": 3.0
         },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,
@@ -4002,6 +3927,8 @@
           "y": 60.0,
           "z": 3.0
         },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
         "topdown_transform": {
           "m00": -1.0,
           "m01": 0.0,

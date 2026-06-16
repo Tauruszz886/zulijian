@@ -1,6 +1,7 @@
 import { safeCall, safeCreateObstacle } from "@common/engine_safe"
 import { TriggerHub } from "@common/trigger_hub"
 import { createFastRunSystem, type FastRunSystem } from "./fast_run_system"
+import { LEVEL_TERRAIN_FRAMES, LEVEL_TERRAIN_SPECS, type LevelTerrainSpec } from "./level_terrain"
 
 const TAG = "ZLJ_MAIN"
 const SPEED_TAG = "ZLJ_SPEED_UI"
@@ -65,6 +66,16 @@ const GRID_LINE_DURATION = 9999
 const GRID_LINE_BATCH_SIZE = 220
 const GRID_LINE_COLOR = "00E5FF"
 const GRID_LINES_VISIBLE = false
+const EXPANDED_FLOOR_START_MODULE_INDEX = 1
+const EXPANDED_FLOOR_END_MODULE_INDEX = 10
+const EXPANDED_RUNTIME_FLOOR_SX = 160
+const EXPANDED_RUNTIME_FLOOR_SY = 3
+const EXPANDED_RUNTIME_FLOOR_SZ = 100
+const ORIGINAL_TERRAIN_FRAME_SX = 100
+const ORIGINAL_TERRAIN_FRAME_SZ = 80
+const SIDE_WALL_THICKNESS = 2
+const SIDE_WALL_INSET = 0.5
+const WEST_WALL_OPENING_GAP_SZ = 19
 const FIRST_LEVEL_TERRAIN_MODULE_INDEX = 1
 const SECOND_LEVEL_TERRAIN_MODULE_INDEX = 2
 const THIRD_LEVEL_TERRAIN_MODULE_INDEX = 3
@@ -73,9 +84,17 @@ const FIFTH_LEVEL_TERRAIN_MODULE_INDEX = 5
 const SIXTH_LEVEL_TERRAIN_MODULE_INDEX = 6
 const SEVENTH_LEVEL_TERRAIN_MODULE_INDEX = 7
 const EIGHTH_LEVEL_TERRAIN_MODULE_INDEX = 8
+const NINTH_LEVEL_TERRAIN_MODULE_INDEX = 9
+const TENTH_LEVEL_TERRAIN_MODULE_INDEX = 10
 const FIRST_LEVEL_TERRAIN_HEIGHT = 3
 const RAISED_TERRAIN_BASE_Y = FIRST_LEVEL_TERRAIN_BASE_Y + FIRST_LEVEL_TERRAIN_HEIGHT
 const EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE = 8
+const EIGHTH_LEVEL_SMALL_COLUMN_CENTER_RAISE_Y = 2.5
+const EIGHTH_LEVEL_LONG_BAR_CENTER_RAISE_Y = 1.5
+const EIGHTH_LEVEL_MECHANISM_MOVE_Z = 3.5
+const EIGHTH_LEVEL_MECHANISM_SPLIT_Z = 50
+const EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS = 1
+const EIGHTH_LEVEL_MECHANISM_MOVE_FRAMES = 35
 const FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP = 10
 const FOURTH_LEVEL_COMPRESSOR_HEIGHT = 5
 const FOURTH_LEVEL_COMPRESSOR_START_Y =
@@ -149,6 +168,15 @@ type RuntimeMovingFloor = {
   z: number
   downY: number
   upY: number
+}
+
+type RuntimeEighthMechanismPart = {
+  name: string
+  unit: unknown
+  x: number
+  y: number
+  z: number
+  targetZ: number
 }
 
 type SpeedButton = {
@@ -289,788 +317,6 @@ const FINAL_WEST_WALL: RuntimeWall = {
   sz: 79,
 }
 
-const FIRST_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "入口长平台40",
-    startX: 0,
-    startZ: 0,
-    sx: 40,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 80,
-  },
-  {
-    name: "中段平台35",
-    startX: 50,
-    startZ: 0,
-    sx: 35,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 80,
-  },
-  {
-    name: "终点短平台10",
-    startX: 90,
-    startZ: 0,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 80,
-  },
-]
-
-const SECOND_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "右侧立体15x39_11",
-    startX: 0,
-    startZ: 20,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 39.11118076628725,
-  },
-  {
-    name: "中间立体60x59_5",
-    startX: 25,
-    startZ: 10,
-    sx: 60,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 59.5,
-  },
-  {
-    name: "左侧立体10x30",
-    startX: 90,
-    startZ: 25,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 30,
-  },
-]
-
-const THIRD_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "右侧立体15x40",
-    startX: 85,
-    startZ: 20,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 40,
-  },
-  {
-    name: "右侧连通7_5x10",
-    startX: 77.5,
-    startZ: 35,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 10,
-  },
-  {
-    name: "中间右列下段15x13_75",
-    startX: 57.5,
-    startZ: 5,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间中列下段15x13_75",
-    startX: 37.5,
-    startZ: 5,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间左列下段15x13_75",
-    startX: 17.5,
-    startZ: 5,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间右列二段15x13_75",
-    startX: 57.5,
-    startZ: 23.75,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间中列二段15x13_75",
-    startX: 37.5,
-    startZ: 23.75,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间左列二段15x13_75",
-    startX: 17.5,
-    startZ: 23.75,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间右列三段15x13_75",
-    startX: 57.5,
-    startZ: 42.5,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间中列三段15x13_75",
-    startX: 37.5,
-    startZ: 42.5,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间左列三段15x13_75",
-    startX: 17.5,
-    startZ: 42.5,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间右列上段15x13_75",
-    startX: 57.5,
-    startZ: 61.25,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间中列上段15x13_75",
-    startX: 37.5,
-    startZ: 61.25,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "中间左列上段15x13_75",
-    startX: 17.5,
-    startZ: 61.25,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 13.75,
-  },
-  {
-    name: "左侧长条10x80",
-    startX: 0,
-    startZ: 0,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 80,
-  },
-]
-
-const FOURTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "左侧立体10x80",
-    startX: 0,
-    startZ: 0,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 80,
-  },
-  {
-    name: "右侧立体15x40",
-    startX: 85,
-    startZ: 20,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 40,
-  },
-  {
-    name: "右侧连通7_5x10",
-    startX: 77.5,
-    startZ: 35,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 10,
-  },
-  {
-    name: "中间主长条75x20",
-    startX: 10,
-    startZ: 30,
-    sx: 75,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 20,
-  },
-  {
-    name: "下方小平台10x7_5",
-    startX: 45,
-    startZ: 22.5,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 7.5,
-  },
-  {
-    name: "上方小平台10x7_5",
-    startX: 45,
-    startZ: 50,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 7.5,
-  },
-  {
-    name: "中间上方左压板30x20",
-    startX: 10,
-    startZ: 30,
-    sx: 30,
-    sy: FOURTH_LEVEL_COMPRESSOR_HEIGHT,
-    sz: 20,
-    baseY: FOURTH_LEVEL_COMPRESSOR_START_Y,
-    compressorDownY: FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
-    compressor: true,
-  },
-  {
-    name: "中间上方右压板35x20",
-    startX: 50,
-    startZ: 30,
-    sx: 35,
-    sy: FOURTH_LEVEL_COMPRESSOR_HEIGHT,
-    sz: 20,
-    baseY: FOURTH_LEVEL_COMPRESSOR_START_Y,
-    compressorDownY: FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
-    compressor: true,
-  },
-]
-
-const FIFTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "上方横平台5x30",
-    startX: 0,
-    startZ: 25,
-    sx: 5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 30,
-  },
-  {
-    name: "下方横平台10x60",
-    startX: 90,
-    startZ: 10,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 60,
-  },
-  {
-    name: "中下竖平台20x14",
-    startX: 70,
-    startZ: 33,
-    sx: 20,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "中间方块12_5x14",
-    startX: 30,
-    startZ: 33,
-    sx: 12.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "上方连接块5x14",
-    startX: 5,
-    startZ: 33,
-    sx: 5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "左侧下块7_524x10",
-    startX: 7.5,
-    startZ: 5,
-    sx: 7.523669876411105,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 10,
-  },
-  {
-    name: "左侧中块7_5x8_5",
-    startX: 27.5,
-    startZ: 5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 8.5,
-  },
-  {
-    name: "左侧上块7_5x10",
-    startX: 50,
-    startZ: 5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 10,
-  },
-  {
-    name: "右侧下块7_5x9",
-    startX: 29.024240179683595,
-    startZ: 67.5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 9,
-  },
-  {
-    name: "右侧中块7_5x9",
-    startX: 47,
-    startZ: 67.5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 9,
-  },
-  {
-    name: "右侧上块7_5x9",
-    startX: 70,
-    startZ: 67.5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 9,
-  },
-]
-
-const SIXTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "上方横平台5x30",
-    startX: 0,
-    startZ: 25,
-    sx: 5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 30,
-  },
-  {
-    name: "下方横平台10x60",
-    startX: 90,
-    startZ: 10,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 60,
-  },
-  {
-    name: "中下竖平台20x14",
-    startX: 70,
-    startZ: 33,
-    sx: 20,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "中间长平台60x14",
-    startX: 10,
-    startZ: 33,
-    sx: 60,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "上方连接块5x14",
-    startX: 5,
-    startZ: 33,
-    sx: 5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-]
-
-const SEVENTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "左侧中段平台5x30",
-    startX: 0,
-    startZ: 25,
-    sx: 5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 30,
-  },
-  {
-    name: "右侧长平台10x60",
-    startX: 90,
-    startZ: 10,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 60,
-  },
-  {
-    name: "中右平台15x14",
-    startX: 75,
-    startZ: 33,
-    sx: 15,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "中间平台10x14",
-    startX: 32.5,
-    startZ: 33,
-    sx: 10,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "左侧连接块5x14",
-    startX: 5,
-    startZ: 33,
-    sx: 5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 14,
-  },
-  {
-    name: "下方跳块7_5x10",
-    startX: 46,
-    startZ: 5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 10,
-  },
-  {
-    name: "上方跳块7_5x9",
-    startX: 14.02424017968361,
-    startZ: 67.5,
-    sx: 7.5,
-    sy: FIRST_LEVEL_TERRAIN_HEIGHT,
-    sz: 9,
-  },
-]
-
-const EIGHTH_LEVEL_TERRAIN_PIECES: RuntimeTerrainPiece[] = [
-  {
-    name: "实体34A_5x35",
-    startX: 0,
-    startZ: 30,
-    sx: 5,
-    sy: 3,
-    sz: 35,
-  },
-  {
-    name: "实体62D_70x20",
-    startX: 5,
-    startZ: 40,
-    sx: 70,
-    sy: 3,
-    sz: 20,
-  },
-  {
-    name: "实体632_70x4",
-    startX: 5,
-    startZ: 40,
-    sx: 70,
-    sy: 5,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体689_70x4",
-    startX: 5,
-    startZ: 56,
-    sx: 70,
-    sy: 5,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体685_27_5x1_8",
-    startX: 9.5,
-    startZ: 48,
-    sx: 27.5,
-    sy: 3,
-    sz: 1.8,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6C1_27_5x1_8",
-    startX: 9.5,
-    startZ: 50.2,
-    sx: 27.5,
-    sy: 3,
-    sz: 1.8,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体675_0_5x4",
-    startX: 10.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6B9_0_5x4",
-    startX: 10.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体626_7_5x10",
-    startX: 11,
-    startZ: 5,
-    sx: 7.5,
-    sy: 3,
-    sz: 10,
-  },
-  {
-    name: "实体671_0_5x4",
-    startX: 15.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6B5_0_5x4",
-    startX: 15.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体66D_0_5x4",
-    startX: 20.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6B1_0_5x4",
-    startX: 20.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体669_0_5x4",
-    startX: 25.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6AD_0_5x4",
-    startX: 25.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体665_0_5x4",
-    startX: 30.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6A9_0_5x4",
-    startX: 30.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体661_0_5x4",
-    startX: 35.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6A5_0_5x4",
-    startX: 35.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体575_7_5x10",
-    startX: 41,
-    startZ: 5,
-    sx: 7.5,
-    sy: 3,
-    sz: 10,
-  },
-  {
-    name: "实体681_27_5x1_8",
-    startX: 44.5,
-    startZ: 48,
-    sx: 27.5,
-    sy: 3,
-    sz: 1.8,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6BD_27_5x1_8",
-    startX: 44.5,
-    startZ: 50.2,
-    sx: 27.5,
-    sy: 3,
-    sz: 1.8,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体65D_0_5x4",
-    startX: 45.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体6A1_0_5x4",
-    startX: 45.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体659_0_5x4",
-    startX: 50.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体69D_0_5x4",
-    startX: 50.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体655_0_5x4",
-    startX: 55.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体699_0_5x4",
-    startX: 55.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体651_0_5x4",
-    startX: 60.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体695_0_5x4",
-    startX: 60.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体645_0_5x4",
-    startX: 65.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体649_0_5x4",
-    startX: 65.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体64D_0_5x4",
-    startX: 65.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体691_0_5x4",
-    startX: 65.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体640_0_5x4",
-    startX: 70.5,
-    startZ: 44,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体68D_0_5x4",
-    startX: 70.5,
-    startZ: 52,
-    sx: 0.5,
-    sy: 1,
-    sz: 4,
-    baseY: RAISED_TERRAIN_BASE_Y,
-  },
-  {
-    name: "实体40F_15x54",
-    startX: 75,
-    startZ: 13,
-    sx: 15,
-    sy: 3,
-    sz: 54,
-  },
-  {
-    name: "实体406_10x60",
-    startX: 90,
-    startZ: 10,
-    sx: 10,
-    sy: 3,
-    sz: 60,
-  },
-]
-
 let fastRunSystem: FastRunSystem | undefined
 let registered = false
 let runtimeFloorsCreated = false
@@ -1080,6 +326,7 @@ let runtimeCeilingCreated = false
 let runtimeGridDrawStarted = false
 let runtimeCompressorStarted = false
 let runtimeSixthFloorMoveStarted = false
+let runtimeEighthMechanismStarted = false
 let currentSpeedValue = DEFAULT_SPEED
 let displayTargetsLogged = false
 const enabledRoles = new Map<string, boolean>()
@@ -1088,6 +335,7 @@ const registeredOverlayButtons = new Map<string, boolean>()
 const spawnAdjustedRoles = new Map<string, boolean>()
 let runtimeCompressorPieces: RuntimeCompressorPiece[] = []
 let runtimeSixthMovingFloor: RuntimeMovingFloor | undefined
+let runtimeEighthMechanismParts: RuntimeEighthMechanismPart[] = []
 
 function fastRunLogger(...args: unknown[]): void {
   const lastArg = args.length > 0 ? args[args.length - 1] : ""
@@ -1104,6 +352,79 @@ function runtimeModuleLabel(moduleIndex: number): string {
 
 function runtimeModuleName(name: string, moduleIndex: number): string {
   return `${runtimeModuleLabel(moduleIndex)}_${name}`
+}
+
+function isExpandedFloorModule(moduleIndex: number): boolean {
+  return moduleIndex >= EXPANDED_FLOOR_START_MODULE_INDEX && moduleIndex <= EXPANDED_FLOOR_END_MODULE_INDEX
+}
+
+function getRuntimeFloorForModule(moduleIndex: number): RuntimeFloor {
+  const frame = LEVEL_TERRAIN_FRAMES[moduleIndex]
+  if (frame !== undefined) {
+    return {
+      name: RUNTIME_FLOOR.name,
+      x: RUNTIME_FLOOR.x,
+      z: RUNTIME_FLOOR.z,
+      sx: frame.sx,
+      sy: EXPANDED_RUNTIME_FLOOR_SY,
+      sz: frame.sz,
+    }
+  }
+  if (!isExpandedFloorModule(moduleIndex)) {
+    return RUNTIME_FLOOR
+  }
+  return {
+    name: RUNTIME_FLOOR.name,
+    x: RUNTIME_FLOOR.x,
+    z: RUNTIME_FLOOR.z,
+    sx: EXPANDED_RUNTIME_FLOOR_SX,
+    sy: EXPANDED_RUNTIME_FLOOR_SY,
+    sz: EXPANDED_RUNTIME_FLOOR_SZ,
+  }
+}
+
+function getRuntimeModuleCenterX(moduleIndex: number): number {
+  return RUNTIME_FLOOR.x + MODULE_STEP_X * moduleIndex
+}
+
+function getRuntimeTerrainFrameForModule(moduleIndex: number, floor: RuntimeFloor): RuntimeFloor {
+  return floor
+}
+
+function toRuntimeTerrainPiece(spec: LevelTerrainSpec): RuntimeTerrainPiece {
+  if (spec.role === "fourth_compressor") {
+    return {
+      name: spec.name,
+      startX: spec.startX,
+      startZ: spec.startZ,
+      sx: spec.sx,
+      sy: spec.sy,
+      sz: spec.sz,
+      baseY: FOURTH_LEVEL_COMPRESSOR_START_Y,
+      compressorDownY: FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
+      compressor: true,
+    }
+  }
+  return {
+    name: spec.name,
+    startX: spec.startX,
+    startZ: spec.startZ,
+    sx: spec.sx,
+    sy: spec.sy,
+    sz: spec.sz,
+  }
+}
+
+function getRuntimeTerrainPiecesForModule(moduleIndex: number): RuntimeTerrainPiece[] {
+  const specs = LEVEL_TERRAIN_SPECS[moduleIndex]
+  if (specs === undefined) {
+    return []
+  }
+  const pieces: RuntimeTerrainPiece[] = []
+  for (let i = 0; i < specs.length; i++) {
+    pieces.push(toRuntimeTerrainPiece(specs[i]!))
+  }
+  return pieces
 }
 
 function applyLevelFloorAppearance(unit: unknown, name: string): void {
@@ -1209,7 +530,7 @@ function createRuntimeFloorCopies(): void {
 
   const floor = RUNTIME_FLOOR
   print(
-    `[${FLOOR_TAG}] create begin copies=${RUNTIME_COPY_COUNT} total_modules=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 original_prefab=${ORIGINAL_FLOOR_PREFAB_ID} level_prefab=${LEVEL_FLOOR_PREFAB_ID} base_y=${FLOOR_BASE_Y} step_x=${MODULE_STEP_X}`
+    `[${FLOOR_TAG}] create begin copies=${RUNTIME_COPY_COUNT} total_modules=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 original_prefab=${ORIGINAL_FLOOR_PREFAB_ID} level_prefab=${LEVEL_FLOOR_PREFAB_ID} base_y=${FLOOR_BASE_Y} expanded_modules=${EXPANDED_FLOOR_START_MODULE_INDEX}..${EXPANDED_FLOOR_END_MODULE_INDEX} expanded_size=(${EXPANDED_RUNTIME_FLOOR_SX},${EXPANDED_RUNTIME_FLOOR_SY},${EXPANDED_RUNTIME_FLOOR_SZ})`
   )
   print(
     `[${FLOOR_TAG}] existing name=${runtimeModuleName(floor.name, 0)} unit=2134777966 base=(${floor.x},${FLOOR_BASE_Y},${floor.z}) scale=(${floor.sx},${floor.sy},${floor.sz}) source=editor`
@@ -1219,11 +540,12 @@ function createRuntimeFloorCopies(): void {
   const createBatch = (): void => {
     let createdThisFrame = 0
     while (moduleIndex <= RUNTIME_COPY_COUNT && createdThisFrame < RUNTIME_FLOOR_CREATE_BATCH_SIZE) {
-      const x = floor.x + MODULE_STEP_X * moduleIndex
+      const moduleFloor = getRuntimeFloorForModule(moduleIndex)
+      const x = getRuntimeModuleCenterX(moduleIndex)
       const unit = safeCreateObstacle(
         LEVEL_FLOOR_PREFAB_ID,
         math.Vector3(x as Fixed, FLOOR_BASE_Y as Fixed, floor.z as Fixed),
-        math.Vector3(floor.sx as Fixed, floor.sy as Fixed, floor.sz as Fixed),
+        math.Vector3(moduleFloor.sx as Fixed, moduleFloor.sy as Fixed, moduleFloor.sz as Fixed),
         { tag: `runtime_floor_create_${runtimeModuleName(floor.name, moduleIndex)}`, logger: print }
       )
       const name = runtimeModuleName(floor.name, moduleIndex)
@@ -1240,7 +562,7 @@ function createRuntimeFloorCopies(): void {
         startSixthLevelFloorMove()
       }
       print(
-        `[${FLOOR_TAG}] created name=${name} unit=${tostring(unit)} prefab=${LEVEL_FLOOR_PREFAB_ID} base=(${x},${FLOOR_BASE_Y},${floor.z}) scale=(${floor.sx},${floor.sy},${floor.sz}) batch_size=${RUNTIME_FLOOR_CREATE_BATCH_SIZE}`
+        `[${FLOOR_TAG}] created name=${name} unit=${tostring(unit)} prefab=${LEVEL_FLOOR_PREFAB_ID} base=(${x},${FLOOR_BASE_Y},${floor.z}) scale=(${moduleFloor.sx},${moduleFloor.sy},${moduleFloor.sz}) expanded=${isExpandedFloorModule(moduleIndex)} batch_size=${RUNTIME_FLOOR_CREATE_BATCH_SIZE}`
       )
       moduleIndex += 1
       createdThisFrame += 1
@@ -1261,107 +583,41 @@ function createRuntimeTiles(): void {
   runtimeTilesCreated = true
   runtimeCompressorPieces = []
   runtimeCompressorStarted = false
+  runtimeEighthMechanismParts = []
+  runtimeEighthMechanismStarted = false
 
   const floor = RUNTIME_FLOOR
   print(
-    `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT} full_tiles=${RUNTIME_COPY_COUNT} first_level_terrain_pieces=${FIRST_LEVEL_TERRAIN_PIECES.length} module_1=第1关 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} step_x=${MODULE_STEP_X} original_floor=kept birth_tile=editor`
+    `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT} full_tiles=${RUNTIME_COPY_COUNT} dxf_levels=1..10 module_1=第1关 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} terrain_source=split_level_files original_floor=kept birth_tile=editor`
   )
   for (let moduleIndex = 1; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
-    const x = floor.x + MODULE_STEP_X * moduleIndex
-    if (moduleIndex === FIRST_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        FIRST_LEVEL_TERRAIN_MODULE_INDEX,
-        FIRST_LEVEL_TERRAIN_PIECES,
-        "40_gap10_35_gap5_10",
-        "x_gap1=839..849_width10_x_gap2=884..889_width5"
-      )
-      continue
-    }
-    if (moduleIndex === SECOND_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        SECOND_LEVEL_TERRAIN_MODULE_INDEX,
-        SECOND_LEVEL_TERRAIN_PIECES,
-        "solid_only_15x39_11_60x59_5_10x30",
-        "solid_dims_only aux_lines_ignored right_z=-56..-16.88881923371275 center_z=-66..-6.5 left_z=-51..-21"
-      )
-      continue
-    }
-    if (moduleIndex === THIRD_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        THIRD_LEVEL_TERRAIN_MODULE_INDEX,
-        THIRD_LEVEL_TERRAIN_PIECES,
-        "solid_only_third_level_right_step_center_4x3_left_strip",
-        "solid_dims_only aux_lines_ignored right_step=15x40+7.5x10 center_grid=4x3_each15x13.75_gap5 left_strip=10x80"
-      )
-      continue
-    }
-    if (moduleIndex === FOURTH_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        FOURTH_LEVEL_TERRAIN_MODULE_INDEX,
-        FOURTH_LEVEL_TERRAIN_PIECES,
-        "solid_only_fourth_level2_from_dxf",
-        "solid_dims_only aux_lines_ignored dxf_outer=100x80 flat=6 press_plates=2 plates_above_middle gap_y=10 h=5 left_plate=30x20 right_plate=35x20"
-      )
-      continue
-    }
-    if (moduleIndex === FIFTH_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        FIFTH_LEVEL_TERRAIN_MODULE_INDEX,
-        FIFTH_LEVEL_TERRAIN_PIECES,
-        "solid_only_fifth_level_from_dxf",
-        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=11 plan_view_match=true main_path=5x30+5x14+12.5x14+20x14+10x60 side_blocks=6"
-      )
-      continue
-    }
-    if (moduleIndex === SIXTH_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        SIXTH_LEVEL_TERRAIN_MODULE_INDEX,
-        SIXTH_LEVEL_TERRAIN_PIECES,
-        "solid_only_sixth_level_from_dxf",
-        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=5 main_path=5x30+5x14+60x14+20x14+10x60"
-      )
-      continue
-    }
-    if (moduleIndex === SEVENTH_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrain(
-        floor,
-        x,
-        SEVENTH_LEVEL_TERRAIN_MODULE_INDEX,
-        SEVENTH_LEVEL_TERRAIN_PIECES,
-        "solid_only_seventh_level_from_dxf",
-        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=7 path=5x30+5x14+10x14+15x14+10x60 jump_blocks=7.5x10+7.5x9"
-      )
-      continue
-    }
-    if (moduleIndex === EIGHTH_LEVEL_TERRAIN_MODULE_INDEX) {
-      createRuntimeTerrainBatched(
-        floor,
-        x,
-        EIGHTH_LEVEL_TERRAIN_MODULE_INDEX,
-        EIGHTH_LEVEL_TERRAIN_PIECES,
-        "solid_only_eighth_level_from_dxf",
-        "solid_dims_only aux_lines_ignored dxf_outer=100x80 pieces=38 entry=10x60+15x54 parsed_connection=true raised_on_top=true",
-        EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE
-      )
+    const moduleFloor = getRuntimeFloorForModule(moduleIndex)
+    const terrainFloor = getRuntimeTerrainFrameForModule(moduleIndex, moduleFloor)
+    const x = getRuntimeModuleCenterX(moduleIndex)
+    const dxfTerrainPieces = getRuntimeTerrainPiecesForModule(moduleIndex)
+    if (dxfTerrainPieces.length > 0) {
+      const pattern = `dxf_solid_only_level_${moduleIndex}`
+      const gapSummary = `dxf_confirmed frame=${terrainFloor.sx}x${terrainFloor.sz} pieces=${dxfTerrainPieces.length} source=LEVEL_TERRAIN_SPECS`
+      if (moduleIndex === EIGHTH_LEVEL_TERRAIN_MODULE_INDEX) {
+        createRuntimeTerrainBatched(
+          terrainFloor,
+          x,
+          moduleIndex,
+          dxfTerrainPieces,
+          pattern,
+          `${gapSummary} mechanism=raised_crossbars_and_long_plates move_z=${EIGHTH_LEVEL_MECHANISM_MOVE_Z} move_seconds=${EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS}`,
+          EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE
+        )
+      } else {
+        createRuntimeTerrain(terrainFloor, x, moduleIndex, dxfTerrainPieces, pattern, gapSummary)
+      }
       continue
     }
     const name = runtimeModuleName("地砖", moduleIndex)
     const unit = safeCreateObstacle(
       WALL_PREFAB_ID,
       math.Vector3(x as Fixed, TILE_BASE_Y as Fixed, floor.z as Fixed),
-      math.Vector3(floor.sx as Fixed, TILE_HEIGHT as Fixed, floor.sz as Fixed),
+      math.Vector3(moduleFloor.sx as Fixed, TILE_HEIGHT as Fixed, moduleFloor.sz as Fixed),
       { tag: `runtime_tile_create_${name}`, logger: print }
     )
     if (unit !== null) {
@@ -1373,7 +629,7 @@ function createRuntimeTiles(): void {
       )
     }
     print(
-      `[${TILE_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${TILE_BASE_Y},${floor.z}) scale=(${floor.sx},${TILE_HEIGHT},${floor.sz}) mirror=false`
+      `[${TILE_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${TILE_BASE_Y},${floor.z}) scale=(${moduleFloor.sx},${TILE_HEIGHT},${moduleFloor.sz}) terrain_original=true mirror=false`
     )
   }
 
@@ -1402,8 +658,117 @@ function isTerrainCutoutModule(moduleIndex: number): boolean {
     moduleIndex === FIFTH_LEVEL_TERRAIN_MODULE_INDEX ||
     moduleIndex === SIXTH_LEVEL_TERRAIN_MODULE_INDEX ||
     moduleIndex === SEVENTH_LEVEL_TERRAIN_MODULE_INDEX ||
-    moduleIndex === EIGHTH_LEVEL_TERRAIN_MODULE_INDEX
+    moduleIndex === EIGHTH_LEVEL_TERRAIN_MODULE_INDEX ||
+    moduleIndex === NINTH_LEVEL_TERRAIN_MODULE_INDEX ||
+    moduleIndex === TENTH_LEVEL_TERRAIN_MODULE_INDEX
   )
+}
+
+function getRuntimeTerrainPieceY(moduleIndex: number, piece: RuntimeTerrainPiece): number {
+  const y = piece.baseY === undefined ? FIRST_LEVEL_TERRAIN_BASE_Y : piece.baseY
+  if (moduleIndex !== EIGHTH_LEVEL_TERRAIN_MODULE_INDEX) {
+    return y
+  }
+  if (piece.sx === 0.5 && piece.sz === 4) {
+    return y + EIGHTH_LEVEL_SMALL_COLUMN_CENTER_RAISE_Y
+  }
+  if (piece.sz === 1.8) {
+    return y + EIGHTH_LEVEL_LONG_BAR_CENTER_RAISE_Y
+  }
+  return y
+}
+
+function getEighthLevelMechanismTargetZ(piece: RuntimeTerrainPiece, z: number): number | undefined {
+  const isSmallCrossbar = piece.sx === 0.5 && piece.sz === 4
+  const isLongPlate = piece.sz === 1.8
+  if (!isSmallCrossbar && !isLongPlate) {
+    return undefined
+  }
+  const moveZ = piece.startZ < EIGHTH_LEVEL_MECHANISM_SPLIT_Z ? -EIGHTH_LEVEL_MECHANISM_MOVE_Z : EIGHTH_LEVEL_MECHANISM_MOVE_Z
+  return z + moveZ
+}
+
+function registerEighthLevelMechanismPart(
+  moduleIndex: number,
+  piece: RuntimeTerrainPiece,
+  unit: unknown,
+  name: string,
+  x: number,
+  y: number,
+  z: number
+): void {
+  if (moduleIndex !== EIGHTH_LEVEL_TERRAIN_MODULE_INDEX || unit === null || unit === undefined) {
+    return
+  }
+  const targetZ = getEighthLevelMechanismTargetZ(piece, z)
+  if (targetZ === undefined) {
+    return
+  }
+  runtimeEighthMechanismParts.push({ name, unit, x, y, z, targetZ })
+  print(
+    `[ZLJ_EIGHTH_MECHANISM] registered name=${name} start=(${x},${y},${z}) target_z=${targetZ} move_z=${targetZ - z} move_seconds=${EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS}`
+  )
+}
+
+function setEighthLevelMechanismPartPosition(part: RuntimeEighthMechanismPart, z: number): void {
+  safeCall(
+    () => {
+      ;(part.unit as any).set_position(math.Vector3(part.x as Fixed, part.y as Fixed, z as Fixed))
+    },
+    { tag: `eighth_mechanism_set_position_${part.name}`, fallback: undefined, logger: print }
+  )
+}
+
+function animateEighthLevelMechanism(toTarget: boolean, done?: () => void): void {
+  if (runtimeEighthMechanismParts.length === 0) {
+    if (done !== undefined) {
+      done()
+    }
+    return
+  }
+  let frame = 0
+  const step = (): void => {
+    frame += 1
+    const t = frame / EIGHTH_LEVEL_MECHANISM_MOVE_FRAMES
+    for (let i = 0; i < runtimeEighthMechanismParts.length; i++) {
+      const part = runtimeEighthMechanismParts[i]!
+      const fromZ = toTarget ? part.z : part.targetZ
+      const toZ = toTarget ? part.targetZ : part.z
+      setEighthLevelMechanismPartPosition(part, fromZ + (toZ - fromZ) * t)
+    }
+    if (frame < EIGHTH_LEVEL_MECHANISM_MOVE_FRAMES) {
+      ;(LuaAPI as any).call_delay_frame(1, step)
+      return
+    }
+    if (done !== undefined) {
+      done()
+    }
+  }
+  step()
+}
+
+function scheduleEighthLevelMechanismCycle(toTarget: boolean): void {
+  print(
+    `[ZLJ_EIGHTH_MECHANISM] move begin direction=${toTarget ? "to_beam" : "return"} parts=${runtimeEighthMechanismParts.length} distance=${EIGHTH_LEVEL_MECHANISM_MOVE_Z} seconds=${EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS}`
+  )
+  animateEighthLevelMechanism(toTarget, () => {
+    scheduleEighthLevelMechanismCycle(!toTarget)
+  })
+}
+
+function startEighthLevelMechanism(): void {
+  if (runtimeEighthMechanismStarted) {
+    return
+  }
+  runtimeEighthMechanismStarted = true
+  if (runtimeEighthMechanismParts.length === 0) {
+    print("[ZLJ_EIGHTH_MECHANISM] skipped parts=0")
+    return
+  }
+  print(
+    `[ZLJ_EIGHTH_MECHANISM] start parts=${runtimeEighthMechanismParts.length} groups=4 visible_crossbars_per_group=6 distance=${EIGHTH_LEVEL_MECHANISM_MOVE_Z} seconds=${EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS} axis=Z`
+  )
+  scheduleEighthLevelMechanismCycle(true)
 }
 
 function createRuntimeTerrain(
@@ -1421,7 +786,7 @@ function createRuntimeTerrain(
   )
   for (let i = 0; i < pieces.length; i++) {
     const piece = pieces[i]!
-    const y = piece.baseY === undefined ? FIRST_LEVEL_TERRAIN_BASE_Y : piece.baseY
+    const y = getRuntimeTerrainPieceY(moduleIndex, piece)
     const x = moduleMinX + piece.startX + piece.sx / 2
     const z = moduleMinZ + piece.startZ + piece.sz / 2
     const name = runtimeModuleName(piece.name, moduleIndex)
@@ -1472,7 +837,7 @@ function createRuntimeTerrainBatched(
     let createdThisFrame = 0
     while (index < pieces.length && createdThisFrame < batchSize) {
       const piece = pieces[index]!
-      const y = piece.baseY === undefined ? FIRST_LEVEL_TERRAIN_BASE_Y : piece.baseY
+      const y = getRuntimeTerrainPieceY(moduleIndex, piece)
       const x = moduleMinX + piece.startX + piece.sx / 2
       const z = moduleMinZ + piece.startZ + piece.sz / 2
       const name = runtimeModuleName(piece.name, moduleIndex)
@@ -1483,6 +848,7 @@ function createRuntimeTerrainBatched(
         { tag: `runtime_terrain_create_${name}`, logger: print }
       )
       disableMirrorReflect(unit, `runtime_terrain_disable_mirror_${name}`)
+      registerEighthLevelMechanismPart(moduleIndex, piece, unit, name, x, y, z)
       print(
         `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=false batch=${math.floor(index / batchSize) + 1}`
       )
@@ -1496,6 +862,7 @@ function createRuntimeTerrainBatched(
     }
 
     print(`[${TERRAIN_TAG}] gaps module=${runtimeModuleLabel(moduleIndex)} ${gapSummary}`)
+    startEighthLevelMechanism()
   }
 
   createBatch()
@@ -1580,51 +947,132 @@ function startRuntimeCompressors(): void {
   scheduleRuntimeCompressorCycle()
 }
 
+function createRuntimeWallUnit(wall: RuntimeWall, moduleIndex: number, xOffset = 0): void {
+  const x = wall.x + xOffset
+  const name = runtimeModuleName(wall.name, moduleIndex)
+  const unit = safeCreateObstacle(
+    WALL_PREFAB_ID,
+    math.Vector3(x as Fixed, WALL_BASE_Y as Fixed, wall.z as Fixed),
+    math.Vector3(wall.sx as Fixed, WALL_HEIGHT as Fixed, wall.sz as Fixed),
+    { tag: `runtime_wall_create_${name}`, logger: print }
+  )
+  print(
+    `[${WALL_TAG}] created name=${name} unit=${tostring(unit)} pos=(${x},${WALL_BASE_Y},${wall.z}) scale=(${wall.sx},${WALL_HEIGHT},${wall.sz})`
+  )
+}
+
+function getRuntimeWallsForModule(moduleIndex: number): RuntimeWall[] {
+  const floor = getRuntimeFloorForModule(moduleIndex)
+  const centerX = getRuntimeModuleCenterX(moduleIndex)
+  const centerZ = floor.z
+  const minX = centerX - floor.sx / 2
+  const maxX = centerX + floor.sx / 2
+  const minZ = centerZ - floor.sz / 2
+  const maxZ = centerZ + floor.sz / 2
+  const wallMinZ = minZ + SIDE_WALL_INSET
+  const wallMaxZ = maxZ - SIDE_WALL_INSET
+  const openingMinZ = centerZ - WEST_WALL_OPENING_GAP_SZ / 2
+  const openingMaxZ = centerZ + WEST_WALL_OPENING_GAP_SZ / 2
+  const northWestLength = openingMinZ - wallMinZ
+  const southWestLength = wallMaxZ - openingMaxZ
+  return [
+    {
+      name: "北墙",
+      side: "north",
+      x: centerX,
+      z: wallMinZ,
+      sx: floor.sx - SIDE_WALL_INSET * 2,
+      sz: SIDE_WALL_THICKNESS,
+    },
+    {
+      name: "东墙",
+      side: "east",
+      x: maxX - SIDE_WALL_INSET,
+      z: centerZ,
+      sx: SIDE_WALL_THICKNESS,
+      sz: floor.sz - SIDE_WALL_INSET * 2,
+    },
+    {
+      name: "南墙",
+      side: "south",
+      x: centerX,
+      z: wallMaxZ,
+      sx: floor.sx - SIDE_WALL_INSET * 2,
+      sz: SIDE_WALL_THICKNESS,
+    },
+    {
+      name: "西墙上段",
+      side: "west",
+      x: minX + SIDE_WALL_INSET,
+      z: wallMinZ + northWestLength / 2,
+      sx: SIDE_WALL_THICKNESS,
+      sz: northWestLength,
+    },
+    {
+      name: "西墙下段",
+      side: "west",
+      x: minX + SIDE_WALL_INSET,
+      z: openingMaxZ + southWestLength / 2,
+      sx: SIDE_WALL_THICKNESS,
+      sz: southWestLength,
+    },
+  ]
+}
+
+function getRuntimeFinalWestWall(): RuntimeWall {
+  const floor = getRuntimeFloorForModule(RUNTIME_COPY_COUNT)
+  const centerX = getRuntimeModuleCenterX(RUNTIME_COPY_COUNT)
+  const minX = centerX - floor.sx / 2
+  return {
+    name: "西墙封口",
+    side: "west",
+    x: minX + SIDE_WALL_INSET,
+    z: floor.z,
+    sx: SIDE_WALL_THICKNESS,
+    sz: floor.sz - SIDE_WALL_INSET * 2,
+  }
+}
+
 function createRuntimeWalls(): void {
   if (runtimeWallsCreated) {
     return
   }
   runtimeWallsCreated = true
 
-  const wallCount = RUNTIME_WALLS.length * (RUNTIME_COPY_COUNT + 1) - RUNTIME_COPY_COUNT - 1
-  print(
-    `[${WALL_TAG}] create begin count=${wallCount} modules=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${WALL_BASE_Y} height=${WALL_HEIGHT} step_x=${MODULE_STEP_X} shared_opening=west_gap`
-  )
+  let wallCount = 0
   for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
-    const offsetX = MODULE_STEP_X * moduleIndex
-    for (let i = 0; i < RUNTIME_WALLS.length; i++) {
-      const wall = RUNTIME_WALLS[i]!
+    const walls = getRuntimeWallsForModule(moduleIndex)
+    for (let i = 0; i < walls.length; i++) {
+      const wall = walls[i]!
       if (wall.side === "east" && moduleIndex > 0) {
         continue
       }
       if (wall.side === "west" && moduleIndex === RUNTIME_COPY_COUNT) {
         continue
       }
-      const x = wall.x + offsetX
-      const name = runtimeModuleName(wall.name, moduleIndex)
-      const unit = safeCreateObstacle(
-        WALL_PREFAB_ID,
-        math.Vector3(x as Fixed, WALL_BASE_Y as Fixed, wall.z as Fixed),
-        math.Vector3(wall.sx as Fixed, WALL_HEIGHT as Fixed, wall.sz as Fixed),
-        { tag: `runtime_wall_create_${name}`, logger: print }
-      )
-      print(
-        `[${WALL_TAG}] created name=${name} unit=${tostring(unit)} pos=(${x},${WALL_BASE_Y},${wall.z}) scale=(${wall.sx},${WALL_HEIGHT},${wall.sz})`
-      )
+      wallCount += 1
     }
     if (moduleIndex === RUNTIME_COPY_COUNT) {
-      const wall = FINAL_WEST_WALL
-      const x = wall.x + offsetX
-      const name = runtimeModuleName(wall.name, moduleIndex)
-      const unit = safeCreateObstacle(
-        WALL_PREFAB_ID,
-        math.Vector3(x as Fixed, WALL_BASE_Y as Fixed, wall.z as Fixed),
-        math.Vector3(wall.sx as Fixed, WALL_HEIGHT as Fixed, wall.sz as Fixed),
-        { tag: `runtime_wall_create_${name}`, logger: print }
-      )
-      print(
-        `[${WALL_TAG}] created name=${name} unit=${tostring(unit)} pos=(${x},${WALL_BASE_Y},${wall.z}) scale=(${wall.sx},${WALL_HEIGHT},${wall.sz})`
-      )
+      wallCount += 1
+    }
+  }
+  print(
+    `[${WALL_TAG}] create begin count=${wallCount} modules=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${WALL_BASE_Y} height=${WALL_HEIGHT} expanded_modules=${EXPANDED_FLOOR_START_MODULE_INDEX}..${EXPANDED_FLOOR_END_MODULE_INDEX} shared_opening=west_gap`
+  )
+  for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
+    const walls = getRuntimeWallsForModule(moduleIndex)
+    for (let i = 0; i < walls.length; i++) {
+      const wall = walls[i]!
+      if (wall.side === "east" && moduleIndex > 0) {
+        continue
+      }
+      if (wall.side === "west" && moduleIndex === RUNTIME_COPY_COUNT) {
+        continue
+      }
+      createRuntimeWallUnit(wall, moduleIndex)
+    }
+    if (moduleIndex === RUNTIME_COPY_COUNT) {
+      createRuntimeWallUnit(getRuntimeFinalWestWall(), moduleIndex)
     }
   }
 }
@@ -1637,19 +1085,20 @@ function createRuntimeCeiling(): void {
 
   const ceiling = RUNTIME_CEILING
   print(
-    `[${CEILING_TAG}] create begin count=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${CEILING_BASE_Y} step_x=${MODULE_STEP_X}`
+    `[${CEILING_TAG}] create begin count=${RUNTIME_COPY_COUNT + 1} module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${CEILING_BASE_Y} expanded_modules=${EXPANDED_FLOOR_START_MODULE_INDEX}..${EXPANDED_FLOOR_END_MODULE_INDEX}`
   )
   for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
-    const x = ceiling.x + MODULE_STEP_X * moduleIndex
+    const moduleFloor = getRuntimeFloorForModule(moduleIndex)
+    const x = getRuntimeModuleCenterX(moduleIndex)
     const name = runtimeModuleName(ceiling.name, moduleIndex)
     const unit = safeCreateObstacle(
       WALL_PREFAB_ID,
       math.Vector3(x as Fixed, CEILING_BASE_Y as Fixed, ceiling.z as Fixed),
-      math.Vector3(ceiling.sx as Fixed, ceiling.sy as Fixed, ceiling.sz as Fixed),
+      math.Vector3(moduleFloor.sx as Fixed, ceiling.sy as Fixed, moduleFloor.sz as Fixed),
       { tag: `runtime_ceiling_create_${name}`, logger: print }
     )
     print(
-      `[${CEILING_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${CEILING_BASE_Y},${ceiling.z}) scale=(${ceiling.sx},${ceiling.sy},${ceiling.sz})`
+      `[${CEILING_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${CEILING_BASE_Y},${ceiling.z}) scale=(${moduleFloor.sx},${ceiling.sy},${moduleFloor.sz}) expanded=${isExpandedFloorModule(moduleIndex)}`
     )
   }
 }

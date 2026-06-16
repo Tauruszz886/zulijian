@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="920" viewBox="0 0 1300 920">
+<rect width="100%" height="100%" fill="#f6f7f2"/>
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif}.title{font-size:24px;font-weight:700}.label{font-size:15px}.small{font-size:13px}.num{font-size:16px;font-weight:700}.dim{font-size:14px}</style>
+<text x="90" y="42" class="title" fill="#202020">第五关2.dxf 实体平台方向预览（按 3DSOLID，方向不翻转）</text>
+<line x1="90.00" y1="713.00" x2="90.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="166.00" y1="713.00" x2="166.00" y2="105.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="242.00" y1="713.00" x2="242.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="318.00" y1="713.00" x2="318.00" y2="105.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="394.00" y1="713.00" x2="394.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="470.00" y1="713.00" x2="470.00" y2="105.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="546.00" y1="713.00" x2="546.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="622.00" y1="713.00" x2="622.00" y2="105.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="698.00" y1="713.00" x2="698.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="774.00" y1="713.00" x2="774.00" y2="105.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="850.00" y1="713.00" x2="850.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="90.00" y1="713.00" x2="850.00" y2="713.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="90.00" y1="637.00" x2="850.00" y2="637.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="90.00" y1="561.00" x2="850.00" y2="561.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="90.00" y1="485.00" x2="850.00" y2="485.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="90.00" y1="409.00" x2="850.00" y2="409.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="90.00" y1="333.00" x2="850.00" y2="333.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="90.00" y1="257.00" x2="850.00" y2="257.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="90.00" y1="181.00" x2="850.00" y2="181.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="90.00" y1="105.00" x2="850.00" y2="105.00" stroke="#c8cdc4" stroke-width="1"/>
+<rect x="90.00" y="105.00" width="760.00" height="608.00" fill="none" stroke="#444" stroke-width="4"/>
+<line x1="926.00" y1="409.00" x2="850.00" y2="409.00" stroke="#c83c32" stroke-width="6" marker-end="url(#arrowRed)"/>
+<line x1="90.00" y1="409.00" x2="14.00" y2="409.00" stroke="#2878be" stroke-width="6" marker-end="url(#arrowBlue)"/>
+<defs>
+  <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#c83c32"/></marker>
+  <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2878be"/></marker>
+</defs>
+<text x="606.80" y="74.60" class="label" font-weight="700" fill="#aa2824">上一关入口 / 第4关方向（X+，右侧）</text>
+<text x="90.00" y="758.60" class="label" font-weight="700" fill="#1e5fa0">下一关 / 第6关方向（X-，左侧）</text>
+<rect x="90.00" y="295.00" width="76.00" height="228.00" fill="#7EA0C6" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="128.00" y="405.00" class="num" text-anchor="middle" fill="#111">1</text>
+<text x="128.00" y="424.00" class="dim" text-anchor="middle" fill="#111">10x30</text>
+<rect x="166.00" y="355.80" width="38.00" height="106.40" fill="#8FB791" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="185.00" y="405.00" class="num" text-anchor="middle" fill="#111">2</text>
+<text x="185.00" y="424.00" class="dim" text-anchor="middle" fill="#111">5x14</text>
+<rect x="242.18" y="131.60" width="57.00" height="68.40" fill="#CD976C" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="270.68" y="161.80" class="num" text-anchor="middle" fill="#111">3</text>
+<text x="270.68" y="180.80" class="dim" text-anchor="middle" fill="#111">7.5x9</text>
+<rect x="299.00" y="610.40" width="57.00" height="64.60" fill="#AA89BE" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="327.50" y="638.70" class="num" text-anchor="middle" fill="#111">4</text>
+<text x="327.50" y="657.70" class="dim" text-anchor="middle" fill="#111">7.5x8.5</text>
+<rect x="356.00" y="355.80" width="95.00" height="106.40" fill="#D2B45F" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="403.50" y="405.00" class="num" text-anchor="middle" fill="#111">5</text>
+<text x="403.50" y="424.00" class="dim" text-anchor="middle" fill="#111">12.5x14</text>
+<rect x="447.20" y="131.60" width="57.00" height="68.40" fill="#74AEAF" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="475.70" y="161.80" class="num" text-anchor="middle" fill="#111">6</text>
+<text x="475.70" y="180.80" class="dim" text-anchor="middle" fill="#111">7.5x9</text>
+<rect x="470.00" y="599.00" width="57.00" height="76.00" fill="#C67E86" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="498.50" y="633.00" class="num" text-anchor="middle" fill="#111">7</text>
+<text x="498.50" y="652.00" class="dim" text-anchor="middle" fill="#111">7.5x10</text>
+<rect x="622.00" y="131.60" width="57.00" height="68.40" fill="#999999" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="650.50" y="161.80" class="num" text-anchor="middle" fill="#111">8</text>
+<text x="650.50" y="180.80" class="dim" text-anchor="middle" fill="#111">7.5x9</text>
+<rect x="660.00" y="355.80" width="114.00" height="106.40" fill="#7EA0C6" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="717.00" y="405.00" class="num" text-anchor="middle" fill="#111">9</text>
+<text x="717.00" y="424.00" class="dim" text-anchor="middle" fill="#111">15x14</text>
+<rect x="774.00" y="181.00" width="76.00" height="456.00" fill="#8FB791" stroke="#263238" stroke-width="3" opacity="0.92"/>
+<text x="812.00" y="405.00" class="num" text-anchor="middle" fill="#111">10</text>
+<text x="812.00" y="424.00" class="dim" text-anchor="middle" fill="#111">10x60</text>
+<text x="90.00" y="97.00" class="small" fill="#555">startX=0</text>
+<text x="758.80" y="97.00" class="small" fill="#555">startX=100</text>
+<text x="858.00" y="109.00" class="small" fill="#555">startZ=80</text>
+<text x="858.00" y="717.00" class="small" fill="#555">startZ=0</text>
+<text x="905.00" y="120.00" class="label" font-weight="700" fill="#222">实体列表</text>
+<rect x="905.00" y="158.00" width="16" height="16" fill="#7EA0C6" stroke="#263238"/>
+<text x="929.00" y="172.00" class="small" fill="#222">1. 34A  start(0,25)  10x30</text>
+<rect x="905.00" y="182.00" width="16" height="16" fill="#8FB791" stroke="#263238"/>
+<text x="929.00" y="196.00" class="small" fill="#222">2. 548  start(10,33)  5x14</text>
+<rect x="905.00" y="206.00" width="16" height="16" fill="#CD976C" stroke="#263238"/>
+<text x="929.00" y="220.00" class="small" fill="#222">3. 585  start(20.0242,67.5)  7.5x9</text>
+<rect x="905.00" y="230.00" width="16" height="16" fill="#AA89BE" stroke="#263238"/>
+<text x="929.00" y="244.00" class="small" fill="#222">4. 579  start(27.5,5)  7.5x8.5</text>
+<rect x="905.00" y="254.00" width="16" height="16" fill="#D2B45F" stroke="#263238"/>
+<text x="929.00" y="268.00" class="small" fill="#222">5. 544  start(35,33)  12.5x14</text>
+<rect x="905.00" y="278.00" width="16" height="16" fill="#74AEAF" stroke="#263238"/>
+<text x="929.00" y="292.00" class="small" fill="#222">6. 57D  start(47,67.5)  7.5x9</text>
+<rect x="905.00" y="302.00" width="16" height="16" fill="#C67E86" stroke="#263238"/>
+<text x="929.00" y="316.00" class="small" fill="#222">7. 575  start(50,5)  7.5x10</text>
+<rect x="905.00" y="326.00" width="16" height="16" fill="#999999" stroke="#263238"/>
+<text x="929.00" y="340.00" class="small" fill="#222">8. 581  start(70,67.5)  7.5x9</text>
+<rect x="905.00" y="350.00" width="16" height="16" fill="#7EA0C6" stroke="#263238"/>
+<text x="929.00" y="364.00" class="small" fill="#222">9. 40F  start(75,33)  15x14</text>
+<rect x="905.00" y="374.00" width="16" height="16" fill="#8FB791" stroke="#263238"/>
+<text x="929.00" y="388.00" class="small" fill="#222">10. 406  start(90,10)  10x60</text>
+<text x="90" y="856" class="label" fill="#333">本图按 DXF 3DSOLID 实体绘制。上方为 local Z=80，下方为 local Z=0；右侧连接上一关，左侧连接下一关。</text>
+<text x="90" y="882" class="small" fill="#666">当前识别：10 个实体平台，全部高度 3。辅助线只用于核对，不作为施工平台。</text>
+</svg>

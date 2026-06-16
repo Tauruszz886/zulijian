@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980">
+<rect width="100%" height="100%" fill="#f6f7f2"/>
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif}.title{font-size:25px;font-weight:700}.label{font-size:15px}.small{font-size:12px}.module{font-size:18px;font-weight:700}.tiny{font-size:10px}</style>
+<text x="70" y="36" class="title" fill="#222">第七关 DXF 数据结构确认图</text>
+<text x="70" y="64" class="label" fill="#555">外框/识别范围：160 x 100（outer_frame）；平台来源：3DSOLID；实体数：6</text>
+<line x1="70.00" y1="643.75" x2="70.00" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="124.38" y1="643.75" x2="124.38" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="178.75" y1="643.75" x2="178.75" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="233.12" y1="643.75" x2="233.12" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="287.50" y1="643.75" x2="287.50" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="341.88" y1="643.75" x2="341.88" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="396.25" y1="643.75" x2="396.25" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="450.62" y1="643.75" x2="450.62" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="505.00" y1="643.75" x2="505.00" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="559.38" y1="643.75" x2="559.38" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="613.75" y1="643.75" x2="613.75" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="668.12" y1="643.75" x2="668.12" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="722.50" y1="643.75" x2="722.50" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="776.88" y1="643.75" x2="776.88" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="831.25" y1="643.75" x2="831.25" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="885.62" y1="643.75" x2="885.62" y2="100.00" stroke="#dfe3da" stroke-width="1"/>
+<line x1="940.00" y1="643.75" x2="940.00" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="70.00" y1="643.75" x2="940.00" y2="643.75" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="70.00" y1="589.38" x2="940.00" y2="589.38" stroke="#dfe3da" stroke-width="1"/>
+<line x1="70.00" y1="535.00" x2="940.00" y2="535.00" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="70.00" y1="480.62" x2="940.00" y2="480.62" stroke="#dfe3da" stroke-width="1"/>
+<line x1="70.00" y1="426.25" x2="940.00" y2="426.25" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="70.00" y1="371.88" x2="940.00" y2="371.88" stroke="#dfe3da" stroke-width="1"/>
+<line x1="70.00" y1="317.50" x2="940.00" y2="317.50" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="70.00" y1="263.12" x2="940.00" y2="263.12" stroke="#dfe3da" stroke-width="1"/>
+<line x1="70.00" y1="208.75" x2="940.00" y2="208.75" stroke="#c8cdc4" stroke-width="1"/>
+<line x1="70.00" y1="154.38" x2="940.00" y2="154.38" stroke="#dfe3da" stroke-width="1"/>
+<line x1="70.00" y1="100.00" x2="940.00" y2="100.00" stroke="#c8cdc4" stroke-width="1"/>
+<rect x="70.00" y="100.00" width="870.00" height="543.75" fill="none" stroke="#333" stroke-width="4"/>
+<defs><marker id="arrowR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#c83c32"/></marker><marker id="arrowB" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2878be"/></marker></defs>
+<line x1="1005.25" y1="371.88" x2="940.00" y2="371.88" stroke="#c83c32" stroke-width="6" marker-end="url(#arrowR)"/>
+<line x1="70.00" y1="371.88" x2="4.75" y2="371.88" stroke="#2878be" stroke-width="6" marker-end="url(#arrowB)"/>
+<text x="668.12" y="124.00" class="small" fill="#a33">上一关 X+ / 右侧入口</text>
+<text x="70.00" y="677.75" class="small" fill="#267">下一关 X- / 左侧出口</text>
+<rect x="70.00" y="269.92" width="87.00" height="203.91" fill="#7EA0C6" stroke="#263238" stroke-width="1.8" opacity="0.92"/>
+<text x="113.50" y="369.88" class="tiny" text-anchor="middle" fill="#111">1</text>
+<text x="113.50" y="382.88" class="tiny" text-anchor="middle" fill="#111">h3</text>
+<rect x="192.01" y="123.79" width="65.25" height="61.17" fill="#7EA0C6" stroke="#263238" stroke-width="1.8" opacity="0.92"/>
+<text x="224.64" y="152.38" class="tiny" text-anchor="middle" fill="#111">2</text>
+<text x="224.64" y="165.38" class="tiny" text-anchor="middle" fill="#111">h3</text>
+<rect x="374.50" y="324.30" width="87.00" height="95.16" fill="#7EA0C6" stroke="#263238" stroke-width="1.8" opacity="0.92"/>
+<text x="418.00" y="369.88" class="tiny" text-anchor="middle" fill="#111">3</text>
+<text x="418.00" y="382.88" class="tiny" text-anchor="middle" fill="#111">h3</text>
+<rect x="470.20" y="541.80" width="65.25" height="67.97" fill="#7EA0C6" stroke="#263238" stroke-width="1.8" opacity="0.92"/>
+<text x="502.82" y="573.78" class="tiny" text-anchor="middle" fill="#111">4</text>
+<text x="502.82" y="586.78" class="tiny" text-anchor="middle" fill="#111">h3</text>
+<rect x="744.25" y="324.30" width="108.75" height="95.16" fill="#7EA0C6" stroke="#263238" stroke-width="1.8" opacity="0.92"/>
+<text x="798.62" y="369.88" class="tiny" text-anchor="middle" fill="#111">5</text>
+<text x="798.62" y="382.88" class="tiny" text-anchor="middle" fill="#111">h3</text>
+<rect x="853.00" y="167.97" width="87.00" height="407.81" fill="#7EA0C6" stroke="#263238" stroke-width="1.8" opacity="0.92"/>
+<text x="896.50" y="369.88" class="tiny" text-anchor="middle" fill="#111">6</text>
+<text x="896.50" y="382.88" class="tiny" text-anchor="middle" fill="#111">h3</text>
+<text x="1010.0" y="110.0" class="module" fill="#222">结构列表</text>
+<text x="1010.0" y="138.0" class="small" fill="#555">高度分布：h3=6</text>
+<rect x="1010.0" y="156.0" width="14" height="14" fill="#7EA0C6" stroke="#263238"/>
+<text x="1032.0" y="168.0" class="small" fill="#222">1. 772 start(0,31.25) 16x37.5 h3</text>
+<rect x="1010.0" y="179.0" width="14" height="14" fill="#7EA0C6" stroke="#263238"/>
+<text x="1032.0" y="191.0" class="small" fill="#222">2. 776 start(22.4388,84.375) 12x11.25 h3</text>
+<rect x="1010.0" y="202.0" width="14" height="14" fill="#7EA0C6" stroke="#263238"/>
+<text x="1032.0" y="214.0" class="small" fill="#222">3. 77A start(56,41.25) 16x17.5 h3</text>
+<rect x="1010.0" y="225.0" width="14" height="14" fill="#7EA0C6" stroke="#263238"/>
+<text x="1032.0" y="237.0" class="small" fill="#222">4. 77E start(73.6,6.25) 12x12.5 h3</text>
+<rect x="1010.0" y="248.0" width="14" height="14" fill="#7EA0C6" stroke="#263238"/>
+<text x="1032.0" y="260.0" class="small" fill="#222">5. 788 start(124,41.25) 20x17.5 h3</text>
+<rect x="1010.0" y="271.0" width="14" height="14" fill="#7EA0C6" stroke="#263238"/>
+<text x="1032.0" y="283.0" class="small" fill="#222">6. 782 start(144,12.5) 16x75 h3</text>
+</svg>

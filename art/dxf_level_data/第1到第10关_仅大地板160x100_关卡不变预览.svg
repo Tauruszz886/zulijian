@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980">
+<rect width="100%" height="100%" fill="#f6f7f2"/>
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif}.title{font-size:25px;font-weight:700}.label{font-size:15px}.small{font-size:12px}.module{font-size:18px;font-weight:700}</style>
+<text x="55" y="34" class="title" fill="#222">第1到第10关：只扩大下层大地板/墙体/天花板，关卡地形保持原 100x80</text>
+<text x="55" y="62" class="label" fill="#555">灰色外框=下层大地板/墙体/天花板 160x100；虚线框=原关卡地形 100x80，保持原尺寸和原中心。</text>
+<text x="55.0" y="81.0" class="module" fill="#222">第1关</text>
+<rect x="55.0" y="95.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="55.0" y="95.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="199.0" y="143.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="199.0" y="143.0" width="192.0" height="384.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="439.0" y="143.0" width="168.0" height="384.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="631.0" y="143.0" width="48.0" height="384.0" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="74.2" y="114.2" class="small" fill="#555">大地板 160x100</text>
+<text x="213.4" y="137.0" class="small" fill="#555">关卡 100x80</text>
+<text x="841.0" y="81.0" class="module" fill="#222">第2关</text>
+<rect x="841.0" y="95.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="841.0" y="95.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="985.0" y="143.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="985.0" y="243.3" width="72.0" height="187.7" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1105.0" y="193.4" width="288.0" height="285.6" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1417.0" y="263.0" width="48.0" height="144.0" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="860.2" y="114.2" class="small" fill="#555">大地板 160x100</text>
+<text x="999.4" y="137.0" class="small" fill="#555">关卡 100x80</text>
+<text x="1627.0" y="81.0" class="module" fill="#222">第3关</text>
+<rect x="1627.0" y="95.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="1627.0" y="95.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="1771.0" y="143.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="2179.0" y="239.0" width="72.0" height="192.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2143.0" y="311.0" width="36.0" height="48.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2047.0" y="437.0" width="72.0" height="66.0" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1951.0" y="437.0" width="72.0" height="66.0" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1855.0" y="437.0" width="72.0" height="66.0" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2047.0" y="347.0" width="72.0" height="66.0" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1951.0" y="347.0" width="72.0" height="66.0" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1855.0" y="347.0" width="72.0" height="66.0" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2047.0" y="257.0" width="72.0" height="66.0" fill="#B4A078" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1951.0" y="257.0" width="72.0" height="66.0" fill="#80A0A8" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1855.0" y="257.0" width="72.0" height="66.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2047.0" y="167.0" width="72.0" height="66.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1951.0" y="167.0" width="72.0" height="66.0" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1855.0" y="167.0" width="72.0" height="66.0" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1771.0" y="143.0" width="48.0" height="384.0" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="1646.2" y="114.2" class="small" fill="#555">大地板 160x100</text>
+<text x="1785.4" y="137.0" class="small" fill="#555">关卡 100x80</text>
+<text x="2413.0" y="81.0" class="module" fill="#222">第4关</text>
+<rect x="2413.0" y="95.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="2413.0" y="95.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="2557.0" y="143.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="2557.0" y="143.0" width="48.0" height="384.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2965.0" y="239.0" width="72.0" height="192.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2929.0" y="311.0" width="36.0" height="48.0" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2605.0" y="287.0" width="360.0" height="96.0" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2773.0" y="383.0" width="48.0" height="36.0" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2773.0" y="251.0" width="48.0" height="36.0" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2605.0" y="287.0" width="144.0" height="96.0" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2797.0" y="287.0" width="168.0" height="96.0" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="2432.2" y="114.2" class="small" fill="#555">大地板 160x100</text>
+<text x="2571.4" y="137.0" class="small" fill="#555">关卡 100x80</text>
+<text x="3199.0" y="81.0" class="module" fill="#222">第5关</text>
+<rect x="3199.0" y="95.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="3199.0" y="95.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="3343.0" y="143.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="3343.0" y="263.0" width="48.0" height="144.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3391.0" y="301.4" width="24.0" height="67.2" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3439.1" y="159.8" width="36.0" height="43.2" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3475.0" y="462.2" width="36.0" height="40.8" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3511.0" y="301.4" width="60.0" height="67.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3568.6" y="159.8" width="36.0" height="43.2" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3583.0" y="455.0" width="36.0" height="48.0" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3679.0" y="159.8" width="36.0" height="43.2" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3703.0" y="301.4" width="72.0" height="67.2" fill="#B4A078" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="3775.0" y="191.0" width="48.0" height="288.0" fill="#80A0A8" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="3218.2" y="114.2" class="small" fill="#555">大地板 160x100</text>
+<text x="3357.4" y="137.0" class="small" fill="#555">关卡 100x80</text>
+<text x="55.0" y="673.0" class="module" fill="#222">第6关</text>
+<rect x="55.0" y="687.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="55.0" y="687.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="199.0" y="735.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="199.0" y="855.0" width="24.0" height="144.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="631.0" y="783.0" width="48.0" height="288.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="535.0" y="893.4" width="96.0" height="67.2" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="247.0" y="893.4" width="288.0" height="67.2" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="223.0" y="893.4" width="24.0" height="67.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="74.2" y="706.2" class="small" fill="#555">大地板 160x100</text>
+<text x="213.4" y="729.0" class="small" fill="#555">关卡 100x80</text>
+<text x="841.0" y="673.0" class="module" fill="#222">第7关</text>
+<rect x="841.0" y="687.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="841.0" y="687.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="985.0" y="735.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="985.0" y="855.0" width="24.0" height="144.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1417.0" y="783.0" width="48.0" height="288.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1345.0" y="893.4" width="72.0" height="67.2" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1141.0" y="893.4" width="48.0" height="67.2" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1009.0" y="893.4" width="24.0" height="67.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1205.8" y="1047.0" width="36.0" height="48.0" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1052.3" y="751.8" width="36.0" height="43.2" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="860.2" y="706.2" class="small" fill="#555">大地板 160x100</text>
+<text x="999.4" y="729.0" class="small" fill="#555">关卡 100x80</text>
+<text x="1627.0" y="673.0" class="module" fill="#222">第8关</text>
+<rect x="1627.0" y="687.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="1627.0" y="687.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="1771.0" y="735.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="1771.0" y="807.0" width="60.0" height="168.0" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1823.8" y="1047.0" width="36.0" height="48.0" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1831.0" y="826.8" width="336.0" height="96.0" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1831.0" y="903.6" width="336.0" height="19.2" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1831.0" y="826.8" width="336.0" height="19.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1852.6" y="875.7" width="132.0" height="8.6" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1852.6" y="865.2" width="132.0" height="8.6" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1857.4" y="884.4" width="2.4" height="19.2" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1857.4" y="846.0" width="2.4" height="19.2" fill="#B4A078" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1881.4" y="884.4" width="2.4" height="19.2" fill="#80A0A8" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1881.4" y="846.0" width="2.4" height="19.2" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1905.4" y="884.4" width="2.4" height="19.2" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1905.4" y="846.0" width="2.4" height="19.2" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1929.4" y="884.4" width="2.4" height="19.2" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1929.4" y="846.0" width="2.4" height="19.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1953.4" y="884.4" width="2.4" height="19.2" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1953.4" y="846.0" width="2.4" height="19.2" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1967.8" y="1047.0" width="36.0" height="48.0" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1977.4" y="884.4" width="2.4" height="19.2" fill="#B4A078" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="1977.4" y="846.0" width="2.4" height="19.2" fill="#80A0A8" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2020.6" y="875.7" width="132.0" height="8.6" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2020.6" y="865.2" width="132.0" height="8.6" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2025.4" y="884.4" width="2.4" height="19.2" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2025.4" y="846.0" width="2.4" height="19.2" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2049.4" y="884.4" width="2.4" height="19.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2049.4" y="846.0" width="2.4" height="19.2" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2073.4" y="884.4" width="2.4" height="19.2" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2073.4" y="846.0" width="2.4" height="19.2" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2097.4" y="884.4" width="2.4" height="19.2" fill="#B4A078" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2097.4" y="846.0" width="2.4" height="19.2" fill="#80A0A8" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2121.4" y="884.4" width="2.4" height="19.2" fill="#7EA0C6" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2121.4" y="884.4" width="2.4" height="19.2" fill="#8FB791" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2121.4" y="884.4" width="2.4" height="19.2" fill="#CD976C" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2121.4" y="846.0" width="2.4" height="19.2" fill="#AA89BE" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2145.4" y="884.4" width="2.4" height="19.2" fill="#D2B45F" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2145.4" y="846.0" width="2.4" height="19.2" fill="#74AEAF" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2167.0" y="797.4" width="36.0" height="259.2" fill="#C67E86" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<rect x="2203.0" y="783.0" width="48.0" height="288.0" fill="#999999" stroke="#263238" stroke-width="1.5" opacity="0.92"/>
+<text x="1646.2" y="706.2" class="small" fill="#555">大地板 160x100</text>
+<text x="1785.4" y="729.0" class="small" fill="#555">关卡 100x80</text>
+<text x="2413.0" y="673.0" class="module" fill="#222">第9关</text>
+<rect x="2413.0" y="687.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="2413.0" y="687.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="2557.0" y="735.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="2557.0" y="735.0" width="480.0" height="384.0" fill="#7EA0C6" stroke="#263238" stroke-width="2" opacity="0.55"/>
+<text x="2797.0" y="927.0" class="label" text-anchor="middle" fill="#111">上层地砖仍 100x80</text>
+<text x="2432.2" y="706.2" class="small" fill="#555">大地板 160x100</text>
+<text x="2571.4" y="729.0" class="small" fill="#555">关卡 100x80</text>
+<text x="3199.0" y="673.0" class="module" fill="#222">第10关</text>
+<rect x="3199.0" y="687.0" width="768.0" height="480.0" fill="#ecefe8" stroke="#333" stroke-width="2"/>
+<rect x="3199.0" y="687.0" width="768.0" height="480.0" fill="none" stroke="#7b7b7b" stroke-width="8" opacity="0.35"/>
+<rect x="3343.0" y="735.0" width="480.0" height="384.0" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5" opacity="0.75"/>
+<rect x="3343.0" y="735.0" width="480.0" height="384.0" fill="#7EA0C6" stroke="#263238" stroke-width="2" opacity="0.55"/>
+<text x="3583.0" y="927.0" class="label" text-anchor="middle" fill="#111">上层地砖仍 100x80</text>
+<text x="3218.2" y="706.2" class="small" fill="#555">大地板 160x100</text>
+<text x="3357.4" y="729.0" class="small" fill="#555">关卡 100x80</text>
+</svg>

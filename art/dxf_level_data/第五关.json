@@ -1,8 +1,8 @@
 {
   "schema": "zulijian.dxf_level_data.v1",
   "source": {
-    "path": "/tmp/codex-web-uploads/f-7eN9El/第五关.dxf",
-    "filename": "第五关.dxf",
+    "path": "/tmp/codex-web-uploads/f-snVhML/第五关2.dxf",
+    "filename": "第五关2.dxf",
     "acad_version": "AC1032"
   },
   "options": {
@@ -12,17 +12,50 @@
   },
   "summary": {
     "entity_counts": {
-      "3DSOLID": 11,
-      "DIMENSION": 12,
-      "LINE": 43,
+      "3DSOLID": 10,
+      "DIMENSION": 11,
+      "LINE": 38,
       "LWPOLYLINE": 1
+    },
+    "object_counts": {
+      "ACAD_EVALUATION_GRAPH": 10,
+      "ACDBASSOCACTION": 6,
+      "ACDBASSOCALIGNEDDIMACTIONBODY": 1,
+      "ACDBASSOCDEPENDENCY": 6,
+      "ACDBASSOCEDGEACTIONPARAM": 3,
+      "ACDBASSOCGEOMDEPENDENCY": 11,
+      "ACDBASSOCNETWORK": 2,
+      "ACDBASSOCOSNAPPOINTREFACTIONPARAM": 11,
+      "ACDBASSOCPERSSUBENTMANAGER": 1,
+      "ACDBASSOCROTATEDDIMACTIONBODY": 5,
+      "ACDBASSOCVERTEXACTIONPARAM": 8,
+      "ACDBDETAILVIEWSTYLE": 1,
+      "ACDBDICTIONARYWDFLT": 1,
+      "ACDBPERSSUBENTMANAGER": 1,
+      "ACDBPLACEHOLDER": 1,
+      "ACDBSECTIONVIEWSTYLE": 1,
+      "ACSH_BOX_CLASS": 10,
+      "ACSH_HISTORY_CLASS": 10,
+      "CELLSTYLEMAP": 1,
+      "DICTIONARY": 28,
+      "DICTIONARYVAR": 11,
+      "DIMASSOC": 3,
+      "LAYOUT": 3,
+      "MATERIAL": 3,
+      "MLEADERSTYLE": 1,
+      "MLINESTYLE": 1,
+      "SCALE": 17,
+      "SORTENTSTABLE": 1,
+      "TABLESTYLE": 1,
+      "VISUALSTYLE": 26,
+      "XRECORD": 4
     },
     "layers": {
       "0": {
         "LWPOLYLINE": 1,
-        "LINE": 43,
-        "DIMENSION": 12,
-        "3DSOLID": 11
+        "LINE": 38,
+        "DIMENSION": 11,
+        "3DSOLID": 10
       }
     },
     "geometry_bounds": {
@@ -855,110 +888,6 @@
       },
       {
         "type": "LINE",
-        "handle": "560",
-        "layer": "0",
-        "start": {
-          "x": 34.09856,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "end": {
-          "x": 39.09856,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "length": 5.0,
-        "orientation": "horizontal",
-        "start_local": {
-          "x": 25.0,
-          "z": 5.0
-        },
-        "end_local": {
-          "x": 30.0,
-          "z": 5.0
-        },
-        "index": 38
-      },
-      {
-        "type": "LINE",
-        "handle": "564",
-        "layer": "0",
-        "start": {
-          "x": 34.09856,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "end": {
-          "x": 24.09856,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "length": 10.0,
-        "orientation": "horizontal",
-        "start_local": {
-          "x": 25.0,
-          "z": 5.0
-        },
-        "end_local": {
-          "x": 15.0,
-          "z": 5.0
-        },
-        "index": 39
-      },
-      {
-        "type": "LINE",
-        "handle": "565",
-        "layer": "0",
-        "start": {
-          "x": 24.09856,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "end": {
-          "x": 24.09856,
-          "y": -29.618176,
-          "z": 0.0
-        },
-        "length": 7.5,
-        "orientation": "vertical",
-        "start_local": {
-          "x": 15.0,
-          "z": 5.0
-        },
-        "end_local": {
-          "x": 15.0,
-          "z": 12.5
-        },
-        "index": 40
-      },
-      {
-        "type": "LINE",
-        "handle": "566",
-        "layer": "0",
-        "start": {
-          "x": 24.09856,
-          "y": -29.618176,
-          "z": 0.0
-        },
-        "end": {
-          "x": 16.59856,
-          "y": -29.618176,
-          "z": 0.0
-        },
-        "length": 7.5,
-        "orientation": "horizontal",
-        "start_local": {
-          "x": 15.0,
-          "z": 12.5
-        },
-        "end_local": {
-          "x": 7.5,
-          "z": 12.5
-        },
-        "index": 41
-      },
-      {
-        "type": "LINE",
         "handle": "567",
         "layer": "0",
         "start": {
@@ -981,33 +910,7 @@
           "x": 7.5,
           "z": 5.0
         },
-        "index": 42
-      },
-      {
-        "type": "LINE",
-        "handle": "568",
-        "layer": "0",
-        "start": {
-          "x": 16.59856,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "end": {
-          "x": 24.12223,
-          "y": -37.118176,
-          "z": 0.0
-        },
-        "length": 7.52367,
-        "orientation": "horizontal",
-        "start_local": {
-          "x": 7.5,
-          "z": 5.0
-        },
-        "end_local": {
-          "x": 15.02367,
-          "z": 5.0
-        },
-        "index": 43
+        "index": 38
       },
       {
         "type": "LINE",
@@ -1033,7 +936,7 @@
           "x": 35.0,
           "z": 5.0
         },
-        "index": 45
+        "index": 39
       },
       {
         "type": "LINE",
@@ -1059,7 +962,7 @@
           "x": 35.0,
           "z": 12.5
         },
-        "index": 46
+        "index": 40
       },
       {
         "type": "LINE",
@@ -1085,7 +988,7 @@
           "x": 27.5,
           "z": 12.5
         },
-        "index": 47
+        "index": 41
       },
       {
         "type": "LINE",
@@ -1111,7 +1014,7 @@
           "x": 27.5,
           "z": 5.0
         },
-        "index": 48
+        "index": 42
       },
       {
         "type": "LINE",
@@ -1137,7 +1040,7 @@
           "x": 57.5,
           "z": 12.5
         },
-        "index": 49
+        "index": 43
       },
       {
         "type": "LINE",
@@ -1163,7 +1066,7 @@
           "x": 50.0,
           "z": 12.5
         },
-        "index": 50
+        "index": 44
       },
       {
         "type": "LINE",
@@ -1189,7 +1092,7 @@
           "x": 50.0,
           "z": 5.0
         },
-        "index": 51
+        "index": 45
       },
       {
         "type": "LINE",
@@ -1215,7 +1118,7 @@
           "x": 50.0,
           "z": 5.0
         },
-        "index": 52
+        "index": 46
       }
     ],
     "polylines": [
@@ -1436,7 +1339,7 @@
           "x": 70.0,
           "z": 67.5
         },
-        "index": 58
+        "index": 52
       },
       {
         "type": "DIMENSION",
@@ -1481,7 +1384,7 @@
           "x": 70.0,
           "z": 80.0
         },
-        "index": 59
+        "index": 53
       },
       {
         "type": "DIMENSION",
@@ -1526,7 +1429,7 @@
           "x": 57.5,
           "z": 0.0
         },
-        "index": 60
+        "index": 54
       },
       {
         "type": "DIMENSION",
@@ -1543,34 +1446,34 @@
         ],
         "measure": 27.5,
         "definition_start": {
-          "x": 51.59856,
+          "x": 56.59856,
           "y": -9.118176,
           "z": 0.0
         },
         "definition_end": {
-          "x": 79.09856,
+          "x": 84.09856,
           "y": -8.884362,
           "z": 0.0
         },
         "dimension_line_point": {
-          "x": 79.09856,
+          "x": 84.09856,
           "y": -12.097512,
           "z": 0.0
         },
         "text_midpoint": {
-          "x": 65.34856,
+          "x": 70.34856,
           "y": -10.014178,
           "z": 0.0
         },
         "definition_start_local": {
-          "x": 42.5,
+          "x": 47.5,
           "z": 33.0
         },
         "definition_end_local": {
-          "x": 70.0,
+          "x": 75.0,
           "z": 33.233814
         },
-        "index": 61
+        "index": 55
       },
       {
         "type": "DIMENSION",
@@ -1614,7 +1517,7 @@
           "x": 10.0,
           "z": 47.0
         },
-        "index": 62
+        "index": 56
       },
       {
         "type": "DIMENSION",
@@ -1629,9 +1532,9 @@
           "AcDbAlignedDimension",
           "AcDbRotatedDimension"
         ],
-        "measure": 29.02424,
+        "measure": 20.02424,
         "definition_start": {
-          "x": 38.1228,
+          "x": 29.1228,
           "y": 34.381824,
           "z": 0.0
         },
@@ -1646,19 +1549,19 @@
           "z": 0.0
         },
         "text_midpoint": {
-          "x": 23.61068,
+          "x": 19.11068,
           "y": 35.279963,
           "z": 0.0
         },
         "definition_start_local": {
-          "x": 29.02424,
+          "x": 20.02424,
           "z": 76.5
         },
         "definition_end_local": {
           "x": 0.0,
           "z": 76.5
         },
-        "index": 63
+        "index": 57
       },
       {
         "type": "DIMENSION",
@@ -1673,24 +1576,24 @@
           "AcDbAlignedDimension",
           "AcDbRotatedDimension"
         ],
-        "measure": 10.47576,
+        "measure": 19.47576,
         "definition_start": {
           "x": 56.09856,
           "y": 34.381824,
           "z": 0.0
         },
         "definition_end": {
-          "x": 45.6228,
+          "x": 36.6228,
           "y": 34.381824,
           "z": 0.0
         },
         "dimension_line_point": {
-          "x": 45.6228,
+          "x": 36.6228,
           "y": 36.523802,
           "z": 0.0
         },
         "text_midpoint": {
-          "x": 50.86068,
+          "x": 46.36068,
           "y": 38.607135,
           "z": 0.0
         },
@@ -1699,10 +1602,10 @@
           "z": 76.5
         },
         "definition_end_local": {
-          "x": 36.52424,
+          "x": 27.52424,
           "z": 76.5
         },
-        "index": 64
+        "index": 58
       },
       {
         "type": "DIMENSION",
@@ -1746,51 +1649,7 @@
           "x": 50.0,
           "z": 13.5
         },
-        "index": 65
-      },
-      {
-        "type": "DIMENSION",
-        "handle": "698",
-        "layer": "0",
-        "name": "*D14",
-        "style": "ISO-25",
-        "dimension_type": 32,
-        "subclasses": [
-          "AcDbEntity",
-          "AcDbDimension",
-          "AcDbAlignedDimension",
-          "AcDbRotatedDimension"
-        ],
-        "measure": 12.47633,
-        "definition_start": {
-          "x": 36.59856,
-          "y": -28.618176,
-          "z": 0.0
-        },
-        "definition_end": {
-          "x": 24.12223,
-          "y": -28.618176,
-          "z": 0.0
-        },
-        "dimension_line_point": {
-          "x": 24.12223,
-          "y": -27.594244,
-          "z": 0.0
-        },
-        "text_midpoint": {
-          "x": 30.360395,
-          "y": -25.51091,
-          "z": 0.0
-        },
-        "definition_start_local": {
-          "x": 27.5,
-          "z": 13.5
-        },
-        "definition_end_local": {
-          "x": 15.02367,
-          "z": 13.5
-        },
-        "index": 66
+        "index": 59
       }
     ],
     "solids3d": [
@@ -1798,7 +1657,7 @@
         "type": "3DSOLID",
         "handle": "34A",
         "layer": "0",
-        "persistent_id": "{28caf132-b141-234b-a871-37a5eeda0c25}",
+        "persistent_id": "{316064da-5fea-8a48-9b2c-43c59e184eb8}",
         "history_handle": "34D",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 15
@@ -1807,7 +1666,7 @@
         "type": "3DSOLID",
         "handle": "406",
         "layer": "0",
-        "persistent_id": "{d7a69c83-0a5e-0448-92c9-85188429b99a}",
+        "persistent_id": "{3abd0b01-600d-0148-ae93-2048c4f43293}",
         "history_handle": "409",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 19
@@ -1816,7 +1675,7 @@
         "type": "3DSOLID",
         "handle": "40F",
         "layer": "0",
-        "persistent_id": "{5e290932-18bb-f24e-9a69-69a11cbef1ca}",
+        "persistent_id": "{8642a46b-57bb-c741-bf16-b2acc56d8348}",
         "history_handle": "412",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 20
@@ -1825,7 +1684,7 @@
         "type": "3DSOLID",
         "handle": "544",
         "layer": "0",
-        "persistent_id": "{f65a0574-61b8-0244-b666-a7843e4df8a8}",
+        "persistent_id": "{932f597e-d1ff-8741-bb89-86b5d47f3d5c}",
         "history_handle": "547",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 31
@@ -1834,64 +1693,55 @@
         "type": "3DSOLID",
         "handle": "548",
         "layer": "0",
-        "persistent_id": "{9e80d808-a3e9-7f45-96eb-76ea4aa49495}",
+        "persistent_id": "{c6a797af-54d0-1c49-bc07-43d74827e212}",
         "history_handle": "54B",
         "geometry_status": "recorded_without_readable_mesh",
         "index": 32
       },
       {
         "type": "3DSOLID",
-        "handle": "569",
-        "layer": "0",
-        "persistent_id": "{d48becdc-f4ae-d24c-b3a5-1643727274ad}",
-        "history_handle": "56C",
-        "geometry_status": "recorded_without_readable_mesh",
-        "index": 44
-      },
-      {
-        "type": "3DSOLID",
         "handle": "575",
         "layer": "0",
-        "persistent_id": "{4720c0e9-78d6-284b-8c07-97f35f524824}",
+        "persistent_id": "{1f13ed6d-dd39-4f46-a32d-09be31bdf4c6}",
         "history_handle": "578",
         "geometry_status": "recorded_without_readable_mesh",
-        "index": 53
+        "index": 47
       },
       {
         "type": "3DSOLID",
         "handle": "579",
         "layer": "0",
-        "persistent_id": "{3257d2fc-2b84-8543-a154-140d27ac1612}",
+        "persistent_id": "{840d881e-2868-5845-8e82-0466d6f940ba}",
         "history_handle": "57C",
         "geometry_status": "recorded_without_readable_mesh",
-        "index": 54
+        "index": 48
       },
       {
         "type": "3DSOLID",
         "handle": "57D",
         "layer": "0",
-        "persistent_id": "{4ae9d752-8128-a249-b9c4-75009a001d79}",
+        "persistent_id": "{2d4648f1-489b-3840-81c7-eba9f46afd67}",
         "history_handle": "580",
         "geometry_status": "recorded_without_readable_mesh",
-        "index": 55
+        "index": 49
       },
       {
         "type": "3DSOLID",
         "handle": "581",
         "layer": "0",
-        "persistent_id": "{e927d85c-d961-3d4e-a240-0cd8f06a401f}",
+        "persistent_id": "{522e06b9-a383-dd40-9b07-7e33fbe1cfd6}",
         "history_handle": "584",
         "geometry_status": "recorded_without_readable_mesh",
-        "index": 56
+        "index": 50
       },
       {
         "type": "3DSOLID",
         "handle": "585",
         "layer": "0",
-        "persistent_id": "{e1106cf5-a435-6d4c-8c9d-1961f7325394}",
+        "persistent_id": "{4d90f0a7-de2d-b947-86a5-8e8c6600b170}",
         "history_handle": "586",
         "geometry_status": "recorded_without_readable_mesh",
-        "index": 57
+        "index": 51
       }
     ],
     "circles": [],
@@ -2048,54 +1898,6 @@
         "orientation": "horizontal",
         "cad": {
           "start": {
-            "x": 16.59856,
-            "y": -37.118176
-          },
-          "end": {
-            "x": 24.12223,
-            "y": -37.118176
-          }
-        },
-        "local": {
-          "start": {
-            "x": 7.5,
-            "z": 5.0
-          },
-          "end": {
-            "x": 15.02367,
-            "z": 5.0
-          }
-        },
-        "length": 7.52367
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
-            "x": 16.59856,
-            "y": -29.618176
-          },
-          "end": {
-            "x": 24.09856,
-            "y": -29.618176
-          }
-        },
-        "local": {
-          "start": {
-            "x": 7.5,
-            "z": 12.5
-          },
-          "end": {
-            "x": 15.0,
-            "z": 12.5
-          }
-        },
-        "length": 7.5
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
             "x": 19.09856,
             "y": -42.118176
           },
@@ -2139,54 +1941,6 @@
           }
         },
         "length": 7.5
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
-            "x": 24.09856,
-            "y": -37.118176
-          },
-          "end": {
-            "x": 34.09856,
-            "y": -37.118176
-          }
-        },
-        "local": {
-          "start": {
-            "x": 15.0,
-            "z": 5.0
-          },
-          "end": {
-            "x": 25.0,
-            "z": 5.0
-          }
-        },
-        "length": 10.0
-      },
-      {
-        "orientation": "horizontal",
-        "cad": {
-          "start": {
-            "x": 34.09856,
-            "y": -37.118176
-          },
-          "end": {
-            "x": 39.09856,
-            "y": -37.118176
-          }
-        },
-        "local": {
-          "start": {
-            "x": 25.0,
-            "z": 5.0
-          },
-          "end": {
-            "x": 30.0,
-            "z": 5.0
-          }
-        },
-        "length": 5.0
       },
       {
         "orientation": "horizontal",
@@ -2600,30 +2354,6 @@
         "orientation": "vertical",
         "cad": {
           "start": {
-            "x": 24.09856,
-            "y": -37.118176
-          },
-          "end": {
-            "x": 24.09856,
-            "y": -29.618176
-          }
-        },
-        "local": {
-          "start": {
-            "x": 15.0,
-            "z": 5.0
-          },
-          "end": {
-            "x": 15.0,
-            "z": 12.5
-          }
-        },
-        "length": 7.5
-      },
-      {
-        "orientation": "vertical",
-        "cad": {
-          "start": {
             "x": 36.59856,
             "y": -37.118176
           },
@@ -2974,44 +2704,6 @@
       },
       {
         "cad_bounds": {
-          "min_x": 16.59856,
-          "min_y": -37.118176,
-          "max_x": 24.09856,
-          "max_y": -29.618176,
-          "width": 7.5,
-          "height": 7.5
-        },
-        "local_rect": {
-          "startX": 7.5,
-          "startZ": 5.0,
-          "sx": 7.5,
-          "sz": 7.5
-        },
-        "area": 56.25,
-        "is_frame": false,
-        "source": "closed_axis_aligned_segments"
-      },
-      {
-        "cad_bounds": {
-          "min_x": 36.59856,
-          "min_y": -37.118176,
-          "max_x": 44.09856,
-          "max_y": -29.618176,
-          "width": 7.5,
-          "height": 7.5
-        },
-        "local_rect": {
-          "startX": 27.5,
-          "startZ": 5.0,
-          "sx": 7.5,
-          "sz": 7.5
-        },
-        "area": 56.25,
-        "is_frame": false,
-        "source": "closed_axis_aligned_segments"
-      },
-      {
-        "cad_bounds": {
           "min_x": 59.09856,
           "min_y": -37.118176,
           "max_x": 66.59856,
@@ -3041,22 +2733,6 @@
       },
       {
         "name": "rect_002_7_5x7_5",
-        "startX": 7.5,
-        "startZ": 5.0,
-        "sx": 7.5,
-        "sz": 7.5,
-        "source": "closed_axis_aligned_segments"
-      },
-      {
-        "name": "rect_003_7_5x7_5",
-        "startX": 27.5,
-        "startZ": 5.0,
-        "sx": 7.5,
-        "sz": 7.5,
-        "source": "closed_axis_aligned_segments"
-      },
-      {
-        "name": "rect_004_7_5x7_5",
         "startX": 50.0,
         "startZ": 5.0,
         "sx": 7.5,
@@ -3064,9 +2740,402 @@
         "source": "closed_axis_aligned_segments"
       }
     ],
+    "solid_box_candidates": [
+      {
+        "solid_handle": "34A",
+        "history_handle": "34D",
+        "persistent_id": "{316064da-5fea-8a48-9b2c-43c59e184eb8}",
+        "name": "solid_34A_10x30",
+        "box_handle": "34B",
+        "graph_handle": "34C",
+        "node_id": 17,
+        "cad_center": {
+          "x": 14.09856,
+          "y": -2.118176
+        },
+        "local_center": {
+          "x": 5.0,
+          "z": 40.0
+        },
+        "topdown_rect": {
+          "startX": 0.0,
+          "startZ": 25.0,
+          "sx": 10.0,
+          "sz": 30.0
+        },
+        "raw_box_size": {
+          "x": 10.0,
+          "y": 30.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "548",
+        "history_handle": "54B",
+        "persistent_id": "{c6a797af-54d0-1c49-bc07-43d74827e212}",
+        "name": "solid_548_5x14",
+        "box_handle": "549",
+        "graph_handle": "54A",
+        "node_id": 47,
+        "cad_center": {
+          "x": 21.59856,
+          "y": -2.118176
+        },
+        "local_center": {
+          "x": 12.5,
+          "z": 40.0
+        },
+        "topdown_rect": {
+          "startX": 10.0,
+          "startZ": 33.0,
+          "sx": 5.0,
+          "sz": 14.0
+        },
+        "raw_box_size": {
+          "x": 5.0,
+          "y": 14.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "585",
+        "history_handle": "586",
+        "persistent_id": "{4d90f0a7-de2d-b947-86a5-8e8c6600b170}",
+        "name": "solid_585_7_5x9",
+        "box_handle": "588",
+        "graph_handle": "587",
+        "node_id": 53,
+        "cad_center": {
+          "x": 32.8728,
+          "y": 29.881824
+        },
+        "local_center": {
+          "x": 23.77424,
+          "z": 72.0
+        },
+        "topdown_rect": {
+          "startX": 20.02424,
+          "startZ": 67.5,
+          "sx": 7.5,
+          "sz": 9.0
+        },
+        "raw_box_size": {
+          "x": 7.5,
+          "y": 9.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "579",
+        "history_handle": "57C",
+        "persistent_id": "{840d881e-2868-5845-8e82-0466d6f940ba}",
+        "name": "solid_579_7_5x8_5",
+        "box_handle": "57A",
+        "graph_handle": "57B",
+        "node_id": 50,
+        "cad_center": {
+          "x": 40.34856,
+          "y": -32.868176
+        },
+        "local_center": {
+          "x": 31.25,
+          "z": 9.25
+        },
+        "topdown_rect": {
+          "startX": 27.5,
+          "startZ": 5.0,
+          "sx": 7.5,
+          "sz": 8.5
+        },
+        "raw_box_size": {
+          "x": 7.5,
+          "y": 8.5,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "544",
+        "history_handle": "547",
+        "persistent_id": "{932f597e-d1ff-8741-bb89-86b5d47f3d5c}",
+        "name": "solid_544_12_5x14",
+        "box_handle": "545",
+        "graph_handle": "546",
+        "node_id": 46,
+        "cad_center": {
+          "x": 50.34856,
+          "y": -2.118176
+        },
+        "local_center": {
+          "x": 41.25,
+          "z": 40.0
+        },
+        "topdown_rect": {
+          "startX": 35.0,
+          "startZ": 33.0,
+          "sx": 12.5,
+          "sz": 14.0
+        },
+        "raw_box_size": {
+          "x": 12.5,
+          "y": 14.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": -1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "57D",
+        "history_handle": "580",
+        "persistent_id": "{2d4648f1-489b-3840-81c7-eba9f46afd67}",
+        "name": "solid_57D_7_5x9",
+        "box_handle": "57E",
+        "graph_handle": "57F",
+        "node_id": 51,
+        "cad_center": {
+          "x": 59.84856,
+          "y": 29.881824
+        },
+        "local_center": {
+          "x": 50.75,
+          "z": 72.0
+        },
+        "topdown_rect": {
+          "startX": 47.0,
+          "startZ": 67.5,
+          "sx": 7.5,
+          "sz": 9.0
+        },
+        "raw_box_size": {
+          "x": 7.5,
+          "y": 9.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "575",
+        "history_handle": "578",
+        "persistent_id": "{1f13ed6d-dd39-4f46-a32d-09be31bdf4c6}",
+        "name": "solid_575_7_5x10",
+        "box_handle": "576",
+        "graph_handle": "577",
+        "node_id": 49,
+        "cad_center": {
+          "x": 62.84856,
+          "y": -32.118176
+        },
+        "local_center": {
+          "x": 53.75,
+          "z": 10.0
+        },
+        "topdown_rect": {
+          "startX": 50.0,
+          "startZ": 5.0,
+          "sx": 7.5,
+          "sz": 10.0
+        },
+        "raw_box_size": {
+          "x": 7.5,
+          "y": 10.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "581",
+        "history_handle": "584",
+        "persistent_id": "{522e06b9-a383-dd40-9b07-7e33fbe1cfd6}",
+        "name": "solid_581_7_5x9",
+        "box_handle": "582",
+        "graph_handle": "583",
+        "node_id": 52,
+        "cad_center": {
+          "x": 82.84856,
+          "y": 29.881824
+        },
+        "local_center": {
+          "x": 73.75,
+          "z": 72.0
+        },
+        "topdown_rect": {
+          "startX": 70.0,
+          "startZ": 67.5,
+          "sx": 7.5,
+          "sz": 9.0
+        },
+        "raw_box_size": {
+          "x": 7.5,
+          "y": 9.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "40F",
+        "history_handle": "412",
+        "persistent_id": "{8642a46b-57bb-c741-bf16-b2acc56d8348}",
+        "name": "solid_40F_15x14",
+        "box_handle": "410",
+        "graph_handle": "411",
+        "node_id": 22,
+        "cad_center": {
+          "x": 91.59856,
+          "y": -2.118176
+        },
+        "local_center": {
+          "x": 82.5,
+          "z": 40.0
+        },
+        "topdown_rect": {
+          "startX": 75.0,
+          "startZ": 33.0,
+          "sx": 15.0,
+          "sz": 14.0
+        },
+        "raw_box_size": {
+          "x": 15.0,
+          "y": 14.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": -1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "406",
+        "history_handle": "409",
+        "persistent_id": "{3abd0b01-600d-0148-ae93-2048c4f43293}",
+        "name": "solid_406_10x60",
+        "box_handle": "407",
+        "graph_handle": "408",
+        "node_id": 20,
+        "cad_center": {
+          "x": 104.09856,
+          "y": -2.118176
+        },
+        "local_center": {
+          "x": 95.0,
+          "z": 40.0
+        },
+        "topdown_rect": {
+          "startX": 90.0,
+          "startZ": 10.0,
+          "sx": 10.0,
+          "sz": 60.0
+        },
+        "raw_box_size": {
+          "x": 10.0,
+          "y": 60.0,
+          "z": 3.0
+        },
+        "vertical_axis": "z",
+        "vertical_height": 3.0,
+        "topdown_transform": {
+          "m00": -1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      }
+    ],
     "notes": [
       "rectangle_candidates 只来自闭合的轴对齐线段边界。",
-      "3DSOLID 在当前 DXF 中没有可直接读取的 mesh/vertex，已保留句柄但不参与矩形推导。"
+      "solid_box_candidates 来自 3DSOLID 的 ACSH_BOX_CLASS 历史数据；topdown_rect 是按 CAD 俯视投影得到的施工参考。",
+      "3DSOLID 的 ACIS mesh 未直接解析；如需要斜面/非盒体，应额外校验 ACDSDATA。"
     ]
   }
 }
