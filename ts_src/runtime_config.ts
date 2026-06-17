@@ -10,6 +10,7 @@ export const TERRAIN_TAG = "ZLJ_RUNTIME_TERRAIN"
 export const DASHBOARD_CENTER_X = 640
 export const DASHBOARD_CENTER_Y = 760
 export const DEFAULT_SPEED = 40
+export const TRIGGER_RETURN_TO_BIRTH_ENABLED = false
 export const WALL_PREFAB_ID = 105205
 export const LEVEL_FLOOR_PREFAB_ID = WALL_PREFAB_ID
 export const LEVEL_FLOOR_PAINT_AREA_COLORS = [
@@ -25,7 +26,7 @@ export const TILE_HEIGHT = 3
 export const BIRTH_SPAWN_X = 949
 export const BIRTH_SPAWN_Y = 8
 export const BIRTH_SPAWN_Z = -36
-export const FIRST_LEVEL_TERRAIN_BASE_Y = 3
+export const FIRST_LEVEL_TERRAIN_BASE_Y = 3.5
 export const WALL_BASE_Y = 2
 export const WALL_HEIGHT = 45
 export const CEILING_BASE_Y = 46.5
@@ -51,10 +52,13 @@ export const WEST_WALL_OPENING_GAP_SZ = 19
 
 export const FIFTH_LEVEL_TERRAIN_MODULE_INDEX = 5
 export const EIGHTH_LEVEL_TERRAIN_MODULE_INDEX = 8
+export const NINTH_LEVEL_TERRAIN_MODULE_INDEX = 9
 export const TENTH_LEVEL_TERRAIN_MODULE_INDEX = 10
 export const FIRST_LEVEL_TERRAIN_HEIGHT = 3
 export const EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE = 8
 export const EIGHTH_LEVEL_MECHANISM_CENTER_RAISE_Y = 5.5
+export const EIGHTH_LEVEL_MOVING_LONG_PLATE_EXTRA_RAISE_Y = -1
+export const EIGHTH_LEVEL_SMALL_CROSSBAR_EXTRA_RAISE_Y = 0.75
 export const EIGHTH_LEVEL_FIXED_HIGH_BAR_HEIGHT = 9.5
 export const EIGHTH_LEVEL_MECHANISM_MOVE_Z = 3.5
 export const EIGHTH_LEVEL_MECHANISM_SPLIT_Z = 63.75
@@ -106,6 +110,7 @@ export type RuntimeTerrainPiece = {
   sy: number
   sz: number
   baseY?: number
+  prefabId?: number
   compressor?: boolean
   compressorDownY?: number
 }

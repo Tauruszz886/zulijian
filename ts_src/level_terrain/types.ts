@@ -5,6 +5,8 @@ export type LevelTerrainSpec = {
   sx: number
   sy: number
   sz: number
+  baseY?: number
+  prefabId?: number
   role?: "fourth_compressor"
 }
 

@@ -1,4 +1,5 @@
-import { safeCall } from "@common/engine_safe"
+import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
+import { TriggerHub } from "@common/trigger_hub"
 import {
   EIGHTH_LEVEL_FIXED_HIGH_BAR_HEIGHT,
   EIGHTH_LEVEL_MECHANISM_CENTER_RAISE_Y,
@@ -6,18 +7,32 @@ import {
   EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS,
   EIGHTH_LEVEL_MECHANISM_MOVE_Z,
   EIGHTH_LEVEL_MECHANISM_SPLIT_Z,
+  EIGHTH_LEVEL_MOVING_LONG_PLATE_EXTRA_RAISE_Y,
+  EIGHTH_LEVEL_SMALL_CROSSBAR_EXTRA_RAISE_Y,
   EIGHTH_LEVEL_TERRAIN_MODULE_INDEX,
+  FIRST_LEVEL_TERRAIN_HEIGHT,
   type RuntimeTerrainPiece,
 } from "./runtime_config"
+import { returnUnitToBirth } from "./runtime_fall_return"
+import { asFixed } from "./runtime_layout"
+
+const DEATH_TRIGGER_PREFAB_ID = 3101010
+const DEATH_TRIGGER_OUTSET = 0.2
 
 type RuntimeEighthMechanismPart = {
   name: string
   unit: unknown
+  trigger?: unknown
   x: number
   y: number
   z: number
   targetZ: number
 }
+
+declare const EVENT: {
+  ANY_LIFEENTITY_TRIGGER_SPACE: string
+}
+declare const Enums: { TriggerSpaceEventType: { ENTER: number } }
 
 let runtimeEighthMechanismStarted = false
 let runtimeEighthMechanismParts: RuntimeEighthMechanismPart[] = []
@@ -32,7 +47,7 @@ function isEighthLevelSmallCrossbar(piece: RuntimeTerrainPiece): boolean {
 }
 
 function isEighthLevelMovingLongPlate(piece: RuntimeTerrainPiece): boolean {
-  return piece.sz === 1.8
+  return (piece.sx === 35 || piece.sx === 27.5) && piece.sy === 5 && piece.sz === 4
 }
 
 function isEighthLevelFixedHighBar(piece: RuntimeTerrainPiece): boolean {
@@ -44,8 +59,14 @@ export function getRuntimeTerrainPieceY(moduleIndex: number, piece: RuntimeTerra
   if (moduleIndex !== EIGHTH_LEVEL_TERRAIN_MODULE_INDEX) {
     return y
   }
-  if (isEighthLevelSmallCrossbar(piece) || isEighthLevelMovingLongPlate(piece) || isEighthLevelFixedHighBar(piece)) {
-    return y + EIGHTH_LEVEL_MECHANISM_CENTER_RAISE_Y
+  if (isEighthLevelFixedHighBar(piece)) {
+    return y + FIRST_LEVEL_TERRAIN_HEIGHT
+  }
+  if (isEighthLevelSmallCrossbar(piece)) {
+    return y + EIGHTH_LEVEL_MECHANISM_CENTER_RAISE_Y + EIGHTH_LEVEL_SMALL_CROSSBAR_EXTRA_RAISE_Y
+  }
+  if (isEighthLevelMovingLongPlate(piece)) {
+    return y + EIGHTH_LEVEL_MECHANISM_CENTER_RAISE_Y + EIGHTH_LEVEL_MOVING_LONG_PLATE_EXTRA_RAISE_Y
   }
   return y
 }
@@ -58,6 +79,47 @@ function getEighthLevelMechanismTargetZ(piece: RuntimeTerrainPiece, z: number): 
   }
   const moveZ = piece.startZ < EIGHTH_LEVEL_MECHANISM_SPLIT_Z ? -EIGHTH_LEVEL_MECHANISM_MOVE_Z : EIGHTH_LEVEL_MECHANISM_MOVE_Z
   return z + moveZ
+}
+
+function vec3(x: number, y: number, z: number): unknown {
+  return math.Vector3(asFixed(x), asFixed(y), asFixed(z))
+}
+
+function extractTriggerUnit(data: unknown): unknown {
+  const eventData = data as { event_unit?: unknown; unit?: unknown } | undefined
+  return eventData?.event_unit !== undefined ? eventData.event_unit : eventData?.unit
+}
+
+function createEighthDeathTrigger(name: string, x: number, y: number, z: number, piece: RuntimeTerrainPiece): unknown {
+  const trigger = safeCreateCustomTriggerSpace(
+    DEATH_TRIGGER_PREFAB_ID,
+    vec3(x, y, z),
+    vec3(piece.sx + DEATH_TRIGGER_OUTSET * 2, piece.sy + DEATH_TRIGGER_OUTSET * 2, piece.sz + DEATH_TRIGGER_OUTSET * 2),
+    { tag: `eighth_death_trigger_create_${name}`, logger: print }
+  )
+  if (trigger === null || trigger === undefined) {
+    print(`[ZLJ_EIGHTH_MECHANISM] death trigger create failed name=${name}`)
+    return undefined
+  }
+  const triggerId = safeCall(
+    () => {
+      return (trigger as any).get_id()
+    },
+    { tag: `eighth_death_trigger_id_${name}`, fallback: null, logger: print }
+  )
+  if (triggerId !== null && triggerId !== undefined) {
+    TriggerHub.register(
+      [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
+      (_eventName: unknown, _actor: unknown, data: unknown) => {
+        returnUnitToBirth(extractTriggerUnit(data), `eighth_mechanism:${name}:${tostring(triggerId)}`)
+      },
+      { safe: true, safeCallback: true, tag: `eighth_death_trigger_${name}`, logger: print }
+    )
+  }
+  print(
+    `[ZLJ_EIGHTH_MECHANISM] death trigger created name=${name} trigger=${tostring(trigger)} id=${tostring(triggerId)} pos=(${x},${y},${z}) scale=(${piece.sx + DEATH_TRIGGER_OUTSET * 2},${piece.sy + DEATH_TRIGGER_OUTSET * 2},${piece.sz + DEATH_TRIGGER_OUTSET * 2}) enabled_by_global=false`
+  )
+  return trigger
 }
 
 export function registerEighthLevelMechanismPart(
@@ -76,7 +138,8 @@ export function registerEighthLevelMechanismPart(
   if (targetZ === undefined) {
     return
   }
-  runtimeEighthMechanismParts.push({ name, unit, x, y, z, targetZ })
+  const trigger = createEighthDeathTrigger(name, x, y, z, piece)
+  runtimeEighthMechanismParts.push({ name, unit, trigger, x, y, z, targetZ })
   print(
     `[ZLJ_EIGHTH_MECHANISM] registered name=${name} start=(${x},${y},${z}) target_z=${targetZ} move_z=${targetZ - z} move_seconds=${EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS}`
   )
@@ -89,6 +152,14 @@ function setEighthLevelMechanismPartPosition(part: RuntimeEighthMechanismPart, z
     },
     { tag: `eighth_mechanism_set_position_${part.name}`, fallback: undefined, logger: print }
   )
+  if (part.trigger !== undefined && part.trigger !== null) {
+    safeCall(
+      () => {
+        ;(part.trigger as any).set_position(math.Vector3(part.x as Fixed, part.y as Fixed, z as Fixed))
+      },
+      { tag: `eighth_mechanism_set_trigger_position_${part.name}`, fallback: undefined, logger: print }
+    )
+  }
 }
 
 function animateEighthLevelMechanism(toTarget: boolean, done?: () => void): void {

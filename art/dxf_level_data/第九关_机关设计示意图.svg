@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+<rect width="1100" height="720" fill="#f7f8fb"/>
+<text x="550.00" y="38.00" font-size="26" fill="#111" text-anchor="middle" font-weight="700">第九关当前结构示意图（机关设计参考）</text>
+<text x="550.00" y="66.00" font-size="16" fill="#444" text-anchor="middle" font-weight="400">外框 160 x 100；灰色为现有地砖平台，浅红区为空洞/可放机关区域</text>
+<rect x="80.00" y="90.00" width="800.00" height="500.00" fill="#ffffff" fill-opacity="1" stroke="#111" stroke-width="2"/>
+<line x1="80.00" y1="90.00" x2="80.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="130.00" y1="90.00" x2="130.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="180.00" y1="90.00" x2="180.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="230.00" y1="90.00" x2="230.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="280.00" y1="90.00" x2="280.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="330.00" y1="90.00" x2="330.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="380.00" y1="90.00" x2="380.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="430.00" y1="90.00" x2="430.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="480.00" y1="90.00" x2="480.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="530.00" y1="90.00" x2="530.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="580.00" y1="90.00" x2="580.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="630.00" y1="90.00" x2="630.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="680.00" y1="90.00" x2="680.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="730.00" y1="90.00" x2="730.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="780.00" y1="90.00" x2="780.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="830.00" y1="90.00" x2="830.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="880.00" y1="90.00" x2="880.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="90.00" x2="880.00" y2="90.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="140.00" x2="880.00" y2="140.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="190.00" x2="880.00" y2="190.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="240.00" x2="880.00" y2="240.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="290.00" x2="880.00" y2="290.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="340.00" x2="880.00" y2="340.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="390.00" x2="880.00" y2="390.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="440.00" x2="880.00" y2="440.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="490.00" x2="880.00" y2="490.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="540.00" x2="880.00" y2="540.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="80.00" y1="590.00" x2="880.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<rect x="155.00" y="240.00" width="50.00" height="200.00" fill="#f7c6c2" fill-opacity="0.35" stroke="#e79a93" stroke-width="0.8"/>
+<rect x="455.00" y="290.00" width="50.00" height="100.00" fill="#f7c6c2" fill-opacity="0.35" stroke="#e79a93" stroke-width="0.8"/>
+<rect x="755.00" y="240.00" width="50.00" height="200.00" fill="#f7c6c2" fill-opacity="0.35" stroke="#e79a93" stroke-width="0.8"/>
+<rect x="155.00" y="90.00" width="650.00" height="150.00" fill="#f7c6c2" fill-opacity="0.35" stroke="#e79a93" stroke-width="0.8"/>
+<rect x="155.00" y="440.00" width="650.00" height="150.00" fill="#f7c6c2" fill-opacity="0.35" stroke="#e79a93" stroke-width="0.8"/>
+<rect x="80.00" y="240.00" width="75.00" height="200.00" fill="#cfd6df" fill-opacity="0.95" stroke="#586574" stroke-width="1.4"/>
+<text x="117.50" y="345.00" font-size="13" fill="#27313d" text-anchor="middle" font-weight="700">左入口平台 15x40</text>
+<text x="117.50" y="362.00" font-size="12" fill="#27313d" text-anchor="middle" font-weight="400">15 x 40</text>
+<rect x="205.00" y="290.00" width="250.00" height="100.00" fill="#cfd6df" fill-opacity="0.95" stroke="#586574" stroke-width="1.4"/>
+<text x="330.00" y="345.00" font-size="13" fill="#27313d" text-anchor="middle" font-weight="700">中平台A 50x20</text>
+<text x="330.00" y="362.00" font-size="12" fill="#27313d" text-anchor="middle" font-weight="400">50 x 20</text>
+<rect x="505.00" y="290.00" width="250.00" height="100.00" fill="#cfd6df" fill-opacity="0.95" stroke="#586574" stroke-width="1.4"/>
+<text x="630.00" y="345.00" font-size="13" fill="#27313d" text-anchor="middle" font-weight="700">中平台B 50x20</text>
+<text x="630.00" y="362.00" font-size="12" fill="#27313d" text-anchor="middle" font-weight="400">50 x 20</text>
+<rect x="805.00" y="240.00" width="75.00" height="200.00" fill="#cfd6df" fill-opacity="0.95" stroke="#586574" stroke-width="1.4"/>
+<text x="842.50" y="345.00" font-size="13" fill="#27313d" text-anchor="middle" font-weight="700">右出口平台 15x40</text>
+<text x="842.50" y="362.00" font-size="12" fill="#27313d" text-anchor="middle" font-weight="400">15 x 40</text>
+<text x="117.50" y="225.00" font-size="12" fill="#555" text-anchor="middle" font-weight="400">startX 0</text>
+<text x="205.00" y="275.00" font-size="13" fill="#8e241c" text-anchor="middle" font-weight="700">间距10</text>
+<text x="480.00" y="275.00" font-size="13" fill="#8e241c" text-anchor="middle" font-weight="700">间距10</text>
+<text x="780.00" y="275.00" font-size="13" fill="#8e241c" text-anchor="middle" font-weight="700">间距10</text>
+<text x="480.00" y="627.00" font-size="15" fill="#333" text-anchor="middle" font-weight="700">X方向：15 + 10 + 50 + 10 + 50 + 10 + 15 = 160</text>
+<text x="900.00" y="340.00" font-size="13" fill="#333" text-anchor="start" font-weight="400">Z中线区域：平台在 Z=30..70 / 中平台在 Z=40..60</text>
+<line x1="40.00" y1="340.00" x2="80.00" y2="340.00" stroke="#222" stroke-width="2.5"/>
+<polygon points="80.0,340.0 70.0,335.0 70.0,345.0" fill="#222"/>
+<text x="40.00" y="325.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">入口</text>
+<line x1="880.00" y1="340.00" x2="920.00" y2="340.00" stroke="#222" stroke-width="2.5"/>
+<polygon points="920.0,340.0 910.0,335.0 910.0,345.0" fill="#222"/>
+<text x="890.00" y="325.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">出口</text>
+<line x1="205.00" y1="205.00" x2="455.00" y2="205.00" stroke="#c0392b" stroke-width="2.5"/>
+<polygon points="455,205 446,200 446,210" fill="#c0392b"/>
+<text x="330.00" y="197.00" font-size="13" fill="#8e241c" text-anchor="middle" font-weight="700">中平台A宽50</text>
+<line x1="505.00" y1="205.00" x2="755.00" y2="205.00" stroke="#c0392b" stroke-width="2.5"/>
+<polygon points="755,205 746,200 746,210" fill="#c0392b"/>
+<text x="630.00" y="197.00" font-size="13" fill="#8e241c" text-anchor="middle" font-weight="700">中平台B宽50</text>
+<text x="480.00" y="180.00" font-size="14" fill="#8e241c" text-anchor="middle" font-weight="700">可在两个中平台或三段空隙处设计机关</text>
+<text x="920.00" y="87.00" font-size="20" fill="#111" text-anchor="start" font-weight="700">数据结构</text>
+<text x="920.00" y="115.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">外框：160 x 100</text>
+<text x="920.00" y="143.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">左平台：startX=0, startZ=30, 15x40</text>
+<text x="920.00" y="171.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">中平台A：startX=25, startZ=40, 50x20</text>
+<text x="920.00" y="199.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">中平台B：startX=85, startZ=40, 50x20</text>
+<text x="920.00" y="227.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">右平台：startX=145, startZ=30, 15x40</text>
+<text x="920.00" y="255.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">地砖厚度：Y=3</text>
+<text x="920.00" y="283.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">行走面：Y=6.5</text>
+<text x="920.00" y="355.00" font-size="20" fill="#111" text-anchor="start" font-weight="700">空洞/间距</text>
+<text x="920.00" y="387.00" font-size="14" fill="#8e241c" text-anchor="start" font-weight="400">X=15..25，宽10</text>
+<text x="920.00" y="413.00" font-size="14" fill="#8e241c" text-anchor="start" font-weight="400">X=75..85，宽10</text>
+<text x="920.00" y="439.00" font-size="14" fill="#8e241c" text-anchor="start" font-weight="400">X=135..145，宽10</text>
+<text x="920.00" y="465.00" font-size="14" fill="#8e241c" text-anchor="start" font-weight="400">中平台上下方为空区</text>
+</svg>

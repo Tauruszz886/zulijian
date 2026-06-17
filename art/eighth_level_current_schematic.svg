@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760">
+<rect width="1120" height="760" fill="#f7f8fb"/>
+<text x="560.00" y="38.00" font-size="26" fill="#111" text-anchor="middle" font-weight="700">第八关当前结构示意图（按运行时代码生成）</text>
+<text x="560.00" y="66.00" font-size="16" fill="#444" text-anchor="middle" font-weight="400">俯视图：外框 160 x 100；固定高长条已贴合地砖顶面，小横挡已整体提高 0.75</text>
+<rect class="" x="70.00" y="90.00" width="800.00" height="500.00" fill="#ffffff" fill-opacity="1" stroke="#111" stroke-width="2"/>
+<line x1="70.00" y1="90.00" x2="70.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="120.00" y1="90.00" x2="120.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="170.00" y1="90.00" x2="170.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="220.00" y1="90.00" x2="220.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="270.00" y1="90.00" x2="270.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="320.00" y1="90.00" x2="320.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="370.00" y1="90.00" x2="370.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="420.00" y1="90.00" x2="420.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="470.00" y1="90.00" x2="470.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="520.00" y1="90.00" x2="520.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="570.00" y1="90.00" x2="570.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="620.00" y1="90.00" x2="620.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="670.00" y1="90.00" x2="670.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="720.00" y1="90.00" x2="720.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="770.00" y1="90.00" x2="770.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="820.00" y1="90.00" x2="820.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="870.00" y1="90.00" x2="870.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="90.00" x2="870.00" y2="90.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="140.00" x2="870.00" y2="140.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="190.00" x2="870.00" y2="190.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="240.00" x2="870.00" y2="240.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="290.00" x2="870.00" y2="290.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="340.00" x2="870.00" y2="340.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="390.00" x2="870.00" y2="390.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="440.00" x2="870.00" y2="440.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="490.00" x2="870.00" y2="490.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="540.00" x2="870.00" y2="540.00" stroke="#d8dde8" stroke-width="0.8"/>
+<line x1="70.00" y1="590.00" x2="870.00" y2="590.00" stroke="#d8dde8" stroke-width="0.8"/>
+<rect class="" x="70.00" y="277.50" width="100.00" height="218.75" fill="#cfd6df" fill-opacity="0.9" stroke="#5f6b7a" stroke-width="1.2"/>
+<rect class="" x="170.00" y="358.75" width="560.00" height="100.00" fill="#cfd6df" fill-opacity="0.9" stroke="#5f6b7a" stroke-width="1.2"/>
+<rect class="" x="208.00" y="121.25" width="60.00" height="62.50" fill="#cfd6df" fill-opacity="0.9" stroke="#5f6b7a" stroke-width="1.2"/>
+<rect class="" x="448.00" y="121.25" width="60.00" height="62.50" fill="#cfd6df" fill-opacity="0.9" stroke="#5f6b7a" stroke-width="1.2"/>
+<rect class="" x="730.00" y="171.25" width="60.00" height="337.50" fill="#cfd6df" fill-opacity="0.9" stroke="#5f6b7a" stroke-width="1.2"/>
+<rect class="" x="790.00" y="152.50" width="80.00" height="375.00" fill="#cfd6df" fill-opacity="0.9" stroke="#5f6b7a" stroke-width="1.2"/>
+<rect class="" x="170.00" y="358.75" width="560.00" height="20.00" fill="#2f6fed" fill-opacity="0.95" stroke="#173b82" stroke-width="1.4"/>
+<rect class="" x="170.00" y="438.75" width="560.00" height="20.00" fill="#2f6fed" fill-opacity="0.95" stroke="#173b82" stroke-width="1.4"/>
+<rect class="" x="187.50" y="398.75" width="175.00" height="9.00" fill="#f0a028" fill-opacity="0.98" stroke="#9a5b00" stroke-width="1.0"/>
+<rect class="" x="187.50" y="409.75" width="175.00" height="9.00" fill="#f0a028" fill-opacity="0.98" stroke="#9a5b00" stroke-width="1.0"/>
+<rect class="" x="402.50" y="398.75" width="137.50" height="9.00" fill="#f0a028" fill-opacity="0.98" stroke="#9a5b00" stroke-width="1.0"/>
+<rect class="" x="402.50" y="409.75" width="137.50" height="9.00" fill="#f0a028" fill-opacity="0.98" stroke="#9a5b00" stroke-width="1.0"/>
+<rect class="" x="577.50" y="398.75" width="137.50" height="9.00" fill="#f0a028" fill-opacity="0.98" stroke="#9a5b00" stroke-width="1.0"/>
+<rect class="" x="577.50" y="409.75" width="137.50" height="9.00" fill="#f0a028" fill-opacity="0.98" stroke="#9a5b00" stroke-width="1.0"/>
+<rect class="" x="205.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="205.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="230.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="230.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="255.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="255.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="280.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="280.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="305.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="305.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="330.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="330.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="355.00" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="355.00" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="407.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="407.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="432.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="432.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="457.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="457.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="482.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="482.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="507.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="507.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="532.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="532.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="582.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="582.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="607.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="607.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="632.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="632.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="657.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="657.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="682.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="682.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="707.50" y="378.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<rect class="" x="707.50" y="418.75" width="2.50" height="20.00" fill="#d64045" fill-opacity="0.98" stroke="#8d1d21" stroke-width="0.8"/>
+<line x1="385.00" y1="388.75" x2="360.00" y2="388.75" stroke="#d64045" stroke-width="2.0"/>
+<polygon points="360.0,388.8 370.0,383.8 370.0,393.8" fill="#d64045"/>
+<text x="372.50" y="380.75" font-size="12" fill="#8d1d21" text-anchor="start" font-weight="400">移动 3.5</text>
+<line x1="550.00" y1="428.75" x2="575.00" y2="428.75" stroke="#d64045" stroke-width="2.0"/>
+<polygon points="575.0,428.8 565.0,423.8 565.0,433.8" fill="#d64045"/>
+<text x="525.00" y="445.75" font-size="12" fill="#8d1d21" text-anchor="start" font-weight="400">移动 3.5</text>
+<text x="450.00" y="346.50" font-size="13" fill="#0f2d66" text-anchor="middle" font-weight="700">固定高长条A：112x4，底Y=6.5，顶Y=16.0</text>
+<text x="450.00" y="476.00" font-size="13" fill="#0f2d66" text-anchor="middle" font-weight="700">固定高长条B：112x4，底Y=6.5，顶Y=16.0</text>
+<text x="450.00" y="395.00" font-size="13" fill="#7a1d1f" text-anchor="middle" font-weight="700">小横挡底Y=9.75；运动长板底Y=9.0</text>
+<text x="450.00" y="512.50" font-size="14" fill="#3d4652" text-anchor="middle" font-weight="700">主平台 112x20，底Y=3.5，行走面Y=6.5</text>
+<line x1="30.00" y1="340.00" x2="70.00" y2="340.00" stroke="#222" stroke-width="2.5"/>
+<polygon points="70.0,340.0 60.0,335.0 60.0,345.0" fill="#222"/>
+<text x="30.00" y="325.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">入口/上一关</text>
+<line x1="870.00" y1="340.00" x2="910.00" y2="340.00" stroke="#222" stroke-width="2.5"/>
+<polygon points="910.0,340.0 900.0,335.0 900.0,345.0" fill="#222"/>
+<text x="825.00" y="325.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">出口</text>
+<text x="910.00" y="82.00" font-size="20" fill="#111" text-anchor="start" font-weight="700">图例</text>
+<rect x="910" y="110" width="24" height="18" fill="#cfd6df" stroke="#333"/>
+<text x="944.00" y="125.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">普通地形/平台：底Y=3.5，顶Y=6.5</text>
+<rect x="910" y="148" width="24" height="18" fill="#2f6fed" stroke="#333"/>
+<text x="944.00" y="163.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">两侧固定高长条：底Y=6.5，贴地砖表面</text>
+<rect x="910" y="186" width="24" height="18" fill="#f0a028" stroke="#333"/>
+<text x="944.00" y="201.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">运动长板：底Y=9.0</text>
+<rect x="910" y="224" width="24" height="18" fill="#d64045" stroke="#333"/>
+<text x="944.00" y="239.00" font-size="14" fill="#222" text-anchor="start" font-weight="400">小横挡：底Y=9.75（刚提高0.75）</text>
+<text x="910.00" y="286.00" font-size="20" fill="#111" text-anchor="start" font-weight="700">高度剖面关系</text>
+<line x1="940.00" y1="600.00" x2="940.00" y2="330.00" stroke="#333" stroke-width="2"/>
+<line x1="934.00" y1="600.00" x2="1220.00" y2="600.00" stroke="#ccd2dc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="910.00" y="605.00" font-size="12" fill="#555" text-anchor="start" font-weight="400">Y=3</text>
+<line x1="934.00" y1="590.00" x2="1220.00" y2="590.00" stroke="#ccd2dc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="910.00" y="595.00" font-size="12" fill="#555" text-anchor="start" font-weight="400">Y=3.5</text>
+<line x1="934.00" y1="530.00" x2="1220.00" y2="530.00" stroke="#ccd2dc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="910.00" y="535.00" font-size="12" fill="#555" text-anchor="start" font-weight="400">Y=6.5</text>
+<line x1="934.00" y1="480.00" x2="1220.00" y2="480.00" stroke="#ccd2dc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="910.00" y="485.00" font-size="12" fill="#555" text-anchor="start" font-weight="400">Y=9</text>
+<line x1="934.00" y1="465.00" x2="1220.00" y2="465.00" stroke="#ccd2dc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="910.00" y="470.00" font-size="12" fill="#555" text-anchor="start" font-weight="400">Y=9.75</text>
+<line x1="934.00" y1="340.00" x2="1220.00" y2="340.00" stroke="#ccd2dc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="910.00" y="345.00" font-size="12" fill="#555" text-anchor="start" font-weight="400">Y=16</text>
+<rect x="970" y="530.0" width="70" height="60.0" fill="#cfd6df" stroke="#5f6b7a"/>
+<text x="1005.00" y="565.00" font-size="12" fill="#333" text-anchor="middle" font-weight="400">主平台</text>
+<rect x="1060" y="340.0" width="70" height="190.0" fill="#2f6fed" stroke="#173b82"/>
+<text x="1095.00" y="440.00" font-size="12" fill="#0f2d66" text-anchor="middle" font-weight="400">固定高条</text>
+<rect x="1150" y="445.0" width="42" height="20.0" fill="#d64045" stroke="#8d1d21"/>
+<text x="1171.00" y="460.00" font-size="12" fill="#7a1d1f" text-anchor="middle" font-weight="400">小横挡</text>
+<text x="970.00" y="522.00" font-size="12" fill="#333" text-anchor="start" font-weight="400">行走面 / 固定高条底面贴合</text>
+<text x="1145.00" y="457.00" font-size="12" fill="#7a1d1f" text-anchor="start" font-weight="400">+0.75 后</text>
+<text x="70.00" y="724.00" font-size="15" fill="#444" text-anchor="start" font-weight="400">说明：红色小横挡和橙色运动长板按 Z 方向往返；蓝色固定高长条不参与移动。</text>
+</svg>

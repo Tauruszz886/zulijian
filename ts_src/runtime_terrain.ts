@@ -1,4 +1,4 @@
-import { safeCall, safeCreateObstacle } from "@common/engine_safe"
+import { safeCall, safeCreateCustomTriggerSpace, safeCreateObstacle } from "@common/engine_safe"
 import { LEVEL_TERRAIN_SPECS, type LevelTerrainSpec } from "./level_terrain"
 import {
   EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS,
@@ -20,12 +20,15 @@ import {
   type RuntimeTerrainPiece,
 } from "./runtime_config"
 import { registerRuntimeCompressorPiece, resetRuntimeCompressors, startRuntimeCompressors } from "./runtime_compressor"
+import { createFallReturnTriggers } from "./runtime_fall_return"
 import {
   getRuntimeTerrainPieceY,
   registerEighthLevelMechanismPart,
   resetEighthLevelMechanism,
   startEighthLevelMechanism,
 } from "./runtime_eighth_mechanism"
+import { registerNinthVanishingPlatform, resetNinthLevelMechanism } from "./runtime_ninth_mechanism"
+import { registerTenthCurrentPart, resetTenthCurrentMechanism, startTenthCurrentMechanism } from "./runtime_tenth_current"
 import {
   getRuntimeFloorForModule,
   getRuntimeModuleCenterX,
@@ -36,6 +39,7 @@ import {
 import { drawRuntimeTileGrid } from "./runtime_structure"
 
 let runtimeTilesCreated = false
+const TRAILING_CURRENT_PREFAB_ID = 3301506
 
 function disableMirrorReflect(unit: unknown, tag: string): void {
   if (unit === null || unit === undefined) {
@@ -59,6 +63,7 @@ function toRuntimeTerrainPiece(spec: LevelTerrainSpec): RuntimeTerrainPiece {
       sy: spec.sy,
       sz: spec.sz,
       baseY: FOURTH_LEVEL_COMPRESSOR_START_Y,
+      prefabId: spec.prefabId,
       compressorDownY: FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
       compressor: true,
     }
@@ -70,6 +75,8 @@ function toRuntimeTerrainPiece(spec: LevelTerrainSpec): RuntimeTerrainPiece {
     sx: spec.sx,
     sy: spec.sy,
     sz: spec.sz,
+    baseY: spec.baseY,
+    prefabId: spec.prefabId,
   }
 }
 
@@ -85,6 +92,21 @@ function getRuntimeTerrainPiecesForModule(moduleIndex: number): RuntimeTerrainPi
   return pieces
 }
 
+function createTerrainUnit(prefabId: number, x: number, y: number, z: number, sx: number, sy: number, sz: number, name: string): unknown {
+  const pos = math.Vector3(x as Fixed, y as Fixed, z as Fixed)
+  const scale = math.Vector3(sx as Fixed, sy as Fixed, sz as Fixed)
+  if (prefabId === TRAILING_CURRENT_PREFAB_ID) {
+    return safeCreateCustomTriggerSpace(prefabId, pos, scale, {
+      tag: `runtime_terrain_trigger_create_${name}`,
+      logger: print,
+    })
+  }
+  return safeCreateObstacle(prefabId, pos, scale, {
+    tag: `runtime_terrain_create_${name}`,
+    logger: print,
+  })
+}
+
 function createRuntimeTerrain(
   floor: RuntimeFloor,
   moduleCenterX: number,
@@ -98,17 +120,34 @@ function createRuntimeTerrain(
   print(
     `[${TERRAIN_TAG}] create begin module=${runtimeModuleLabel(moduleIndex)} prefab=${WALL_PREFAB_ID} module_center=(${moduleCenterX},${FIRST_LEVEL_TERRAIN_BASE_Y},${floor.z}) module_size=(${floor.sx},${floor.sz}) pieces=${pieces.length} pattern=${pattern} base_y=${FIRST_LEVEL_TERRAIN_BASE_Y} scale_y=${FIRST_LEVEL_TERRAIN_HEIGHT}`
   )
+  let trailingCurrentCount = 0
+  let trailingCurrentMinX = 999999
+  let trailingCurrentMaxX = -999999
+  let trailingCurrentMinZ = 999999
+  let trailingCurrentMaxZ = -999999
   for (let i = 0; i < pieces.length; i++) {
     const piece = pieces[i]!
     const y = getRuntimeTerrainPieceY(moduleIndex, piece, FIRST_LEVEL_TERRAIN_BASE_Y)
     const x = moduleMinX + piece.startX + piece.sx / 2
     const z = moduleMinZ + piece.startZ + piece.sz / 2
     const name = runtimeModuleName(piece.name, moduleIndex)
-    const unit = safeCreateObstacle(
-      WALL_PREFAB_ID,
-      math.Vector3(x as Fixed, y as Fixed, z as Fixed),
-      math.Vector3(piece.sx as Fixed, piece.sy as Fixed, piece.sz as Fixed),
-      { tag: `runtime_terrain_create_${name}`, logger: print }
+    const prefabId = piece.prefabId === undefined ? WALL_PREFAB_ID : piece.prefabId
+    if (prefabId === TRAILING_CURRENT_PREFAB_ID) {
+      trailingCurrentCount += 1
+      trailingCurrentMinX = math.min(trailingCurrentMinX, moduleMinX + piece.startX)
+      trailingCurrentMaxX = math.max(trailingCurrentMaxX, moduleMinX + piece.startX + piece.sx)
+      trailingCurrentMinZ = math.min(trailingCurrentMinZ, moduleMinZ + piece.startZ)
+      trailingCurrentMaxZ = math.max(trailingCurrentMaxZ, moduleMinZ + piece.startZ + piece.sz)
+    }
+    const unit = createTerrainUnit(
+      prefabId,
+      x,
+      y,
+      z,
+      piece.sx,
+      piece.sy,
+      piece.sz,
+      name
     )
     disableMirrorReflect(unit, `runtime_terrain_disable_mirror_${name}`)
     if (piece.compressor === true && unit !== null) {
@@ -124,8 +163,15 @@ function createRuntimeTerrain(
         downY: piece.compressorDownY === undefined ? FOURTH_LEVEL_COMPRESSOR_DOWN_Y : piece.compressorDownY,
       })
     }
+    registerNinthVanishingPlatform(moduleIndex, piece, unit, name, x, z)
+    registerTenthCurrentPart(moduleIndex, piece, unit, name, x, y, z)
     print(
-      `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=${piece.compressor === true}`
+      `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} prefab=${prefabId} kind=${prefabId === TRAILING_CURRENT_PREFAB_ID ? "custom_trigger" : "obstacle"} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=${piece.compressor === true}`
+    )
+  }
+  if (trailingCurrentCount > 0) {
+    print(
+      `[${TERRAIN_TAG}] trailing_current_summary module=${runtimeModuleLabel(moduleIndex)} prefab=${TRAILING_CURRENT_PREFAB_ID} count=${trailingCurrentCount} x_range=${trailingCurrentMinX}..${trailingCurrentMaxX} z_range=${trailingCurrentMinZ}..${trailingCurrentMaxZ}`
     )
   }
   print(`[${TERRAIN_TAG}] gaps module=${runtimeModuleLabel(moduleIndex)} ${gapSummary}`)
@@ -155,8 +201,9 @@ function createRuntimeTerrainBatched(
       const x = moduleMinX + piece.startX + piece.sx / 2
       const z = moduleMinZ + piece.startZ + piece.sz / 2
       const name = runtimeModuleName(piece.name, moduleIndex)
+      const prefabId = piece.prefabId === undefined ? WALL_PREFAB_ID : piece.prefabId
       const unit = safeCreateObstacle(
-        WALL_PREFAB_ID,
+        prefabId,
         math.Vector3(x as Fixed, y as Fixed, z as Fixed),
         math.Vector3(piece.sx as Fixed, piece.sy as Fixed, piece.sz as Fixed),
         { tag: `runtime_terrain_create_${name}`, logger: print }
@@ -164,7 +211,7 @@ function createRuntimeTerrainBatched(
       disableMirrorReflect(unit, `runtime_terrain_disable_mirror_${name}`)
       registerEighthLevelMechanismPart(moduleIndex, piece, unit, name, x, y, z)
       print(
-        `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=false batch=${math.floor(index / batchSize) + 1}`
+        `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} prefab=${prefabId} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=false batch=${math.floor(index / batchSize) + 1}`
       )
       index += 1
       createdThisFrame += 1
@@ -189,6 +236,8 @@ export function createRuntimeTiles(): void {
   runtimeTilesCreated = true
   resetRuntimeCompressors()
   resetEighthLevelMechanism()
+  resetNinthLevelMechanism()
+  resetTenthCurrentMechanism()
 
   print(
     `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT + 1} full_or_dxf_tiles=${RUNTIME_COPY_COUNT + 1} dxf_levels=1..10 module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} terrain_source=split_level_files birth_tile=runtime`
@@ -231,4 +280,6 @@ export function createRuntimeTiles(): void {
 
   drawRuntimeTileGrid()
   startRuntimeCompressors()
+  startTenthCurrentMechanism()
+  createFallReturnTriggers()
 }

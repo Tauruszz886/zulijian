@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#667085"/>
+    </marker>
+    <style>
+      text { font-family: Arial, "Microsoft YaHei", sans-serif; fill: #202124; }
+      .title { font-size: 26px; font-weight: 700; }
+      .note { font-size: 18px; }
+      .small { font-size: 15px; fill: #4b5563; }
+      .label { font-size: 17px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="900" fill="#f7f5ef"/>
+  <text x="70" y="48" class="title">第10关电流轨道逻辑示意：表面推进 + 地下回收</text>
+  <text x="70" y="82" class="note">不是绕平台边缘转圈。电流只在表面往平台方向走，走到头后下潜，在地砖下面隐藏返回原位。</text>
+
+  <!-- Top view -->
+  <g transform="translate(90 150)">
+    <text x="0" y="-25" class="title">俯视图：表面可见运动方向</text>
+
+    <!-- full tile/floor reference -->
+    <rect x="0" y="0" width="1220" height="310" fill="#ebe7dc" stroke="#8a8173" stroke-width="3"/>
+    <text x="20" y="34" class="small">第10关地砖范围</text>
+
+    <!-- center platform -->
+    <rect x="210" y="105" width="880" height="100" fill="#b7d7f0" stroke="#2f557f" stroke-width="4"/>
+    <text x="555" y="162" class="label" fill="#1f3b57">中间平台 115 x 20</text>
+
+    <!-- side platforms -->
+    <rect x="40" y="55" width="110" height="200" fill="#a9d08e" stroke="#2f6b2f" stroke-width="3"/>
+    <rect x="1130" y="55" width="70" height="200" fill="#a9d08e" stroke="#2f6b2f" stroke-width="3"/>
+
+    <!-- visible current lanes -->
+    <line x1="1135" y1="125" x2="1090" y2="125" stroke="#dc2626" stroke-width="8" marker-end="url(#arrow-red)"/>
+    <line x1="1135" y1="155" x2="1090" y2="155" stroke="#ef4444" stroke-width="8" marker-end="url(#arrow-red)"/>
+    <line x1="1135" y1="185" x2="1090" y2="185" stroke="#f97316" stroke-width="8" marker-end="url(#arrow-red)"/>
+
+    <line x1="730" y1="125" x2="210" y2="125" stroke="#1d4ed8" stroke-width="8" marker-end="url(#arrow-blue)"/>
+    <line x1="730" y1="155" x2="210" y2="155" stroke="#2563eb" stroke-width="8" marker-end="url(#arrow-blue)"/>
+    <line x1="730" y1="185" x2="210" y2="185" stroke="#3b82f6" stroke-width="8" marker-end="url(#arrow-blue)"/>
+
+    <text x="760" y="95" class="small">表面可见段：往平台方向直线推进</text>
+    <text x="225" y="235" class="small">到头后从这里下潜到地砖下面</text>
+    <text x="990" y="235" class="small">回到原位后上浮，继续下一轮</text>
+  </g>
+
+  <!-- Section view -->
+  <g transform="translate(90 560)">
+    <text x="0" y="-30" class="title">剖面图：完整闭合轨道</text>
+
+    <!-- floor/tile section -->
+    <rect x="0" y="90" width="1220" height="32" fill="#c8b98b" stroke="#8a6f37" stroke-width="2"/>
+    <text x="18" y="82" class="small">地砖/平台表面</text>
+
+    <!-- surface visible path -->
+    <path d="M1080 70 L190 70" stroke="#dc2626" stroke-width="9" fill="none" marker-end="url(#arrow-red)"/>
+    <text x="515" y="48" class="label">表面可见：往平台方向走</text>
+
+    <!-- down path -->
+    <path d="M190 70 L190 205" stroke="#667085" stroke-width="7" fill="none" stroke-dasharray="14 10" marker-end="url(#arrow-gray)"/>
+    <text x="205" y="150" class="small">下潜</text>
+
+    <!-- hidden return path -->
+    <path d="M190 205 L1080 205" stroke="#667085" stroke-width="9" fill="none" stroke-dasharray="18 12" marker-end="url(#arrow-gray)"/>
+    <text x="510" y="238" class="label" fill="#667085">地下隐藏返回原位置</text>
+
+    <!-- up path -->
+    <path d="M1080 205 L1080 70" stroke="#667085" stroke-width="7" fill="none" stroke-dasharray="14 10" marker-end="url(#arrow-gray)"/>
+    <text x="1095" y="150" class="small">上浮</text>
+
+    <!-- start/end markers -->
+    <circle cx="1080" cy="70" r="10" fill="#16a34a"/>
+    <text x="1098" y="75" class="small">起点/复位点</text>
+    <circle cx="190" cy="70" r="10" fill="#dc2626"/>
+    <text x="55" y="75" class="small">终点/下潜点</text>
+
+    <text x="0" y="300" class="note">这个轨道是“输送带式循环”：只有上面的红色段让玩家看见，下面灰色虚线是回收段。</text>
+  </g>
+</svg>

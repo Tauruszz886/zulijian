@@ -1,4 +1,5 @@
-import { safeCall } from "@common/engine_safe"
+import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
+import { TriggerHub } from "@common/trigger_hub"
 import {
   FOURTH_LEVEL_COMPRESSOR_DOWN_FRAMES,
   FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
@@ -9,11 +10,17 @@ import {
   FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS,
   FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP,
 } from "./runtime_config"
+import { returnUnitToBirth } from "./runtime_fall_return"
 import { asFixed } from "./runtime_layout"
+
+const TAG = "ZLJ_RUNTIME_COMPRESSOR"
+const DEATH_TRIGGER_PREFAB_ID = 3101010
+const DEATH_TRIGGER_OUTSET = 0.25
 
 type RuntimeCompressorPiece = {
   name: string
   unit: unknown
+  trigger?: unknown
   x: number
   z: number
   sx: number
@@ -22,6 +29,11 @@ type RuntimeCompressorPiece = {
   upY: number
   downY: number
 }
+
+declare const EVENT: {
+  ANY_LIFEENTITY_TRIGGER_SPACE: string
+}
+declare const Enums: { TriggerSpaceEventType: { ENTER: number } }
 
 let runtimeCompressorStarted = false
 let runtimeCompressorPieces: RuntimeCompressorPiece[] = []
@@ -32,7 +44,64 @@ export function resetRuntimeCompressors(): void {
 }
 
 export function registerRuntimeCompressorPiece(piece: RuntimeCompressorPiece): void {
+  createRuntimeCompressorDeathTrigger(piece)
   runtimeCompressorPieces.push(piece)
+}
+
+function vec3(x: number, y: number, z: number): unknown {
+  return math.Vector3(asFixed(x), asFixed(y), asFixed(z))
+}
+
+function extractTriggerUnit(data: unknown): unknown {
+  const eventData = data as { event_unit?: unknown; unit?: unknown } | undefined
+  return eventData?.event_unit !== undefined ? eventData.event_unit : eventData?.unit
+}
+
+function registerRuntimeCompressorDeathEvent(piece: RuntimeCompressorPiece): void {
+  if (piece.trigger === undefined || piece.trigger === null) {
+    return
+  }
+  const triggerId = safeCall(
+    () => {
+      return (piece.trigger as any).get_id()
+    },
+    { tag: `runtime_compressor_death_trigger_id_${piece.name}`, fallback: null, logger: print }
+  )
+  if (triggerId === null || triggerId === undefined) {
+    print(`[${TAG}] death trigger register skipped name=${piece.name} trigger_id=nil`)
+    return
+  }
+  TriggerHub.register(
+    [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
+    (_eventName: unknown, _actor: unknown, data: unknown) => {
+      returnUnitToBirth(extractTriggerUnit(data), `compressor:${piece.name}:${tostring(triggerId)}`)
+    },
+    {
+      safe: true,
+      safeCallback: true,
+      tag: `runtime_compressor_death_${piece.name}`,
+      logger: print,
+    }
+  )
+  print(`[${TAG}] death trigger registered name=${piece.name} trigger=${tostring(piece.trigger)} id=${tostring(triggerId)}`)
+}
+
+function createRuntimeCompressorDeathTrigger(piece: RuntimeCompressorPiece): void {
+  const trigger = safeCreateCustomTriggerSpace(
+    DEATH_TRIGGER_PREFAB_ID,
+    vec3(piece.x, piece.upY, piece.z),
+    vec3(piece.sx + DEATH_TRIGGER_OUTSET * 2, piece.sy + DEATH_TRIGGER_OUTSET * 2, piece.sz + DEATH_TRIGGER_OUTSET * 2),
+    { tag: `runtime_compressor_death_trigger_create_${piece.name}`, logger: print }
+  )
+  if (trigger === null) {
+    print(`[${TAG}] death trigger create failed name=${piece.name}`)
+    return
+  }
+  piece.trigger = trigger
+  registerRuntimeCompressorDeathEvent(piece)
+  print(
+    `[${TAG}] death trigger created name=${piece.name} prefab=${DEATH_TRIGGER_PREFAB_ID} pos=(${piece.x},${piece.upY},${piece.z}) scale=(${piece.sx + DEATH_TRIGGER_OUTSET * 2},${piece.sy + DEATH_TRIGGER_OUTSET * 2},${piece.sz + DEATH_TRIGGER_OUTSET * 2})`
+  )
 }
 
 function setRuntimeCompressorPosition(piece: RuntimeCompressorPiece, y: number): void {
@@ -42,6 +111,14 @@ function setRuntimeCompressorPosition(piece: RuntimeCompressorPiece, y: number):
     },
     { tag: `runtime_compressor_set_position_${piece.name}`, fallback: undefined, logger: print }
   )
+  if (piece.trigger !== undefined && piece.trigger !== null) {
+    safeCall(
+      () => {
+        ;(piece.trigger as any).set_position(math.Vector3(piece.x as Fixed, y as Fixed, piece.z as Fixed))
+      },
+      { tag: `runtime_compressor_set_trigger_position_${piece.name}`, fallback: undefined, logger: print }
+    )
+  }
 }
 
 function animateRuntimeCompressorPiece(piece: RuntimeCompressorPiece, fromY: number, toY: number, frames: number, done?: () => void): void {
@@ -85,12 +162,12 @@ function animateRuntimeCompressors(direction: "drop" | "rise", frames: number, d
 function scheduleRuntimeCompressorCycle(): void {
   ;(LuaAPI as any).call_delay_time(asFixed(FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS), () => {
     print(
-      `[ZLJ_RUNTIME_COMPRESSOR] drop begin pieces=${runtimeCompressorPieces.length} wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS} plate_y=${FOURTH_LEVEL_COMPRESSOR_START_Y}->${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
+      `[${TAG}] drop begin pieces=${runtimeCompressorPieces.length} wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS} plate_y=${FOURTH_LEVEL_COMPRESSOR_START_Y}->${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
     )
     animateRuntimeCompressors("drop", FOURTH_LEVEL_COMPRESSOR_DOWN_FRAMES, () => {
       ;(LuaAPI as any).call_delay_time(asFixed(FOURTH_LEVEL_COMPRESSOR_HOLD_SECONDS), () => {
         print(
-          `[ZLJ_RUNTIME_COMPRESSOR] rise begin pieces=${runtimeCompressorPieces.length} plate_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y}->${FOURTH_LEVEL_COMPRESSOR_START_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
+          `[${TAG}] rise begin pieces=${runtimeCompressorPieces.length} plate_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y}->${FOURTH_LEVEL_COMPRESSOR_START_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
         )
         animateRuntimeCompressors("rise", FOURTH_LEVEL_COMPRESSOR_UP_FRAMES, scheduleRuntimeCompressorCycle)
       })
@@ -104,11 +181,11 @@ export function startRuntimeCompressors(): void {
   }
   runtimeCompressorStarted = true
   if (runtimeCompressorPieces.length === 0) {
-    print("[ZLJ_RUNTIME_COMPRESSOR] skipped pieces=0")
+    print(`[${TAG}] skipped pieces=0`)
     return
   }
   print(
-    `[ZLJ_RUNTIME_COMPRESSOR] start pieces=${runtimeCompressorPieces.length} plate_up_y=${FOURTH_LEVEL_COMPRESSOR_START_Y} plate_down_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP} plate_height=${FOURTH_LEVEL_COMPRESSOR_HEIGHT} cycle_wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS}`
+    `[${TAG}] start pieces=${runtimeCompressorPieces.length} plate_up_y=${FOURTH_LEVEL_COMPRESSOR_START_Y} plate_down_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP} plate_height=${FOURTH_LEVEL_COMPRESSOR_HEIGHT} cycle_wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS}`
   )
   scheduleRuntimeCompressorCycle()
 }

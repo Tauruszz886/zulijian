@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="100%" height="100%" fill="#f7f7f2"/>
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif;fill:#222}.small{font-size:14px}.title{font-size:24px;font-weight:bold}.axis{font-size:12px;fill:#555}</style>
+<text x="90" y="35" class="title">第10关运行时快照: 3301506 拖尾电流布局</text>
+<text x="90" y="62" class="small">运行日志证明: LDisplayTrigger, prefab=3301506, count=100, 每段 scale=(1,1,1), 20段头尾连接。</text>
+<line x1="97.62" y1="90.00" x2="97.62" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="79.62" y="840" class="axis">-730</text>
+<line x1="173.88" y1="90.00" x2="173.88" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="155.88" y="840" class="axis">-720</text>
+<line x1="250.12" y1="90.00" x2="250.12" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="232.12" y="840" class="axis">-710</text>
+<line x1="326.38" y1="90.00" x2="326.38" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="308.38" y="840" class="axis">-700</text>
+<line x1="402.62" y1="90.00" x2="402.62" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="384.62" y="840" class="axis">-690</text>
+<line x1="478.88" y1="90.00" x2="478.88" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="460.88" y="840" class="axis">-680</text>
+<line x1="555.12" y1="90.00" x2="555.12" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="537.12" y="840" class="axis">-670</text>
+<line x1="631.38" y1="90.00" x2="631.38" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="613.38" y="840" class="axis">-660</text>
+<line x1="707.62" y1="90.00" x2="707.62" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="689.62" y="840" class="axis">-650</text>
+<line x1="783.88" y1="90.00" x2="783.88" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="765.88" y="840" class="axis">-640</text>
+<line x1="860.12" y1="90.00" x2="860.12" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="842.12" y="840" class="axis">-630</text>
+<line x1="936.38" y1="90.00" x2="936.38" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="918.38" y="840" class="axis">-620</text>
+<line x1="1012.62" y1="90.00" x2="1012.62" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="994.62" y="840" class="axis">-610</text>
+<line x1="1088.88" y1="90.00" x2="1088.88" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="1070.88" y="840" class="axis">-600</text>
+<line x1="1165.12" y1="90.00" x2="1165.12" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="1147.12" y="840" class="axis">-590</text>
+<line x1="1241.38" y1="90.00" x2="1241.38" y2="820.00" stroke="#d5d0c4" stroke-width="1"/>
+<text x="1223.38" y="840" class="axis">-580</text>
+<line x1="90.00" y1="133.80" x2="1310.00" y2="133.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="137.80" class="axis">-80</text>
+<line x1="90.00" y1="206.80" x2="1310.00" y2="206.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="210.80" class="axis">-70</text>
+<line x1="90.00" y1="279.80" x2="1310.00" y2="279.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="283.80" class="axis">-60</text>
+<line x1="90.00" y1="352.80" x2="1310.00" y2="352.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="356.80" class="axis">-50</text>
+<line x1="90.00" y1="425.80" x2="1310.00" y2="425.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="429.80" class="axis">-40</text>
+<line x1="90.00" y1="498.80" x2="1310.00" y2="498.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="502.80" class="axis">-30</text>
+<line x1="90.00" y1="571.80" x2="1310.00" y2="571.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="575.80" class="axis">-20</text>
+<line x1="90.00" y1="644.80" x2="1310.00" y2="644.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="648.80" class="axis">-10</text>
+<line x1="90.00" y1="717.80" x2="1310.00" y2="717.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="721.80" class="axis">0</text>
+<line x1="90.00" y1="790.80" x2="1310.00" y2="790.80" stroke="#d5d0c4" stroke-width="1"/>
+<text x="25" y="794.80" class="axis">10</text>
+<rect x="90.00" y="90.00" width="1220.00" height="730.00" fill="#ebe7dc" stroke="#68645d" stroke-width="3" opacity="1" />
+<rect x="1195.62" y="309.00" width="114.38" height="292.00" fill="#a9d08e" stroke="#2f6b2f" stroke-width="3" opacity="1" />
+<rect x="242.50" y="382.00" width="876.88" height="146.00" fill="#b7d7f0" stroke="#2f557f" stroke-width="3" opacity="1" />
+<rect x="90.00" y="309.00" width="114.38" height="292.00" fill="#a9d08e" stroke="#2f6b2f" stroke-width="3" opacity="1" />
+<rect x="1107.17" y="382.00" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="389.30" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="396.60" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="403.90" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="411.20" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="418.50" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="425.80" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="433.10" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="440.40" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="447.70" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="455.00" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="462.30" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="469.60" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="476.90" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="484.20" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="491.50" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="498.80" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="506.10" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="513.40" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="520.70" width="7.62" height="7.30" fill="#ff3b30" stroke="#111" stroke-width="0.5" opacity="1" />
+<text x="1118.99" y="374.00" class="small" transform="rotate(90 1118.99,374.00)">97B 第1道 Y=6.5</text>
+<rect x="1107.17" y="382.00" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="389.30" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="396.60" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="403.90" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="411.20" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="418.50" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="425.80" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="433.10" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="440.40" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="447.70" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="455.00" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="462.30" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="469.60" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="476.90" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="484.20" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="491.50" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="498.80" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="506.10" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="513.40" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="520.70" width="7.62" height="7.30" fill="#ff9500" stroke="#111" stroke-width="0.5" opacity="1" />
+<text x="1118.99" y="374.00" class="small" transform="rotate(90 1118.99,374.00)">97B 第2道 Y=7.5</text>
+<rect x="1107.17" y="382.00" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="389.30" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="396.60" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="403.90" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="411.20" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="418.50" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="425.80" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="433.10" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="440.40" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="447.70" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="455.00" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="462.30" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="469.60" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="476.90" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="484.20" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="491.50" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="498.80" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="506.10" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="513.40" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="1107.17" y="520.70" width="7.62" height="7.30" fill="#ffcc00" stroke="#111" stroke-width="0.5" opacity="1" />
+<text x="1118.99" y="374.00" class="small" transform="rotate(90 1118.99,374.00)">97B 第3道 Y=8.5</text>
+<rect x="733.55" y="382.00" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="389.30" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="396.60" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="403.90" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="411.20" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="418.50" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="425.80" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="433.10" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="440.40" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="447.70" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="455.00" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="462.30" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="469.60" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="476.90" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="484.20" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="491.50" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="498.80" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="506.10" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="513.40" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="733.55" y="520.70" width="7.62" height="7.30" fill="#00a2ff" stroke="#111" stroke-width="0.5" opacity="1" />
+<text x="745.36" y="374.00" class="small" transform="rotate(90 745.36,374.00)">97F 1道 Y=6.5</text>
+<rect x="428.55" y="382.00" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="389.30" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="396.60" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="403.90" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="411.20" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="418.50" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="425.80" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="433.10" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="440.40" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="447.70" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="455.00" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="462.30" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="469.60" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="476.90" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="484.20" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="491.50" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="498.80" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="506.10" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="513.40" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<rect x="428.55" y="520.70" width="7.62" height="7.30" fill="#af52de" stroke="#111" stroke-width="0.5" opacity="1" />
+<text x="440.36" y="374.00" class="small" transform="rotate(90 440.36,374.00)">983 1道 Y=6.5</text>
+<text x="1190.00" y="674.00" class="small">通向第9关一侧</text>
+<text x="95.00" y="674.00" class="small">第10关封口侧</text>
+<text x="90" y="850" class="small">坐标范围: 第10关地板 X=-731..-571, Z=-86..14；3301506 总范围 X=-686.6..-596.6, Z=-46..-26。</text>
+</svg>
