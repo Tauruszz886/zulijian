@@ -393,6 +393,16 @@ export class FastRunSystem {
     this.updateDashboardValues()
   }
 
+  isDashboardComponentGrounded(): boolean {
+    const component = this.getDashboardComponent()
+    return component !== null ? component.isGrounded() : true
+  }
+
+  calculateDashboardMaxAirMoveDistance(hangTimeSeconds: number, initialSpeed?: number): number {
+    const component = this.getDashboardComponent()
+    return component !== null ? component.calculateMaxAirMoveDistance(hangTimeSeconds, initialSpeed) : 0
+  }
+
   private resolveRoleId(roleOrId: Role | RoleID): RoleID {
     if (type(roleOrId) === "number") return roleOrId as RoleID
     return (roleOrId as Role).get_roleid()
@@ -478,6 +488,12 @@ export class FastRunSystem {
       },
       setRayDebugEnabled: (enabled: boolean) => {
         this.setRayDebugEnabled(enabled)
+      },
+      isGrounded: () => {
+        return this.isDashboardComponentGrounded()
+      },
+      getTickSeconds: () => {
+        return this.tickSeconds
       },
       logger: this.logger,
     })

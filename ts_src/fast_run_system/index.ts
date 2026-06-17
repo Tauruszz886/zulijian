@@ -1,4 +1,5 @@
 export * from "./FastRunExpression"
+export * from "./FastRunAirDistance"
 export * from "./FastRunComponent"
 export * from "./FastRunSystem"
 export * from "./FastRunTestDashboard"

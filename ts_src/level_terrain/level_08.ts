@@ -3,8 +3,8 @@ import type { LevelTerrainSpec } from "./types"
 export const LEVEL_08_TERRAIN: readonly LevelTerrainSpec[] = [
   { name: "dxf_789_20x43_75", startX: 0, startZ: 37.5, sx: 20, sy: 3, sz: 43.75 },
   { name: "dxf_62D_112x20", startX: 20, startZ: 53.75, sx: 112, sy: 3, sz: 20 },
-  { name: "dxf_632_112x4", startX: 20, startZ: 53.75, sx: 112, sy: 5, sz: 4 },
-  { name: "dxf_689_112x4", startX: 20, startZ: 69.75, sx: 112, sy: 5, sz: 4 },
+  { name: "dxf_632_112x4", startX: 20, startZ: 53.75, sx: 112, sy: 9.5, sz: 4 },
+  { name: "dxf_97B_112x4", startX: 20, startZ: 69.75, sx: 112, sy: 9.5, sz: 4 },
   { name: "dxf_80C_35x1_8", startX: 23.5, startZ: 61.75, sx: 35, sy: 3, sz: 1.8 },
   { name: "dxf_814_35x1_8", startX: 23.5, startZ: 63.95, sx: 35, sy: 3, sz: 1.8 },
   { name: "dxf_840_0_5x4", startX: 27, startZ: 57.75, sx: 0.5, sy: 1, sz: 4 },

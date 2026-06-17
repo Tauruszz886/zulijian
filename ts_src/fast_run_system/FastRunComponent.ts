@@ -1,5 +1,6 @@
 import { safeCall, safeVoid } from "@common/engine_safe"
 import { drawRuntimeDebugLine } from "../runtime_ui"
+import { calculateFastRunMaxAirMoveDistance } from "./FastRunAirDistance"
 import { evaluateFastRunExpression } from "./FastRunExpression"
 
 type PhysicsCcdTarget = {
@@ -387,6 +388,7 @@ export class FastRunComponent {
   private tickIndex: integer = 0
   private enabled = false
   private currentSpeed: number
+  private grounded = true
   private lastHorizontalDirection: HorizontalDirection = { x: 0, z: 1 }
 
   constructor(options: FastRunComponentOptions) {
@@ -532,6 +534,19 @@ export class FastRunComponent {
 
   setRayDebugEnabled(enabled: boolean): void {
     this.options.rayDebug.enabled = enabled
+  }
+
+  isGrounded(): boolean {
+    return this.grounded
+  }
+
+  calculateMaxAirMoveDistance(hangTimeSeconds: number, initialSpeed?: number): number {
+    return calculateFastRunMaxAirMoveDistance({
+      maxSpeed: this.options.maxSpeed,
+      airAcceleration: this.getAirAcceleration(),
+      hangTimeSeconds,
+      initialSpeed,
+    })
   }
 
   configureCharacter(): void {
@@ -689,7 +704,7 @@ export class FastRunComponent {
     return hitAny
   }
 
-  private isGrounded(character: Character): boolean {
+  private checkGrounded(character: Character): boolean {
     if (!this.options.ground.enabled) return true
 
     const position = character.get_position()
@@ -769,9 +784,9 @@ export class FastRunComponent {
     const checkDirection = this.getObstacleCheckDirection(character, inputX, inputZ)
     const blocked = checkDirection !== null ? this.hasObstacleAhead(character, checkDirection.x, checkDirection.z) : false
     const currentVelocity = character.get_linear_velocity()
-    const grounded = this.isGrounded(character)
-    const acceleration = grounded ? this.getGroundAcceleration() : this.getAirAcceleration()
-    const deceleration = grounded ? this.getGroundDeceleration() : this.getAirDeceleration()
+    this.grounded = this.checkGrounded(character)
+    const acceleration = this.grounded ? this.getGroundAcceleration() : this.getAirAcceleration()
+    const deceleration = this.grounded ? this.getGroundDeceleration() : this.getAirDeceleration()
 
     let direction = inputDirection
     if (direction !== null && !blocked) {

@@ -1,0 +1,1043 @@
+{
+  "schema": "zulijian.dxf_level_data.v1",
+  "source": {
+    "path": "/tmp/codex-web-uploads/f-yowtwF/第一关.dxf",
+    "filename": "第一关.dxf",
+    "acad_version": "AC1032"
+  },
+  "options": {
+    "round_digits": 6,
+    "z_mode": "cad-y",
+    "coordinate_mapping": "cad_x_to_local_x__cad_y_to_local_z"
+  },
+  "summary": {
+    "entity_counts": {
+      "3DSOLID": 3,
+      "DIMENSION": 5,
+      "LINE": 6,
+      "LWPOLYLINE": 1
+    },
+    "object_counts": {
+      "ACAD_EVALUATION_GRAPH": 3,
+      "ACDBASSOCACTION": 4,
+      "ACDBASSOCALIGNEDDIMACTIONBODY": 3,
+      "ACDBASSOCDEPENDENCY": 4,
+      "ACDBASSOCEDGEACTIONPARAM": 3,
+      "ACDBASSOCGEOMDEPENDENCY": 8,
+      "ACDBASSOCNETWORK": 2,
+      "ACDBASSOCOSNAPPOINTREFACTIONPARAM": 8,
+      "ACDBASSOCPERSSUBENTMANAGER": 1,
+      "ACDBASSOCROTATEDDIMACTIONBODY": 1,
+      "ACDBASSOCVERTEXACTIONPARAM": 5,
+      "ACDBDETAILVIEWSTYLE": 1,
+      "ACDBDICTIONARYWDFLT": 1,
+      "ACDBPERSSUBENTMANAGER": 1,
+      "ACDBPLACEHOLDER": 1,
+      "ACDBSECTIONVIEWSTYLE": 1,
+      "ACSH_BOX_CLASS": 3,
+      "ACSH_HISTORY_CLASS": 3,
+      "CELLSTYLEMAP": 1,
+      "DICTIONARY": 26,
+      "DICTIONARYVAR": 11,
+      "LAYOUT": 3,
+      "MATERIAL": 3,
+      "MLEADERSTYLE": 1,
+      "MLINESTYLE": 1,
+      "RAPIDRTRENDERSETTINGS": 7,
+      "SCALE": 17,
+      "TABLESTYLE": 1,
+      "VISUALSTYLE": 26,
+      "XRECORD": 4
+    },
+    "layers": {
+      "0": {
+        "LINE": 6,
+        "3DSOLID": 3,
+        "DIMENSION": 5,
+        "LWPOLYLINE": 1
+      }
+    },
+    "geometry_bounds": {
+      "min_x": -4.379667,
+      "min_y": 89.644531,
+      "max_x": 155.620333,
+      "max_y": 189.644531,
+      "width": 160.0,
+      "height": 100.0
+    },
+    "drawing_bounds": {
+      "min_x": -4.379667,
+      "min_y": 81.605716,
+      "max_x": 166.16123,
+      "max_y": 233.140746,
+      "width": 170.540897,
+      "height": 151.53503
+    }
+  },
+  "frame": {
+    "source": "largest_closed_lwpolyline",
+    "entity_index": 9,
+    "handle": "2BF",
+    "cad_bounds": {
+      "min_x": -4.379667,
+      "min_y": 89.644531,
+      "max_x": 155.620333,
+      "max_y": 189.644531,
+      "width": 160.0,
+      "height": 100.0
+    },
+    "local_bounds": {
+      "startX": 0.0,
+      "startZ": 0.0,
+      "sx": 160.0,
+      "sz": 100.0
+    },
+    "points": [
+      {
+        "x": -4.379667,
+        "y": 89.644531
+      },
+      {
+        "x": 155.620333,
+        "y": 89.644531
+      },
+      {
+        "x": 155.620333,
+        "y": 189.644531
+      },
+      {
+        "x": -4.379667,
+        "y": 189.644531
+      }
+    ],
+    "points_local": [
+      {
+        "x": 0.0,
+        "z": 0.0
+      },
+      {
+        "x": 160.0,
+        "z": 0.0
+      },
+      {
+        "x": 160.0,
+        "z": 100.0
+      },
+      {
+        "x": 0.0,
+        "z": 100.0
+      }
+    ]
+  },
+  "entities": {
+    "lines": [
+      {
+        "type": "LINE",
+        "handle": "1D2",
+        "layer": "0",
+        "start": {
+          "x": 11.620333,
+          "y": 89.644531,
+          "z": 0.0
+        },
+        "end": {
+          "x": 11.620333,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "length": 100.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 16.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 16.0,
+          "z": 100.0
+        },
+        "index": 0
+      },
+      {
+        "type": "LINE",
+        "handle": "1DC",
+        "layer": "0",
+        "start": {
+          "x": 75.620333,
+          "y": 89.644531,
+          "z": 0.0
+        },
+        "end": {
+          "x": 75.620333,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "length": 100.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 80.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 80.0,
+          "z": 100.0
+        },
+        "index": 2
+      },
+      {
+        "type": "LINE",
+        "handle": "2C6",
+        "layer": "0",
+        "start": {
+          "x": 155.620333,
+          "y": 89.644531,
+          "z": 0.0
+        },
+        "end": {
+          "x": 155.620333,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "length": 100.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 160.0,
+          "z": 0.0
+        },
+        "end_local": {
+          "x": 160.0,
+          "z": 100.0
+        },
+        "index": 10
+      },
+      {
+        "type": "LINE",
+        "handle": "2C7",
+        "layer": "0",
+        "start": {
+          "x": 155.620333,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "end": {
+          "x": 155.620333,
+          "y": 160.626547,
+          "z": 0.0
+        },
+        "length": 29.017985,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 160.0,
+          "z": 100.0
+        },
+        "end_local": {
+          "x": 160.0,
+          "z": 70.982015
+        },
+        "index": 11
+      },
+      {
+        "type": "LINE",
+        "handle": "2CA",
+        "layer": "0",
+        "start": {
+          "x": 155.620333,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "end": {
+          "x": -4.379667,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "length": 160.0,
+        "orientation": "horizontal",
+        "start_local": {
+          "x": 160.0,
+          "z": 100.0
+        },
+        "end_local": {
+          "x": 0.0,
+          "z": 100.0
+        },
+        "index": 12
+      },
+      {
+        "type": "LINE",
+        "handle": "2CB",
+        "layer": "0",
+        "start": {
+          "x": -4.379667,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "end": {
+          "x": -4.379667,
+          "y": 89.644531,
+          "z": 0.0
+        },
+        "length": 100.0,
+        "orientation": "vertical",
+        "start_local": {
+          "x": 0.0,
+          "z": 100.0
+        },
+        "end_local": {
+          "x": 0.0,
+          "z": 0.0
+        },
+        "index": 13
+      }
+    ],
+    "polylines": [
+      {
+        "type": "LWPOLYLINE",
+        "handle": "2BF",
+        "layer": "0",
+        "closed": true,
+        "flags": 1,
+        "vertex_count": 4,
+        "vertices": [
+          {
+            "x": -4.379667,
+            "y": 89.644531
+          },
+          {
+            "x": 155.620333,
+            "y": 89.644531
+          },
+          {
+            "x": 155.620333,
+            "y": 189.644531
+          },
+          {
+            "x": -4.379667,
+            "y": 189.644531
+          }
+        ],
+        "vertices_local": [
+          {
+            "x": 0.0,
+            "z": 0.0
+          },
+          {
+            "x": 160.0,
+            "z": 0.0
+          },
+          {
+            "x": 160.0,
+            "z": 100.0
+          },
+          {
+            "x": 0.0,
+            "z": 100.0
+          }
+        ],
+        "index": 9
+      }
+    ],
+    "dimensions": [
+      {
+        "type": "DIMENSION",
+        "handle": "1F0",
+        "layer": "0",
+        "name": "*D1",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 8.0,
+        "definition_start": {
+          "x": 11.620333,
+          "y": 89.644531,
+          "z": 0.0
+        },
+        "definition_end": {
+          "x": 19.620333,
+          "y": 89.644531,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": 19.620333,
+          "y": 81.605716,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 15.620333,
+          "y": 83.480716,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 16.0,
+          "z": 0.0
+        },
+        "definition_end_local": {
+          "x": 24.0,
+          "z": 0.0
+        },
+        "index": 5
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "224",
+        "layer": "0",
+        "name": "*D3",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 100.0,
+        "definition_start": {
+          "x": 155.620333,
+          "y": 89.644531,
+          "z": 2.4
+        },
+        "definition_end": {
+          "x": 155.620333,
+          "y": 189.644531,
+          "z": 2.4
+        },
+        "dimension_line_point": {
+          "x": 166.16123,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 164.28623,
+          "y": 139.644531,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 160.0,
+          "z": 0.0
+        },
+        "definition_end_local": {
+          "x": 160.0,
+          "z": 100.0
+        },
+        "index": 6
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "23A",
+        "layer": "0",
+        "name": "*D4",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 160.0,
+        "definition_start": {
+          "x": 155.620333,
+          "y": 217.644531,
+          "z": 2.4
+        },
+        "definition_end": {
+          "x": -4.379667,
+          "y": 217.644531,
+          "z": 2.4
+        },
+        "dimension_line_point": {
+          "x": -4.379667,
+          "y": 231.265746,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 75.620333,
+          "y": 233.140746,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 160.0,
+          "z": 128.0
+        },
+        "definition_end_local": {
+          "x": 0.0,
+          "z": 128.0
+        },
+        "index": 7
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "25F",
+        "layer": "0",
+        "name": "*D6",
+        "style": "ISO-25",
+        "dimension_type": 33,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension"
+        ],
+        "measure": 16.0,
+        "definition_start": {
+          "x": -4.379667,
+          "y": 189.644531,
+          "z": 1.2
+        },
+        "definition_end": {
+          "x": 11.620333,
+          "y": 189.644531,
+          "z": 2.4
+        },
+        "dimension_line_point": {
+          "x": 11.620333,
+          "y": 193.429933,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 3.620333,
+          "y": 195.304933,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 0.0,
+          "z": 100.0
+        },
+        "definition_end_local": {
+          "x": 16.0,
+          "z": 100.0
+        },
+        "index": 8
+      },
+      {
+        "type": "DIMENSION",
+        "handle": "481",
+        "layer": "0",
+        "name": "*D8",
+        "style": "ISO-25",
+        "dimension_type": 32,
+        "subclasses": [
+          "AcDbEntity",
+          "AcDbDimension",
+          "AcDbAlignedDimension",
+          "AcDbRotatedDimension"
+        ],
+        "measure": 10.0,
+        "definition_start": {
+          "x": 75.620333,
+          "y": 189.644531,
+          "z": 1.2
+        },
+        "definition_end": {
+          "x": 85.620333,
+          "y": 189.644531,
+          "z": 0.0
+        },
+        "dimension_line_point": {
+          "x": 85.620333,
+          "y": 194.819707,
+          "z": 0.0
+        },
+        "text_midpoint": {
+          "x": 80.620333,
+          "y": 196.694707,
+          "z": 0.0
+        },
+        "definition_start_local": {
+          "x": 80.0,
+          "z": 100.0
+        },
+        "definition_end_local": {
+          "x": 90.0,
+          "z": 100.0
+        },
+        "index": 14
+      }
+    ],
+    "solids3d": [
+      {
+        "type": "3DSOLID",
+        "handle": "1D5",
+        "layer": "0",
+        "persistent_id": "{4b3614a0-f0bd-ba4d-9b7c-8f4255dadfb1}",
+        "history_handle": "1D8",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 1
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "1DF",
+        "layer": "0",
+        "persistent_id": "{5b24bb4d-1b44-cb42-9045-e8399b98e01a}",
+        "history_handle": "1E2",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 3
+      },
+      {
+        "type": "3DSOLID",
+        "handle": "1EC",
+        "layer": "0",
+        "persistent_id": "{9cab5c68-aa69-1040-a3b4-caf0b5084a98}",
+        "history_handle": "1EF",
+        "geometry_status": "recorded_without_readable_mesh",
+        "index": 4
+      }
+    ],
+    "circles": [],
+    "arcs": [],
+    "unsupported": []
+  },
+  "processed": {
+    "axis_segments": [
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": -4.379667,
+            "y": 89.644531
+          },
+          "end": {
+            "x": 155.620333,
+            "y": 89.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 160.0,
+            "z": 0.0
+          }
+        },
+        "length": 160.0
+      },
+      {
+        "orientation": "horizontal",
+        "cad": {
+          "start": {
+            "x": -4.379667,
+            "y": 189.644531
+          },
+          "end": {
+            "x": 155.620333,
+            "y": 189.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 100.0
+          },
+          "end": {
+            "x": 160.0,
+            "z": 100.0
+          }
+        },
+        "length": 160.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": -4.379667,
+            "y": 89.644531
+          },
+          "end": {
+            "x": -4.379667,
+            "y": 189.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 0.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 0.0,
+            "z": 100.0
+          }
+        },
+        "length": 100.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 11.620333,
+            "y": 89.644531
+          },
+          "end": {
+            "x": 11.620333,
+            "y": 189.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 16.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 16.0,
+            "z": 100.0
+          }
+        },
+        "length": 100.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 75.620333,
+            "y": 89.644531
+          },
+          "end": {
+            "x": 75.620333,
+            "y": 189.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 80.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 80.0,
+            "z": 100.0
+          }
+        },
+        "length": 100.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 155.620333,
+            "y": 89.644531
+          },
+          "end": {
+            "x": 155.620333,
+            "y": 189.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 160.0,
+            "z": 0.0
+          },
+          "end": {
+            "x": 160.0,
+            "z": 100.0
+          }
+        },
+        "length": 100.0
+      },
+      {
+        "orientation": "vertical",
+        "cad": {
+          "start": {
+            "x": 155.620333,
+            "y": 160.626547
+          },
+          "end": {
+            "x": 155.620333,
+            "y": 189.644531
+          }
+        },
+        "local": {
+          "start": {
+            "x": 160.0,
+            "z": 70.982016
+          },
+          "end": {
+            "x": 160.0,
+            "z": 100.0
+          }
+        },
+        "length": 29.017984
+      }
+    ],
+    "rectangle_candidates": [
+      {
+        "cad_bounds": {
+          "min_x": -4.379667,
+          "min_y": 89.644531,
+          "max_x": 155.620333,
+          "max_y": 189.644531,
+          "width": 160.0,
+          "height": 100.0
+        },
+        "local_rect": {
+          "startX": 0.0,
+          "startZ": 0.0,
+          "sx": 160.0,
+          "sz": 100.0
+        },
+        "area": 16000.0,
+        "is_frame": true,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "cad_bounds": {
+          "min_x": 11.620333,
+          "min_y": 89.644531,
+          "max_x": 155.620333,
+          "max_y": 189.644531,
+          "width": 144.0,
+          "height": 100.0
+        },
+        "local_rect": {
+          "startX": 16.0,
+          "startZ": 0.0,
+          "sx": 144.0,
+          "sz": 100.0
+        },
+        "area": 14400.0,
+        "is_frame": false,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "cad_bounds": {
+          "min_x": -4.379667,
+          "min_y": 89.644531,
+          "max_x": 75.620333,
+          "max_y": 189.644531,
+          "width": 80.0,
+          "height": 100.0
+        },
+        "local_rect": {
+          "startX": 0.0,
+          "startZ": 0.0,
+          "sx": 80.0,
+          "sz": 100.0
+        },
+        "area": 8000.0,
+        "is_frame": false,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "cad_bounds": {
+          "min_x": 75.620333,
+          "min_y": 89.644531,
+          "max_x": 155.620333,
+          "max_y": 189.644531,
+          "width": 80.0,
+          "height": 100.0
+        },
+        "local_rect": {
+          "startX": 80.0,
+          "startZ": 0.0,
+          "sx": 80.0,
+          "sz": 100.0
+        },
+        "area": 8000.0,
+        "is_frame": false,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "cad_bounds": {
+          "min_x": 11.620333,
+          "min_y": 89.644531,
+          "max_x": 75.620333,
+          "max_y": 189.644531,
+          "width": 64.0,
+          "height": 100.0
+        },
+        "local_rect": {
+          "startX": 16.0,
+          "startZ": 0.0,
+          "sx": 64.0,
+          "sz": 100.0
+        },
+        "area": 6400.0,
+        "is_frame": false,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "cad_bounds": {
+          "min_x": -4.379667,
+          "min_y": 89.644531,
+          "max_x": 11.620333,
+          "max_y": 189.644531,
+          "width": 16.0,
+          "height": 100.0
+        },
+        "local_rect": {
+          "startX": 0.0,
+          "startZ": 0.0,
+          "sx": 16.0,
+          "sz": 100.0
+        },
+        "area": 1600.0,
+        "is_frame": false,
+        "source": "closed_axis_aligned_segments"
+      }
+    ],
+    "runtime_terrain_piece_candidates": [
+      {
+        "name": "rect_001_144x100",
+        "startX": 16.0,
+        "startZ": 0.0,
+        "sx": 144.0,
+        "sz": 100.0,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "name": "rect_002_80x100",
+        "startX": 0.0,
+        "startZ": 0.0,
+        "sx": 80.0,
+        "sz": 100.0,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "name": "rect_003_80x100",
+        "startX": 80.0,
+        "startZ": 0.0,
+        "sx": 80.0,
+        "sz": 100.0,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "name": "rect_004_64x100",
+        "startX": 16.0,
+        "startZ": 0.0,
+        "sx": 64.0,
+        "sz": 100.0,
+        "source": "closed_axis_aligned_segments"
+      },
+      {
+        "name": "rect_005_16x100",
+        "startX": 0.0,
+        "startZ": 0.0,
+        "sx": 16.0,
+        "sz": 100.0,
+        "source": "closed_axis_aligned_segments"
+      }
+    ],
+    "solid_box_candidates": [
+      {
+        "solid_handle": "1D5",
+        "history_handle": "1D8",
+        "persistent_id": "{4b3614a0-f0bd-ba4d-9b7c-8f4255dadfb1}",
+        "name": "solid_1D5_16x100",
+        "box_handle": "1D6",
+        "graph_handle": "1D7",
+        "node_id": 1,
+        "cad_center": {
+          "x": 3.620333,
+          "y": 139.644531
+        },
+        "local_center": {
+          "x": 8.0,
+          "z": 50.0
+        },
+        "topdown_rect": {
+          "startX": 0.0,
+          "startZ": 0.0,
+          "sx": 16.0,
+          "sz": 100.0
+        },
+        "raw_box_size": {
+          "x": 16.0,
+          "y": 100.0,
+          "z": 2.4
+        },
+        "vertical_axis": "z",
+        "vertical_height": 2.4,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "1DF",
+        "history_handle": "1E2",
+        "persistent_id": "{5b24bb4d-1b44-cb42-9045-e8399b98e01a}",
+        "name": "solid_1DF_56x100",
+        "box_handle": "1E0",
+        "graph_handle": "1E1",
+        "node_id": 2,
+        "cad_center": {
+          "x": 47.620333,
+          "y": 139.644531
+        },
+        "local_center": {
+          "x": 52.0,
+          "z": 50.0
+        },
+        "topdown_rect": {
+          "startX": 24.0,
+          "startZ": 0.0,
+          "sx": 56.0,
+          "sz": 100.0
+        },
+        "raw_box_size": {
+          "x": 56.0,
+          "y": 100.0,
+          "z": 2.4
+        },
+        "vertical_axis": "z",
+        "vertical_height": 2.4,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      },
+      {
+        "solid_handle": "1EC",
+        "history_handle": "1EF",
+        "persistent_id": "{9cab5c68-aa69-1040-a3b4-caf0b5084a98}",
+        "name": "solid_1EC_70x100",
+        "box_handle": "1ED",
+        "graph_handle": "1EE",
+        "node_id": 3,
+        "cad_center": {
+          "x": 120.620333,
+          "y": 139.644531
+        },
+        "local_center": {
+          "x": 125.0,
+          "z": 50.0
+        },
+        "topdown_rect": {
+          "startX": 90.0,
+          "startZ": 0.0,
+          "sx": 70.0,
+          "sz": 100.0
+        },
+        "raw_box_size": {
+          "x": 70.0,
+          "y": 100.0,
+          "z": 2.4
+        },
+        "vertical_axis": "z",
+        "vertical_height": 2.4,
+        "topdown_transform": {
+          "m00": 1.0,
+          "m01": 0.0,
+          "m02": 0.0,
+          "m10": 0.0,
+          "m11": 1.0,
+          "m12": 0.0
+        },
+        "source": "ACSH_BOX_CLASS"
+      }
+    ],
+    "notes": [
+      "rectangle_candidates 只来自闭合的轴对齐线段边界。",
+      "solid_box_candidates 来自 3DSOLID 的 ACSH_BOX_CLASS 历史数据；topdown_rect 是按 CAD 俯视投影得到的施工参考。",
+      "3DSOLID 的 ACIS mesh 未直接解析；如需要斜面/非盒体，应额外校验 ACDSDATA。"
+    ]
+  }
+}

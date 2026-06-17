@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="980" viewBox="0 0 1320 980">
+  <rect width="1320" height="980" fill="#f8f8f4"/>
+  <text x="660" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#202020">第五关俯视示意：绿色=新增夹层，灰色=已有地砖，外框=大地板160x100</text>
+
+  <g transform="translate(100 90) scale(7)">
+    <rect x="0" y="0" width="160" height="100" fill="#ffffff" stroke="#111111" stroke-width="0.45"/>
+
+    <rect x="0" y="0" width="16" height="31.25" fill="#b8e6be" stroke="#2c8046" stroke-width="0.3"/>
+    <rect x="0" y="68.75" width="16" height="31.25" fill="#abdeb4" stroke="#2c8046" stroke-width="0.3"/>
+    <rect x="16" y="0" width="128" height="41.25" fill="#b8e6be" stroke="#2c8046" stroke-width="0.3"/>
+    <rect x="16" y="58.75" width="128" height="41.25" fill="#abdeb4" stroke="#2c8046" stroke-width="0.3"/>
+    <rect x="144" y="0" width="16" height="12.5" fill="#b8e6be" stroke="#2c8046" stroke-width="0.3"/>
+    <rect x="144" y="87.5" width="16" height="12.5" fill="#abdeb4" stroke="#2c8046" stroke-width="0.3"/>
+
+    <rect x="0" y="31.25" width="16" height="37.5" fill="#9aa2ab" stroke="#3c4148" stroke-width="0.45"/>
+    <rect x="16" y="41.25" width="128" height="17.5" fill="#9aa2ab" stroke="#3c4148" stroke-width="0.45"/>
+    <rect x="144" y="12.5" width="16" height="75" fill="#9aa2ab" stroke="#3c4148" stroke-width="0.45"/>
+
+    <g font-family="Arial, sans-serif" font-size="3.2" text-anchor="middle">
+      <text x="8" y="14" fill="#105528">夹层A 16x31.25</text>
+      <text x="8" y="84" fill="#105528">夹层B 16x31.25</text>
+      <text x="80" y="20" fill="#105528">夹层C 128x41.25</text>
+      <text x="80" y="80" fill="#105528">夹层D 128x41.25</text>
+      <text x="152" y="7" fill="#105528">夹层E</text>
+      <text x="152" y="95" fill="#105528">夹层F</text>
+      <text x="8" y="50" fill="#ffffff">已有地砖 16x37.5</text>
+      <text x="80" y="51" fill="#ffffff">已有地砖 128x17.5</text>
+      <text x="152" y="50" fill="#ffffff">已有地砖 16x75</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="16" fill="#202020">
+    <text x="100" y="825">夹层拆分为 6 块，全部避开灰色已有地砖范围：</text>
+    <text x="120" y="855">A: X 0..16, Z 0..31.25</text>
+    <text x="120" y="880">B: X 0..16, Z 68.75..100</text>
+    <text x="120" y="905">C: X 16..144, Z 0..41.25</text>
+    <text x="510" y="855">D: X 16..144, Z 58.75..100</text>
+    <text x="510" y="880">E: X 144..160, Z 0..12.5</text>
+    <text x="510" y="905">F: X 144..160, Z 87.5..100</text>
+    <text x="900" y="855">侧面逻辑：夹层在大地板和地砖中间，</text>
+    <text x="900" y="880">建议跟随第五关上移大地板一起运动。</text>
+  </g>
+</svg>
