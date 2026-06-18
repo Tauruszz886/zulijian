@@ -1,6 +1,7 @@
 import { safeCall, safeCreateCustomTriggerSpace, safeCreateObstacle } from "@common/engine_safe"
 import { LEVEL_TERRAIN_SPECS, type LevelTerrainSpec } from "./level_terrain"
 import {
+  BIRTH_TILE_BASE_Y,
   EIGHTH_LEVEL_MECHANISM_MOVE_SECONDS,
   EIGHTH_LEVEL_MECHANISM_MOVE_Z,
   EIGHTH_LEVEL_TERRAIN_CREATE_BATCH_SIZE,
@@ -28,6 +29,8 @@ import {
   startEighthLevelMechanism,
 } from "./runtime_eighth_mechanism"
 import { registerNinthVanishingPlatform, resetNinthLevelMechanism } from "./runtime_ninth_mechanism"
+import { startSecondLevelChaser } from "./runtime_second_chaser"
+import { registerThirdLevelTimedPlatform, resetThirdLevelMechanism, startThirdLevelMechanism } from "./runtime_third_mechanism"
 import { registerTenthCurrentPart, resetTenthCurrentMechanism, startTenthCurrentMechanism } from "./runtime_tenth_current"
 import {
   getRuntimeFloorForModule,
@@ -40,6 +43,10 @@ import { drawRuntimeTileGrid } from "./runtime_structure"
 
 let runtimeTilesCreated = false
 const TRAILING_CURRENT_PREFAB_ID = 3301506
+
+function getFullTileBaseY(moduleIndex: number): number {
+  return moduleIndex === 0 ? BIRTH_TILE_BASE_Y : TILE_BASE_Y
+}
 
 function disableMirrorReflect(unit: unknown, tag: string): void {
   if (unit === null || unit === undefined) {
@@ -164,6 +171,7 @@ function createRuntimeTerrain(
       })
     }
     registerNinthVanishingPlatform(moduleIndex, piece, unit, name, x, z)
+    registerThirdLevelTimedPlatform(moduleIndex, piece, unit, name, x, y, z)
     registerTenthCurrentPart(moduleIndex, piece, unit, name, x, y, z)
     print(
       `[${TERRAIN_TAG}] created name=${name} unit=${tostring(unit)} prefab=${prefabId} kind=${prefabId === TRAILING_CURRENT_PREFAB_ID ? "custom_trigger" : "obstacle"} base=(${x},${y},${z}) scale=(${piece.sx},${piece.sy},${piece.sz}) x_range=${moduleMinX + piece.startX}..${moduleMinX + piece.startX + piece.sx} z_range=${moduleMinZ + piece.startZ}..${moduleMinZ + piece.startZ + piece.sz} mirror=false compressor=${piece.compressor === true}`
@@ -237,10 +245,11 @@ export function createRuntimeTiles(): void {
   resetRuntimeCompressors()
   resetEighthLevelMechanism()
   resetNinthLevelMechanism()
+  resetThirdLevelMechanism()
   resetTenthCurrentMechanism()
 
   print(
-    `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT + 1} full_or_dxf_tiles=${RUNTIME_COPY_COUNT + 1} dxf_levels=1..10 module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} terrain_source=split_level_files birth_tile=runtime`
+    `[${TILE_TAG}] create begin modules=${RUNTIME_COPY_COUNT + 1} full_or_dxf_tiles=${RUNTIME_COPY_COUNT + 1} dxf_levels=1..10 module_0=出生地 last_module=第${RUNTIME_COPY_COUNT}关 prefab=${WALL_PREFAB_ID} base_y=${TILE_BASE_Y} birth_base_y=${BIRTH_TILE_BASE_Y} terrain_source=split_level_files birth_tile=runtime`
   )
   for (let moduleIndex = 0; moduleIndex <= RUNTIME_COPY_COUNT; moduleIndex++) {
     const moduleFloor = getRuntimeFloorForModule(moduleIndex)
@@ -266,20 +275,23 @@ export function createRuntimeTiles(): void {
       continue
     }
     const name = runtimeModuleName("地砖", moduleIndex)
+    const tileY = getFullTileBaseY(moduleIndex)
     const unit = safeCreateObstacle(
       WALL_PREFAB_ID,
-      math.Vector3(x as Fixed, TILE_BASE_Y as Fixed, RUNTIME_FLOOR.z as Fixed),
+      math.Vector3(x as Fixed, tileY as Fixed, RUNTIME_FLOOR.z as Fixed),
       math.Vector3(moduleFloor.sx as Fixed, TILE_HEIGHT as Fixed, moduleFloor.sz as Fixed),
       { tag: `runtime_tile_create_${name}`, logger: print }
     )
     disableMirrorReflect(unit, `runtime_tile_disable_mirror_${name}`)
     print(
-      `[${TILE_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${TILE_BASE_Y},${RUNTIME_FLOOR.z}) scale=(${moduleFloor.sx},${TILE_HEIGHT},${moduleFloor.sz}) terrain_original=true mirror=false`
+      `[${TILE_TAG}] created name=${name} unit=${tostring(unit)} base=(${x},${tileY},${RUNTIME_FLOOR.z}) scale=(${moduleFloor.sx},${TILE_HEIGHT},${moduleFloor.sz}) terrain_original=true mirror=false`
     )
   }
 
   drawRuntimeTileGrid()
   startRuntimeCompressors()
+  startThirdLevelMechanism()
   startTenthCurrentMechanism()
+  startSecondLevelChaser()
   createFallReturnTriggers()
 }

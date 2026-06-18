@@ -1,4 +1,5 @@
 import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
+import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import {
   EIGHTH_LEVEL_FIXED_HIGH_BAR_HEIGHT,
@@ -15,6 +16,7 @@ import {
 } from "./runtime_config"
 import { returnUnitToBirth } from "./runtime_fall_return"
 import { asFixed } from "./runtime_layout"
+import { GAME_EVENTS } from "./utils/GameEvents"
 
 const DEATH_TRIGGER_PREFAB_ID = 3101010
 const DEATH_TRIGGER_OUTSET = 0.2
@@ -36,6 +38,7 @@ declare const Enums: { TriggerSpaceEventType: { ENTER: number } }
 
 let runtimeEighthMechanismStarted = false
 let runtimeEighthMechanismParts: RuntimeEighthMechanismPart[] = []
+let runtimeEighthMechanismGeneration = 0
 
 export function resetEighthLevelMechanism(): void {
   runtimeEighthMechanismParts = []
@@ -170,7 +173,11 @@ function animateEighthLevelMechanism(toTarget: boolean, done?: () => void): void
     return
   }
   let frame = 0
+  const generation = runtimeEighthMechanismGeneration
   const step = (): void => {
+    if (generation !== runtimeEighthMechanismGeneration) {
+      return
+    }
     frame += 1
     const t = frame / EIGHTH_LEVEL_MECHANISM_MOVE_FRAMES
     for (let i = 0; i < runtimeEighthMechanismParts.length; i++) {
@@ -213,3 +220,23 @@ export function startEighthLevelMechanism(): void {
   )
   scheduleEighthLevelMechanismCycle(true)
 }
+
+function resetEighthLevelMechanismToInitial(source: string): void {
+  if (runtimeEighthMechanismParts.length === 0) {
+    return
+  }
+  runtimeEighthMechanismGeneration += 1
+  for (let i = 0; i < runtimeEighthMechanismParts.length; i++) {
+    const part = runtimeEighthMechanismParts[i]!
+    setEighthLevelMechanismPartPosition(part, part.z)
+  }
+  runtimeEighthMechanismStarted = false
+  print(
+    `[ZLJ_EIGHTH_MECHANISM] reset_to_initial source=${source} parts=${runtimeEighthMechanismParts.length} generation=${runtimeEighthMechanismGeneration}`
+  )
+  startEighthLevelMechanism()
+}
+
+EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+  resetEighthLevelMechanismToInitial(tostring(source))
+})

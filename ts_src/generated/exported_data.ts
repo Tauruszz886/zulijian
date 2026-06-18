@@ -12,16 +12,23 @@ export const EquipmentPrefab = {} as const
 
 export const MontageKeys = {} as const
 
-export const Prefab = {} as const
+export const Prefab = {
+  "decoration": {
+    "直线": 1073741913,
+  },
+} as const
 
 export const QuestData = {} as const
 
 export const StoryData = {} as const
 
 export const UINodes = {
+  "按钮A": "1519736575|1123301873", // @as EButton
+  "按钮B": "1519736575|1942228679", // @as EButton
   "标识": "1519736575|1883038573", // @as ELabel
   "画布0": "1519736575|1405255247", // @as ECanvas
   "画布1": "1519736575|1631733151", // @as ECanvas
+  "画布2": "1519736575|1960838312", // @as ECanvas
   "确认按钮": "1519736575|1349974473", // @as EButton
   "速度减1": "1519736575|1013743464", // @as EButton
   "速度减10": "1519736575|1453382142", // @as EButton

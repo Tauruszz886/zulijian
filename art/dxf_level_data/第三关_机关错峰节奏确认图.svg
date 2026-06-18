@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <style>
+      .title { font: 700 28px sans-serif; fill: #20242a; }
+      .label { font: 600 18px sans-serif; fill: #26313d; }
+      .small { font: 14px sans-serif; fill: #4b5663; }
+      .tiny { font: 12px sans-serif; fill: #5d6672; }
+      .note { font: 16px sans-serif; fill: #374151; }
+      .stable { fill: #d8dde5; stroke: #7b8491; stroke-width: 2; }
+      .g1 { fill: #ff9c6e; stroke: #a64b22; stroke-width: 2; }
+      .g2 { fill: #ffd166; stroke: #9a7200; stroke-width: 2; }
+      .g3 { fill: #78d8a0; stroke: #1e7c48; stroke-width: 2; }
+      .g4 { fill: #76b7ff; stroke: #1f5d99; stroke-width: 2; }
+      .grid { stroke: #c9d0da; stroke-width: 1; }
+      .axis { stroke: #6b7280; stroke-width: 2; }
+      .fade { fill: #f97316; opacity: .85; }
+      .hidden { fill: #111827; opacity: .78; }
+      .recover { fill: #22c55e; opacity: .85; }
+      .dash { stroke: #6b7280; stroke-width: 2; stroke-dasharray: 6 6; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="760" fill="#f7f8fb"/>
+  <text class="title" x="40" y="48">第三关机关错峰循环设计</text>
+  <text class="note" x="40" y="82">组内按编号顺序依次启动；组间错开启动，形成斜向波浪，适合跑得快的关卡节奏。</text>
+
+  <g transform="translate(60,125)">
+    <text class="label" x="0" y="-18">俯视编号与分组</text>
+    <rect class="stable" x="0" y="112" width="80" height="150" rx="4"/>
+    <text class="label" x="34" y="192">1</text>
+    <text class="tiny" x="12" y="285">入口稳定</text>
+
+    <g transform="translate(120,0)">
+      <rect class="g4" x="0" y="0" width="110" height="72" rx="4"/><text class="label" x="48" y="43">2</text>
+      <rect class="g3" x="0" y="94" width="110" height="72" rx="4"/><text class="label" x="48" y="137">3</text>
+      <rect class="g2" x="0" y="188" width="110" height="72" rx="4"/><text class="label" x="48" y="231">4</text>
+      <rect class="g1" x="0" y="282" width="110" height="72" rx="4"/><text class="label" x="48" y="325">5</text>
+    </g>
+    <g transform="translate(260,0)">
+      <rect class="g4" x="0" y="0" width="110" height="72" rx="4"/><text class="label" x="48" y="43">6</text>
+      <rect class="g3" x="0" y="94" width="110" height="72" rx="4"/><text class="label" x="48" y="137">7</text>
+      <rect class="g2" x="0" y="188" width="110" height="72" rx="4"/><text class="label" x="48" y="231">8</text>
+      <rect class="g1" x="0" y="282" width="110" height="72" rx="4"/><text class="label" x="43" y="325">9</text>
+    </g>
+    <g transform="translate(400,0)">
+      <rect class="g4" x="0" y="0" width="110" height="72" rx="4"/><text class="label" x="42" y="43">10</text>
+      <rect class="g3" x="0" y="94" width="110" height="72" rx="4"/><text class="label" x="42" y="137">11</text>
+      <rect class="g2" x="0" y="188" width="110" height="72" rx="4"/><text class="label" x="42" y="231">12</text>
+      <rect class="g1" x="0" y="282" width="110" height="72" rx="4"/><text class="label" x="42" y="325">13</text>
+    </g>
+
+    <rect class="stable" x="548" y="150" width="58" height="54" rx="4"/>
+    <text class="label" x="568" y="183">14</text>
+    <rect class="stable" x="636" y="100" width="90" height="205" rx="4"/>
+    <text class="label" x="671" y="209">15</text>
+    <text class="tiny" x="542" y="330">出口稳定</text>
+
+    <path class="dash" d="M148 374 L488 374"/>
+    <text class="small" x="150" y="398">G1: 5 -> 9 -> 13</text>
+    <text class="small" x="150" y="424">G2: 4 -> 8 -> 12</text>
+    <text class="small" x="150" y="450">G3: 3 -> 7 -> 11</text>
+    <text class="small" x="150" y="476">G4: 2 -> 6 -> 10</text>
+  </g>
+
+  <g transform="translate(60,610)">
+    <text class="label" x="0" y="-210">循环时间轴，周期 11 秒</text>
+    <text class="small" x="0" y="-184">每个平台：显示等待 2.0s -> 虚化 1.0s -> 消失 2.0s -> 恢复 0.3s</text>
+    <text class="small" x="0" y="-160">组内间隔 1.5s，组间间隔 0.7s。玩家跑快时会看到平台按斜向波浪不断断开。</text>
+
+    <line class="axis" x1="95" y1="0" x2="1170" y2="0"/>
+    <g>
+      <line class="grid" x1="95" y1="-125" x2="95" y2="18"/><text class="tiny" x="90" y="38">0</text>
+      <line class="grid" x1="193" y1="-125" x2="193" y2="18"/><text class="tiny" x="188" y="38">1</text>
+      <line class="grid" x1="291" y1="-125" x2="291" y2="18"/><text class="tiny" x="286" y="38">2</text>
+      <line class="grid" x1="389" y1="-125" x2="389" y2="18"/><text class="tiny" x="384" y="38">3</text>
+      <line class="grid" x1="487" y1="-125" x2="487" y2="18"/><text class="tiny" x="482" y="38">4</text>
+      <line class="grid" x1="585" y1="-125" x2="585" y2="18"/><text class="tiny" x="580" y="38">5</text>
+      <line class="grid" x1="683" y1="-125" x2="683" y2="18"/><text class="tiny" x="678" y="38">6</text>
+      <line class="grid" x1="781" y1="-125" x2="781" y2="18"/><text class="tiny" x="776" y="38">7</text>
+      <line class="grid" x1="879" y1="-125" x2="879" y2="18"/><text class="tiny" x="874" y="38">8</text>
+      <line class="grid" x1="977" y1="-125" x2="977" y2="18"/><text class="tiny" x="972" y="38">9</text>
+      <line class="grid" x1="1075" y1="-125" x2="1075" y2="18"/><text class="tiny" x="1066" y="38">10</text>
+      <line class="grid" x1="1173" y1="-125" x2="1173" y2="18"/><text class="tiny" x="1164" y="38">11</text>
+    </g>
+
+    <text class="small" x="0" y="-96">G1</text>
+    <rect class="fade" x="291" y="-112" width="98" height="16" rx="3"/><rect class="hidden" x="389" y="-112" width="196" height="16" rx="3"/><rect class="recover" x="585" y="-112" width="30" height="16" rx="3"/><text class="tiny" x="100" y="-100">5@0.0</text>
+    <rect class="fade" x="438" y="-90" width="98" height="16" rx="3"/><rect class="hidden" x="536" y="-90" width="196" height="16" rx="3"/><rect class="recover" x="732" y="-90" width="30" height="16" rx="3"/><text class="tiny" x="100" y="-78">9@1.5</text>
+    <rect class="fade" x="585" y="-68" width="98" height="16" rx="3"/><rect class="hidden" x="683" y="-68" width="196" height="16" rx="3"/><rect class="recover" x="879" y="-68" width="30" height="16" rx="3"/><text class="tiny" x="100" y="-56">13@3.0</text>
+
+    <text class="small" x="0" y="-30">G2</text>
+    <rect class="fade" x="360" y="-46" width="98" height="16" rx="3"/><rect class="hidden" x="458" y="-46" width="196" height="16" rx="3"/><rect class="recover" x="654" y="-46" width="30" height="16" rx="3"/><text class="tiny" x="100" y="-34">4@0.7</text>
+    <rect class="fade" x="507" y="-24" width="98" height="16" rx="3"/><rect class="hidden" x="605" y="-24" width="196" height="16" rx="3"/><rect class="recover" x="801" y="-24" width="30" height="16" rx="3"/><text class="tiny" x="100" y="-12">8@2.2</text>
+    <rect class="fade" x="654" y="-2" width="98" height="16" rx="3"/><rect class="hidden" x="752" y="-2" width="196" height="16" rx="3"/><rect class="recover" x="948" y="-2" width="30" height="16" rx="3"/><text class="tiny" x="100" y="10">12@3.7</text>
+  </g>
+
+  <g transform="translate(710,400)">
+    <text class="label" x="0" y="0">后半段启动点</text>
+    <text class="small" x="0" y="34">G3：3@1.4 -> 7@2.9 -> 11@4.4</text>
+    <text class="small" x="0" y="62">G4：2@2.1 -> 6@3.6 -> 10@5.1</text>
+    <text class="small" x="0" y="102">这样从玩家视角看，不是一整列/一整排同时消失，</text>
+    <text class="small" x="0" y="130">而是入口到出口方向持续错峰，逼玩家保持速度和路线判断。</text>
+  </g>
+
+  <g transform="translate(920,690)">
+    <rect class="fade" x="0" y="-18" width="26" height="14" rx="2"/><text class="tiny" x="34" y="-7">虚化中，仍可短暂反应</text>
+    <rect class="hidden" x="180" y="-18" width="26" height="14" rx="2"/><text class="tiny" x="214" y="-7">消失，踩空掉落</text>
+  </g>
+</svg>

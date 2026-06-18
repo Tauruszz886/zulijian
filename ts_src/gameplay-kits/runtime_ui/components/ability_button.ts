@@ -1,8 +1,8 @@
 import { safeVoid } from "@common/engine_safe"
-import type { RuntimeButtonStyle, RuntimeUiHost } from "../types"
+import type { RuntimeAbilityButtonStyle, RuntimeUiClickHandler, RuntimeUiClickOptions, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
 
-export class RuntimeButton {
+export class RuntimeAbilityButton {
   readonly node: EButton
   private readonly host: RuntimeUiHost
 
@@ -17,7 +17,7 @@ export class RuntimeButton {
         () => {
           role.set_button_text(this.node, text)
         },
-        { tag: "runtime_ui_button_text", logger: scopedLogger(this.host) },
+        { tag: "runtime_ui_ability_button_text", logger: scopedLogger(this.host) },
       )
     })
   }
@@ -28,12 +28,20 @@ export class RuntimeButton {
         () => {
           role.set_node_visible(this.node, visible)
         },
-        { tag: "runtime_ui_button_visible", logger: scopedLogger(this.host) },
+        { tag: "runtime_ui_ability_button_visible", logger: scopedLogger(this.host) },
       )
     })
   }
 
-  applyStyle(style?: RuntimeButtonStyle): void {
+  onClick(handler: RuntimeUiClickHandler, options?: RuntimeUiClickOptions): number | null {
+    return this.host.registerClick(this.node, handler, options)
+  }
+
+  offClick(regId: number): boolean {
+    return this.host.unregisterClick(regId)
+  }
+
+  applyStyle(style?: RuntimeAbilityButtonStyle): void {
     const enabled = style?.enabled !== undefined ? style.enabled : true
     const touchEnabled = style?.touchEnabled !== undefined ? style.touchEnabled : true
     this.host.forEachRole((role) => {
@@ -44,8 +52,10 @@ export class RuntimeButton {
           role.set_node_touch_enabled(this.node, touchEnabled)
           if (style?.fontSize !== undefined) role.set_button_font_size(this.node, fixed(style.fontSize))
           if (style?.textColor !== undefined) role.set_button_text_color(this.node, style.textColor)
+          if (style?.normalImageKey !== undefined) role.set_button_normal_image(this.node, style.normalImageKey)
+          if (style?.pressedImageKey !== undefined) role.set_button_pressed_image(this.node, style.pressedImageKey)
         },
-        { tag: "runtime_ui_button_style", logger: scopedLogger(this.host) },
+        { tag: "runtime_ui_ability_button_style", logger: scopedLogger(this.host) },
       )
     })
   }

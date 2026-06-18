@@ -1,0 +1,30 @@
+{
+  "kit": "runtime_ui",
+  "version": "0.1.0",
+  "platformCommit": "00b767a109d0f1afc938ad29f914e5e6cf290fc8",
+  "source": "platform/gameplay-kits/runtime_ui",
+  "sourceDir": "src",
+  "targetDir": "ts_src/gameplay-kits/runtime_ui",
+  "dependencies": [],
+  "files": {
+    "components/ability_button.ts": "1d75ba3344f8062f8dd0a6b1d58f212750cfc67d5fc3d446ff3488b63551bb83",
+    "components/bag_slot.ts": "edfb0e85354bc44d36d24ba60d9a2170f8a14437dd1ea19f3869c5288b6161fa",
+    "components/button.ts": "7df88b0905a11e0e55a41b20e17311d5ffb1018feeff55dde3cd3991c785ef29",
+    "components/clipping.ts": "495e8d65b174d5eb779dafd85d34996c3cd95b0f96a1fe598957256e093d0f00",
+    "components/debug_line.ts": "e3d293cda18a2c77a787a6b1a528168ef127d771ca278791b4dfea2973a9aba0",
+    "components/effect.ts": "8b34c39c4d3899d310f506a877d403c9d457b29574035f2c6656dc08ae977a4d",
+    "components/group.ts": "8cce3c09187faac2d565aaac5c3a8fc4db075e5127907aeac6b21ce07733187b",
+    "components/image.ts": "1688abd674f3683f812e7e8e1e97a33f065c0c50e720bfbf82de269b01479bfe",
+    "components/input.ts": "0f91f3df9bf1ebe6d84c7879a7b46e403fc6a9e7733040cbad6e03d76f094402",
+    "components/label.ts": "e903d7f82a9d715605e8d91b1c6aee72f2d7f0752c72a7625b67c49c80787ff4",
+    "components/list_view.ts": "f63562fbfc09d64c9da9740cccfc2ff879756069944bb31fb8093f345adc1359",
+    "components/node.ts": "3ed3d314393ec0b760fb0ad8d9ef0bb2884e6644399314e25216b33f423ee2aa",
+    "components/progress_bar.ts": "36106748c9de6dff6080b52b1523aeebb7767295a2bdd0369052326507c7c06a",
+    "components/progress_timer.ts": "4c7af3389f81f9a555ff6f0d6cace288cafe742db52616702404cb9973e51f37",
+    "index.ts": "4e33a290e2236da3b5497319c0c3201d0c9ecf0af714595b826ed875fe140b53",
+    "scope/scope.ts": "8a0a097a7ce57276306e6dd0afd2d0ef6b8d6246c32599abb69f40679aaeaee8",
+    "types.ts": "3042ea23e71ee7ace51fa5e3a8de8c6f1cca7f3823dad272f5ffd3cfaba13db4",
+    "utils.ts": "904bd45ff71b2ca532525898731f28d8a237940f6f9667dfa84ab4d80e0e9531"
+  },
+  "installedAt": "2026-06-18T06:59:24.820837+00:00"
+}

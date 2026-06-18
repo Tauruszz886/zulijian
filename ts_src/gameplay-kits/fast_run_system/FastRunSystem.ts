@@ -154,6 +154,14 @@ export class FastRunSystem {
     return this.enabled
   }
 
+  enableDashboard(): void {
+    this.testMode.enabled = true
+    this.enableTestMode()
+    if (this.testDashboard !== null) {
+      this.testDashboard.setEnabled(true)
+    }
+  }
+
   addComponent(role: Role, options?: FastRunComponentConfig): FastRunComponent {
     const roleId = role.get_roleid()
     const existing = this.getComponentByRoleId(roleId)

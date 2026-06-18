@@ -1,0 +1,4961 @@
+{
+  "edges": [
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1013743464"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1338623457"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1349974473"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1453382142"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1506247873"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1540147645"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1680243400"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1880430446"
+    },
+    {
+      "parent_id": "1631733151",
+      "source": "parent",
+      "child_id": "1883038573"
+    },
+    {
+      "parent_id": "1960838312",
+      "source": "parent",
+      "child_id": "1123301873"
+    },
+    {
+      "parent_id": "1960838312",
+      "source": "parent",
+      "child_id": "1942228679"
+    },
+    {
+      "parent_id": "defaultcanvasnode1011933552",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1427710398"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1276061067"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1566442096"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1598508423"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1673070147"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1814058157"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1891456124"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1896696601"
+    },
+    {
+      "parent_id": "defaultcanvasnode1044316774",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1963676575"
+    },
+    {
+      "parent_id": "defaultcanvasnode1114031223",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1029693153"
+    },
+    {
+      "parent_id": "defaultcanvasnode1114031223",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1295940304"
+    },
+    {
+      "parent_id": "defaultcanvasnode1114031223",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1496089394"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1071229631"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1329129470"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1492146154"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1610043440"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1687689551"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1858489733"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1995028804"
+    },
+    {
+      "parent_id": "defaultcanvasnode1137630781",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2124983789"
+    },
+    {
+      "parent_id": "defaultcanvasnode1230522130",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1400580767"
+    },
+    {
+      "parent_id": "defaultcanvasnode1252630487",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1438208584"
+    },
+    {
+      "parent_id": "defaultcanvasnode1252630487",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1927559568"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1050067477"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1254768002"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1417575460"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1622169303"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1766282371"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1862397091"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1999558730"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2004833563"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2105922088"
+    },
+    {
+      "parent_id": "defaultcanvasnode1259815385",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2144615921"
+    },
+    {
+      "parent_id": "defaultcanvasnode1293441246",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1775762583"
+    },
+    {
+      "parent_id": "defaultcanvasnode1293441246",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1918482818"
+    },
+    {
+      "parent_id": "defaultcanvasnode1296506048",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1154702123"
+    },
+    {
+      "parent_id": "defaultcanvasnode1335681995",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1880602002"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1236424741"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1246819891"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1675616354"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1737662377"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1760445157"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1766282370"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1838830362"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1986929758"
+    },
+    {
+      "parent_id": "defaultcanvasnode1427710398",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2083572943"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1080841164"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1267728326"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1285385574"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1350831479"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1584406445"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1592358185"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1726530207"
+    },
+    {
+      "parent_id": "defaultcanvasnode1443248909",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2088407629"
+    },
+    {
+      "parent_id": "defaultcanvasnode1584406445",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1709380891"
+    },
+    {
+      "parent_id": "defaultcanvasnode1591028881",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1507987965"
+    },
+    {
+      "parent_id": "defaultcanvasnode1622165009",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1720032214"
+    },
+    {
+      "parent_id": "defaultcanvasnode1642230240",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1776633338"
+    },
+    {
+      "parent_id": "defaultcanvasnode1775762583",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1259815385"
+    },
+    {
+      "parent_id": "defaultcanvasnode1849575195",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1011933552"
+    },
+    {
+      "parent_id": "defaultcanvasnode1862397091",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1611079652"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1405230583"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1591028881"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1623929962"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1648012547"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1670875248"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1758496163"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1902745941"
+    },
+    {
+      "parent_id": "defaultcanvasnode1867770220",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2127132979"
+    },
+    {
+      "parent_id": "defaultcanvasnode1880602002",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1044316774"
+    },
+    {
+      "parent_id": "defaultcanvasnode1880602002",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1137630781"
+    },
+    {
+      "parent_id": "defaultcanvasnode1880602002",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1443248909"
+    },
+    {
+      "parent_id": "defaultcanvasnode1880602002",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1867770220"
+    },
+    {
+      "parent_id": "defaultcanvasnode1918482818",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1492436928"
+    },
+    {
+      "parent_id": "defaultcanvasnode1918482818",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1857540445"
+    },
+    {
+      "parent_id": "defaultcanvasnode1918482818",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1878526944"
+    },
+    {
+      "parent_id": "defaultcanvasnode1918482818",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1993959573"
+    },
+    {
+      "parent_id": "defaultcanvasnode1927559568",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1944465210"
+    },
+    {
+      "parent_id": "defaultcanvasnode1963676575",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1575737141"
+    },
+    {
+      "parent_id": "defaultcanvasnode2098288674",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1642230240"
+    },
+    {
+      "parent_id": "defaultcanvasnode2124983789",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1059218624"
+    },
+    {
+      "parent_id": "defaultcanvasnode2125201311",
+      "source": "parent",
+      "child_id": "defaultcanvasnode1176795066"
+    },
+    {
+      "parent_id": "defaultcanvasnode2125201311",
+      "source": "parent",
+      "child_id": "defaultcanvasnode2094007192"
+    }
+  ],
+  "nodes_by_id": {
+    "defaultcanvasnode1766282371": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1766282371",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1766282371"
+    },
+    "left_thumb": {
+      "children_ids": [],
+      "node_id": "left_thumb",
+      "type": "20000",
+      "attrs": {
+        "name": "摇杆",
+        "visible": true,
+        "height": 149.60000419617,
+        "width": 149.60000419617,
+        "opacity": 1
+      },
+      "id": "left_thumb"
+    },
+    "img_properties_panel": {
+      "children_ids": [],
+      "node_id": "img_properties_panel",
+      "type": "21103",
+      "attrs": {
+        "name": "角色属性面板",
+        "visible": true,
+        "height": 88,
+        "width": 486,
+        "opacity": 1
+      },
+      "id": "img_properties_panel"
+    },
+    "Button_skill_b2": {
+      "children_ids": [],
+      "node_id": "Button_skill_b2",
+      "type": "20000",
+      "attrs": {
+        "name": "前扑",
+        "visible": true,
+        "height": 148,
+        "width": 148,
+        "opacity": 0.49803921568627
+      },
+      "id": "Button_skill_b2"
+    },
+    "defaultcanvasnode2094007192": {
+      "parent_id": "defaultcanvasnode2125201311",
+      "node_id": "defaultcanvasnode2094007192",
+      "attrs": {
+        "text": "+999",
+        "name": "金币数量",
+        "visible": true,
+        "height": 45.356563568115,
+        "width": 100.3104095459,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode2094007192"
+    },
+    "1123301873": {
+      "parent_id": "1960838312",
+      "node_id": "1123301873",
+      "attrs": {
+        "text": "A",
+        "name": "圆形金",
+        "visible": true,
+        "height": 130,
+        "width": 130,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1123301873"
+    },
+    "defaultcanvasnode1427710398": {
+      "parent_id": "defaultcanvasnode1011933552",
+      "node_id": "defaultcanvasnode1427710398",
+      "attrs": {
+        "name": "底板",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1427710398"
+    },
+    "defaultcanvasnode1267728326": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1267728326",
+      "attrs": {
+        "text": "造塔名称",
+        "name": "造塔名称",
+        "visible": true,
+        "height": 76.958023071289,
+        "width": 164.14764404297,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1267728326"
+    },
+    "defaultcanvasnode1944465210": {
+      "parent_id": "defaultcanvasnode1927559568",
+      "node_id": "defaultcanvasnode1944465210",
+      "attrs": {
+        "text": "3",
+        "name": "等级数字",
+        "visible": true,
+        "height": 50,
+        "width": 50,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1944465210"
+    },
+    "defaultcanvasnode1857540445": {
+      "parent_id": "defaultcanvasnode1918482818",
+      "node_id": "defaultcanvasnode1857540445",
+      "attrs": {
+        "name": "点击",
+        "visible": true,
+        "height": 151.54208374023,
+        "width": 150,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1857540445"
+    },
+    "defaultcanvasnode1891456124": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1891456124",
+      "attrs": {
+        "text": "造塔名称",
+        "name": "造塔名称",
+        "visible": true,
+        "height": 76.958023071289,
+        "width": 161.77374267578,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1891456124"
+    },
+    "img_battle_over": {
+      "children_ids": [],
+      "node_id": "img_battle_over",
+      "type": "21000",
+      "attrs": {
+        "name": "游戏结束",
+        "visible": false,
+        "height": 400,
+        "width": 500,
+        "opacity": 1
+      },
+      "id": "img_battle_over"
+    },
+    "img_countdown_tip": {
+      "children_ids": [],
+      "node_id": "img_countdown_tip",
+      "type": "21106",
+      "attrs": {
+        "name": "复活倒计时",
+        "visible": true,
+        "height": 292,
+        "width": 384,
+        "opacity": 1
+      },
+      "id": "img_countdown_tip"
+    },
+    "img_pass_num": {
+      "children_ids": [],
+      "node_id": "img_pass_num",
+      "type": "21101",
+      "attrs": {
+        "name": "通关人数",
+        "visible": true,
+        "height": 350,
+        "width": 500,
+        "opacity": 1
+      },
+      "id": "img_pass_num"
+    },
+    "defaultcanvasnode1400580767": {
+      "parent_id": "defaultcanvasnode1230522130",
+      "node_id": "defaultcanvasnode1400580767",
+      "attrs": {
+        "name": "进度条",
+        "visible": true,
+        "height": 20,
+        "width": 120,
+        "opacity": 1
+      },
+      "type": "10013",
+      "children_ids": [],
+      "id": "defaultcanvasnode1400580767"
+    },
+    "defaultcanvasnode1995028804": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1995028804",
+      "attrs": {
+        "name": "点击",
+        "visible": true,
+        "height": 221.72511291504,
+        "width": 143.53811645508,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1995028804"
+    },
+    "1680243400": {
+      "parent_id": "1631733151",
+      "node_id": "1680243400",
+      "attrs": {
+        "text": "-100",
+        "name": "速度减100",
+        "visible": true,
+        "height": 88,
+        "width": 96,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1680243400"
+    },
+    "defaultcanvasnode1405230583": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1405230583",
+      "attrs": {
+        "name": "环",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1405230583"
+    },
+    "defaultcanvasnode1598508423": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1598508423",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1598508423"
+    },
+    "defaultcanvasnode1296506048": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1296506048",
+      "type": "202",
+      "attrs": {
+        "name": "集火UI",
+        "visible": false,
+        "height": 200,
+        "width": 200,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1296506048"
+    },
+    "defaultcanvasnode2125201311": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode2125201311",
+      "type": "202",
+      "attrs": {
+        "name": "金币飘字",
+        "visible": false,
+        "height": 200,
+        "width": 200,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode2125201311"
+    },
+    "defaultcanvasnode1622165009": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1622165009",
+      "type": "202",
+      "attrs": {
+        "name": "问号",
+        "visible": false,
+        "height": 200,
+        "width": 200,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1622165009"
+    },
+    "defaultcanvasnode1918482818": {
+      "parent_id": "defaultcanvasnode1293441246",
+      "node_id": "defaultcanvasnode1918482818",
+      "attrs": {
+        "name": "删除图标",
+        "visible": true,
+        "height": 122.55908203125,
+        "width": 122.55908203125,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1918482818"
+    },
+    "defaultcanvasnode1575737141": {
+      "parent_id": "defaultcanvasnode1963676575",
+      "node_id": "defaultcanvasnode1575737141",
+      "attrs": {
+        "text": "8折",
+        "name": "打折文本",
+        "visible": true,
+        "height": 66.678916931152,
+        "width": 120.62201690674,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1575737141"
+    },
+    "defaultcanvasnode1584406445": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1584406445",
+      "attrs": {
+        "name": "红色底板",
+        "visible": true,
+        "height": 53.308895111084,
+        "width": 100,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1584406445"
+    },
+    "img_squad_score": {
+      "children_ids": [],
+      "node_id": "img_squad_score",
+      "type": "21000",
+      "attrs": {
+        "name": "小队分数",
+        "visible": false,
+        "height": 241,
+        "width": 234,
+        "opacity": 1
+      },
+      "id": "img_squad_score"
+    },
+    "defaultcanvasnode1623929962": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1623929962",
+      "attrs": {
+        "text": "造塔名称",
+        "name": "造塔名称",
+        "visible": true,
+        "height": 76.958023071289,
+        "width": 161.71391296387,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1623929962"
+    },
+    "defaultcanvasnode1176795066": {
+      "parent_id": "defaultcanvasnode2125201311",
+      "node_id": "defaultcanvasnode1176795066",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1176795066"
+    },
+    "defaultcanvasnode1642230240": {
+      "parent_id": "defaultcanvasnode2098288674",
+      "node_id": "defaultcanvasnode1642230240",
+      "attrs": {
+        "name": "对话框",
+        "visible": true,
+        "height": 118,
+        "width": 301.98910522461,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1642230240"
+    },
+    "defaultcanvasnode1276061067": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1276061067",
+      "attrs": {
+        "name": "环",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1276061067"
+    },
+    "btn_emoji": {
+      "children_ids": [],
+      "node_id": "btn_emoji",
+      "type": "20000",
+      "attrs": {
+        "name": "表情",
+        "visible": true,
+        "height": 103.99999773502,
+        "width": 103.99999773502,
+        "opacity": 0.8
+      },
+      "id": "btn_emoji"
+    },
+    "1405255247": {
+      "children_ids": [],
+      "node_id": "1405255247",
+      "type": "200",
+      "attrs": {
+        "name": "画布0",
+        "visible": false,
+        "height": 1080,
+        "width": 2286,
+        "opacity": 1
+      },
+      "id": "1405255247"
+    },
+    "defaultcanvasnode1029693153": {
+      "parent_id": "defaultcanvasnode1114031223",
+      "node_id": "defaultcanvasnode1029693153",
+      "attrs": {
+        "name": "爱心",
+        "visible": true,
+        "height": 91.580490112305,
+        "width": 81.177253723145,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1029693153"
+    },
+    "Button_skill_b3": {
+      "children_ids": [],
+      "node_id": "Button_skill_b3",
+      "type": "20000",
+      "attrs": {
+        "name": "举起",
+        "visible": true,
+        "height": 148,
+        "width": 148,
+        "opacity": 0.49803921568627
+      },
+      "id": "Button_skill_b3"
+    },
+    "defaultcanvasnode1622169303": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1622169303",
+      "attrs": {
+        "name": "升级点击2-3",
+        "visible": true,
+        "height": 178.60206604004,
+        "width": 150,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1622169303"
+    },
+    "img_firecracker_tip": {
+      "children_ids": [],
+      "node_id": "img_firecracker_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "爆竹提示",
+        "visible": false,
+        "height": 172,
+        "width": 745,
+        "opacity": 1
+      },
+      "id": "img_firecracker_tip"
+    },
+    "img_special_tip": {
+      "children_ids": [],
+      "node_id": "img_special_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "带框特殊提示",
+        "visible": false,
+        "height": 162,
+        "width": 800,
+        "opacity": 1
+      },
+      "id": "img_special_tip"
+    },
+    "1338623457": {
+      "parent_id": "1631733151",
+      "node_id": "1338623457",
+      "attrs": {
+        "text": "+1",
+        "name": "速度加1",
+        "visible": true,
+        "height": 88,
+        "width": 96,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1338623457"
+    },
+    "defaultcanvasnode1878526944": {
+      "parent_id": "defaultcanvasnode1918482818",
+      "node_id": "defaultcanvasnode1878526944",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 44.144916534424,
+        "width": 124.65170288086,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1878526944"
+    },
+    "defaultcanvasnode2144615921": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode2144615921",
+      "attrs": {
+        "name": "环",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode2144615921"
+    },
+    "1453382142": {
+      "parent_id": "1631733151",
+      "node_id": "1453382142",
+      "attrs": {
+        "text": "-10",
+        "name": "速度减10",
+        "visible": true,
+        "height": 88,
+        "width": 96,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1453382142"
+    },
+    "defaultcanvasnode1896696601": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1896696601",
+      "attrs": {
+        "text": "150",
+        "name": "金币数量",
+        "visible": true,
+        "height": 48.241264343262,
+        "width": 107.52117156982,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1896696601"
+    },
+    "img_rank_score": {
+      "children_ids": [],
+      "node_id": "img_rank_score",
+      "type": "21000",
+      "attrs": {
+        "name": "个人排名积分",
+        "visible": false,
+        "height": 350,
+        "width": 382,
+        "opacity": 1
+      },
+      "id": "img_rank_score"
+    },
+    "defaultcanvasnode1114031223": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1114031223",
+      "type": "202",
+      "attrs": {
+        "name": "终点血量",
+        "visible": false,
+        "height": 200,
+        "width": 400,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1114031223"
+    },
+    "defaultcanvasnode1720032214": {
+      "parent_id": "defaultcanvasnode1622165009",
+      "node_id": "defaultcanvasnode1720032214",
+      "attrs": {
+        "name": "问号",
+        "visible": true,
+        "height": 296,
+        "width": 296,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1720032214"
+    },
+    "defaultcanvasnode1417575460": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1417575460",
+      "attrs": {
+        "name": "升级点击1-2",
+        "visible": true,
+        "height": 178.60206604004,
+        "width": 150,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1417575460"
+    },
+    "defaultcanvasnode1880602002": {
+      "parent_id": "defaultcanvasnode1335681995",
+      "node_id": "defaultcanvasnode1880602002",
+      "attrs": {
+        "name": "底板",
+        "visible": true,
+        "height": 185.20155334473,
+        "width": 728.45690917969,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1880602002"
+    },
+    "defaultcanvasnode1071229631": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1071229631",
+      "attrs": {
+        "name": "环",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1071229631"
+    },
+    "Button_skill_c": {
+      "children_ids": [],
+      "node_id": "Button_skill_c",
+      "type": "20000",
+      "attrs": {
+        "name": "决战技",
+        "visible": true,
+        "height": 148,
+        "width": 148,
+        "opacity": 0.49803921568627
+      },
+      "id": "Button_skill_c"
+    },
+    "Button_skill_a": {
+      "children_ids": [],
+      "node_id": "Button_skill_a",
+      "type": "20000",
+      "attrs": {
+        "name": "跳",
+        "visible": true,
+        "height": 274,
+        "width": 274,
+        "opacity": 0.49803921568627
+      },
+      "id": "Button_skill_a"
+    },
+    "defaultcanvasnode1849575195": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1849575195",
+      "type": "202",
+      "attrs": {
+        "name": "解锁UI",
+        "visible": false,
+        "height": 450,
+        "width": 200,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1849575195"
+    },
+    "defaultcanvasnode1726530207": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1726530207",
+      "attrs": {
+        "name": "环",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1726530207"
+    },
+    "defaultcanvasnode2127132979": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode2127132979",
+      "attrs": {
+        "text": "150",
+        "name": "金币数量",
+        "visible": true,
+        "height": 48.241264343262,
+        "width": 107.52117156982,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode2127132979"
+    },
+    "defaultcanvasnode1776633338": {
+      "parent_id": "defaultcanvasnode1642230240",
+      "node_id": "defaultcanvasnode1776633338",
+      "attrs": {
+        "text": "你好呀",
+        "name": "你好呀",
+        "visible": true,
+        "height": 67.338661193848,
+        "width": 216.38236999512,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1776633338"
+    },
+    "defaultcanvasnode1591028881": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1591028881",
+      "attrs": {
+        "name": "红色底板",
+        "visible": true,
+        "height": 53.308895111084,
+        "width": 100,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1591028881"
+    },
+    "defaultcanvasnode1285385574": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1285385574",
+      "attrs": {
+        "text": "150",
+        "name": "金币数量",
+        "visible": true,
+        "height": 48.241264343262,
+        "width": 107.52117156982,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1285385574"
+    },
+    "defaultcanvasnode1999558730": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1999558730",
+      "attrs": {
+        "text": "999",
+        "name": "金币数量",
+        "visible": true,
+        "height": 55.448974609375,
+        "width": 90.190231323242,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1999558730"
+    },
+    "defaultcanvasnode1252630487": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1252630487",
+      "type": "202",
+      "attrs": {
+        "name": "星级UI",
+        "visible": false,
+        "height": 240,
+        "width": 240,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1252630487"
+    },
+    "1631733151": {
+      "children_ids": [],
+      "node_id": "1631733151",
+      "type": "200",
+      "attrs": {
+        "name": "画布1",
+        "visible": false,
+        "height": 1080,
+        "width": 2286,
+        "opacity": 1
+      },
+      "id": "1631733151"
+    },
+    "defaultcanvasnode1137630781": {
+      "parent_id": "defaultcanvasnode1880602002",
+      "node_id": "defaultcanvasnode1137630781",
+      "attrs": {
+        "name": "造塔",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1137630781"
+    },
+    "img_game_over": {
+      "children_ids": [],
+      "node_id": "img_game_over",
+      "type": "21000",
+      "attrs": {
+        "name": "游戏结束页面",
+        "visible": false,
+        "height": 300,
+        "width": 364,
+        "opacity": 1
+      },
+      "id": "img_game_over"
+    },
+    "defaultcanvasnode1246819891": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1246819891",
+      "attrs": {
+        "text": "999",
+        "name": "金币数量",
+        "visible": true,
+        "height": 55.448974609375,
+        "width": 90.190231323242,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1246819891"
+    },
+    "defaultcanvasnode1814058157": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1814058157",
+      "attrs": {
+        "name": "图标",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1814058157"
+    },
+    "1540147645": {
+      "parent_id": "1631733151",
+      "node_id": "1540147645",
+      "attrs": {
+        "text": "+100",
+        "name": "速度加100",
+        "visible": true,
+        "height": 88,
+        "width": 96,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1540147645"
+    },
+    "defaultcanvasnode1335681995": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1335681995",
+      "type": "202",
+      "attrs": {
+        "name": "塔基建造UI",
+        "visible": false,
+        "height": 450,
+        "width": 800,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1335681995"
+    },
+    "img_speed_score1": {
+      "children_ids": [],
+      "node_id": "img_speed_score1",
+      "type": "21104",
+      "attrs": {
+        "name": "竞速积分",
+        "visible": false,
+        "height": 109,
+        "width": 408,
+        "opacity": 1
+      },
+      "id": "img_speed_score1"
+    },
+    "1942228679": {
+      "parent_id": "1960838312",
+      "node_id": "1942228679",
+      "attrs": {
+        "text": "B",
+        "name": "圆形蓝",
+        "visible": true,
+        "height": 130,
+        "width": 130,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1942228679"
+    },
+    "defaultcanvasnode1927559568": {
+      "parent_id": "defaultcanvasnode1252630487",
+      "node_id": "defaultcanvasnode1927559568",
+      "attrs": {
+        "name": "等级底板",
+        "visible": true,
+        "height": 48,
+        "width": 48,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1927559568"
+    },
+    "defaultcanvasnode2088407629": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode2088407629",
+      "attrs": {
+        "name": "图标",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode2088407629"
+    },
+    "defaultcanvasnode1592358185": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1592358185",
+      "attrs": {
+        "name": "点击",
+        "visible": true,
+        "height": 221.72511291504,
+        "width": 145.43626403809,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1592358185"
+    },
+    "defaultcanvasnode1254768002": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1254768002",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 40,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1254768002"
+    },
+    "defaultcanvasnode1295940304": {
+      "parent_id": "defaultcanvasnode1114031223",
+      "node_id": "defaultcanvasnode1295940304",
+      "attrs": {
+        "name": "血量底板",
+        "visible": true,
+        "height": 66.656784057617,
+        "width": 188.05065917969,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1295940304"
+    },
+    "defaultcanvasnode1709380891": {
+      "parent_id": "defaultcanvasnode1584406445",
+      "node_id": "defaultcanvasnode1709380891",
+      "attrs": {
+        "text": "8折",
+        "name": "打折文本",
+        "visible": true,
+        "height": 66.678916931152,
+        "width": 120.09818267822,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1709380891"
+    },
+    "defaultcanvasnode1566442096": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1566442096",
+      "attrs": {
+        "name": "点击",
+        "visible": true,
+        "height": 221.72511291504,
+        "width": 146.35108947754,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1566442096"
+    },
+    "defaultcanvasnode1496089394": {
+      "parent_id": "defaultcanvasnode1114031223",
+      "node_id": "defaultcanvasnode1496089394",
+      "attrs": {
+        "text": "x10",
+        "name": "血量",
+        "visible": true,
+        "height": 100,
+        "width": 150,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1496089394"
+    },
+    "defaultcanvasnode2124983789": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode2124983789",
+      "attrs": {
+        "name": "红色底板",
+        "visible": true,
+        "height": 53.308895111084,
+        "width": 100,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode2124983789"
+    },
+    "defaultcanvasnode1011933552": {
+      "parent_id": "defaultcanvasnode1849575195",
+      "node_id": "defaultcanvasnode1011933552",
+      "attrs": {
+        "name": "底板",
+        "visible": true,
+        "height": 198.30044555664,
+        "width": 176.79193115234,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1011933552"
+    },
+    "defaultcanvasnode1611079652": {
+      "parent_id": "defaultcanvasnode1862397091",
+      "node_id": "defaultcanvasnode1611079652",
+      "attrs": {
+        "text": "8折",
+        "name": "打折文本",
+        "visible": true,
+        "height": 50,
+        "width": 128.77795410156,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1611079652"
+    },
+    "defaultcanvasnode1050067477": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1050067477",
+      "attrs": {
+        "name": "升级提示箭头",
+        "visible": true,
+        "height": 40,
+        "width": 40,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1050067477"
+    },
+    "defaultcanvasnode1993959573": {
+      "parent_id": "defaultcanvasnode1918482818",
+      "node_id": "defaultcanvasnode1993959573",
+      "attrs": {
+        "text": "999",
+        "name": "金币数量",
+        "visible": true,
+        "height": 55.448974609375,
+        "width": 90.190231323242,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1993959573"
+    },
+    "defaultcanvasnode1766282370": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1766282370",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1766282370"
+    },
+    "defaultcanvasnode1963676575": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1963676575",
+      "attrs": {
+        "name": "红色底板",
+        "visible": true,
+        "height": 53.308895111084,
+        "width": 100,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1963676575"
+    },
+    "defaultcanvasnode1259815385": {
+      "parent_id": "defaultcanvasnode1775762583",
+      "node_id": "defaultcanvasnode1259815385",
+      "attrs": {
+        "name": "底板",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1259815385"
+    },
+    "defaultcanvasnode1867770220": {
+      "parent_id": "defaultcanvasnode1880602002",
+      "node_id": "defaultcanvasnode1867770220",
+      "attrs": {
+        "name": "造塔",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1867770220"
+    },
+    "defaultcanvasnode1507987965": {
+      "parent_id": "defaultcanvasnode1591028881",
+      "node_id": "defaultcanvasnode1507987965",
+      "attrs": {
+        "text": "8折",
+        "name": "打折文本",
+        "visible": true,
+        "height": 66.678916931152,
+        "width": 122.04384613037,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1507987965"
+    },
+    "defaultcanvasnode1902745941": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1902745941",
+      "attrs": {
+        "name": "点击",
+        "visible": true,
+        "height": 221.72511291504,
+        "width": 152.4280090332,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1902745941"
+    },
+    "defaultcanvasnode1293441246": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1293441246",
+      "type": "202",
+      "attrs": {
+        "name": "防御塔升级UI",
+        "visible": false,
+        "height": 450,
+        "width": 200,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1293441246"
+    },
+    "defaultcanvasnode1059218624": {
+      "parent_id": "defaultcanvasnode2124983789",
+      "node_id": "defaultcanvasnode1059218624",
+      "attrs": {
+        "text": "8折",
+        "name": "打折文本",
+        "visible": true,
+        "height": 66.678916931152,
+        "width": 126.93177032471,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1059218624"
+    },
+    "defaultcanvasnode1986929758": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1986929758",
+      "attrs": {
+        "name": "环",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1986929758"
+    },
+    "defaultcanvasnode1675616354": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1675616354",
+      "attrs": {
+        "name": "问号图标",
+        "visible": true,
+        "height": 65.332229614258,
+        "width": 65.332229614258,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1675616354"
+    },
+    "defaultcanvasnode1670875248": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1670875248",
+      "attrs": {
+        "name": "图标",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1670875248"
+    },
+    "img_warn_tip": {
+      "children_ids": [],
+      "node_id": "img_warn_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "警告提示",
+        "visible": false,
+        "height": 164,
+        "width": 608,
+        "opacity": 1
+      },
+      "id": "img_warn_tip"
+    },
+    "img_num_tip": {
+      "children_ids": [],
+      "node_id": "img_num_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "圈数提示",
+        "visible": false,
+        "height": 98,
+        "width": 214,
+        "opacity": 1
+      },
+      "id": "img_num_tip"
+    },
+    "defaultcanvasnode1154702123": {
+      "parent_id": "defaultcanvasnode1296506048",
+      "node_id": "defaultcanvasnode1154702123",
+      "attrs": {
+        "name": "集火",
+        "visible": true,
+        "height": 169.28108215332,
+        "width": 169.28108215332,
+        "opacity": 1
+      },
+      "type": "10043",
+      "children_ids": [],
+      "id": "defaultcanvasnode1154702123"
+    },
+    "Button_skill_b1": {
+      "children_ids": [],
+      "node_id": "Button_skill_b1",
+      "type": "20000",
+      "attrs": {
+        "name": "滚动",
+        "visible": true,
+        "height": 148,
+        "width": 148,
+        "opacity": 0.49803921568627
+      },
+      "id": "Button_skill_b1"
+    },
+    "defaultcanvasnode1492146154": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1492146154",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 40,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1492146154"
+    },
+    "defaultcanvasnode2083572943": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode2083572943",
+      "attrs": {
+        "name": "替换金币底板",
+        "visible": true,
+        "height": 77.363578796387,
+        "width": 77.363563537598,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode2083572943"
+    },
+    "defaultcanvasnode1230522130": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode1230522130",
+      "type": "202",
+      "attrs": {
+        "name": "解锁进度UI",
+        "visible": false,
+        "height": 200,
+        "width": 200,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode1230522130"
+    },
+    "defaultcanvasnode1862397091": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode1862397091",
+      "attrs": {
+        "name": "红色底板",
+        "visible": true,
+        "height": 53.310001373291,
+        "width": 100,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1862397091"
+    },
+    "img_quest": {
+      "children_ids": [],
+      "node_id": "img_quest",
+      "type": "21000",
+      "attrs": {
+        "name": "任务",
+        "visible": false,
+        "height": 140,
+        "width": 381,
+        "opacity": 1
+      },
+      "id": "img_quest"
+    },
+    "img_split_screen": {
+      "children_ids": [],
+      "node_id": "img_split_screen",
+      "type": "21000",
+      "attrs": {
+        "name": "分屏画面",
+        "visible": false,
+        "height": 275,
+        "width": 356,
+        "opacity": 1
+      },
+      "id": "img_split_screen"
+    },
+    "defaultcanvasnode1443248909": {
+      "parent_id": "defaultcanvasnode1880602002",
+      "node_id": "defaultcanvasnode1443248909",
+      "attrs": {
+        "name": "造塔",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1443248909"
+    },
+    "1880430446": {
+      "parent_id": "1631733151",
+      "node_id": "1880430446",
+      "attrs": {
+        "text": "+10",
+        "name": "速度加10",
+        "visible": true,
+        "height": 100.81657409668,
+        "width": 109.9817199707,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1880430446"
+    },
+    "defaultcanvasnode1858489733": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1858489733",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1858489733"
+    },
+    "defaultcanvasnode1044316774": {
+      "parent_id": "defaultcanvasnode1880602002",
+      "node_id": "defaultcanvasnode1044316774",
+      "attrs": {
+        "name": "造塔",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1044316774"
+    },
+    "defaultcanvasnode1236424741": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1236424741",
+      "attrs": {
+        "name": "点击",
+        "visible": true,
+        "height": 183.46748352051,
+        "width": 124.65173339844,
+        "opacity": 0
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1236424741"
+    },
+    "defaultcanvasnode1760445157": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1760445157",
+      "attrs": {
+        "name": "圆形底板",
+        "visible": true,
+        "height": 110.00001525879,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1760445157"
+    },
+    "defaultcanvasnode1758496163": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1758496163",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 40,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1758496163"
+    },
+    "img_time": {
+      "children_ids": [],
+      "node_id": "img_time",
+      "type": "21105",
+      "attrs": {
+        "name": "倒计时",
+        "visible": false,
+        "height": 90,
+        "width": 225,
+        "opacity": 1
+      },
+      "id": "img_time"
+    },
+    "1960838312": {
+      "children_ids": [],
+      "node_id": "1960838312",
+      "type": "200",
+      "attrs": {
+        "name": "画布2",
+        "visible": true,
+        "height": 1080,
+        "width": 2286,
+        "opacity": 1
+      },
+      "id": "1960838312"
+    },
+    "img_play_tip": {
+      "children_ids": [],
+      "node_id": "img_play_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "游玩提示",
+        "visible": false,
+        "height": 106,
+        "width": 520,
+        "opacity": 1
+      },
+      "id": "img_play_tip"
+    },
+    "1506247873": {
+      "parent_id": "1631733151",
+      "node_id": "1506247873",
+      "attrs": {
+        "text": "100",
+        "name": "速度文字",
+        "visible": true,
+        "height": 80,
+        "width": 121.00390625,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "1506247873"
+    },
+    "defaultcanvasnode1673070147": {
+      "parent_id": "defaultcanvasnode1044316774",
+      "node_id": "defaultcanvasnode1673070147",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 40,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1673070147"
+    },
+    "defaultcanvasnode1329129470": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1329129470",
+      "attrs": {
+        "text": "150",
+        "name": "金币数量",
+        "visible": true,
+        "height": 48.241264343262,
+        "width": 107.52117156982,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1329129470"
+    },
+    "defaultcanvasnode1080841164": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1080841164",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 40,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1080841164"
+    },
+    "img_camp_integral": {
+      "children_ids": [],
+      "node_id": "img_camp_integral",
+      "type": "21102",
+      "attrs": {
+        "name": "团队阵营积分",
+        "visible": false,
+        "height": 138,
+        "width": 203,
+        "opacity": 1
+      },
+      "id": "img_camp_integral"
+    },
+    "defaultcanvasnode1737662377": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1737662377",
+      "attrs": {
+        "name": "金币底板",
+        "visible": true,
+        "height": 40,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1737662377"
+    },
+    "defaultcanvasnode1775762583": {
+      "parent_id": "defaultcanvasnode1293441246",
+      "node_id": "defaultcanvasnode1775762583",
+      "attrs": {
+        "name": "底板",
+        "visible": true,
+        "height": 193.30032348633,
+        "width": 171.32000732422,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1775762583"
+    },
+    "head_tip": {
+      "children_ids": [],
+      "node_id": "head_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "玩家信息",
+        "visible": false,
+        "height": 168,
+        "width": 137,
+        "opacity": 1
+      },
+      "id": "head_tip"
+    },
+    "btn_reset": {
+      "children_ids": [],
+      "node_id": "btn_reset",
+      "type": "20000",
+      "attrs": {
+        "name": "复位",
+        "visible": true,
+        "height": 94,
+        "width": 94,
+        "opacity": 0.8
+      },
+      "id": "btn_reset"
+    },
+    "img_tip": {
+      "children_ids": [],
+      "node_id": "img_tip",
+      "type": "21000",
+      "attrs": {
+        "name": "提示文字",
+        "visible": false,
+        "height": 144,
+        "width": 263,
+        "opacity": 1
+      },
+      "id": "img_tip"
+    },
+    "defaultcanvasnode1838830362": {
+      "parent_id": "defaultcanvasnode1427710398",
+      "node_id": "defaultcanvasnode1838830362",
+      "attrs": {
+        "text": "解锁",
+        "name": "解锁",
+        "visible": true,
+        "height": 58.781322479248,
+        "width": 176.79190063477,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1838830362"
+    },
+    "defaultcanvasnode1350831479": {
+      "parent_id": "defaultcanvasnode1443248909",
+      "node_id": "defaultcanvasnode1350831479",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1350831479"
+    },
+    "defaultcanvasnode1648012547": {
+      "parent_id": "defaultcanvasnode1867770220",
+      "node_id": "defaultcanvasnode1648012547",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1648012547"
+    },
+    "1883038573": {
+      "parent_id": "1631733151",
+      "node_id": "1883038573",
+      "attrs": {
+        "text": "速度\\n",
+        "name": "标识",
+        "visible": true,
+        "height": 80,
+        "width": 142.72805786133,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "1883038573"
+    },
+    "defaultcanvasnode1610043440": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1610043440",
+      "attrs": {
+        "name": "图标",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1610043440"
+    },
+    "defaultcanvasnode1687689551": {
+      "parent_id": "defaultcanvasnode1137630781",
+      "node_id": "defaultcanvasnode1687689551",
+      "attrs": {
+        "text": "造塔名称",
+        "name": "造塔名称",
+        "visible": true,
+        "height": 76.958023071289,
+        "width": 171.04899597168,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode1687689551"
+    },
+    "defaultcanvasnode1492436928": {
+      "parent_id": "defaultcanvasnode1918482818",
+      "node_id": "defaultcanvasnode1492436928",
+      "attrs": {
+        "name": "金币图标",
+        "visible": true,
+        "height": 44.073234558105,
+        "width": 44.073234558105,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1492436928"
+    },
+    "defaultcanvasnode2105922088": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode2105922088",
+      "attrs": {
+        "name": "图标",
+        "visible": true,
+        "height": 110,
+        "width": 110,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode2105922088"
+    },
+    "defaultcanvasnode2098288674": {
+      "children_ids": [],
+      "node_id": "defaultcanvasnode2098288674",
+      "type": "202",
+      "attrs": {
+        "name": "对话框",
+        "visible": false,
+        "height": 118,
+        "width": 302,
+        "opacity": 1
+      },
+      "id": "defaultcanvasnode2098288674"
+    },
+    "defaultcanvasnode1438208584": {
+      "parent_id": "defaultcanvasnode1252630487",
+      "node_id": "defaultcanvasnode1438208584",
+      "attrs": {
+        "name": "升级提示箭头",
+        "visible": true,
+        "height": 48,
+        "width": 48,
+        "opacity": 1
+      },
+      "type": "10003",
+      "children_ids": [],
+      "id": "defaultcanvasnode1438208584"
+    },
+    "defaultcanvasnode2004833563": {
+      "parent_id": "defaultcanvasnode1259815385",
+      "node_id": "defaultcanvasnode2004833563",
+      "attrs": {
+        "text": "升级",
+        "name": "升级",
+        "visible": true,
+        "height": 58.781322479248,
+        "width": 171.32005310059,
+        "opacity": 1
+      },
+      "type": "10002",
+      "children_ids": [],
+      "id": "defaultcanvasnode2004833563"
+    },
+    "1349974473": {
+      "parent_id": "1631733151",
+      "node_id": "1349974473",
+      "attrs": {
+        "text": "确认",
+        "name": "确认按钮",
+        "visible": true,
+        "height": 130,
+        "width": 130,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1349974473"
+    },
+    "Panel_righttop": {
+      "children_ids": [],
+      "node_id": "Panel_righttop",
+      "type": "20000",
+      "attrs": {
+        "name": "沟通",
+        "visible": true,
+        "height": 346,
+        "width": 160,
+        "opacity": 0.8
+      },
+      "id": "Panel_righttop"
+    },
+    "1013743464": {
+      "parent_id": "1631733151",
+      "node_id": "1013743464",
+      "attrs": {
+        "text": "-1",
+        "name": "速度减1",
+        "visible": true,
+        "height": 88,
+        "width": 96,
+        "opacity": 1
+      },
+      "type": "10001",
+      "children_ids": [],
+      "id": "1013743464"
+    }
+  },
+  "ids": [
+    "1405255247",
+    "1631733151",
+    "1349974473",
+    "1883038573",
+    "1880430446",
+    "1453382142",
+    "1338623457",
+    "1013743464",
+    "1540147645",
+    "1680243400",
+    "1506247873",
+    "left_thumb",
+    "Button_skill_a",
+    "Button_skill_b1",
+    "Button_skill_b2",
+    "Button_skill_b3",
+    "Button_skill_c",
+    "btn_reset",
+    "Panel_righttop",
+    "btn_emoji",
+    "img_speed_score1",
+    "img_firecracker_tip",
+    "img_properties_panel",
+    "img_tip",
+    "img_countdown_tip",
+    "img_quest",
+    "img_play_tip",
+    "img_game_over",
+    "img_rank_score",
+    "img_battle_over",
+    "img_special_tip",
+    "img_num_tip",
+    "img_pass_num",
+    "img_camp_integral",
+    "img_split_screen",
+    "head_tip",
+    "img_time",
+    "img_warn_tip",
+    "img_squad_score",
+    "defaultcanvasnode1622165009",
+    "defaultcanvasnode1720032214",
+    "defaultcanvasnode2098288674",
+    "defaultcanvasnode1642230240",
+    "defaultcanvasnode1776633338",
+    "defaultcanvasnode1335681995",
+    "defaultcanvasnode1880602002",
+    "defaultcanvasnode1443248909",
+    "defaultcanvasnode2088407629",
+    "defaultcanvasnode1726530207",
+    "defaultcanvasnode1080841164",
+    "defaultcanvasnode1267728326",
+    "defaultcanvasnode1285385574",
+    "defaultcanvasnode1350831479",
+    "defaultcanvasnode1584406445",
+    "defaultcanvasnode1709380891",
+    "defaultcanvasnode1592358185",
+    "defaultcanvasnode1044316774",
+    "defaultcanvasnode1814058157",
+    "defaultcanvasnode1276061067",
+    "defaultcanvasnode1673070147",
+    "defaultcanvasnode1896696601",
+    "defaultcanvasnode1891456124",
+    "defaultcanvasnode1598508423",
+    "defaultcanvasnode1963676575",
+    "defaultcanvasnode1575737141",
+    "defaultcanvasnode1566442096",
+    "defaultcanvasnode1137630781",
+    "defaultcanvasnode1610043440",
+    "defaultcanvasnode1071229631",
+    "defaultcanvasnode1492146154",
+    "defaultcanvasnode1329129470",
+    "defaultcanvasnode1687689551",
+    "defaultcanvasnode1858489733",
+    "defaultcanvasnode2124983789",
+    "defaultcanvasnode1059218624",
+    "defaultcanvasnode1995028804",
+    "defaultcanvasnode1867770220",
+    "defaultcanvasnode1670875248",
+    "defaultcanvasnode1405230583",
+    "defaultcanvasnode1758496163",
+    "defaultcanvasnode2127132979",
+    "defaultcanvasnode1623929962",
+    "defaultcanvasnode1648012547",
+    "defaultcanvasnode1591028881",
+    "defaultcanvasnode1507987965",
+    "defaultcanvasnode1902745941",
+    "defaultcanvasnode1293441246",
+    "defaultcanvasnode1775762583",
+    "defaultcanvasnode1259815385",
+    "defaultcanvasnode2105922088",
+    "defaultcanvasnode2144615921",
+    "defaultcanvasnode2004833563",
+    "defaultcanvasnode1254768002",
+    "defaultcanvasnode1999558730",
+    "defaultcanvasnode1766282371",
+    "defaultcanvasnode1050067477",
+    "defaultcanvasnode1862397091",
+    "defaultcanvasnode1611079652",
+    "defaultcanvasnode1417575460",
+    "defaultcanvasnode1622169303",
+    "defaultcanvasnode1918482818",
+    "defaultcanvasnode1878526944",
+    "defaultcanvasnode1993959573",
+    "defaultcanvasnode1857540445",
+    "defaultcanvasnode1492436928",
+    "defaultcanvasnode1849575195",
+    "defaultcanvasnode1011933552",
+    "defaultcanvasnode1427710398",
+    "defaultcanvasnode1760445157",
+    "defaultcanvasnode2083572943",
+    "defaultcanvasnode1675616354",
+    "defaultcanvasnode1986929758",
+    "defaultcanvasnode1838830362",
+    "defaultcanvasnode1737662377",
+    "defaultcanvasnode1766282370",
+    "defaultcanvasnode1246819891",
+    "defaultcanvasnode1236424741",
+    "defaultcanvasnode2125201311",
+    "defaultcanvasnode2094007192",
+    "defaultcanvasnode1176795066",
+    "defaultcanvasnode1296506048",
+    "defaultcanvasnode1154702123",
+    "defaultcanvasnode1230522130",
+    "defaultcanvasnode1400580767",
+    "defaultcanvasnode1252630487",
+    "defaultcanvasnode1927559568",
+    "defaultcanvasnode1944465210",
+    "defaultcanvasnode1438208584",
+    "defaultcanvasnode1114031223",
+    "defaultcanvasnode1295940304",
+    "defaultcanvasnode1029693153",
+    "defaultcanvasnode1496089394",
+    "1960838312",
+    "1123301873",
+    "1942228679"
+  ],
+  "attr_keys": [
+    "name",
+    "x",
+    "y",
+    "width",
+    "height",
+    "visible",
+    "opacity",
+    "text"
+  ],
+  "schema": "egg_editor_eui_nodes.v1",
+  "node_tree": [
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "1405255247",
+        "type": "200",
+        "attrs": {
+          "name": "画布0",
+          "visible": false,
+          "height": 1080,
+          "width": 2286,
+          "opacity": 1
+        },
+        "id": "1405255247"
+      },
+      "children": [],
+      "id": "1405255247"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "1631733151",
+        "type": "200",
+        "attrs": {
+          "name": "画布1",
+          "visible": false,
+          "height": 1080,
+          "width": 2286,
+          "opacity": 1
+        },
+        "id": "1631733151"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1013743464",
+            "attrs": {
+              "text": "-1",
+              "name": "速度减1",
+              "visible": true,
+              "height": 88,
+              "width": 96,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1013743464"
+          },
+          "children": [],
+          "id": "1013743464"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1338623457",
+            "attrs": {
+              "text": "+1",
+              "name": "速度加1",
+              "visible": true,
+              "height": 88,
+              "width": 96,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1338623457"
+          },
+          "children": [],
+          "id": "1338623457"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1349974473",
+            "attrs": {
+              "text": "确认",
+              "name": "确认按钮",
+              "visible": true,
+              "height": 130,
+              "width": 130,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1349974473"
+          },
+          "children": [],
+          "id": "1349974473"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1453382142",
+            "attrs": {
+              "text": "-10",
+              "name": "速度减10",
+              "visible": true,
+              "height": 88,
+              "width": 96,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1453382142"
+          },
+          "children": [],
+          "id": "1453382142"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1506247873",
+            "attrs": {
+              "text": "100",
+              "name": "速度文字",
+              "visible": true,
+              "height": 80,
+              "width": 121.00390625,
+              "opacity": 1
+            },
+            "type": "10002",
+            "children_ids": [],
+            "id": "1506247873"
+          },
+          "children": [],
+          "id": "1506247873"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1540147645",
+            "attrs": {
+              "text": "+100",
+              "name": "速度加100",
+              "visible": true,
+              "height": 88,
+              "width": 96,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1540147645"
+          },
+          "children": [],
+          "id": "1540147645"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1680243400",
+            "attrs": {
+              "text": "-100",
+              "name": "速度减100",
+              "visible": true,
+              "height": 88,
+              "width": 96,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1680243400"
+          },
+          "children": [],
+          "id": "1680243400"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1880430446",
+            "attrs": {
+              "text": "+10",
+              "name": "速度加10",
+              "visible": true,
+              "height": 100.81657409668,
+              "width": 109.9817199707,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1880430446"
+          },
+          "children": [],
+          "id": "1880430446"
+        },
+        {
+          "data": {
+            "parent_id": "1631733151",
+            "node_id": "1883038573",
+            "attrs": {
+              "text": "速度\\n",
+              "name": "标识",
+              "visible": true,
+              "height": 80,
+              "width": 142.72805786133,
+              "opacity": 1
+            },
+            "type": "10002",
+            "children_ids": [],
+            "id": "1883038573"
+          },
+          "children": [],
+          "id": "1883038573"
+        }
+      ],
+      "id": "1631733151"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "left_thumb",
+        "type": "20000",
+        "attrs": {
+          "name": "摇杆",
+          "visible": true,
+          "height": 149.60000419617,
+          "width": 149.60000419617,
+          "opacity": 1
+        },
+        "id": "left_thumb"
+      },
+      "children": [],
+      "id": "left_thumb"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "Button_skill_a",
+        "type": "20000",
+        "attrs": {
+          "name": "跳",
+          "visible": true,
+          "height": 274,
+          "width": 274,
+          "opacity": 0.49803921568627
+        },
+        "id": "Button_skill_a"
+      },
+      "children": [],
+      "id": "Button_skill_a"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "Button_skill_b1",
+        "type": "20000",
+        "attrs": {
+          "name": "滚动",
+          "visible": true,
+          "height": 148,
+          "width": 148,
+          "opacity": 0.49803921568627
+        },
+        "id": "Button_skill_b1"
+      },
+      "children": [],
+      "id": "Button_skill_b1"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "Button_skill_b2",
+        "type": "20000",
+        "attrs": {
+          "name": "前扑",
+          "visible": true,
+          "height": 148,
+          "width": 148,
+          "opacity": 0.49803921568627
+        },
+        "id": "Button_skill_b2"
+      },
+      "children": [],
+      "id": "Button_skill_b2"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "Button_skill_b3",
+        "type": "20000",
+        "attrs": {
+          "name": "举起",
+          "visible": true,
+          "height": 148,
+          "width": 148,
+          "opacity": 0.49803921568627
+        },
+        "id": "Button_skill_b3"
+      },
+      "children": [],
+      "id": "Button_skill_b3"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "Button_skill_c",
+        "type": "20000",
+        "attrs": {
+          "name": "决战技",
+          "visible": true,
+          "height": 148,
+          "width": 148,
+          "opacity": 0.49803921568627
+        },
+        "id": "Button_skill_c"
+      },
+      "children": [],
+      "id": "Button_skill_c"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "btn_reset",
+        "type": "20000",
+        "attrs": {
+          "name": "复位",
+          "visible": true,
+          "height": 94,
+          "width": 94,
+          "opacity": 0.8
+        },
+        "id": "btn_reset"
+      },
+      "children": [],
+      "id": "btn_reset"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "Panel_righttop",
+        "type": "20000",
+        "attrs": {
+          "name": "沟通",
+          "visible": true,
+          "height": 346,
+          "width": 160,
+          "opacity": 0.8
+        },
+        "id": "Panel_righttop"
+      },
+      "children": [],
+      "id": "Panel_righttop"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "btn_emoji",
+        "type": "20000",
+        "attrs": {
+          "name": "表情",
+          "visible": true,
+          "height": 103.99999773502,
+          "width": 103.99999773502,
+          "opacity": 0.8
+        },
+        "id": "btn_emoji"
+      },
+      "children": [],
+      "id": "btn_emoji"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_speed_score1",
+        "type": "21104",
+        "attrs": {
+          "name": "竞速积分",
+          "visible": false,
+          "height": 109,
+          "width": 408,
+          "opacity": 1
+        },
+        "id": "img_speed_score1"
+      },
+      "children": [],
+      "id": "img_speed_score1"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_firecracker_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "爆竹提示",
+          "visible": false,
+          "height": 172,
+          "width": 745,
+          "opacity": 1
+        },
+        "id": "img_firecracker_tip"
+      },
+      "children": [],
+      "id": "img_firecracker_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_properties_panel",
+        "type": "21103",
+        "attrs": {
+          "name": "角色属性面板",
+          "visible": true,
+          "height": 88,
+          "width": 486,
+          "opacity": 1
+        },
+        "id": "img_properties_panel"
+      },
+      "children": [],
+      "id": "img_properties_panel"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "提示文字",
+          "visible": false,
+          "height": 144,
+          "width": 263,
+          "opacity": 1
+        },
+        "id": "img_tip"
+      },
+      "children": [],
+      "id": "img_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_countdown_tip",
+        "type": "21106",
+        "attrs": {
+          "name": "复活倒计时",
+          "visible": true,
+          "height": 292,
+          "width": 384,
+          "opacity": 1
+        },
+        "id": "img_countdown_tip"
+      },
+      "children": [],
+      "id": "img_countdown_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_quest",
+        "type": "21000",
+        "attrs": {
+          "name": "任务",
+          "visible": false,
+          "height": 140,
+          "width": 381,
+          "opacity": 1
+        },
+        "id": "img_quest"
+      },
+      "children": [],
+      "id": "img_quest"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_play_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "游玩提示",
+          "visible": false,
+          "height": 106,
+          "width": 520,
+          "opacity": 1
+        },
+        "id": "img_play_tip"
+      },
+      "children": [],
+      "id": "img_play_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_game_over",
+        "type": "21000",
+        "attrs": {
+          "name": "游戏结束页面",
+          "visible": false,
+          "height": 300,
+          "width": 364,
+          "opacity": 1
+        },
+        "id": "img_game_over"
+      },
+      "children": [],
+      "id": "img_game_over"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_rank_score",
+        "type": "21000",
+        "attrs": {
+          "name": "个人排名积分",
+          "visible": false,
+          "height": 350,
+          "width": 382,
+          "opacity": 1
+        },
+        "id": "img_rank_score"
+      },
+      "children": [],
+      "id": "img_rank_score"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_battle_over",
+        "type": "21000",
+        "attrs": {
+          "name": "游戏结束",
+          "visible": false,
+          "height": 400,
+          "width": 500,
+          "opacity": 1
+        },
+        "id": "img_battle_over"
+      },
+      "children": [],
+      "id": "img_battle_over"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_special_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "带框特殊提示",
+          "visible": false,
+          "height": 162,
+          "width": 800,
+          "opacity": 1
+        },
+        "id": "img_special_tip"
+      },
+      "children": [],
+      "id": "img_special_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_num_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "圈数提示",
+          "visible": false,
+          "height": 98,
+          "width": 214,
+          "opacity": 1
+        },
+        "id": "img_num_tip"
+      },
+      "children": [],
+      "id": "img_num_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_pass_num",
+        "type": "21101",
+        "attrs": {
+          "name": "通关人数",
+          "visible": true,
+          "height": 350,
+          "width": 500,
+          "opacity": 1
+        },
+        "id": "img_pass_num"
+      },
+      "children": [],
+      "id": "img_pass_num"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_camp_integral",
+        "type": "21102",
+        "attrs": {
+          "name": "团队阵营积分",
+          "visible": false,
+          "height": 138,
+          "width": 203,
+          "opacity": 1
+        },
+        "id": "img_camp_integral"
+      },
+      "children": [],
+      "id": "img_camp_integral"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_split_screen",
+        "type": "21000",
+        "attrs": {
+          "name": "分屏画面",
+          "visible": false,
+          "height": 275,
+          "width": 356,
+          "opacity": 1
+        },
+        "id": "img_split_screen"
+      },
+      "children": [],
+      "id": "img_split_screen"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "head_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "玩家信息",
+          "visible": false,
+          "height": 168,
+          "width": 137,
+          "opacity": 1
+        },
+        "id": "head_tip"
+      },
+      "children": [],
+      "id": "head_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_time",
+        "type": "21105",
+        "attrs": {
+          "name": "倒计时",
+          "visible": false,
+          "height": 90,
+          "width": 225,
+          "opacity": 1
+        },
+        "id": "img_time"
+      },
+      "children": [],
+      "id": "img_time"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_warn_tip",
+        "type": "21000",
+        "attrs": {
+          "name": "警告提示",
+          "visible": false,
+          "height": 164,
+          "width": 608,
+          "opacity": 1
+        },
+        "id": "img_warn_tip"
+      },
+      "children": [],
+      "id": "img_warn_tip"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "img_squad_score",
+        "type": "21000",
+        "attrs": {
+          "name": "小队分数",
+          "visible": false,
+          "height": 241,
+          "width": 234,
+          "opacity": 1
+        },
+        "id": "img_squad_score"
+      },
+      "children": [],
+      "id": "img_squad_score"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1622165009",
+        "type": "202",
+        "attrs": {
+          "name": "问号",
+          "visible": false,
+          "height": 200,
+          "width": 200,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1622165009"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1622165009",
+            "node_id": "defaultcanvasnode1720032214",
+            "attrs": {
+              "name": "问号",
+              "visible": true,
+              "height": 296,
+              "width": 296,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1720032214"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1720032214"
+        }
+      ],
+      "id": "defaultcanvasnode1622165009"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode2098288674",
+        "type": "202",
+        "attrs": {
+          "name": "对话框",
+          "visible": false,
+          "height": 118,
+          "width": 302,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode2098288674"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode2098288674",
+            "node_id": "defaultcanvasnode1642230240",
+            "attrs": {
+              "name": "对话框",
+              "visible": true,
+              "height": 118,
+              "width": 301.98910522461,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1642230240"
+          },
+          "children": [
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1642230240",
+                "node_id": "defaultcanvasnode1776633338",
+                "attrs": {
+                  "text": "你好呀",
+                  "name": "你好呀",
+                  "visible": true,
+                  "height": 67.338661193848,
+                  "width": 216.38236999512,
+                  "opacity": 1
+                },
+                "type": "10002",
+                "children_ids": [],
+                "id": "defaultcanvasnode1776633338"
+              },
+              "children": [],
+              "id": "defaultcanvasnode1776633338"
+            }
+          ],
+          "id": "defaultcanvasnode1642230240"
+        }
+      ],
+      "id": "defaultcanvasnode2098288674"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1335681995",
+        "type": "202",
+        "attrs": {
+          "name": "塔基建造UI",
+          "visible": false,
+          "height": 450,
+          "width": 800,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1335681995"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1335681995",
+            "node_id": "defaultcanvasnode1880602002",
+            "attrs": {
+              "name": "底板",
+              "visible": true,
+              "height": 185.20155334473,
+              "width": 728.45690917969,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1880602002"
+          },
+          "children": [
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1880602002",
+                "node_id": "defaultcanvasnode1044316774",
+                "attrs": {
+                  "name": "造塔",
+                  "visible": true,
+                  "height": 110,
+                  "width": 110,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1044316774"
+              },
+              "children": [
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1276061067",
+                    "attrs": {
+                      "name": "环",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1276061067"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1276061067"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1566442096",
+                    "attrs": {
+                      "name": "点击",
+                      "visible": true,
+                      "height": 221.72511291504,
+                      "width": 146.35108947754,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1566442096"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1566442096"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1598508423",
+                    "attrs": {
+                      "name": "金币图标",
+                      "visible": true,
+                      "height": 44.073234558105,
+                      "width": 44.073234558105,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1598508423"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1598508423"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1673070147",
+                    "attrs": {
+                      "name": "金币底板",
+                      "visible": true,
+                      "height": 40,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1673070147"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1673070147"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1814058157",
+                    "attrs": {
+                      "name": "图标",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1814058157"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1814058157"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1891456124",
+                    "attrs": {
+                      "text": "造塔名称",
+                      "name": "造塔名称",
+                      "visible": true,
+                      "height": 76.958023071289,
+                      "width": 161.77374267578,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1891456124"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1891456124"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1896696601",
+                    "attrs": {
+                      "text": "150",
+                      "name": "金币数量",
+                      "visible": true,
+                      "height": 48.241264343262,
+                      "width": 107.52117156982,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1896696601"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1896696601"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1044316774",
+                    "node_id": "defaultcanvasnode1963676575",
+                    "attrs": {
+                      "name": "红色底板",
+                      "visible": true,
+                      "height": 53.308895111084,
+                      "width": 100,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1963676575"
+                  },
+                  "children": [
+                    {
+                      "data": {
+                        "parent_id": "defaultcanvasnode1963676575",
+                        "node_id": "defaultcanvasnode1575737141",
+                        "attrs": {
+                          "text": "8折",
+                          "name": "打折文本",
+                          "visible": true,
+                          "height": 66.678916931152,
+                          "width": 120.62201690674,
+                          "opacity": 1
+                        },
+                        "type": "10002",
+                        "children_ids": [],
+                        "id": "defaultcanvasnode1575737141"
+                      },
+                      "children": [],
+                      "id": "defaultcanvasnode1575737141"
+                    }
+                  ],
+                  "id": "defaultcanvasnode1963676575"
+                }
+              ],
+              "id": "defaultcanvasnode1044316774"
+            },
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1880602002",
+                "node_id": "defaultcanvasnode1137630781",
+                "attrs": {
+                  "name": "造塔",
+                  "visible": true,
+                  "height": 110,
+                  "width": 110,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1137630781"
+              },
+              "children": [
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1071229631",
+                    "attrs": {
+                      "name": "环",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1071229631"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1071229631"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1329129470",
+                    "attrs": {
+                      "text": "150",
+                      "name": "金币数量",
+                      "visible": true,
+                      "height": 48.241264343262,
+                      "width": 107.52117156982,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1329129470"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1329129470"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1492146154",
+                    "attrs": {
+                      "name": "金币底板",
+                      "visible": true,
+                      "height": 40,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1492146154"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1492146154"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1610043440",
+                    "attrs": {
+                      "name": "图标",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1610043440"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1610043440"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1687689551",
+                    "attrs": {
+                      "text": "造塔名称",
+                      "name": "造塔名称",
+                      "visible": true,
+                      "height": 76.958023071289,
+                      "width": 171.04899597168,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1687689551"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1687689551"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1858489733",
+                    "attrs": {
+                      "name": "金币图标",
+                      "visible": true,
+                      "height": 44.073234558105,
+                      "width": 44.073234558105,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1858489733"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1858489733"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode1995028804",
+                    "attrs": {
+                      "name": "点击",
+                      "visible": true,
+                      "height": 221.72511291504,
+                      "width": 143.53811645508,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1995028804"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1995028804"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1137630781",
+                    "node_id": "defaultcanvasnode2124983789",
+                    "attrs": {
+                      "name": "红色底板",
+                      "visible": true,
+                      "height": 53.308895111084,
+                      "width": 100,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2124983789"
+                  },
+                  "children": [
+                    {
+                      "data": {
+                        "parent_id": "defaultcanvasnode2124983789",
+                        "node_id": "defaultcanvasnode1059218624",
+                        "attrs": {
+                          "text": "8折",
+                          "name": "打折文本",
+                          "visible": true,
+                          "height": 66.678916931152,
+                          "width": 126.93177032471,
+                          "opacity": 1
+                        },
+                        "type": "10002",
+                        "children_ids": [],
+                        "id": "defaultcanvasnode1059218624"
+                      },
+                      "children": [],
+                      "id": "defaultcanvasnode1059218624"
+                    }
+                  ],
+                  "id": "defaultcanvasnode2124983789"
+                }
+              ],
+              "id": "defaultcanvasnode1137630781"
+            },
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1880602002",
+                "node_id": "defaultcanvasnode1443248909",
+                "attrs": {
+                  "name": "造塔",
+                  "visible": true,
+                  "height": 110,
+                  "width": 110,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1443248909"
+              },
+              "children": [
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1080841164",
+                    "attrs": {
+                      "name": "金币底板",
+                      "visible": true,
+                      "height": 40,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1080841164"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1080841164"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1267728326",
+                    "attrs": {
+                      "text": "造塔名称",
+                      "name": "造塔名称",
+                      "visible": true,
+                      "height": 76.958023071289,
+                      "width": 164.14764404297,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1267728326"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1267728326"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1285385574",
+                    "attrs": {
+                      "text": "150",
+                      "name": "金币数量",
+                      "visible": true,
+                      "height": 48.241264343262,
+                      "width": 107.52117156982,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1285385574"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1285385574"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1350831479",
+                    "attrs": {
+                      "name": "金币图标",
+                      "visible": true,
+                      "height": 44.073234558105,
+                      "width": 44.073234558105,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1350831479"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1350831479"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1584406445",
+                    "attrs": {
+                      "name": "红色底板",
+                      "visible": true,
+                      "height": 53.308895111084,
+                      "width": 100,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1584406445"
+                  },
+                  "children": [
+                    {
+                      "data": {
+                        "parent_id": "defaultcanvasnode1584406445",
+                        "node_id": "defaultcanvasnode1709380891",
+                        "attrs": {
+                          "text": "8折",
+                          "name": "打折文本",
+                          "visible": true,
+                          "height": 66.678916931152,
+                          "width": 120.09818267822,
+                          "opacity": 1
+                        },
+                        "type": "10002",
+                        "children_ids": [],
+                        "id": "defaultcanvasnode1709380891"
+                      },
+                      "children": [],
+                      "id": "defaultcanvasnode1709380891"
+                    }
+                  ],
+                  "id": "defaultcanvasnode1584406445"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1592358185",
+                    "attrs": {
+                      "name": "点击",
+                      "visible": true,
+                      "height": 221.72511291504,
+                      "width": 145.43626403809,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1592358185"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1592358185"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode1726530207",
+                    "attrs": {
+                      "name": "环",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1726530207"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1726530207"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1443248909",
+                    "node_id": "defaultcanvasnode2088407629",
+                    "attrs": {
+                      "name": "图标",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2088407629"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode2088407629"
+                }
+              ],
+              "id": "defaultcanvasnode1443248909"
+            },
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1880602002",
+                "node_id": "defaultcanvasnode1867770220",
+                "attrs": {
+                  "name": "造塔",
+                  "visible": true,
+                  "height": 110,
+                  "width": 110,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1867770220"
+              },
+              "children": [
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1405230583",
+                    "attrs": {
+                      "name": "环",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1405230583"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1405230583"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1591028881",
+                    "attrs": {
+                      "name": "红色底板",
+                      "visible": true,
+                      "height": 53.308895111084,
+                      "width": 100,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1591028881"
+                  },
+                  "children": [
+                    {
+                      "data": {
+                        "parent_id": "defaultcanvasnode1591028881",
+                        "node_id": "defaultcanvasnode1507987965",
+                        "attrs": {
+                          "text": "8折",
+                          "name": "打折文本",
+                          "visible": true,
+                          "height": 66.678916931152,
+                          "width": 122.04384613037,
+                          "opacity": 1
+                        },
+                        "type": "10002",
+                        "children_ids": [],
+                        "id": "defaultcanvasnode1507987965"
+                      },
+                      "children": [],
+                      "id": "defaultcanvasnode1507987965"
+                    }
+                  ],
+                  "id": "defaultcanvasnode1591028881"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1623929962",
+                    "attrs": {
+                      "text": "造塔名称",
+                      "name": "造塔名称",
+                      "visible": true,
+                      "height": 76.958023071289,
+                      "width": 161.71391296387,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1623929962"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1623929962"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1648012547",
+                    "attrs": {
+                      "name": "金币图标",
+                      "visible": true,
+                      "height": 44.073234558105,
+                      "width": 44.073234558105,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1648012547"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1648012547"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1670875248",
+                    "attrs": {
+                      "name": "图标",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1670875248"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1670875248"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1758496163",
+                    "attrs": {
+                      "name": "金币底板",
+                      "visible": true,
+                      "height": 40,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1758496163"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1758496163"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode1902745941",
+                    "attrs": {
+                      "name": "点击",
+                      "visible": true,
+                      "height": 221.72511291504,
+                      "width": 152.4280090332,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1902745941"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1902745941"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1867770220",
+                    "node_id": "defaultcanvasnode2127132979",
+                    "attrs": {
+                      "text": "150",
+                      "name": "金币数量",
+                      "visible": true,
+                      "height": 48.241264343262,
+                      "width": 107.52117156982,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2127132979"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode2127132979"
+                }
+              ],
+              "id": "defaultcanvasnode1867770220"
+            }
+          ],
+          "id": "defaultcanvasnode1880602002"
+        }
+      ],
+      "id": "defaultcanvasnode1335681995"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1293441246",
+        "type": "202",
+        "attrs": {
+          "name": "防御塔升级UI",
+          "visible": false,
+          "height": 450,
+          "width": 200,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1293441246"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1293441246",
+            "node_id": "defaultcanvasnode1775762583",
+            "attrs": {
+              "name": "底板",
+              "visible": true,
+              "height": 193.30032348633,
+              "width": 171.32000732422,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1775762583"
+          },
+          "children": [
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1775762583",
+                "node_id": "defaultcanvasnode1259815385",
+                "attrs": {
+                  "name": "底板",
+                  "visible": true,
+                  "height": 110,
+                  "width": 110,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1259815385"
+              },
+              "children": [
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1050067477",
+                    "attrs": {
+                      "name": "升级提示箭头",
+                      "visible": true,
+                      "height": 40,
+                      "width": 40,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1050067477"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1050067477"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1254768002",
+                    "attrs": {
+                      "name": "金币底板",
+                      "visible": true,
+                      "height": 40,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1254768002"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1254768002"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1417575460",
+                    "attrs": {
+                      "name": "升级点击1-2",
+                      "visible": true,
+                      "height": 178.60206604004,
+                      "width": 150,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1417575460"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1417575460"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1622169303",
+                    "attrs": {
+                      "name": "升级点击2-3",
+                      "visible": true,
+                      "height": 178.60206604004,
+                      "width": 150,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1622169303"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1622169303"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1766282371",
+                    "attrs": {
+                      "name": "金币图标",
+                      "visible": true,
+                      "height": 44.073234558105,
+                      "width": 44.073234558105,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1766282371"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1766282371"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1862397091",
+                    "attrs": {
+                      "name": "红色底板",
+                      "visible": true,
+                      "height": 53.310001373291,
+                      "width": 100,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1862397091"
+                  },
+                  "children": [
+                    {
+                      "data": {
+                        "parent_id": "defaultcanvasnode1862397091",
+                        "node_id": "defaultcanvasnode1611079652",
+                        "attrs": {
+                          "text": "8折",
+                          "name": "打折文本",
+                          "visible": true,
+                          "height": 50,
+                          "width": 128.77795410156,
+                          "opacity": 1
+                        },
+                        "type": "10002",
+                        "children_ids": [],
+                        "id": "defaultcanvasnode1611079652"
+                      },
+                      "children": [],
+                      "id": "defaultcanvasnode1611079652"
+                    }
+                  ],
+                  "id": "defaultcanvasnode1862397091"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode1999558730",
+                    "attrs": {
+                      "text": "999",
+                      "name": "金币数量",
+                      "visible": true,
+                      "height": 55.448974609375,
+                      "width": 90.190231323242,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1999558730"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1999558730"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode2004833563",
+                    "attrs": {
+                      "text": "升级",
+                      "name": "升级",
+                      "visible": true,
+                      "height": 58.781322479248,
+                      "width": 171.32005310059,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2004833563"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode2004833563"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode2105922088",
+                    "attrs": {
+                      "name": "图标",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2105922088"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode2105922088"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1259815385",
+                    "node_id": "defaultcanvasnode2144615921",
+                    "attrs": {
+                      "name": "环",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2144615921"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode2144615921"
+                }
+              ],
+              "id": "defaultcanvasnode1259815385"
+            }
+          ],
+          "id": "defaultcanvasnode1775762583"
+        },
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1293441246",
+            "node_id": "defaultcanvasnode1918482818",
+            "attrs": {
+              "name": "删除图标",
+              "visible": true,
+              "height": 122.55908203125,
+              "width": 122.55908203125,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1918482818"
+          },
+          "children": [
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1918482818",
+                "node_id": "defaultcanvasnode1492436928",
+                "attrs": {
+                  "name": "金币图标",
+                  "visible": true,
+                  "height": 44.073234558105,
+                  "width": 44.073234558105,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1492436928"
+              },
+              "children": [],
+              "id": "defaultcanvasnode1492436928"
+            },
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1918482818",
+                "node_id": "defaultcanvasnode1857540445",
+                "attrs": {
+                  "name": "点击",
+                  "visible": true,
+                  "height": 151.54208374023,
+                  "width": 150,
+                  "opacity": 0
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1857540445"
+              },
+              "children": [],
+              "id": "defaultcanvasnode1857540445"
+            },
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1918482818",
+                "node_id": "defaultcanvasnode1878526944",
+                "attrs": {
+                  "name": "金币底板",
+                  "visible": true,
+                  "height": 44.144916534424,
+                  "width": 124.65170288086,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1878526944"
+              },
+              "children": [],
+              "id": "defaultcanvasnode1878526944"
+            },
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1918482818",
+                "node_id": "defaultcanvasnode1993959573",
+                "attrs": {
+                  "text": "999",
+                  "name": "金币数量",
+                  "visible": true,
+                  "height": 55.448974609375,
+                  "width": 90.190231323242,
+                  "opacity": 1
+                },
+                "type": "10002",
+                "children_ids": [],
+                "id": "defaultcanvasnode1993959573"
+              },
+              "children": [],
+              "id": "defaultcanvasnode1993959573"
+            }
+          ],
+          "id": "defaultcanvasnode1918482818"
+        }
+      ],
+      "id": "defaultcanvasnode1293441246"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1849575195",
+        "type": "202",
+        "attrs": {
+          "name": "解锁UI",
+          "visible": false,
+          "height": 450,
+          "width": 200,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1849575195"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1849575195",
+            "node_id": "defaultcanvasnode1011933552",
+            "attrs": {
+              "name": "底板",
+              "visible": true,
+              "height": 198.30044555664,
+              "width": 176.79193115234,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1011933552"
+          },
+          "children": [
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1011933552",
+                "node_id": "defaultcanvasnode1427710398",
+                "attrs": {
+                  "name": "底板",
+                  "visible": true,
+                  "height": 110,
+                  "width": 110,
+                  "opacity": 1
+                },
+                "type": "10003",
+                "children_ids": [],
+                "id": "defaultcanvasnode1427710398"
+              },
+              "children": [
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1236424741",
+                    "attrs": {
+                      "name": "点击",
+                      "visible": true,
+                      "height": 183.46748352051,
+                      "width": 124.65173339844,
+                      "opacity": 0
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1236424741"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1236424741"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1246819891",
+                    "attrs": {
+                      "text": "999",
+                      "name": "金币数量",
+                      "visible": true,
+                      "height": 55.448974609375,
+                      "width": 90.190231323242,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1246819891"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1246819891"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1675616354",
+                    "attrs": {
+                      "name": "问号图标",
+                      "visible": true,
+                      "height": 65.332229614258,
+                      "width": 65.332229614258,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1675616354"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1675616354"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1737662377",
+                    "attrs": {
+                      "name": "金币底板",
+                      "visible": true,
+                      "height": 40,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1737662377"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1737662377"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1760445157",
+                    "attrs": {
+                      "name": "圆形底板",
+                      "visible": true,
+                      "height": 110.00001525879,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1760445157"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1760445157"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1766282370",
+                    "attrs": {
+                      "name": "金币图标",
+                      "visible": true,
+                      "height": 44.073234558105,
+                      "width": 44.073234558105,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1766282370"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1766282370"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1838830362",
+                    "attrs": {
+                      "text": "解锁",
+                      "name": "解锁",
+                      "visible": true,
+                      "height": 58.781322479248,
+                      "width": 176.79190063477,
+                      "opacity": 1
+                    },
+                    "type": "10002",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1838830362"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1838830362"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode1986929758",
+                    "attrs": {
+                      "name": "环",
+                      "visible": true,
+                      "height": 110,
+                      "width": 110,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode1986929758"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode1986929758"
+                },
+                {
+                  "data": {
+                    "parent_id": "defaultcanvasnode1427710398",
+                    "node_id": "defaultcanvasnode2083572943",
+                    "attrs": {
+                      "name": "替换金币底板",
+                      "visible": true,
+                      "height": 77.363578796387,
+                      "width": 77.363563537598,
+                      "opacity": 1
+                    },
+                    "type": "10003",
+                    "children_ids": [],
+                    "id": "defaultcanvasnode2083572943"
+                  },
+                  "children": [],
+                  "id": "defaultcanvasnode2083572943"
+                }
+              ],
+              "id": "defaultcanvasnode1427710398"
+            }
+          ],
+          "id": "defaultcanvasnode1011933552"
+        }
+      ],
+      "id": "defaultcanvasnode1849575195"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode2125201311",
+        "type": "202",
+        "attrs": {
+          "name": "金币飘字",
+          "visible": false,
+          "height": 200,
+          "width": 200,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode2125201311"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode2125201311",
+            "node_id": "defaultcanvasnode1176795066",
+            "attrs": {
+              "name": "金币图标",
+              "visible": true,
+              "height": 44.073234558105,
+              "width": 44.073234558105,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1176795066"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1176795066"
+        },
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode2125201311",
+            "node_id": "defaultcanvasnode2094007192",
+            "attrs": {
+              "text": "+999",
+              "name": "金币数量",
+              "visible": true,
+              "height": 45.356563568115,
+              "width": 100.3104095459,
+              "opacity": 1
+            },
+            "type": "10002",
+            "children_ids": [],
+            "id": "defaultcanvasnode2094007192"
+          },
+          "children": [],
+          "id": "defaultcanvasnode2094007192"
+        }
+      ],
+      "id": "defaultcanvasnode2125201311"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1296506048",
+        "type": "202",
+        "attrs": {
+          "name": "集火UI",
+          "visible": false,
+          "height": 200,
+          "width": 200,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1296506048"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1296506048",
+            "node_id": "defaultcanvasnode1154702123",
+            "attrs": {
+              "name": "集火",
+              "visible": true,
+              "height": 169.28108215332,
+              "width": 169.28108215332,
+              "opacity": 1
+            },
+            "type": "10043",
+            "children_ids": [],
+            "id": "defaultcanvasnode1154702123"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1154702123"
+        }
+      ],
+      "id": "defaultcanvasnode1296506048"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1230522130",
+        "type": "202",
+        "attrs": {
+          "name": "解锁进度UI",
+          "visible": false,
+          "height": 200,
+          "width": 200,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1230522130"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1230522130",
+            "node_id": "defaultcanvasnode1400580767",
+            "attrs": {
+              "name": "进度条",
+              "visible": true,
+              "height": 20,
+              "width": 120,
+              "opacity": 1
+            },
+            "type": "10013",
+            "children_ids": [],
+            "id": "defaultcanvasnode1400580767"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1400580767"
+        }
+      ],
+      "id": "defaultcanvasnode1230522130"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1252630487",
+        "type": "202",
+        "attrs": {
+          "name": "星级UI",
+          "visible": false,
+          "height": 240,
+          "width": 240,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1252630487"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1252630487",
+            "node_id": "defaultcanvasnode1438208584",
+            "attrs": {
+              "name": "升级提示箭头",
+              "visible": true,
+              "height": 48,
+              "width": 48,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1438208584"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1438208584"
+        },
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1252630487",
+            "node_id": "defaultcanvasnode1927559568",
+            "attrs": {
+              "name": "等级底板",
+              "visible": true,
+              "height": 48,
+              "width": 48,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1927559568"
+          },
+          "children": [
+            {
+              "data": {
+                "parent_id": "defaultcanvasnode1927559568",
+                "node_id": "defaultcanvasnode1944465210",
+                "attrs": {
+                  "text": "3",
+                  "name": "等级数字",
+                  "visible": true,
+                  "height": 50,
+                  "width": 50,
+                  "opacity": 1
+                },
+                "type": "10002",
+                "children_ids": [],
+                "id": "defaultcanvasnode1944465210"
+              },
+              "children": [],
+              "id": "defaultcanvasnode1944465210"
+            }
+          ],
+          "id": "defaultcanvasnode1927559568"
+        }
+      ],
+      "id": "defaultcanvasnode1252630487"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "defaultcanvasnode1114031223",
+        "type": "202",
+        "attrs": {
+          "name": "终点血量",
+          "visible": false,
+          "height": 200,
+          "width": 400,
+          "opacity": 1
+        },
+        "id": "defaultcanvasnode1114031223"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1114031223",
+            "node_id": "defaultcanvasnode1029693153",
+            "attrs": {
+              "name": "爱心",
+              "visible": true,
+              "height": 91.580490112305,
+              "width": 81.177253723145,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1029693153"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1029693153"
+        },
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1114031223",
+            "node_id": "defaultcanvasnode1295940304",
+            "attrs": {
+              "name": "血量底板",
+              "visible": true,
+              "height": 66.656784057617,
+              "width": 188.05065917969,
+              "opacity": 1
+            },
+            "type": "10003",
+            "children_ids": [],
+            "id": "defaultcanvasnode1295940304"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1295940304"
+        },
+        {
+          "data": {
+            "parent_id": "defaultcanvasnode1114031223",
+            "node_id": "defaultcanvasnode1496089394",
+            "attrs": {
+              "text": "x10",
+              "name": "血量",
+              "visible": true,
+              "height": 100,
+              "width": 150,
+              "opacity": 1
+            },
+            "type": "10002",
+            "children_ids": [],
+            "id": "defaultcanvasnode1496089394"
+          },
+          "children": [],
+          "id": "defaultcanvasnode1496089394"
+        }
+      ],
+      "id": "defaultcanvasnode1114031223"
+    },
+    {
+      "data": {
+        "children_ids": [],
+        "node_id": "1960838312",
+        "type": "200",
+        "attrs": {
+          "name": "画布2",
+          "visible": true,
+          "height": 1080,
+          "width": 2286,
+          "opacity": 1
+        },
+        "id": "1960838312"
+      },
+      "children": [
+        {
+          "data": {
+            "parent_id": "1960838312",
+            "node_id": "1123301873",
+            "attrs": {
+              "text": "A",
+              "name": "圆形金",
+              "visible": true,
+              "height": 130,
+              "width": 130,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1123301873"
+          },
+          "children": [],
+          "id": "1123301873"
+        },
+        {
+          "data": {
+            "parent_id": "1960838312",
+            "node_id": "1942228679",
+            "attrs": {
+              "text": "B",
+              "name": "圆形蓝",
+              "visible": true,
+              "height": 130,
+              "width": 130,
+              "opacity": 1
+            },
+            "type": "10001",
+            "children_ids": [],
+            "id": "1942228679"
+          },
+          "children": [],
+          "id": "1942228679"
+        }
+      ],
+      "id": "1960838312"
+    }
+  ],
+  "node_count": 135,
+  "errors": []
+}

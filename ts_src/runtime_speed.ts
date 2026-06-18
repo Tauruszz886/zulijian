@@ -1,6 +1,7 @@
 import { safeCall } from "@common/engine_safe"
-import { createFastRunSystem, type FastRunSystem } from "./fast_run_system"
-import { DASHBOARD_CENTER_X, DASHBOARD_CENTER_Y, DEFAULT_SPEED, SPEED_TAG } from "./runtime_config"
+import { createFastRunSystem, type FastRunSystem } from "./gameplay-kits/fast_run_system"
+import { registerDashboardUnlockButtons } from "./runtime_dashboard_unlock"
+import { DASHBOARD_CENTER_X, DASHBOARD_CENTER_Y, DASHBOARD_OPACITY, DEFAULT_SPEED, SPEED_TAG } from "./runtime_config"
 import { getOnlineRoles } from "./runtime_roles"
 
 const LEGACY_SPEED_UI_NODE_IDS = [
@@ -66,6 +67,7 @@ function ensureFastRunComponentsForOnlineRoles(): void {
 export function startSystems(): void {
   if (fastRunSystem !== undefined && fastRunSystem.isEnabled()) {
     ensureFastRunComponentsForOnlineRoles()
+    registerDashboardUnlockButtons(() => enableFastRunDashboard())
     return
   }
 
@@ -83,17 +85,28 @@ export function startSystems(): void {
       logIntervalTicks: 0 as integer,
     },
     testMode: {
-      enabled: true,
+      enabled: false,
       parentNodeName: "画布1",
       x: DASHBOARD_CENTER_X,
       y: DASHBOARD_CENTER_Y,
+      opacity: DASHBOARD_OPACITY,
       maxSpeed: 1000,
     },
     logger: fastRunLogger,
   })
   fastRunSystem.setEnabled(true)
   ensureFastRunComponentsForOnlineRoles()
+  registerDashboardUnlockButtons(() => enableFastRunDashboard())
   print(`[${SPEED_TAG}] fast_run_system started speed=${DEFAULT_SPEED}`)
+}
+
+export function enableFastRunDashboard(): void {
+  if (fastRunSystem === undefined) {
+    print(`[${SPEED_TAG}] dashboard enable skipped system=nil`)
+    return
+  }
+  fastRunSystem.enableDashboard()
+  print(`[${SPEED_TAG}] dashboard enable requested`)
 }
 
 function hideLegacySpeedUiForRole(role: Role): void {

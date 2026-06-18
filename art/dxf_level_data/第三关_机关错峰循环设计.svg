@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820">
+  <defs>
+    <style>
+      .title { font: 700 25px sans-serif; fill: #111827; }
+      .h { font: 700 17px sans-serif; fill: #111827; }
+      .txt { font: 14px sans-serif; fill: #334155; }
+      .small { font: 12px sans-serif; fill: #475569; }
+      .num { font: 700 18px sans-serif; fill: #111827; }
+      .frame { fill: #f8fafc; stroke: #0f172a; stroke-width: 2; }
+      .stable { fill: #e5e7eb; stroke: #475569; stroke-width: 1.2; }
+      .g1 { fill: #fecaca; stroke: #dc2626; stroke-width: 2; }
+      .g2 { fill: #fed7aa; stroke: #ea580c; stroke-width: 2; }
+      .g3 { fill: #bfdbfe; stroke: #2563eb; stroke-width: 2; }
+      .g4 { fill: #bbf7d0; stroke: #16a34a; stroke-width: 2; }
+      .solid { fill: #2563eb; }
+      .fade { fill: #93c5fd; }
+      .hidden { fill: #cbd5e1; }
+      .recover { fill: #22c55e; }
+      .axis { stroke: #64748b; stroke-width: 1; }
+      .dash { stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+  <rect width="1280" height="820" fill="#ffffff"/>
+  <text x="44" y="42" class="title">第三关机关错峰循环设计</text>
+
+  <g transform="translate(46,76)">
+    <text x="0" y="-16" class="h">平台分组：每组按左 -> 中 -> 右顺序启动</text>
+    <rect x="0" y="0" width="720" height="450" class="frame"/>
+    <!-- 160x100 scaled by 4.5 -->
+    <rect x="0" y="140.625" width="72" height="168.75" class="stable"/><text x="36" y="230" text-anchor="middle" class="num">1</text>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/><text x="639" y="231" text-anchor="middle" class="num">14</text>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="612" y="196.875" width="54" height="56.25" class="stable"/>
+    <rect x="648" y="112.5" width="72" height="225" class="stable"/><text x="684" y="231" text-anchor="middle" class="num">15</text>
+
+    <!-- G4 top row -->
+    <rect x="126" y="28.125" width="108" height="77.34375" class="g4"/><text x="180" y="73" text-anchor="middle" class="num">2</text>
+    <rect x="270" y="28.125" width="108" height="77.34375" class="g4"/><text x="324" y="73" text-anchor="middle" class="num">6</text>
+    <rect x="414" y="28.125" width="108" height="77.34375" class="g4"/><text x="468" y="73" text-anchor="middle" class="num">10</text>
+    <!-- G3 -->
+    <rect x="126" y="133.59375" width="108" height="77.34375" class="g3"/><text x="180" y="178" text-anchor="middle" class="num">3</text>
+    <rect x="270" y="133.59375" width="108" height="77.34375" class="g3"/><text x="324" y="178" text-anchor="middle" class="num">7</text>
+    <rect x="414" y="133.59375" width="108" height="77.34375" class="g3"/><text x="468" y="178" text-anchor="middle" class="num">11</text>
+    <!-- G2 -->
+    <rect x="126" y="239.0625" width="108" height="77.34375" class="g2"/><text x="180" y="284" text-anchor="middle" class="num">4</text>
+    <rect x="270" y="239.0625" width="108" height="77.34375" class="g2"/><text x="324" y="284" text-anchor="middle" class="num">8</text>
+    <rect x="414" y="239.0625" width="108" height="77.34375" class="g2"/><text x="468" y="284" text-anchor="middle" class="num">12</text>
+    <!-- G1 bottom -->
+    <rect x="126" y="344.53125" width="108" height="77.34375" class="g1"/><text x="180" y="389" text-anchor="middle" class="num">5</text>
+    <rect x="270" y="344.53125" width="108" height="77.34375" class="g1"/><text x="324" y="389" text-anchor="middle" class="num">9</text>
+    <rect x="414" y="344.53125" width="108" height="77.34375" class="g1"/><text x="468" y="389" text-anchor="middle" class="num">13</text>
+
+    <text x="760" y="28" class="h">建议参数</text>
+    <text x="760" y="58" class="txt">单个平台：显示/预警 2.0s</text>
+    <text x="760" y="82" class="txt">渐隐：1.0s</text>
+    <text x="760" y="106" class="txt">消失：2.0s</text>
+    <text x="760" y="130" class="txt">恢复：0.3s</text>
+    <text x="760" y="166" class="txt">组内错开：1.5s</text>
+    <text x="760" y="190" class="txt">组间错开：0.7s</text>
+    <text x="760" y="214" class="txt">循环周期：11.0s</text>
+    <text x="760" y="254" class="txt">结果：像波浪一样追着玩家跑，</text>
+    <text x="760" y="278" class="txt">不会整组同一秒全消失。</text>
+  </g>
+
+  <g transform="translate(46,590)">
+    <text x="0" y="-22" class="h">每轮 11 秒循环内的启动时间</text>
+    <line x1="130" y1="0" x2="1160" y2="0" class="axis"/>
+    <g class="small">
+      <text x="130" y="-8" text-anchor="middle">0</text>
+      <text x="230" y="-8" text-anchor="middle">2</text>
+      <text x="330" y="-8" text-anchor="middle">4</text>
+      <text x="430" y="-8" text-anchor="middle">6</text>
+      <text x="530" y="-8" text-anchor="middle">8</text>
+      <text x="630" y="-8" text-anchor="middle">10</text>
+      <text x="680" y="-8" text-anchor="middle">11s</text>
+    </g>
+    <line x1="130" y1="0" x2="130" y2="170" class="dash"/>
+    <line x1="230" y1="0" x2="230" y2="170" class="dash"/>
+    <line x1="330" y1="0" x2="330" y2="170" class="dash"/>
+    <line x1="430" y1="0" x2="430" y2="170" class="dash"/>
+    <line x1="530" y1="0" x2="530" y2="170" class="dash"/>
+    <line x1="630" y1="0" x2="630" y2="170" class="dash"/>
+    <line x1="680" y1="0" x2="680" y2="170" class="dash"/>
+
+    <rect x="760" y="-32" width="70" height="14" class="solid"/><text x="838" y="-21" class="small">显示2s</text>
+    <rect x="900" y="-32" width="45" height="14" class="fade"/><text x="952" y="-21" class="small">渐隐1s</text>
+    <rect x="1020" y="-32" width="70" height="14" class="hidden"/><text x="1098" y="-21" class="small">消失2s</text>
+
+    <!-- 1s = 50 px, solid 100, fade 50, hidden 100, recover 15 -->
+    <text x="0" y="32" class="h">G1  5 -> 9 -> 13</text>
+    <rect x="130" y="20" width="100" height="13" class="solid"/><rect x="230" y="20" width="50" height="13" class="fade"/><rect x="280" y="20" width="100" height="13" class="hidden"/><text x="116" y="32" text-anchor="end" class="small">5</text>
+    <rect x="205" y="39" width="100" height="13" class="solid"/><rect x="305" y="39" width="50" height="13" class="fade"/><rect x="355" y="39" width="100" height="13" class="hidden"/><text x="191" y="51" text-anchor="end" class="small">9</text>
+    <rect x="280" y="58" width="100" height="13" class="solid"/><rect x="380" y="58" width="50" height="13" class="fade"/><rect x="430" y="58" width="100" height="13" class="hidden"/><text x="266" y="70" text-anchor="end" class="small">13</text>
+
+    <text x="0" y="100" class="h">G2  4 -> 8 -> 12</text>
+    <rect x="165" y="88" width="100" height="13" class="solid"/><rect x="265" y="88" width="50" height="13" class="fade"/><rect x="315" y="88" width="100" height="13" class="hidden"/><text x="151" y="100" text-anchor="end" class="small">4</text>
+    <rect x="240" y="107" width="100" height="13" class="solid"/><rect x="340" y="107" width="50" height="13" class="fade"/><rect x="390" y="107" width="100" height="13" class="hidden"/><text x="226" y="119" text-anchor="end" class="small">8</text>
+    <rect x="315" y="126" width="100" height="13" class="solid"/><rect x="415" y="126" width="50" height="13" class="fade"/><rect x="465" y="126" width="100" height="13" class="hidden"/><text x="301" y="138" text-anchor="end" class="small">12</text>
+
+    <text x="720" y="32" class="h">G3/G4 起点继续错后</text>
+    <text x="720" y="62" class="txt">G3：1.4s 启动，3 -> 7 -> 11</text>
+    <text x="720" y="88" class="txt">G4：2.1s 启动，2 -> 6 -> 10</text>
+    <text x="720" y="125" class="txt">如果玩家跑得更快，可以把组内错开改成 1.2s。</text>
+  </g>
+</svg>

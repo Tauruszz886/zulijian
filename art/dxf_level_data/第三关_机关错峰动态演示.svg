@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820">
+  <defs>
+    <style>
+      text { font-family: Arial, "Microsoft YaHei", sans-serif; }
+      .bg { fill: #f6f7fb; }
+      .title { font-size: 30px; font-weight: 700; fill: #20242a; }
+      .note { font-size: 18px; fill: #374151; }
+      .small { font-size: 15px; fill: #4b5563; }
+      .tiny { font-size: 12px; fill: #6b7280; }
+      .stable rect { fill: #d8dde5; stroke: #7b8491; stroke-width: 2; }
+      .stable text { fill: #26313d; font-size: 22px; font-weight: 700; }
+      .tile rect { stroke-width: 2; rx: 5; }
+      .tile text { fill: #111827; font-size: 24px; font-weight: 700; }
+      .g1 rect { fill: #ff9c6e; stroke: #a64b22; }
+      .g2 rect { fill: #ffd166; stroke: #9a7200; }
+      .g3 rect { fill: #78d8a0; stroke: #1e7c48; }
+      .g4 rect { fill: #76b7ff; stroke: #1f5d99; }
+      .grid { stroke: #d2d8e2; stroke-width: 1; }
+      .axis { stroke: #6b7280; stroke-width: 2; }
+      .legend-box { stroke: #6b7280; stroke-width: 1.5; rx: 4; }
+      .normal { fill: #e8f3ff; }
+      .warn { fill: #ef4444; }
+      .dead { fill: #111827; }
+      .back { fill: #22c55e; }
+      .stateOverlay { fill: #ef4444; opacity: 0; stroke: none; }
+      .beam { stroke: #ef4444; stroke-width: 5; stroke-linecap: round; opacity: 0; }
+      .playhead { stroke: #ef4444; stroke-width: 3; }
+      .timeline-warn { fill: #ef4444; opacity: .9; }
+      .timeline-dead { fill: #111827; opacity: .78; }
+      .timeline-back { fill: #22c55e; opacity: .9; }
+
+      .p5, .p9, .p13, .p4, .p8, .p12, .p3, .p7, .p11, .p2, .p6, .p10 {
+        animation: tileCycle 11s linear infinite;
+      }
+      .p5 .stateOverlay, .p9 .stateOverlay, .p13 .stateOverlay, .p4 .stateOverlay, .p8 .stateOverlay, .p12 .stateOverlay,
+      .p3 .stateOverlay, .p7 .stateOverlay, .p11 .stateOverlay, .p2 .stateOverlay, .p6 .stateOverlay, .p10 .stateOverlay {
+        animation: overlayCycle 11s linear infinite;
+      }
+      .p5, .p5 .stateOverlay { animation-delay: 0s; }
+      .p9, .p9 .stateOverlay { animation-delay: 1.5s; }
+      .p13, .p13 .stateOverlay { animation-delay: 3s; }
+      .p4, .p4 .stateOverlay { animation-delay: .7s; }
+      .p8, .p8 .stateOverlay { animation-delay: 2.2s; }
+      .p12, .p12 .stateOverlay { animation-delay: 3.7s; }
+      .p3, .p3 .stateOverlay { animation-delay: 1.4s; }
+      .p7, .p7 .stateOverlay { animation-delay: 2.9s; }
+      .p11, .p11 .stateOverlay { animation-delay: 4.4s; }
+      .p2, .p2 .stateOverlay { animation-delay: 2.1s; }
+      .p6, .p6 .stateOverlay { animation-delay: 3.6s; }
+      .p10, .p10 .stateOverlay { animation-delay: 5.1s; }
+
+      .beam5, .beam9, .beam13, .beam4, .beam8, .beam12, .beam3, .beam7, .beam11, .beam2, .beam6, .beam10 {
+        animation: beamCycle 11s linear infinite;
+      }
+      .beam5 { animation-delay: 0s; }
+      .beam9 { animation-delay: 1.5s; }
+      .beam13 { animation-delay: 3s; }
+      .beam4 { animation-delay: .7s; }
+      .beam8 { animation-delay: 2.2s; }
+      .beam12 { animation-delay: 3.7s; }
+      .beam3 { animation-delay: 1.4s; }
+      .beam7 { animation-delay: 2.9s; }
+      .beam11 { animation-delay: 4.4s; }
+      .beam2 { animation-delay: 2.1s; }
+      .beam6 { animation-delay: 3.6s; }
+      .beam10 { animation-delay: 5.1s; }
+
+      .head {
+        animation: headMove 11s linear infinite;
+      }
+
+      @keyframes tileCycle {
+        0%, 18.1% { opacity: 1; filter: none; }
+        18.2%, 27.2% { opacity: .72; filter: saturate(1.8); }
+        27.3%, 45.4% { opacity: .12; filter: grayscale(1); }
+        45.5%, 48.1% { opacity: .8; filter: saturate(1.4); }
+        48.2%, 100% { opacity: 1; filter: none; }
+      }
+      @keyframes overlayCycle {
+        0%, 18.1% { opacity: 0; }
+        18.2%, 27.2% { opacity: .95; }
+        27.3%, 100% { opacity: 0; }
+      }
+      @keyframes beamCycle {
+        0%, 18.1% { opacity: 0; }
+        18.2%, 27.2% { opacity: .9; }
+        27.3%, 45.4% { opacity: .25; }
+        45.5%, 100% { opacity: 0; }
+      }
+      @keyframes headMove {
+        from { transform: translateX(0px); }
+        to { transform: translateX(990px); }
+      }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1280" height="820"/>
+  <text class="title" x="42" y="52">第三关机关动态演示：同组依次消失，四组错峰循环</text>
+  <text class="note" x="42" y="88">看法：亮着就是能踩，整块变红就是正在虚化预警，几乎透明就是已经消失，玩家会踩空。</text>
+
+  <g transform="translate(74,135)">
+    <text class="note" x="0" y="-20">平台俯视图</text>
+
+    <g class="stable">
+      <rect x="0" y="114" width="82" height="150" rx="5"/>
+      <text x="34" y="199">1</text>
+      <text class="tiny" x="13" y="287">入口稳定</text>
+    </g>
+
+    <g transform="translate(126,0)">
+      <g class="tile g4 p2"><rect x="0" y="0" width="116" height="72"/><rect class="stateOverlay" x="0" y="0" width="116" height="72"/><text x="51" y="45">2</text></g>
+      <g class="tile g3 p3"><rect x="0" y="94" width="116" height="72"/><rect class="stateOverlay" x="0" y="94" width="116" height="72"/><text x="51" y="139">3</text></g>
+      <g class="tile g2 p4"><rect x="0" y="188" width="116" height="72"/><rect class="stateOverlay" x="0" y="188" width="116" height="72"/><text x="51" y="233">4</text></g>
+      <g class="tile g1 p5"><rect x="0" y="282" width="116" height="72"/><rect class="stateOverlay" x="0" y="282" width="116" height="72"/><text x="51" y="327">5</text></g>
+      <line class="beam beam2" x1="8" y1="36" x2="108" y2="36"/>
+      <line class="beam beam3" x1="8" y1="130" x2="108" y2="130"/>
+      <line class="beam beam4" x1="8" y1="224" x2="108" y2="224"/>
+      <line class="beam beam5" x1="8" y1="318" x2="108" y2="318"/>
+    </g>
+
+    <g transform="translate(278,0)">
+      <g class="tile g4 p6"><rect x="0" y="0" width="116" height="72"/><rect class="stateOverlay" x="0" y="0" width="116" height="72"/><text x="51" y="45">6</text></g>
+      <g class="tile g3 p7"><rect x="0" y="94" width="116" height="72"/><rect class="stateOverlay" x="0" y="94" width="116" height="72"/><text x="51" y="139">7</text></g>
+      <g class="tile g2 p8"><rect x="0" y="188" width="116" height="72"/><rect class="stateOverlay" x="0" y="188" width="116" height="72"/><text x="51" y="233">8</text></g>
+      <g class="tile g1 p9"><rect x="0" y="282" width="116" height="72"/><rect class="stateOverlay" x="0" y="282" width="116" height="72"/><text x="51" y="327">9</text></g>
+      <line class="beam beam6" x1="8" y1="36" x2="108" y2="36"/>
+      <line class="beam beam7" x1="8" y1="130" x2="108" y2="130"/>
+      <line class="beam beam8" x1="8" y1="224" x2="108" y2="224"/>
+      <line class="beam beam9" x1="8" y1="318" x2="108" y2="318"/>
+    </g>
+
+    <g transform="translate(430,0)">
+      <g class="tile g4 p10"><rect x="0" y="0" width="116" height="72"/><rect class="stateOverlay" x="0" y="0" width="116" height="72"/><text x="44" y="45">10</text></g>
+      <g class="tile g3 p11"><rect x="0" y="94" width="116" height="72"/><rect class="stateOverlay" x="0" y="94" width="116" height="72"/><text x="44" y="139">11</text></g>
+      <g class="tile g2 p12"><rect x="0" y="188" width="116" height="72"/><rect class="stateOverlay" x="0" y="188" width="116" height="72"/><text x="44" y="233">12</text></g>
+      <g class="tile g1 p13"><rect x="0" y="282" width="116" height="72"/><rect class="stateOverlay" x="0" y="282" width="116" height="72"/><text x="44" y="327">13</text></g>
+      <line class="beam beam10" x1="8" y1="36" x2="108" y2="36"/>
+      <line class="beam beam11" x1="8" y1="130" x2="108" y2="130"/>
+      <line class="beam beam12" x1="8" y1="224" x2="108" y2="224"/>
+      <line class="beam beam13" x1="8" y1="318" x2="108" y2="318"/>
+    </g>
+
+    <g class="stable">
+      <rect x="590" y="150" width="58" height="54" rx="5"/>
+      <text x="601" y="185">14</text>
+      <rect x="684" y="102" width="92" height="204" rx="5"/>
+      <text x="711" y="211">15</text>
+      <text class="tiny" x="604" y="333">出口稳定</text>
+    </g>
+
+    <g transform="translate(835,5)">
+      <text class="note" x="0" y="0">通俗理解</text>
+      <rect class="legend-box normal" x="0" y="26" width="30" height="20"/><text class="small" x="42" y="42">能踩</text>
+      <rect class="legend-box warn" x="0" y="62" width="30" height="20"/><text class="small" x="42" y="78">正在虚化，提示快离开</text>
+      <rect class="legend-box dead" x="0" y="98" width="30" height="20"/><text class="small" x="42" y="114">已经消失，踩上会掉</text>
+      <rect class="legend-box back" x="0" y="134" width="30" height="20"/><text class="small" x="42" y="150">恢复出现</text>
+
+      <text class="small" x="0" y="205">G1：5 先开始，接着 9，最后 13</text>
+      <text class="small" x="0" y="234">G2：比 G1 慢 0.7 秒启动</text>
+      <text class="small" x="0" y="263">G3：再慢 0.7 秒启动</text>
+      <text class="small" x="0" y="292">G4：最后启动</text>
+      <text class="small" x="0" y="340">玩家感受：</text>
+      <text class="small" x="0" y="368">不是等平台随机没了，</text>
+      <text class="small" x="0" y="396">而是看见前面平台一排一排错开断开，</text>
+      <text class="small" x="0" y="424">逼他保持速度往安全平台跑。</text>
+    </g>
+  </g>
+
+  <g transform="translate(70,605)">
+    <text class="note" x="0" y="-28">11 秒循环时间轴</text>
+    <line class="axis" x1="90" y1="0" x2="1080" y2="0"/>
+    <line class="playhead head" x1="90" y1="-132" x2="90" y2="18"/>
+
+    <g>
+      <line class="grid" x1="90" y1="-132" x2="90" y2="18"/><text class="tiny" x="86" y="38">0</text>
+      <line class="grid" x1="180" y1="-132" x2="180" y2="18"/><text class="tiny" x="176" y="38">1</text>
+      <line class="grid" x1="270" y1="-132" x2="270" y2="18"/><text class="tiny" x="266" y="38">2</text>
+      <line class="grid" x1="360" y1="-132" x2="360" y2="18"/><text class="tiny" x="356" y="38">3</text>
+      <line class="grid" x1="450" y1="-132" x2="450" y2="18"/><text class="tiny" x="446" y="38">4</text>
+      <line class="grid" x1="540" y1="-132" x2="540" y2="18"/><text class="tiny" x="536" y="38">5</text>
+      <line class="grid" x1="630" y1="-132" x2="630" y2="18"/><text class="tiny" x="626" y="38">6</text>
+      <line class="grid" x1="720" y1="-132" x2="720" y2="18"/><text class="tiny" x="716" y="38">7</text>
+      <line class="grid" x1="810" y1="-132" x2="810" y2="18"/><text class="tiny" x="806" y="38">8</text>
+      <line class="grid" x1="900" y1="-132" x2="900" y2="18"/><text class="tiny" x="896" y="38">9</text>
+      <line class="grid" x1="990" y1="-132" x2="990" y2="18"/><text class="tiny" x="982" y="38">10</text>
+      <line class="grid" x1="1080" y1="-132" x2="1080" y2="18"/><text class="tiny" x="1072" y="38">11</text>
+    </g>
+
+    <text class="small" x="0" y="-104">G1</text>
+    <rect class="timeline-warn" x="270" y="-118" width="90" height="14" rx="3"/><rect class="timeline-dead" x="360" y="-118" width="180" height="14" rx="3"/><text class="tiny" x="96" y="-107">5</text>
+    <rect class="timeline-warn" x="405" y="-98" width="90" height="14" rx="3"/><rect class="timeline-dead" x="495" y="-98" width="180" height="14" rx="3"/><text class="tiny" x="96" y="-87">9</text>
+    <rect class="timeline-warn" x="540" y="-78" width="90" height="14" rx="3"/><rect class="timeline-dead" x="630" y="-78" width="180" height="14" rx="3"/><text class="tiny" x="96" y="-67">13</text>
+
+    <text class="small" x="0" y="-44">G2</text>
+    <rect class="timeline-warn" x="333" y="-58" width="90" height="14" rx="3"/><rect class="timeline-dead" x="423" y="-58" width="180" height="14" rx="3"/><text class="tiny" x="96" y="-47">4</text>
+    <rect class="timeline-warn" x="468" y="-38" width="90" height="14" rx="3"/><rect class="timeline-dead" x="558" y="-38" width="180" height="14" rx="3"/><text class="tiny" x="96" y="-27">8</text>
+    <rect class="timeline-warn" x="603" y="-18" width="90" height="14" rx="3"/><rect class="timeline-dead" x="693" y="-18" width="180" height="14" rx="3"/><text class="tiny" x="96" y="-7">12</text>
+
+    <text class="tiny" x="1130" y="-100">红色竖线表示当前播放到第几秒</text>
+    <text class="tiny" x="1130" y="-76">红色段：虚化</text>
+    <text class="tiny" x="1130" y="-52">黑色段：消失</text>
+    <text class="tiny" x="1130" y="-28">播放会自动循环</text>
+  </g>
+</svg>

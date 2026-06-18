@@ -1,7 +1,9 @@
 import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
+import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import {
-  FOURTH_LEVEL_COMPRESSOR_DOWN_FRAMES,
+  FOURTH_LEVEL_COMPRESSOR_DOWN_SECONDS,
+  FOURTH_LEVEL_COMPRESSOR_DOWN_STEPS,
   FOURTH_LEVEL_COMPRESSOR_DOWN_Y,
   FOURTH_LEVEL_COMPRESSOR_HEIGHT,
   FOURTH_LEVEL_COMPRESSOR_HOLD_SECONDS,
@@ -12,6 +14,7 @@ import {
 } from "./runtime_config"
 import { returnUnitToBirth } from "./runtime_fall_return"
 import { asFixed } from "./runtime_layout"
+import { GAME_EVENTS } from "./utils/GameEvents"
 
 const TAG = "ZLJ_RUNTIME_COMPRESSOR"
 const DEATH_TRIGGER_PREFAB_ID = 3101010
@@ -37,6 +40,7 @@ declare const Enums: { TriggerSpaceEventType: { ENTER: number } }
 
 let runtimeCompressorStarted = false
 let runtimeCompressorPieces: RuntimeCompressorPiece[] = []
+let compressorCycleGeneration = 0
 
 export function resetRuntimeCompressors(): void {
   runtimeCompressorPieces = []
@@ -123,12 +127,45 @@ function setRuntimeCompressorPosition(piece: RuntimeCompressorPiece, y: number):
 
 function animateRuntimeCompressorPiece(piece: RuntimeCompressorPiece, fromY: number, toY: number, frames: number, done?: () => void): void {
   let frame = 0
+  const generation = compressorCycleGeneration
   const step = (): void => {
+    if (generation !== compressorCycleGeneration) {
+      return
+    }
     frame += 1
     const t = frame / frames
     setRuntimeCompressorPosition(piece, fromY + (toY - fromY) * t)
     if (frame < frames) {
       ;(LuaAPI as any).call_delay_frame(1, step)
+      return
+    }
+    if (done !== undefined) {
+      done()
+    }
+  }
+  step()
+}
+
+function animateRuntimeCompressorPieceBySeconds(
+  piece: RuntimeCompressorPiece,
+  fromY: number,
+  toY: number,
+  seconds: number,
+  steps: number,
+  done?: () => void
+): void {
+  let stepIndex = 0
+  const generation = compressorCycleGeneration
+  const stepSeconds = seconds / steps
+  const step = (): void => {
+    if (generation !== compressorCycleGeneration) {
+      return
+    }
+    stepIndex += 1
+    const t = stepIndex / steps
+    setRuntimeCompressorPosition(piece, fromY + (toY - fromY) * t)
+    if (stepIndex < steps) {
+      ;(LuaAPI as any).call_delay_time(asFixed(stepSeconds), step)
       return
     }
     if (done !== undefined) {
@@ -159,15 +196,48 @@ function animateRuntimeCompressors(direction: "drop" | "rise", frames: number, d
   }
 }
 
-function scheduleRuntimeCompressorCycle(): void {
-  ;(LuaAPI as any).call_delay_time(asFixed(FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS), () => {
-    print(
-      `[${TAG}] drop begin pieces=${runtimeCompressorPieces.length} wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS} plate_y=${FOURTH_LEVEL_COMPRESSOR_START_Y}->${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
+function animateRuntimeCompressorsDrop(done?: () => void): void {
+  if (runtimeCompressorPieces.length === 0) {
+    if (done !== undefined) {
+      done()
+    }
+    return
+  }
+  let remaining = runtimeCompressorPieces.length
+  for (let i = 0; i < runtimeCompressorPieces.length; i++) {
+    const piece = runtimeCompressorPieces[i]!
+    animateRuntimeCompressorPieceBySeconds(
+      piece,
+      piece.upY,
+      piece.downY,
+      FOURTH_LEVEL_COMPRESSOR_DOWN_SECONDS,
+      FOURTH_LEVEL_COMPRESSOR_DOWN_STEPS,
+      () => {
+        remaining -= 1
+        if (remaining <= 0 && done !== undefined) {
+          done()
+        }
+      }
     )
-    animateRuntimeCompressors("drop", FOURTH_LEVEL_COMPRESSOR_DOWN_FRAMES, () => {
+  }
+}
+
+function scheduleRuntimeCompressorCycle(): void {
+  const generation = compressorCycleGeneration
+  ;(LuaAPI as any).call_delay_time(asFixed(FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS), () => {
+    if (generation !== compressorCycleGeneration) {
+      return
+    }
+    print(
+      `[${TAG}] drop begin pieces=${runtimeCompressorPieces.length} wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS} drop_seconds=${FOURTH_LEVEL_COMPRESSOR_DOWN_SECONDS} plate_y=${FOURTH_LEVEL_COMPRESSOR_START_Y}->${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
+    )
+    animateRuntimeCompressorsDrop(() => {
       ;(LuaAPI as any).call_delay_time(asFixed(FOURTH_LEVEL_COMPRESSOR_HOLD_SECONDS), () => {
+        if (generation !== compressorCycleGeneration) {
+          return
+        }
         print(
-          `[${TAG}] rise begin pieces=${runtimeCompressorPieces.length} plate_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y}->${FOURTH_LEVEL_COMPRESSOR_START_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
+          `[${TAG}] rise begin pieces=${runtimeCompressorPieces.length} hold_seconds=${FOURTH_LEVEL_COMPRESSOR_HOLD_SECONDS} plate_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y}->${FOURTH_LEVEL_COMPRESSOR_START_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP}`
         )
         animateRuntimeCompressors("rise", FOURTH_LEVEL_COMPRESSOR_UP_FRAMES, scheduleRuntimeCompressorCycle)
       })
@@ -185,7 +255,25 @@ export function startRuntimeCompressors(): void {
     return
   }
   print(
-    `[${TAG}] start pieces=${runtimeCompressorPieces.length} plate_up_y=${FOURTH_LEVEL_COMPRESSOR_START_Y} plate_down_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP} plate_height=${FOURTH_LEVEL_COMPRESSOR_HEIGHT} cycle_wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS}`
+    `[${TAG}] start pieces=${runtimeCompressorPieces.length} plate_up_y=${FOURTH_LEVEL_COMPRESSOR_START_Y} plate_down_y=${FOURTH_LEVEL_COMPRESSOR_DOWN_Y} float_gap=${FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP} plate_height=${FOURTH_LEVEL_COMPRESSOR_HEIGHT} cycle_wait=${FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS} drop_seconds=${FOURTH_LEVEL_COMPRESSOR_DOWN_SECONDS} hold_seconds=${FOURTH_LEVEL_COMPRESSOR_HOLD_SECONDS}`
   )
   scheduleRuntimeCompressorCycle()
 }
+
+function resetRuntimeCompressorsToInitial(source: string): void {
+  if (runtimeCompressorPieces.length === 0) {
+    return
+  }
+  compressorCycleGeneration += 1
+  for (let i = 0; i < runtimeCompressorPieces.length; i++) {
+    const piece = runtimeCompressorPieces[i]!
+    setRuntimeCompressorPosition(piece, piece.upY)
+  }
+  runtimeCompressorStarted = false
+  print(`[${TAG}] reset_to_initial source=${source} pieces=${runtimeCompressorPieces.length} generation=${compressorCycleGeneration}`)
+  startRuntimeCompressors()
+}
+
+EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+  resetRuntimeCompressorsToInitial(tostring(source))
+})

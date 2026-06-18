@@ -1,4 +1,5 @@
 import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
+import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import { LEVEL_TERRAIN_SPECS, type LevelTerrainSpec } from "./level_terrain"
 import {
@@ -10,6 +11,7 @@ import {
   type RuntimeFloor,
 } from "./runtime_config"
 import { asFixed, getRuntimeFloorForModule, getRuntimeModuleCenterX, runtimeModuleLabel } from "./runtime_layout"
+import { GAME_EVENTS } from "./utils/GameEvents"
 
 const TAG = "ZLJ_FALL_RETURN"
 const TRIGGER_PREFAB_ID = 3101010
@@ -173,6 +175,7 @@ export function returnUnitToBirth(unit: unknown, source: string): void {
       },
       { tag: `fall_return_to_birth_${source}`, fallback: undefined, logger: print }
     )
+    EventBus.emit(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, unit, source)
     print(`[${TAG}] return_to_birth source=${source} unit=${key} pos=(${BIRTH_SPAWN_X},${BIRTH_SPAWN_Y},${BIRTH_SPAWN_Z})`)
   }, {
     safe: true,

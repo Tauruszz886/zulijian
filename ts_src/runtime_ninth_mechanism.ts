@@ -1,7 +1,9 @@
-import { safeCall, safeCreateCustomTriggerSpace, safeDestroyUnit } from "@common/engine_safe"
+import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
+import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import { NINTH_LEVEL_TERRAIN_MODULE_INDEX, type RuntimeTerrainPiece } from "./runtime_config"
 import { asFixed } from "./runtime_layout"
+import { GAME_EVENTS } from "./utils/GameEvents"
 
 const TAG = "ZLJ_NINTH_MECHANISM"
 const TRIGGER_PREFAB_ID = 3101010
@@ -18,6 +20,8 @@ type NinthPlatform = {
   unit: unknown
   trigger?: unknown
   fading: boolean
+  hidden: boolean
+  generation: number
 }
 
 declare const EVENT: {
@@ -62,6 +66,18 @@ function trySetOpacity(unit: unknown, opacity: number, name: string): void {
       { tag: `ninth_set_model_visible_${name}`, fallback: undefined, logger: print }
     )
   }
+}
+
+function trySetModelVisible(unit: unknown, visible: boolean, name: string): void {
+  safeCall(
+    () => {
+      const target = unit as any
+      if (target.set_model_visible !== undefined && target.set_model_visible !== null) {
+        target.set_model_visible(visible)
+      }
+    },
+    { tag: `ninth_set_model_visible_${name}`, fallback: undefined, logger: print }
+  )
 }
 
 function hasOutlineApi(role: unknown): boolean {
@@ -132,10 +148,14 @@ function applyTouchOutline(actor: unknown, data: unknown, platform: NinthPlatfor
   print(`[${TAG}] touch outline name=${platform.name} ok=${ok} width=${TOUCH_OUTLINE_WIDTH} color=${TOUCH_OUTLINE_COLOR}`)
 }
 
-function fadeAndDestroy(platform: NinthPlatform): void {
+function fadeAndHide(platform: NinthPlatform): void {
   let step = 0
+  const generation = platform.generation
   const stepSeconds = FADE_SECONDS / FADE_STEPS
   const tick = (): void => {
+    if (generation !== platform.generation || !platform.fading) {
+      return
+    }
     step += 1
     const opacity = math.max(0, 1 - step / FADE_STEPS)
     trySetOpacity(platform.unit, opacity, platform.name)
@@ -143,23 +163,22 @@ function fadeAndDestroy(platform: NinthPlatform): void {
       ;(LuaAPI as any).call_delay_time(asFixed(stepSeconds), tick)
       return
     }
-    safeDestroyUnit(platform.unit, { tag: `ninth_destroy_platform_${platform.name}`, logger: print })
-    if (platform.trigger !== undefined && platform.trigger !== null) {
-      safeDestroyUnit(platform.trigger, { tag: `ninth_destroy_trigger_${platform.name}`, logger: print })
-    }
-    print(`[${TAG}] platform disappeared name=${platform.name} seconds=${FADE_SECONDS}`)
+    platform.hidden = true
+    platform.fading = false
+    trySetModelVisible(platform.unit, false, platform.name)
+    print(`[${TAG}] platform hidden name=${platform.name} seconds=${FADE_SECONDS}`)
   }
   tick()
 }
 
 function startFade(platform: NinthPlatform, source: string, actor: unknown, data: unknown): void {
-  if (platform.fading) {
+  if (platform.fading || platform.hidden) {
     return
   }
   platform.fading = true
   applyTouchOutline(actor, data, platform)
   print(`[${TAG}] fade start name=${platform.name} source=${source} seconds=${FADE_SECONDS}`)
-  fadeAndDestroy(platform)
+  fadeAndHide(platform)
 }
 
 function registerTrigger(platform: NinthPlatform, trigger: unknown): void {
@@ -198,7 +217,7 @@ export function registerNinthVanishingPlatform(
   if (!isNinthVanishingPlatform(piece)) {
     return
   }
-  const platform: NinthPlatform = { name, unit, fading: false }
+  const platform: NinthPlatform = { name, unit, fading: false, hidden: false, generation: 0 }
   platforms.push(platform)
   const trigger = safeCreateCustomTriggerSpace(
     TRIGGER_PREFAB_ID,
@@ -211,3 +230,22 @@ export function registerNinthVanishingPlatform(
     `[${TAG}] platform registered name=${name} unit=${tostring(unit)} trigger=${tostring(trigger)} trigger_pos=(${x},${TRIGGER_CENTER_Y},${z}) trigger_scale=(${piece.sx},${TRIGGER_HEIGHT},${piece.sz}) fade_seconds=${FADE_SECONDS}`
   )
 }
+
+function resetNinthLevelPlatformsToInitial(source: string): void {
+  if (platforms.length === 0) {
+    return
+  }
+  for (let i = 0; i < platforms.length; i++) {
+    const platform = platforms[i]!
+    platform.generation += 1
+    platform.fading = false
+    platform.hidden = false
+    trySetModelVisible(platform.unit, true, platform.name)
+    trySetOpacity(platform.unit, 1, platform.name)
+  }
+  print(`[${TAG}] reset_to_initial source=${source} platforms=${platforms.length}`)
+}
+
+EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+  resetNinthLevelPlatformsToInitial(tostring(source))
+})
