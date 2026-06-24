@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeListViewStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeListView {
-  readonly node: ENode
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: ENode) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时列表视图组件，封装 ListView 节点的显隐、透明度和触摸开关。 */
+export class RuntimeListView extends RuntimeUiComponentBase {
   setVisible(visible: boolean): void {
     this.host.forEachRole((role) => {
       safeVoid(

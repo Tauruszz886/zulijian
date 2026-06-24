@@ -1,29 +1,21 @@
+import { EMath } from "../../emath"
+
 export type FastRunAirMoveDistanceOptions = {
   /** 最大水平速度。 */
-  maxSpeed: number
+  maxSpeed: Fixed
   /** 空中水平加速度。 */
-  airAcceleration: number
+  airAcceleration: Fixed
   /** 空中滞留时间，单位秒。 */
-  hangTimeSeconds: number
+  hangTimeSeconds: Fixed
   /** 起跳进入空中时已有的水平速度；默认从 0 开始估算。 */
-  initialSpeed?: number
+  initialSpeed?: Fixed
 }
 
-function clampMin(value: number, minValue: number): number {
-  return value < minValue ? minValue : value
-}
-
-function clampNumber(value: number, minValue: number, maxValue: number): number {
-  if (value < minValue) return minValue
-  if (value > maxValue) return maxValue
-  return value
-}
-
-export function calculateFastRunMaxAirMoveDistance(options: FastRunAirMoveDistanceOptions): number {
-  const maxSpeed = clampMin(options.maxSpeed, 0)
-  const airAcceleration = clampMin(options.airAcceleration, 0)
-  const hangTimeSeconds = clampMin(options.hangTimeSeconds, 0)
-  const initialSpeed = clampNumber(options.initialSpeed !== undefined ? options.initialSpeed : 0, 0, maxSpeed)
+export function calculateFastRunMaxAirMoveDistance(options: FastRunAirMoveDistanceOptions): Fixed {
+  const maxSpeed = EMath.clampMin(options.maxSpeed, 0)
+  const airAcceleration = EMath.clampMin(options.airAcceleration, 0)
+  const hangTimeSeconds = EMath.clampMin(options.hangTimeSeconds, 0)
+  const initialSpeed = EMath.clamp(options.initialSpeed !== undefined ? options.initialSpeed : 0, 0, maxSpeed)
 
   if (hangTimeSeconds <= 0 || maxSpeed <= 0) return 0
   if (airAcceleration <= 0) return initialSpeed * hangTimeSeconds

@@ -14,7 +14,7 @@ import {
   FIRST_LEVEL_TERRAIN_HEIGHT,
   type RuntimeTerrainPiece,
 } from "./runtime_config"
-import { returnUnitToBirth } from "./runtime_fall_return"
+import { eliminateUnitAndRebirthAtBirth } from "./runtime_rebirth"
 import { asFixed } from "./runtime_layout"
 import { GAME_EVENTS } from "./utils/GameEvents"
 
@@ -114,7 +114,7 @@ function createEighthDeathTrigger(name: string, x: number, y: number, z: number,
     TriggerHub.register(
       [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
       (_eventName: unknown, _actor: unknown, data: unknown) => {
-        returnUnitToBirth(extractTriggerUnit(data), `eighth_mechanism:${name}:${tostring(triggerId)}`)
+        eliminateUnitAndRebirthAtBirth(extractTriggerUnit(data), `eighth_mechanism:${name}:${tostring(triggerId)}`)
       },
       { safe: true, safeCallback: true, tag: `eighth_death_trigger_${name}`, logger: print }
     )
@@ -237,6 +237,6 @@ function resetEighthLevelMechanismToInitial(source: string): void {
   startEighthLevelMechanism()
 }
 
-EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+EventBus.on(GAME_EVENTS.PLAYER_DIED_TO_REBIRTH, (_unit: unknown, source: unknown) => {
   resetEighthLevelMechanismToInitial(tostring(source))
 })

@@ -1,3 +1,3 @@
 export const GAME_EVENTS = {
-  PLAYER_RETURNED_TO_BIRTH: "player_returned_to_birth",
+  PLAYER_DIED_TO_REBIRTH: "player_died_to_rebirth",
 } as const

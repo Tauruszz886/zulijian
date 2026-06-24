@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeBagSlotStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeBagSlot {
-  readonly node: EBagSlot
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: EBagSlot) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时背包格组件，封装背包槽位节点的关联实体、显隐和触摸样式。 */
+export class RuntimeBagSlot extends RuntimeUiComponentBase<EBagSlot> {
   setRelatedLifeEntity(lifeEntity: LifeEntity): void {
     this.host.forEachRole((role) => {
       safeVoid(

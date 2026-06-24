@@ -131,11 +131,13 @@
 
     <g transform="translate(430,0)">
       <g class="tile g4 p10"><rect x="0" y="0" width="116" height="72"/><rect class="stateOverlay" x="0" y="0" width="116" height="72"/><text x="44" y="45">10</text></g>
-      <g class="tile g3 p11"><rect x="0" y="94" width="116" height="72"/><rect class="stateOverlay" x="0" y="94" width="116" height="72"/><text x="44" y="139">11</text></g>
+      <g class="tile g3 p11"><rect x="9.667" y="94" width="96.667" height="72"/><rect class="stateOverlay" x="9.667" y="94" width="96.667" height="72"/><text x="44" y="139">11</text></g>
+      <text class="tiny" x="126" y="122">11 / ID 1032584478</text>
+      <text class="tiny" x="126" y="138">QR_第03关_dxf_84C_24x17_1875</text>
       <g class="tile g2 p12"><rect x="0" y="188" width="116" height="72"/><rect class="stateOverlay" x="0" y="188" width="116" height="72"/><text x="44" y="233">12</text></g>
       <g class="tile g1 p13"><rect x="0" y="282" width="116" height="72"/><rect class="stateOverlay" x="0" y="282" width="116" height="72"/><text x="44" y="327">13</text></g>
       <line class="beam beam10" x1="8" y1="36" x2="108" y2="36"/>
-      <line class="beam beam11" x1="8" y1="130" x2="108" y2="130"/>
+      <line class="beam beam11" x1="18" y1="130" x2="98" y2="130"/>
       <line class="beam beam12" x1="8" y1="224" x2="108" y2="224"/>
       <line class="beam beam13" x1="8" y1="318" x2="108" y2="318"/>
     </g>

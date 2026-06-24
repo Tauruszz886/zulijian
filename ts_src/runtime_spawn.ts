@@ -1,11 +1,13 @@
 import { safeCall } from "@common/engine_safe"
 import { BIRTH_SPAWN_X, BIRTH_SPAWN_Y, BIRTH_SPAWN_Z, TAG } from "./runtime_config"
+import { configureRoleBirthRebirthPoint, configureUnitBirthRebirth } from "./runtime_rebirth"
 import { getOnlineRoles, roleKey } from "./runtime_roles"
 
 const spawnAdjustedRoles = new Map<string, boolean>()
 
 function adjustRoleSpawnToBirthTile(role: Role): void {
   const key = roleKey(role)
+  configureRoleBirthRebirthPoint(role, `spawn_${key}`)
   if (spawnAdjustedRoles.get(key) === true) {
     return
   }
@@ -20,6 +22,7 @@ function adjustRoleSpawnToBirthTile(role: Role): void {
     print(`[${TAG}] birth spawn skipped role=${key} character=nil`)
     return
   }
+  configureUnitBirthRebirth(character, `spawn_${key}`)
   safeCall(
     () => {
       ;(character as any).set_position(math.Vector3(BIRTH_SPAWN_X as Fixed, BIRTH_SPAWN_Y as Fixed, BIRTH_SPAWN_Z as Fixed))

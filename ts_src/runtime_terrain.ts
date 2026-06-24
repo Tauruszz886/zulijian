@@ -12,6 +12,7 @@ import {
   FOURTH_LEVEL_COMPRESSOR_START_Y,
   RUNTIME_COPY_COUNT,
   RUNTIME_FLOOR,
+  TENTH_LEVEL_TERRAIN_MODULE_INDEX,
   TERRAIN_TAG,
   TILE_BASE_Y,
   TILE_HEIGHT,
@@ -43,6 +44,9 @@ import { drawRuntimeTileGrid } from "./runtime_structure"
 
 let runtimeTilesCreated = false
 const TRAILING_CURRENT_PREFAB_ID = 3301506
+const TENTH_MIDDLE_PLATFORM_NAME = "dxf_75C_115x20"
+const TENTH_MIDDLE_PLATFORM_COLOR = 0x0000ff as Color
+const PAINT_AREAS = [1, 2, 3, 4] as const
 
 function getFullTileBaseY(moduleIndex: number): number {
   return moduleIndex === 0 ? BIRTH_TILE_BASE_Y : TILE_BASE_Y
@@ -58,6 +62,24 @@ function disableMirrorReflect(unit: unknown, tag: string): void {
     },
     { tag, fallback: undefined, logger: print }
   )
+}
+
+function applyPaintColor(unit: unknown, color: Color, tag: string): void {
+  if (unit === null || unit === undefined) {
+    return
+  }
+  for (let i = 0; i < PAINT_AREAS.length; i++) {
+    const area = PAINT_AREAS[i]! as PaintArea
+    safeCall(
+      () => {
+        const target = unit as any
+        if (target.set_paint_area_color !== undefined && target.set_paint_area_color !== null) {
+          target.set_paint_area_color(area, color)
+        }
+      },
+      { tag: `${tag}_${i + 1}`, fallback: undefined, logger: print }
+    )
+  }
 }
 
 function toRuntimeTerrainPiece(spec: LevelTerrainSpec): RuntimeTerrainPiece {
@@ -157,6 +179,10 @@ function createRuntimeTerrain(
       name
     )
     disableMirrorReflect(unit, `runtime_terrain_disable_mirror_${name}`)
+    if (moduleIndex === TENTH_LEVEL_TERRAIN_MODULE_INDEX && piece.name === TENTH_MIDDLE_PLATFORM_NAME) {
+      applyPaintColor(unit, TENTH_MIDDLE_PLATFORM_COLOR, `runtime_terrain_tenth_middle_blue_${name}`)
+      print(`[${TERRAIN_TAG}] tenth_middle_platform_color name=${name} color=${TENTH_MIDDLE_PLATFORM_COLOR}`)
+    }
     if (piece.compressor === true && unit !== null) {
       registerRuntimeCompressorPiece({
         name,

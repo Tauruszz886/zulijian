@@ -1,16 +1,11 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeInputStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeInput {
-  readonly node: EInputField
-  private readonly host: RuntimeUiHost
+/** 运行时输入框组件，封装 InputField 节点的文本缓存、显隐和触摸样式。 */
+export class RuntimeInput extends RuntimeUiComponentBase<EInputField> {
   private text = ""
-
-  constructor(host: RuntimeUiHost, node: EInputField) {
-    this.host = host
-    this.node = node
-  }
 
   setText(text: string): void {
     this.text = text

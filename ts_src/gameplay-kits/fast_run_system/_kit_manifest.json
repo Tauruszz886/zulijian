@@ -1,20 +1,25 @@
 {
   "kit": "fast_run_system",
   "version": "0.1.0",
-  "platformCommit": "00b767a109d0f1afc938ad29f914e5e6cf290fc8",
+  "platformCommit": "62a1da254e3ef070583f72d8183ef0754ee1720e",
   "source": "platform/gameplay-kits/fast_run_system",
   "sourceDir": "src",
   "targetDir": "ts_src/gameplay-kits/fast_run_system",
   "dependencies": [
-    "runtime_ui"
+    "runtime_ui",
+    "emath"
   ],
   "files": {
-    "FastRunAirDistance.ts": "5a96f44d6added61e7380dbf21237d4ff035d47cff4bbbd39ce470a89365446a",
-    "FastRunComponent.ts": "f199ab32b9895ce02d5bc194f6fd112a5e9b9cbf989ed45df10a1c91692cdf9b",
-    "FastRunExpression.ts": "3f39ecaa38b8be34e04cae71a87648d618922726ffc32551d6b8182c71d0a2a8",
-    "FastRunSystem.ts": "5836b2b4ab3a7f5fafab2ebc17e918163456ff5713ed8f92cba63acce66fae5f",
-    "FastRunTestDashboard.ts": "e3659942d80e32391fbfa77bb62f55001a0bf1c9403f2299e8fab38d6364abd3",
-    "index.ts": "8807d40e9bb6cc5d57f3397c69427c948dda0bbc446f8100b6652a5444e64c0e"
+    "component/FastRunComponent.ts": "39040438babdf234d649a2945897268bae33896a93fce38eba8a9dcde497c760",
+    "component/FastRunComponentOptions.ts": "16d01830e7c5add83b0f503e22e9b0b91245b110b3051b28ac47b04a8c132905",
+    "component/FastRunMotion.ts": "ccb688269bea3f333438dbb13e0a89fc811cc247866abaa85af661e8051d6acd",
+    "component/FastRunPhysics.ts": "8e273765bc1a9ddfed2a55e622da498a4f23e0c95282a47d6200284a354863e2",
+    "component/FastRunRaycast.ts": "d82d9ddda197a6655c9a62324725f92d546a11a85975cfba278c24031e21ad89",
+    "dashboard/FastRunTestDashboard.ts": "50728baa7a897184f2978c283ec7260b5735611cc4b825f6e15f0d8ae9e364d6",
+    "index.ts": "d71350fed2d3ce7e74c6be25835e7ae23688da3a71a9270f121803c8c59f042e",
+    "system/FastRunSystem.ts": "e0f4878c35a7687ff3cc3dfce46fc488dafc6255740505b7b9b63bf911f8f72d",
+    "utils/FastRunAirDistance.ts": "13800c9aa8d0f01a40f2df1de989ffbb452fa7041ac8a0bb993cc2fcf76cdd8d",
+    "utils/FastRunExpression.ts": "e092598ba49fc3d008edf0f895bbf1102d6283270214246d5ade77c800a7ef65"
   },
-  "installedAt": "2026-06-18T06:59:24.823500+00:00"
+  "installedAt": "2026-06-18T12:41:30.372908+00:00"
 }

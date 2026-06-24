@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeLabelStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeLabel {
-  readonly node: ELabel
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: ELabel) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时文本组件，封装 Label 节点的文本、显隐、字号、颜色和描边阴影样式。 */
+export class RuntimeLabel extends RuntimeUiComponentBase<ELabel> {
   setText(text: string): void {
     this.host.forEachRole((role) => {
       safeVoid(
@@ -38,6 +32,7 @@ export class RuntimeLabel {
       safeVoid(
         () => {
           role.set_ui_opacity(this.node, fixed(style?.opacity !== undefined ? style.opacity : 1))
+          if (style?.touchEnabled !== undefined) role.set_node_touch_enabled(this.node, style.touchEnabled)
           if (style?.fontSize !== undefined) role.set_label_font_size(this.node, style.fontSize, fixed(0))
           if (style?.color !== undefined) role.set_label_color(this.node, style.color, fixed(0))
           if (style?.backgroundColor !== undefined) role.set_label_background_color(this.node, style.backgroundColor, fixed(0))

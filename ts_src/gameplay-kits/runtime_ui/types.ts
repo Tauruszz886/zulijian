@@ -24,6 +24,24 @@ export type RuntimeUiRect = {
   height: number
 }
 
+export type RuntimeAutoLayoutValue = {
+  enabled?: boolean
+  isPercent?: boolean
+  value?: number
+}
+
+export type RuntimeAutoAdaptionOptions = {
+  left?: RuntimeAutoLayoutValue
+  right?: RuntimeAutoLayoutValue
+  top?: RuntimeAutoLayoutValue
+  bottom?: RuntimeAutoLayoutValue
+}
+
+export type RuntimeAutoCenterOptions = {
+  horizontal?: RuntimeAutoLayoutValue
+  vertical?: RuntimeAutoLayoutValue
+}
+
 export type RuntimeUiScopeOptions = {
   /** UI 挂载父节点。优先使用导出的 UINodes，避免运行时按名称查找失败。 */
   parentNode?: ENode
@@ -57,6 +75,7 @@ export type RuntimeLabelStyle = {
   fontSize?: integer
   color?: Color
   opacity?: number
+  touchEnabled?: boolean
   backgroundColor?: Color
   backgroundOpacity?: number
   outlineEnabled?: boolean
@@ -80,6 +99,11 @@ export type RuntimeButtonStyle = {
 }
 
 export type RuntimeAbilityButtonStyle = RuntimeButtonStyle
+
+export type LabelButtonStyle = {
+  buttonStyle?: RuntimeButtonStyle
+  labelStyle?: RuntimeLabelStyle
+}
 
 export type RuntimeBagSlotStyle = {
   opacity?: number

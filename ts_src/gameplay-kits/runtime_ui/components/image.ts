@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeImageStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeImage {
-  readonly node: EImage
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: EImage) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时图片组件，封装 Image 节点的显隐、贴图替换、颜色和透明度。 */
+export class RuntimeImage extends RuntimeUiComponentBase<EImage> {
   setVisible(visible: boolean): void {
     this.host.forEachRole((role) => {
       safeVoid(

@@ -2,7 +2,7 @@ import { safeCall, safeCreateCustomTriggerSpace, safeCreateObstacle } from "@com
 import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import { FIRST_LEVEL_TERRAIN_BASE_Y, FIRST_LEVEL_TERRAIN_HEIGHT } from "./runtime_config"
-import { returnUnitToBirth } from "./runtime_fall_return"
+import { eliminateUnitAndRebirthAtBirth } from "./runtime_rebirth"
 import { asFixed, getRuntimeFloorForModule, getRuntimeModuleCenterX } from "./runtime_layout"
 import { getOnlineRoles, roleKey } from "./runtime_roles"
 import { GAME_EVENTS } from "./utils/GameEvents"
@@ -17,7 +17,8 @@ const CHASE_RADIUS = 50
 const CHASE_SPEED = 20
 const TICK_SECONDS = 0.1
 const ROLL_RADIUS = CHASER_SIZE / 2
-const CHASER_BASE_Y = FIRST_LEVEL_TERRAIN_BASE_Y + FIRST_LEVEL_TERRAIN_HEIGHT + ROLL_RADIUS
+const CHASER_SURFACE_CLEARANCE = 0.15
+const CHASER_BASE_Y = FIRST_LEVEL_TERRAIN_BASE_Y + FIRST_LEVEL_TERRAIN_HEIGHT + ROLL_RADIUS + CHASER_SURFACE_CLEARANCE
 const CHASER_MASS = 1
 const CHASER_ACCELERATION_SECONDS = 0.2
 const CHASER_PUSH_FORCE = CHASER_MASS * (CHASE_SPEED / CHASER_ACCELERATION_SECONDS)
@@ -25,6 +26,7 @@ const CHASER_ROLL_TORQUE = CHASER_PUSH_FORCE * ROLL_RADIUS
 const STOP_DISTANCE = 0.4
 const HEIGHT_LOCK_TOLERANCE = 0.05
 const PHYSICS_MOVE_EPSILON = 0.1
+const RESET_HEIGHT_LOCK_DELAYS = [0.05, 0.2, 0.5] as const
 
 const SPHERE_MARK_LOCAL_X = 54.967105
 const SPHERE_MARK_LOCAL_Z = 51.164887
@@ -213,6 +215,46 @@ function setChaserPosition(pos: Position2): void {
         ;(chaserTrigger as any).set_position(vec3(pos.x, CHASER_BASE_Y, pos.z))
       },
       { tag: "second_chaser_set_trigger_position", fallback: undefined, logger: print }
+    )
+  }
+}
+
+function keepChaserGravityOff(source: string): void {
+  if (chaserUnit === null || chaserUnit === undefined) {
+    return
+  }
+  safeCall(
+    () => {
+      const target = chaserUnit as any
+      if (target.disable_gravity !== undefined && target.disable_gravity !== null) {
+        target.disable_gravity()
+      }
+    },
+    { tag: `second_chaser_disable_gravity_${source}`, fallback: undefined, logger: print }
+  )
+}
+
+function lockChaserOnSurface(pos: Position2, source: string): void {
+  stopChaserPhysics()
+  setChaserPosition(pos)
+  stopChaserPhysics()
+  keepChaserGravityOff(source)
+  print(`[${TAG}] lock_surface source=${source} pos=(${pos.x},${CHASER_BASE_Y},${pos.z}) clearance=${CHASER_SURFACE_CLEARANCE}`)
+}
+
+function scheduleResetHeightLocks(pos: Position2, source: string): void {
+  for (let i = 0; i < RESET_HEIGHT_LOCK_DELAYS.length; i++) {
+    const delay = RESET_HEIGHT_LOCK_DELAYS[i]!
+    safeCall(
+      () => {
+        ;(LuaAPI as any).call_delay_time(asFixed(delay), () => {
+          if (!started) {
+            return
+          }
+          lockChaserOnSurface(pos, `${source}_delay_${delay}`)
+        })
+      },
+      { tag: `second_chaser_reset_lock_delay_${i}`, fallback: undefined, logger: print }
     )
   }
 }
@@ -445,7 +487,7 @@ function registerChaserDeathTrigger(trigger: unknown): void {
   TriggerHub.register(
     [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
     (_eventName: unknown, _actor: unknown, data: unknown) => {
-      returnUnitToBirth(extractTriggerUnit(data), `second_chaser:${tostring(triggerId)}`)
+      eliminateUnitAndRebirthAtBirth(extractTriggerUnit(data), `second_chaser:${tostring(triggerId)}`)
     },
     {
       safe: true,
@@ -573,11 +615,12 @@ function resetSecondChaserToInitial(source: string): void {
   physicsDebugCount = 0
   tickGeneration += 1
   stopChaserPhysics()
-  setChaserPosition(startPos)
+  lockChaserOnSurface(startPos, `reset_${source}`)
+  scheduleResetHeightLocks(startPos, `reset_${source}`)
   print(`[${TAG}] reset_to_initial source=${source} pos=(${startPos.x},${CHASER_BASE_Y},${startPos.z})`)
   tick(tickGeneration)
 }
 
-EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+EventBus.on(GAME_EVENTS.PLAYER_DIED_TO_REBIRTH, (_unit: unknown, source: unknown) => {
   resetSecondChaserToInitial(tostring(source))
 })

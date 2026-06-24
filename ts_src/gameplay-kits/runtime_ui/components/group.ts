@@ -1,5 +1,6 @@
 import type { RuntimeUiComponent } from "../types"
 
+/** 运行时 UI 组件组，用于统一管理一组组件的显隐。 */
 export class RuntimeUiGroup {
   private readonly children: RuntimeUiComponent[] = []
 

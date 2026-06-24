@@ -2,7 +2,7 @@ import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
 import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import { TENTH_LEVEL_TERRAIN_MODULE_INDEX, type RuntimeTerrainPiece } from "./runtime_config"
-import { returnUnitToBirth } from "./runtime_fall_return"
+import { eliminateUnitAndRebirthAtBirth } from "./runtime_rebirth"
 import { asFixed } from "./runtime_layout"
 import { GAME_EVENTS } from "./utils/GameEvents"
 
@@ -95,7 +95,7 @@ function registerCurrentDeathEvent(part: TenthCurrentPart): void {
   TriggerHub.register(
     [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
     (_eventName: unknown, _actor: unknown, data: unknown) => {
-      returnUnitToBirth(extractTriggerUnit(data), `tenth_current:${part.name}:${tostring(triggerId)}`)
+      eliminateUnitAndRebirthAtBirth(extractTriggerUnit(data), `tenth_current:${part.name}:${tostring(triggerId)}`)
     },
     {
       safe: true,
@@ -265,7 +265,7 @@ function resetTenthCurrentToInitial(source: string): void {
   startTenthCurrentMechanism()
 }
 
-EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+EventBus.on(GAME_EVENTS.PLAYER_DIED_TO_REBIRTH, (_unit: unknown, source: unknown) => {
   resetTenthCurrentToInitial(tostring(source))
 })
 

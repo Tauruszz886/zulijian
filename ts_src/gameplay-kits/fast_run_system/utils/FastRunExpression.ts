@@ -1,16 +1,16 @@
 export type FastRunExpressionResult = {
   ok: boolean
-  value: number
+  value: Fixed
   error: string
 }
 
 class FastRunExpressionParser {
   private readonly text: string
-  private readonly speed: number
+  private readonly speed: Fixed
   private index = 0
   private error = ""
 
-  constructor(text: string, speed: number) {
+  constructor(text: string, speed: Fixed) {
     this.text = text
     this.speed = speed
   }
@@ -31,7 +31,7 @@ class FastRunExpressionParser {
     return { ok: true, value, error: "" }
   }
 
-  private parseAddSub(): number {
+  private parseAddSub(): Fixed {
     let value = this.parseMulDiv()
     while (this.error.length === 0) {
       this.skipSpaces()
@@ -44,7 +44,7 @@ class FastRunExpressionParser {
     return value
   }
 
-  private parseMulDiv(): number {
+  private parseMulDiv(): Fixed {
     let value = this.parseUnary()
     while (this.error.length === 0) {
       this.skipSpaces()
@@ -61,7 +61,7 @@ class FastRunExpressionParser {
     return value
   }
 
-  private parseUnary(): number {
+  private parseUnary(): Fixed {
     this.skipSpaces()
     const op = this.peek()
     if (op === "+") {
@@ -75,7 +75,7 @@ class FastRunExpressionParser {
     return this.parsePrimary()
   }
 
-  private parsePrimary(): number {
+  private parsePrimary(): Fixed {
     this.skipSpaces()
     const ch = this.peek()
     if (ch === "s" || ch === "S") {
@@ -98,7 +98,7 @@ class FastRunExpressionParser {
     return this.parseNumber()
   }
 
-  private parseNumber(): number {
+  private parseNumber(): Fixed {
     this.skipSpaces()
     const start = this.index
     let sawDigit = false
@@ -139,7 +139,7 @@ class FastRunExpressionParser {
         value = value + (c - 48) / fracDiv
       }
     }
-    return value
+    return value as Fixed
   }
 
   private skipSpaces(): void {
@@ -163,7 +163,7 @@ class FastRunExpressionParser {
     return this.text.charCodeAt(index)
   }
 
-  private isFiniteNumber(value: number): boolean {
+  private isFiniteNumber(value: Fixed): boolean {
     if (value !== value) return false
     const text = tostring(value)
     return text !== "inf" && text !== "-inf" && text !== "nan"
@@ -174,6 +174,6 @@ class FastRunExpressionParser {
   }
 }
 
-export function evaluateFastRunExpression(expression: string, speed: number): FastRunExpressionResult {
+export function evaluateFastRunExpression(expression: string, speed: Fixed): FastRunExpressionResult {
   return new FastRunExpressionParser(expression, speed).parse()
 }

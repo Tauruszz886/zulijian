@@ -1,0 +1,13 @@
+{
+  "kit": "emath",
+  "version": "0.1.0",
+  "platformCommit": "62a1da254e3ef070583f72d8183ef0754ee1720e",
+  "source": "platform/gameplay-kits/emath",
+  "sourceDir": "src",
+  "targetDir": "ts_src/gameplay-kits/emath",
+  "dependencies": [],
+  "files": {
+    "index.ts": "2c0d1f9b92bb110afedb00941ba4d1f0be4bbccf8766023ab7b986f2ae67e79b"
+  },
+  "installedAt": "2026-06-18T12:42:12.477241+00:00"
+}

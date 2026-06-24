@@ -89,7 +89,6 @@ export function startSystems(): void {
       parentNodeName: "画布1",
       x: DASHBOARD_CENTER_X,
       y: DASHBOARD_CENTER_Y,
-      opacity: DASHBOARD_OPACITY,
       maxSpeed: 1000,
     },
     logger: fastRunLogger,
@@ -105,7 +104,20 @@ export function enableFastRunDashboard(): void {
     print(`[${SPEED_TAG}] dashboard enable skipped system=nil`)
     return
   }
-  fastRunSystem.enableDashboard()
+  const system = fastRunSystem as unknown as {
+    testMode?: { enabled?: boolean }
+    enableTestMode?: () => void
+    updateDashboardLoop?: () => void
+  }
+  if (system.testMode !== undefined) {
+    system.testMode.enabled = true
+  }
+  if (system.enableTestMode !== undefined) {
+    system.enableTestMode()
+  }
+  if (system.updateDashboardLoop !== undefined) {
+    system.updateDashboardLoop()
+  }
   print(`[${SPEED_TAG}] dashboard enable requested`)
 }
 

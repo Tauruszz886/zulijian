@@ -1,13 +1,11 @@
 import { safeCall, safeCreateCustomTriggerSpace, safeCreateObstacle } from "@common/engine_safe"
 import { TriggerHub } from "@common/trigger_hub"
-import { TRIGGER_RETURN_TO_BIRTH_ENABLED } from "./runtime_config"
+import { eliminateUnitAndRebirthAtBirth } from "./runtime_rebirth"
 
 const TAG = "ZLJ_RUNTIME_MIDDLE_LAYER"
 const LAYER_PREFAB_ID = 105205
-const RETURN_TRIGGER_PREFAB_ID = 3101010
-const BIRTH_SPAWN_X = 949
-const BIRTH_SPAWN_Y = 8
-const BIRTH_SPAWN_Z = -36
+const HAZARD_TRIGGER_PREFAB_ID = 3101010
+const LAYER_COLOR = 0xff0000 as Color
 const LAYER_SY = 0.1
 const TRIGGER_SY = 0.1
 const MIDDLE_CHANNEL_CENTER_Y = 5
@@ -24,7 +22,9 @@ const GAP_DOWN_Y = CHANNEL_DOWN_Y
 const GAP_UP_Y = CHANNEL_UP_Y
 const MOVE_SECONDS = 2.5
 const MOVE_FRAMES = 40
-const HOLD_SECONDS = 0.4
+const UP_HOLD_SECONDS = 2
+const DOWN_HOLD_SECONDS = 0.4
+const PAINT_AREAS = [1, 2, 3, 4] as const
 
 export const FIFTH_MIDDLE_LAYER_CREATE_DELAY_SECONDS = 3.5
 
@@ -80,7 +80,6 @@ const SPECS: readonly MiddleLayerSpec[] = [
 let created = false
 let moving = false
 let parts: MiddleLayerPart[] = []
-const returnDebounce = new Map<string, boolean>()
 
 function fixed(v: number): Fixed {
   return (v + 0.1 - 0.1) as Fixed
@@ -119,6 +118,25 @@ function setPartY(part: MiddleLayerPart, y: number): void {
   }
 }
 
+function applyLayerColor(unit: unknown, name: string): void {
+  if (unit === null || unit === undefined) {
+    return
+  }
+  for (let i = 0; i < PAINT_AREAS.length; i++) {
+    const area = PAINT_AREAS[i]! as PaintArea
+    safeCall(
+      () => {
+        const target = unit as any
+        if (target.set_paint_area_color !== undefined && target.set_paint_area_color !== null) {
+          target.set_paint_area_color(area, LAYER_COLOR)
+        }
+      },
+      { tag: `middle_layer_color_${name}_${i + 1}`, fallback: undefined, logger: print }
+    )
+  }
+  print(`[${TAG}] color applied name=${name} color=${LAYER_COLOR}`)
+}
+
 function animate(toUp: boolean, done?: () => void): void {
   if (parts.length === 0) {
     if (done !== undefined) done()
@@ -145,11 +163,12 @@ function animate(toUp: boolean, done?: () => void): void {
 }
 
 function cycle(toUp: boolean): void {
+  const holdSeconds = toUp ? UP_HOLD_SECONDS : DOWN_HOLD_SECONDS
   print(
-    `[${TAG}] move begin direction=${toUp ? "up" : "down"} parts=${parts.length} gap_y=${toUp ? GAP_DOWN_Y : GAP_UP_Y}->${toUp ? GAP_UP_Y : GAP_DOWN_Y} channel_y=${toUp ? CHANNEL_DOWN_Y : CHANNEL_UP_Y}->${toUp ? CHANNEL_UP_Y : CHANNEL_DOWN_Y} seconds=${MOVE_SECONDS}`
+    `[${TAG}] move begin direction=${toUp ? "up" : "down"} parts=${parts.length} gap_y=${toUp ? GAP_DOWN_Y : GAP_UP_Y}->${toUp ? GAP_UP_Y : GAP_DOWN_Y} channel_y=${toUp ? CHANNEL_DOWN_Y : CHANNEL_UP_Y}->${toUp ? CHANNEL_UP_Y : CHANNEL_DOWN_Y} seconds=${MOVE_SECONDS} hold_after=${holdSeconds}`
   )
   animate(toUp, () => {
-    ;(LuaAPI as any).call_delay_time(fixed(HOLD_SECONDS), () => cycle(!toUp))
+    ;(LuaAPI as any).call_delay_time(fixed(holdSeconds), () => cycle(!toUp))
   })
 }
 
@@ -161,41 +180,18 @@ function startMove(moduleLabel: string): void {
     return
   }
   print(
-    `[${TAG}] move start module=${moduleLabel} parts=${parts.length} gap_y=${GAP_DOWN_Y}->${GAP_UP_Y} channel_y=${CHANNEL_DOWN_Y}->${CHANNEL_UP_Y} seconds=${MOVE_SECONDS} trigger_prefab=${RETURN_TRIGGER_PREFAB_ID}`
+    `[${TAG}] move start module=${moduleLabel} parts=${parts.length} gap_y=${GAP_DOWN_Y}->${GAP_UP_Y} channel_y=${CHANNEL_DOWN_Y}->${CHANNEL_UP_Y} seconds=${MOVE_SECONDS} up_hold=${UP_HOLD_SECONDS} down_hold=${DOWN_HOLD_SECONDS} trigger_prefab=${HAZARD_TRIGGER_PREFAB_ID}`
   )
   cycle(true)
 }
 
-function returnToBirth(unit: unknown, source: string): void {
-  if (!TRIGGER_RETURN_TO_BIRTH_ENABLED) {
-    print(`[${TAG}] return disabled source=${source}`)
-    return
-  }
-  if (unit === null || unit === undefined) {
-    print(`[${TAG}] return skipped source=${source} unit=nil`)
-    return
-  }
-  const key = tostring(unit)
-  if (returnDebounce.get(key) === true) return
-  returnDebounce.set(key, true)
-  safeCall(
-    () => {
-      ;(unit as any).set_position(vec3(BIRTH_SPAWN_X, BIRTH_SPAWN_Y, BIRTH_SPAWN_Z))
-    },
-    { tag: `middle_layer_return_${source}`, fallback: undefined, logger: print }
-  )
-  print(`[${TAG}] return_to_birth source=${source} unit=${key} pos=(${BIRTH_SPAWN_X},${BIRTH_SPAWN_Y},${BIRTH_SPAWN_Z})`)
-  TriggerHub.register([EVENT.TIMEOUT, 1], () => returnDebounce.delete(key), {
-    safe: true,
-    safeCallback: true,
-    tag: `middle_layer_return_debounce_${key}`,
-    logger: print,
-  })
+function eliminateToBirthRebirth(unit: unknown, source: string): void {
+  eliminateUnitAndRebirthAtBirth(unit, `middle_layer:${source}`)
 }
 
 function handleTriggerData(data: unknown, source: string): void {
   const eventData = data as { event_unit?: unknown; unit?: unknown } | undefined
-  returnToBirth(eventData?.event_unit !== undefined ? eventData.event_unit : eventData?.unit, source)
+  eliminateToBirthRebirth(eventData?.event_unit !== undefined ? eventData.event_unit : eventData?.unit, source)
 }
 
 function registerReturnTrigger(trigger: unknown, name: string): void {
@@ -213,7 +209,7 @@ function registerReturnTrigger(trigger: unknown, name: string): void {
     TriggerHub.register(
       [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
       (_eventName: unknown, _actor: unknown, data: unknown) => handleTriggerData(data, `global:${name}:${tostring(triggerId)}`),
-      { safe: true, safeCallback: true, tag: `middle_layer_return_global_${name}`, logger: print }
+      { safe: true, safeCallback: true, tag: `middle_layer_hazard_${name}`, logger: print }
     )
   }
   print(`[${TAG}] trigger registered name=${name} trigger=${tostring(trigger)} id=${tostring(triggerId)}`)
@@ -228,7 +224,7 @@ export function createFifthMiddleLayer(options: CreateOptions): void {
   const moduleMinX = options.moduleCenterX - options.floor.sx / 2
   const moduleMinZ = options.floor.z - options.floor.sz / 2
   print(
-    `[${TAG}] create begin module=${options.moduleLabel} parts=${SPECS.length} layer_prefab=${LAYER_PREFAB_ID} trigger_prefab=${RETURN_TRIGGER_PREFAB_ID} gap_y=${GAP_DOWN_Y}->${GAP_UP_Y} channel_y=${CHANNEL_DOWN_Y}->${CHANNEL_UP_Y} move_seconds=${MOVE_SECONDS}`
+    `[${TAG}] create begin module=${options.moduleLabel} parts=${SPECS.length} layer_prefab=${LAYER_PREFAB_ID} trigger_prefab=${HAZARD_TRIGGER_PREFAB_ID} gap_y=${GAP_DOWN_Y}->${GAP_UP_Y} channel_y=${CHANNEL_DOWN_Y}->${CHANNEL_UP_Y} move_seconds=${MOVE_SECONDS}`
   )
   for (let i = 0; i < SPECS.length; i++) {
     const spec = SPECS[i]!
@@ -244,11 +240,12 @@ export function createFifthMiddleLayer(options: CreateOptions): void {
       { tag: `middle_layer_create_${name}`, logger: print }
     )
     const trigger = safeCreateCustomTriggerSpace(
-      RETURN_TRIGGER_PREFAB_ID,
+      HAZARD_TRIGGER_PREFAB_ID,
       vec3(x, triggerY(downY), z),
       vec3(spec.sx, TRIGGER_SY, spec.sz),
       { tag: `middle_layer_trigger_create_${name}`, logger: print }
     )
+    applyLayerColor(unit, name)
     registerReturnTrigger(trigger, name)
     if (unit !== null && unit !== undefined) {
       parts.push({ name, unit, trigger, x, z, downY, upY })

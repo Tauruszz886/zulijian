@@ -228,6 +228,6 @@ export function startThirdLevelMechanism(): void {
   )
 }
 
-EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+EventBus.on(GAME_EVENTS.PLAYER_DIED_TO_REBIRTH, (_unit: unknown, source: unknown) => {
   resetThirdLevelPlatformsToInitial(tostring(source))
 })

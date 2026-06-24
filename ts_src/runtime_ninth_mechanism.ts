@@ -246,6 +246,6 @@ function resetNinthLevelPlatformsToInitial(source: string): void {
   print(`[${TAG}] reset_to_initial source=${source} platforms=${platforms.length}`)
 }
 
-EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+EventBus.on(GAME_EVENTS.PLAYER_DIED_TO_REBIRTH, (_unit: unknown, source: unknown) => {
   resetNinthLevelPlatformsToInitial(tostring(source))
 })

@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeProgressTimerStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeProgressTimer {
-  readonly node: EProgressbar
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: EProgressbar) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时环形/计时进度组件，封装 ProgressTimer 节点的范围、当前值、动画值和触摸样式。 */
+export class RuntimeProgressTimer extends RuntimeUiComponentBase<EProgressbar> {
   setRange(min: integer, max: integer): void {
     this.host.forEachRole((role) => {
       safeVoid(

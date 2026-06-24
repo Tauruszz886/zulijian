@@ -12,7 +12,9 @@ import { RuntimeListView } from "../components/list_view"
 import { RuntimeNode } from "../components/node"
 import { RuntimeProgressBar } from "../components/progress_bar"
 import { RuntimeProgressTimer } from "../components/progress_timer"
+import { LabelButton } from "../composites/label_button"
 import type {
+  LabelButtonStyle,
   RuntimeAbilityButtonStyle,
   RuntimeBagSlotStyle,
   RuntimeButtonStyle,
@@ -43,7 +45,7 @@ const DEFAULT_RUNTIME_UI_TOUCH_EVENT_TYPE = 1 as ENodeTouchEventType
  *
  * 重要运行时经验：不要在 main.lua 刚加载时立刻创建 EUI。
  * 实测此时 create_eui_* 可能返回了节点句柄，但画面不渲染。
- * 使用方应在首帧之后创建，例如用 LuaAPI.call_delay_time(math.tofixed(1), ...) 延迟启动 UI。
+ * 使用方应在首帧之后创建，例如用 LuaAPI.call_delay_frame(1, ...) 延迟一帧启动 UI。
  */
 export class RuntimeUiScope {
   private readonly options: RuntimeUiScopeOptions
@@ -224,6 +226,31 @@ export class RuntimeUiScope {
     button.applyStyle(style)
     button.setVisible(true)
     return button
+  }
+
+  createLabelButton(
+    name: string,
+    rect: RuntimeUiRect,
+    text: string,
+    style?: LabelButtonStyle,
+  ): LabelButton | null {
+    const button = this.createButton(`${name}_button`, rect, "", style?.buttonStyle)
+    if (button === null) return null
+
+    const labelRect = {
+      x: rect.x,
+      y: rect.y,
+      width: rect.width + 18,
+      height: rect.height + 6,
+    }
+    const label = this.createLabel(`${name}_label`, labelRect, text, {
+      ...(style?.labelStyle !== undefined ? style.labelStyle : {}),
+      touchEnabled: false,
+      backgroundOpacity: style?.labelStyle?.backgroundOpacity !== undefined ? style.labelStyle.backgroundOpacity : 0,
+    })
+    if (label === null) return null
+
+    return new LabelButton(button, label)
   }
 
   createAbilityButton(

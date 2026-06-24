@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeNodeStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeNode {
-  readonly node: ENode
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: ENode) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时通用节点组件，封装任意 ENode 的显隐、透明度和触摸开关。 */
+export class RuntimeNode extends RuntimeUiComponentBase {
   setVisible(visible: boolean): void {
     this.host.forEachRole((role) => {
       safeVoid(

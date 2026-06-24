@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeEffectStyle, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeEffect {
-  readonly node: EEffectNode
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: EEffectNode) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时 UI 动效组件，封装特效节点的播放、停止、重置和基础显示样式。 */
+export class RuntimeEffect extends RuntimeUiComponentBase<EEffectNode> {
   play(): void {
     this.host.forEachRole((role) => {
       safeVoid(

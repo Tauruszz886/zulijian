@@ -12,7 +12,7 @@ import {
   FOURTH_LEVEL_COMPRESSOR_WAIT_SECONDS,
   FOURTH_LEVEL_PRESS_PLATE_FLOAT_GAP,
 } from "./runtime_config"
-import { returnUnitToBirth } from "./runtime_fall_return"
+import { eliminateUnitAndRebirthAtBirth } from "./runtime_rebirth"
 import { asFixed } from "./runtime_layout"
 import { GAME_EVENTS } from "./utils/GameEvents"
 
@@ -78,7 +78,7 @@ function registerRuntimeCompressorDeathEvent(piece: RuntimeCompressorPiece): voi
   TriggerHub.register(
     [EVENT.ANY_LIFEENTITY_TRIGGER_SPACE, Enums.TriggerSpaceEventType.ENTER, triggerId],
     (_eventName: unknown, _actor: unknown, data: unknown) => {
-      returnUnitToBirth(extractTriggerUnit(data), `compressor:${piece.name}:${tostring(triggerId)}`)
+      eliminateUnitAndRebirthAtBirth(extractTriggerUnit(data), `compressor:${piece.name}:${tostring(triggerId)}`)
     },
     {
       safe: true,
@@ -274,6 +274,6 @@ function resetRuntimeCompressorsToInitial(source: string): void {
   startRuntimeCompressors()
 }
 
-EventBus.on(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, (_unit: unknown, source: unknown) => {
+EventBus.on(GAME_EVENTS.PLAYER_DIED_TO_REBIRTH, (_unit: unknown, source: unknown) => {
   resetRuntimeCompressorsToInitial(tostring(source))
 })

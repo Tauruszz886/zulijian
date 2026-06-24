@@ -1,16 +1,10 @@
 import { safeVoid } from "@common/engine_safe"
 import type { RuntimeAbilityButtonStyle, RuntimeUiClickHandler, RuntimeUiClickOptions, RuntimeUiHost } from "../types"
 import { fixed, scopedLogger } from "../utils"
+import { RuntimeUiComponentBase } from "./base"
 
-export class RuntimeAbilityButton {
-  readonly node: EButton
-  private readonly host: RuntimeUiHost
-
-  constructor(host: RuntimeUiHost, node: EButton) {
-    this.host = host
-    this.node = node
-  }
-
+/** 运行时技能按钮组件，封装引擎 AbilityButton 的文本、显隐、点击和基础样式。 */
+export class RuntimeAbilityButton extends RuntimeUiComponentBase<EButton> {
   setText(text: string): void {
     this.host.forEachRole((role) => {
       safeVoid(

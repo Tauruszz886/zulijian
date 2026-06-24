@@ -1,15 +1,16 @@
 import { TriggerHub } from "@common/trigger_hub"
+import { EMath } from "../../emath"
 import {
-  RuntimeButton,
+  LabelButton,
   RuntimeImage,
   RuntimeLabel,
   RuntimeUiGroup,
   RuntimeUiScope,
-  type RuntimeButtonStyle,
+  type LabelButtonStyle,
   type RuntimeLabelStyle,
-} from "../runtime_ui"
-import { calculateFastRunMaxAirMoveDistance } from "./FastRunAirDistance"
-import { evaluateFastRunExpression } from "./FastRunExpression"
+} from "../../runtime_ui"
+import { calculateFastRunMaxAirMoveDistance } from "../utils/FastRunAirDistance"
+import { evaluateFastRunExpression } from "../utils/FastRunExpression"
 
 type FastRunExpressionTarget =
   | "groundAcceleration"
@@ -21,7 +22,7 @@ type FastRunHangTimeTestState = "idle" | "waiting" | "recording"
 
 type FastRunExpressionButton = {
   target: FastRunExpressionTarget
-  button: RuntimeButton
+  button: LabelButton
 }
 
 type FastRunKeypadButtonSpec = {
@@ -35,57 +36,57 @@ export type FastRunDashboardComponents = {
   group: RuntimeUiGroup
   background: RuntimeImage
   titleLabel: RuntimeLabel
-  rayDebugButton: RuntimeButton
+  rayDebugButton: LabelButton
   currentSpeedLabel: RuntimeLabel
   speedLabel: RuntimeLabel
-  speedMinus10Button: RuntimeButton
-  speedMinus1Button: RuntimeButton
+  speedMinus10Button: LabelButton
+  speedMinus1Button: LabelButton
   speedValueLabel: RuntimeLabel
-  speedPlus1Button: RuntimeButton
-  speedPlus10Button: RuntimeButton
+  speedPlus1Button: LabelButton
+  speedPlus10Button: LabelButton
   activeExpressionLabel: RuntimeLabel
   groundAccelerationLabel: RuntimeLabel
-  groundAccelerationButton: RuntimeButton
+  groundAccelerationButton: LabelButton
   groundDecelerationLabel: RuntimeLabel
-  groundDecelerationButton: RuntimeButton
+  groundDecelerationButton: LabelButton
   airAccelerationLabel: RuntimeLabel
-  airAccelerationButton: RuntimeButton
+  airAccelerationButton: LabelButton
   airDecelerationLabel: RuntimeLabel
-  airDecelerationButton: RuntimeButton
+  airDecelerationButton: LabelButton
   airHangTimeLabel: RuntimeLabel
-  airHangTimeButton: RuntimeButton
-  airHangTestButton: RuntimeButton
+  airHangTimeButton: LabelButton
+  airHangTestButton: LabelButton
   airHangTestLabel: RuntimeLabel
   theoreticalAirDistanceLabel: RuntimeLabel
   testedAirDistanceLabel: RuntimeLabel
   expressionButtons: FastRunExpressionButton[]
-  keypadButtons: RuntimeButton[]
+  keypadButtons: LabelButton[]
 }
 
 export type FastRunTestDashboardCallbacks = {
-  getCurrentSpeed: (this: void) => number
-  getMaxSpeed: (this: void) => number
-  setMaxSpeed: (this: void, speed: number) => void
-  getGroundAcceleration: (this: void) => number
-  setGroundAcceleration: (this: void, groundAcceleration: number) => void
+  getCurrentSpeed: (this: void) => Fixed
+  getMaxSpeed: (this: void) => Fixed
+  setMaxSpeed: (this: void, speed: Fixed) => void
+  getGroundAcceleration: (this: void) => Fixed
+  setGroundAcceleration: (this: void, groundAcceleration: Fixed) => void
   getGroundAccelerationExpression: (this: void) => string
   setGroundAccelerationExpression: (this: void, expression: string) => boolean
-  getGroundDeceleration: (this: void) => number
-  setGroundDeceleration: (this: void, groundDeceleration: number) => void
+  getGroundDeceleration: (this: void) => Fixed
+  setGroundDeceleration: (this: void, groundDeceleration: Fixed) => void
   getGroundDecelerationExpression: (this: void) => string
   setGroundDecelerationExpression: (this: void, expression: string) => boolean
-  getAirAcceleration: (this: void) => number
-  setAirAcceleration: (this: void, airAcceleration: number) => void
+  getAirAcceleration: (this: void) => Fixed
+  setAirAcceleration: (this: void, airAcceleration: Fixed) => void
   getAirAccelerationExpression: (this: void) => string
   setAirAccelerationExpression: (this: void, expression: string) => boolean
-  getAirDeceleration: (this: void) => number
-  setAirDeceleration: (this: void, airDeceleration: number) => void
+  getAirDeceleration: (this: void) => Fixed
+  setAirDeceleration: (this: void, airDeceleration: Fixed) => void
   getAirDecelerationExpression: (this: void) => string
   setAirDecelerationExpression: (this: void, expression: string) => boolean
   isRayDebugEnabled: (this: void) => boolean
   setRayDebugEnabled: (this: void, enabled: boolean) => void
   isGrounded: (this: void) => boolean
-  getTickSeconds: (this: void) => number
+  getTickSeconds: (this: void) => Fixed
   logger: (this: void, msg: string) => void
 }
 
@@ -113,8 +114,6 @@ export type FastRunSystemTestModeOptions = {
   x?: number
   /** 面板中心 Y。 */
   y?: number
-  /** 面板整体透明度，1 为不透明，0.5 为 50%。 */
-  opacity?: number
   /** 标题字号。 */
   titleFontSize?: integer
   /** 普通文本字号。 */
@@ -122,11 +121,11 @@ export type FastRunSystemTestModeOptions = {
   /** 按钮文字字号。 */
   buttonFontSize?: number
   /** 测试面板允许设置的最大速度下限。 */
-  minSpeed?: number
+  minSpeed?: Fixed
   /** 测试面板允许设置的最大速度上限。 */
-  maxSpeed?: number
+  maxSpeed?: Fixed
   /** 测试面板初始滞留时间，单位秒。 */
-  airHangTimeSeconds?: number
+  airHangTimeSeconds?: Fixed
 }
 
 export const DEFAULT_FAST_RUN_TEST_MODE_OPTIONS: FastRunSystemTestModeOptions = {
@@ -135,14 +134,13 @@ export const DEFAULT_FAST_RUN_TEST_MODE_OPTIONS: FastRunSystemTestModeOptions = 
   labelStyleKey: 0 as LabelStyleKey,
   backgroundImageKey: 16941 as ImageKey,
   touchEventType: 1 as ENodeTouchEventType,
-  x: 960,
+  x: 340,
   y: 920,
-  opacity: 1,
   titleFontSize: 24 as integer,
   bodyFontSize: 18 as integer,
   buttonFontSize: 20,
   minSpeed: 0,
-  maxSpeed: 60,
+  maxSpeed: 120,
   airHangTimeSeconds: 0,
 }
 
@@ -186,9 +184,11 @@ const KEYPAD_BUTTON_WIDTH = 72
 const KEYPAD_BUTTON_HEIGHT = 38
 const KEYPAD_COLUMN_GAP = 78
 const MAX_EXPRESSION_LENGTH = 28
-const MAX_AIR_HANG_TIME_SECONDS = 60
+const MAX_AIR_HANG_TIME_SECONDS = 60 as Fixed
 const UI_TEXT_WHITE = 0xffffff as Color
 const UI_TEXT_BLACK = 0x000000 as Color
+const DASHBOARD_BACKGROUND_OPACITY = 0.62
+const DASHBOARD_BUTTON_OPACITY = 0.78
 
 const KEYPAD_BUTTONS: FastRunKeypadButtonSpec[] = [
   { tag: "s", text: "s", action: "append", value: "s" },
@@ -220,12 +220,6 @@ const EXPRESSION_TARGET_NAMES: Record<FastRunExpressionTarget, string> = {
   airHangTime: "滞留时间",
 }
 
-function clampNumber(value: number, minValue: number, maxValue: number): number {
-  if (value < minValue) return minValue
-  if (value > maxValue) return maxValue
-  return value
-}
-
 export function resolveFastRunTestModeOptions(options?: FastRunSystemTestModeOptions): FastRunSystemTestModeOptions {
   const base = DEFAULT_FAST_RUN_TEST_MODE_OPTIONS
   return {
@@ -240,7 +234,6 @@ export function resolveFastRunTestModeOptions(options?: FastRunSystemTestModeOpt
       options?.touchEventType !== undefined ? options.touchEventType : (base.touchEventType as ENodeTouchEventType),
     x: options?.x !== undefined ? options.x : base.x,
     y: options?.y !== undefined ? options.y : base.y,
-    opacity: options?.opacity !== undefined ? options.opacity : base.opacity,
     titleFontSize: options?.titleFontSize !== undefined ? options.titleFontSize : base.titleFontSize,
     bodyFontSize: options?.bodyFontSize !== undefined ? options.bodyFontSize : base.bodyFontSize,
     buttonFontSize: options?.buttonFontSize !== undefined ? options.buttonFontSize : base.buttonFontSize,
@@ -263,15 +256,15 @@ export class FastRunTestDashboard {
   private airAccelerationDraft = ""
   private airDecelerationDraft = ""
   private airHangTimeDraft = ""
-  private airHangTimeSeconds = 0
-  private measuredAirHangTimeSeconds = 0
-  private hangTimeRecordingSeconds = 0
+  private airHangTimeSeconds: Fixed = 0
+  private measuredAirHangTimeSeconds: Fixed = 0
+  private hangTimeRecordingSeconds: Fixed = 0
   private hangTimeTestState: FastRunHangTimeTestState = "idle"
 
   constructor(options: FastRunSystemTestModeOptions, callbacks: FastRunTestDashboardCallbacks) {
     this.options = options
     this.callbacks = callbacks
-    this.airHangTimeSeconds = clampNumber(
+    this.airHangTimeSeconds = EMath.clamp(
       options.airHangTimeSeconds !== undefined ? options.airHangTimeSeconds : 0,
       0,
       MAX_AIR_HANG_TIME_SECONDS,
@@ -367,12 +360,11 @@ export class FastRunTestDashboard {
     const titleStyle = this.createLabelStyle(this.options.titleFontSize as integer)
     const bodyStyle = this.createLabelStyle(this.options.bodyFontSize as integer)
     const buttonStyle = this.createButtonStyle()
-    const opacity = this.getOpacity()
     const background = uiScope.createImage(
       `fast_run_dashboard_bg_${suffix}`,
       { x, y, width: PANEL_WIDTH, height: PANEL_HEIGHT },
       backgroundImageKey,
-      { opacity },
+      { opacity: DASHBOARD_BACKGROUND_OPACITY },
     )
     const titleLabel = uiScope.createLabel(
       `fast_run_dashboard_title_${suffix}`,
@@ -380,7 +372,7 @@ export class FastRunTestDashboard {
       TITLE_TEXT,
       titleStyle,
     )
-    const rayDebugButton = uiScope.createButton(
+    const rayDebugButton = uiScope.createLabelButton(
       `fast_run_dashboard_ray_debug_${suffix}`,
       { x: x + RAY_BUTTON_OFFSET_X, y: y + RAY_BUTTON_OFFSET_Y, width: 94, height: 38 },
       this.callbacks.isRayDebugEnabled() ? "射线开" : "射线关",
@@ -398,13 +390,13 @@ export class FastRunTestDashboard {
       "最大速度",
       bodyStyle,
     )
-    const speedMinus10Button = uiScope.createButton(
+    const speedMinus10Button = uiScope.createLabelButton(
       `fast_run_dashboard_speed_minus_10_${suffix}`,
       { x: x + MINUS_10_OFFSET_X, y: y + SPEED_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
       "-10",
       buttonStyle,
     )
-    const speedMinus1Button = uiScope.createButton(
+    const speedMinus1Button = uiScope.createLabelButton(
       `fast_run_dashboard_speed_minus_1_${suffix}`,
       { x: x + MINUS_1_OFFSET_X, y: y + SPEED_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
       "-1",
@@ -416,13 +408,13 @@ export class FastRunTestDashboard {
       this.formatNumber(this.callbacks.getMaxSpeed()),
       bodyStyle,
     )
-    const speedPlus1Button = uiScope.createButton(
+    const speedPlus1Button = uiScope.createLabelButton(
       `fast_run_dashboard_speed_plus_1_${suffix}`,
       { x: x + PLUS_1_OFFSET_X, y: y + SPEED_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
       "+1",
       buttonStyle,
     )
-    const speedPlus10Button = uiScope.createButton(
+    const speedPlus10Button = uiScope.createLabelButton(
       `fast_run_dashboard_speed_plus_10_${suffix}`,
       { x: x + PLUS_10_OFFSET_X, y: y + SPEED_ROW_OFFSET_Y, width: STEP_BUTTON_WIDTH, height: STEP_BUTTON_HEIGHT },
       "+10",
@@ -441,7 +433,7 @@ export class FastRunTestDashboard {
       bodyStyle,
     )
     this.groundAccelerationDraft = this.callbacks.getGroundAccelerationExpression()
-    const groundAccelerationButton = uiScope.createButton(
+    const groundAccelerationButton = uiScope.createLabelButton(
       `fast_run_dashboard_ground_accel_value_${suffix}`,
       {
         x: x + EXPRESSION_BUTTON_OFFSET_X,
@@ -459,7 +451,7 @@ export class FastRunTestDashboard {
       bodyStyle,
     )
     this.groundDecelerationDraft = this.callbacks.getGroundDecelerationExpression()
-    const groundDecelerationButton = uiScope.createButton(
+    const groundDecelerationButton = uiScope.createLabelButton(
       `fast_run_dashboard_ground_decel_value_${suffix}`,
       {
         x: x + EXPRESSION_BUTTON_OFFSET_X,
@@ -477,7 +469,7 @@ export class FastRunTestDashboard {
       bodyStyle,
     )
     this.airAccelerationDraft = this.callbacks.getAirAccelerationExpression()
-    const airAccelerationButton = uiScope.createButton(
+    const airAccelerationButton = uiScope.createLabelButton(
       `fast_run_dashboard_air_accel_value_${suffix}`,
       {
         x: x + EXPRESSION_BUTTON_OFFSET_X,
@@ -495,7 +487,7 @@ export class FastRunTestDashboard {
       bodyStyle,
     )
     this.airDecelerationDraft = this.callbacks.getAirDecelerationExpression()
-    const airDecelerationButton = uiScope.createButton(
+    const airDecelerationButton = uiScope.createLabelButton(
       `fast_run_dashboard_air_decel_value_${suffix}`,
       {
         x: x + EXPRESSION_BUTTON_OFFSET_X,
@@ -513,7 +505,7 @@ export class FastRunTestDashboard {
       bodyStyle,
     )
     this.airHangTimeDraft = this.formatNumber(this.airHangTimeSeconds)
-    const airHangTimeButton = uiScope.createButton(
+    const airHangTimeButton = uiScope.createLabelButton(
       `fast_run_dashboard_air_hang_value_${suffix}`,
       {
         x: x + EXPRESSION_BUTTON_OFFSET_X,
@@ -524,7 +516,7 @@ export class FastRunTestDashboard {
       this.createExpressionButtonText("airHangTime"),
       buttonStyle,
     )
-    const airHangTestButton = uiScope.createButton(
+    const airHangTestButton = uiScope.createLabelButton(
       `fast_run_dashboard_air_hang_test_${suffix}`,
       { x: x + CAPTION_OFFSET_X, y: y + AIR_HANG_TEST_ROW_OFFSET_Y, width: 118, height: 38 },
       this.createAirHangTestButtonText(),
@@ -549,14 +541,14 @@ export class FastRunTestDashboard {
       bodyStyle,
     )
 
-    const keypadButtons: RuntimeButton[] = []
+    const keypadButtons: LabelButton[] = []
     for (let i = 0; i < KEYPAD_BUTTONS.length; i++) {
       const spec = KEYPAD_BUTTONS[i]
       const col = i % 4
       const row = math.floor(i / 4)
       const width = spec.action === "confirm" ? KEYPAD_BUTTON_WIDTH * 2 + 6 : KEYPAD_BUTTON_WIDTH
       const offsetX = -117 + col * KEYPAD_COLUMN_GAP + (spec.action === "confirm" ? KEYPAD_COLUMN_GAP / 2 : 0)
-      const button = uiScope.createButton(
+      const button = uiScope.createLabelButton(
         `fast_run_dashboard_key_${spec.tag}_${suffix}`,
         {
           x: x + offsetX,
@@ -575,11 +567,11 @@ export class FastRunTestDashboard {
     }
 
     const expressionButtons: FastRunExpressionButton[] = [
-      { target: "groundAcceleration", button: groundAccelerationButton as RuntimeButton },
-      { target: "groundDeceleration", button: groundDecelerationButton as RuntimeButton },
-      { target: "airAcceleration", button: airAccelerationButton as RuntimeButton },
-      { target: "airDeceleration", button: airDecelerationButton as RuntimeButton },
-      { target: "airHangTime", button: airHangTimeButton as RuntimeButton },
+      { target: "groundAcceleration", button: groundAccelerationButton as LabelButton },
+      { target: "groundDeceleration", button: groundDecelerationButton as LabelButton },
+      { target: "airAcceleration", button: airAccelerationButton as LabelButton },
+      { target: "airDeceleration", button: airDecelerationButton as LabelButton },
+      { target: "airHangTime", button: airHangTimeButton as LabelButton },
     ]
 
     if (
@@ -689,10 +681,10 @@ export class FastRunTestDashboard {
     components.group.setVisible(visible)
   }
 
-  private changeSpeed(delta: number): void {
+  private changeSpeed(delta: Fixed): void {
     const minSpeed = this.options.minSpeed !== undefined ? this.options.minSpeed : 0
-    const maxSpeed = this.options.maxSpeed !== undefined ? this.options.maxSpeed : 60
-    this.callbacks.setMaxSpeed(clampNumber(this.callbacks.getMaxSpeed() + delta, minSpeed, maxSpeed))
+    const maxSpeed = this.options.maxSpeed !== undefined ? this.options.maxSpeed : 120
+    this.callbacks.setMaxSpeed(EMath.clamp(this.callbacks.getMaxSpeed() + delta, minSpeed, maxSpeed))
   }
 
   private toggleRayDebug(): void {
@@ -702,15 +694,15 @@ export class FastRunTestDashboard {
   private toggleAirHangTimeTest(): void {
     if (this.hangTimeTestState !== "idle") {
       this.hangTimeTestState = "idle"
-      this.hangTimeRecordingSeconds = 0
+      this.hangTimeRecordingSeconds = 0 as Fixed
       this.log("[FastRunSystemTestMode] air hang test canceled")
       this.updateValues()
       return
     }
 
     this.hangTimeTestState = "waiting"
-    this.hangTimeRecordingSeconds = 0
-    this.measuredAirHangTimeSeconds = 0
+    this.hangTimeRecordingSeconds = 0 as Fixed
+    this.measuredAirHangTimeSeconds = 0 as Fixed
     this.log("[FastRunSystemTestMode] air hang test waiting")
     this.updateValues()
   }
@@ -720,7 +712,7 @@ export class FastRunTestDashboard {
     if (this.hangTimeTestState === "waiting") {
       if (grounded) return
       this.hangTimeTestState = "recording"
-      this.hangTimeRecordingSeconds = 0
+      this.hangTimeRecordingSeconds = 0 as Fixed
       this.log("[FastRunSystemTestMode] air hang test started")
     }
 
@@ -732,7 +724,7 @@ export class FastRunTestDashboard {
       return
     }
 
-    this.hangTimeRecordingSeconds = clampNumber(
+    this.hangTimeRecordingSeconds = EMath.clamp(
       this.hangTimeRecordingSeconds + this.callbacks.getTickSeconds(),
       0,
       MAX_AIR_HANG_TIME_SECONDS,
@@ -753,7 +745,7 @@ export class FastRunTestDashboard {
     return `测试滞留 ${this.formatNumber(this.measuredAirHangTimeSeconds)}s`
   }
 
-  private calculateTheoreticalAirMoveDistance(): number {
+  private calculateTheoreticalAirMoveDistance(): Fixed {
     return calculateFastRunMaxAirMoveDistance({
       maxSpeed: this.callbacks.getMaxSpeed(),
       airAcceleration: this.callbacks.getAirAcceleration(),
@@ -761,7 +753,7 @@ export class FastRunTestDashboard {
     })
   }
 
-  private calculateTestedAirMoveDistance(): number {
+  private calculateTestedAirMoveDistance(): Fixed {
     const hangTimeSeconds =
       this.hangTimeTestState === "recording" ? this.hangTimeRecordingSeconds : this.measuredAirHangTimeSeconds
     return calculateFastRunMaxAirMoveDistance({
@@ -825,7 +817,7 @@ export class FastRunTestDashboard {
     if (!this.hasSpeedSymbol(draft)) {
       const result = evaluateFastRunExpression(draft, 0)
       if (result.ok) {
-        this.airHangTimeSeconds = clampNumber(result.value, 0, MAX_AIR_HANG_TIME_SECONDS)
+        this.airHangTimeSeconds = EMath.clamp(result.value, 0, MAX_AIR_HANG_TIME_SECONDS)
         ok = true
       }
     }
@@ -855,15 +847,13 @@ export class FastRunTestDashboard {
   }
 
   private createLabelStyle(fontSize: integer): RuntimeLabelStyle {
-    const opacity = this.getOpacity()
     return {
       fontSize,
       color: UI_TEXT_WHITE,
-      opacity,
       backgroundOpacity: 0,
       outlineEnabled: true,
       outlineColor: UI_TEXT_BLACK,
-      outlineOpacity: opacity,
+      outlineOpacity: 1,
       outlineWidth: 2,
       shadowEnabled: true,
       shadowColor: UI_TEXT_BLACK,
@@ -872,21 +862,23 @@ export class FastRunTestDashboard {
     }
   }
 
-  private createButtonStyle(): RuntimeButtonStyle {
+  private createButtonStyle(): LabelButtonStyle {
     return {
-      fontSize: this.options.buttonFontSize !== undefined ? this.options.buttonFontSize : 20,
-      textColor: UI_TEXT_WHITE,
-      opacity: this.getOpacity(),
-      enabled: true,
-      touchEnabled: true,
+      buttonStyle: {
+        normalImageKey: this.options.backgroundImageKey as ImageKey,
+        pressedImageKey: this.options.backgroundImageKey as ImageKey,
+        opacity: DASHBOARD_BUTTON_OPACITY,
+        enabled: true,
+        touchEnabled: true,
+      },
+      labelStyle: {
+        ...this.createLabelStyle((this.options.buttonFontSize !== undefined ? this.options.buttonFontSize : 20) as integer),
+        touchEnabled: false,
+      },
     }
   }
 
-  private getOpacity(): number {
-    return this.options.opacity !== undefined ? this.options.opacity : 1
-  }
-
-  private formatNumber(value: number): string {
+  private formatNumber(value: Fixed): string {
     return tostring(math.floor(value * 100 + 0.5) / 100)
   }
 
@@ -1025,7 +1017,7 @@ export class FastRunTestDashboard {
 
   private registerButton(
     scopeId: number,
-    button: RuntimeButton,
+    button: LabelButton,
     touchEventType: ENodeTouchEventType,
     tag: string,
     handler: () => void,

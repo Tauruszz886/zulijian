@@ -44,7 +44,9 @@
     </g>
     <g transform="translate(400,0)">
       <rect class="g4" x="0" y="0" width="110" height="72" rx="4"/><text class="label" x="42" y="43">10</text>
-      <rect class="g3" x="0" y="94" width="110" height="72" rx="4"/><text class="label" x="42" y="137">11</text>
+      <rect class="g3" x="9.167" y="94" width="91.667" height="72" rx="4"/><text class="label" x="42" y="137">11</text>
+      <text class="tiny" x="116" y="120">11 / ID 1032584478</text>
+      <text class="tiny" x="116" y="136">QR_第03关_dxf_84C_24x17_1875</text>
       <rect class="g2" x="0" y="188" width="110" height="72" rx="4"/><text class="label" x="42" y="231">12</text>
       <rect class="g1" x="0" y="282" width="110" height="72" rx="4"/><text class="label" x="42" y="325">13</text>
     </g>

@@ -1,17 +1,12 @@
 import { safeCall, safeCreateCustomTriggerSpace } from "@common/engine_safe"
-import { EventBus } from "@common/event_bus"
 import { TriggerHub } from "@common/trigger_hub"
 import { LEVEL_TERRAIN_SPECS, type LevelTerrainSpec } from "./level_terrain"
 import {
-  BIRTH_SPAWN_X,
-  BIRTH_SPAWN_Y,
-  BIRTH_SPAWN_Z,
   RUNTIME_FLOOR,
-  TRIGGER_RETURN_TO_BIRTH_ENABLED,
   type RuntimeFloor,
 } from "./runtime_config"
 import { asFixed, getRuntimeFloorForModule, getRuntimeModuleCenterX, runtimeModuleLabel } from "./runtime_layout"
-import { GAME_EVENTS } from "./utils/GameEvents"
+import { eliminateUnitAndRebirthAtBirth } from "./runtime_rebirth"
 
 const TAG = "ZLJ_FALL_RETURN"
 const TRIGGER_PREFAB_ID = 3101010
@@ -24,7 +19,6 @@ const TRIGGER_TOP_Y = WALKABLE_TOP_Y - 0.8
 const TRIGGER_CENTER_Y = (TRIGGER_BOTTOM_Y + TRIGGER_TOP_Y) / 2
 const TRIGGER_HEIGHT = TRIGGER_TOP_Y - TRIGGER_BOTTOM_Y
 const CREATE_BATCH_SIZE = 12
-const RETURN_DELAY_SECONDS = 0.15
 const MIN_RECT_SIZE = 0.05
 
 type Rect = {
@@ -45,7 +39,6 @@ declare const EVENT: {
 declare const Enums: { TriggerSpaceEventType: { ENTER: number } }
 
 let created = false
-const returnDebounce = new Map<string, boolean>()
 
 function vec3(x: number, y: number, z: number): unknown {
   return math.Vector3(asFixed(x), asFixed(y), asFixed(z))
@@ -154,46 +147,9 @@ function computeHoleRects(frame: RuntimeFloor, specs: readonly LevelTerrainSpec[
   return mergeVertical(rowRects)
 }
 
-export function returnUnitToBirth(unit: unknown, source: string): void {
-  if (!TRIGGER_RETURN_TO_BIRTH_ENABLED) {
-    print(`[${TAG}] return disabled source=${source}`)
-    return
-  }
-  if (unit === null || unit === undefined) {
-    print(`[${TAG}] return skipped source=${source} unit=nil`)
-    return
-  }
-  const key = tostring(unit)
-  if (returnDebounce.get(key) === true) {
-    return
-  }
-  returnDebounce.set(key, true)
-  TriggerHub.register([EVENT.TIMEOUT, RETURN_DELAY_SECONDS], () => {
-    safeCall(
-      () => {
-        ;(unit as any).set_position(vec3(BIRTH_SPAWN_X, BIRTH_SPAWN_Y, BIRTH_SPAWN_Z))
-      },
-      { tag: `fall_return_to_birth_${source}`, fallback: undefined, logger: print }
-    )
-    EventBus.emit(GAME_EVENTS.PLAYER_RETURNED_TO_BIRTH, unit, source)
-    print(`[${TAG}] return_to_birth source=${source} unit=${key} pos=(${BIRTH_SPAWN_X},${BIRTH_SPAWN_Y},${BIRTH_SPAWN_Z})`)
-  }, {
-    safe: true,
-    safeCallback: true,
-    tag: `fall_return_delay_${source}`,
-    logger: print,
-  })
-  TriggerHub.register([EVENT.TIMEOUT, 1], () => returnDebounce.delete(key), {
-    safe: true,
-    safeCallback: true,
-    tag: `fall_return_debounce_${key}`,
-    logger: print,
-  })
-}
-
 function handleTriggerData(data: unknown, source: string): void {
   const eventData = data as { event_unit?: unknown; unit?: unknown } | undefined
-  returnUnitToBirth(eventData?.event_unit !== undefined ? eventData.event_unit : eventData?.unit, source)
+  eliminateUnitAndRebirthAtBirth(eventData?.event_unit !== undefined ? eventData.event_unit : eventData?.unit, source)
 }
 
 function registerReturnTrigger(trigger: unknown, name: string): void {
@@ -259,7 +215,7 @@ export function createFallReturnTriggers(): void {
   }
 
   print(
-    `[${TAG}] create begin triggers=${parts.length} modules=${FIRST_LEVEL_INDEX}..${LAST_LEVEL_INDEX} prefab=${TRIGGER_PREFAB_ID} y=${TRIGGER_BOTTOM_Y}..${TRIGGER_TOP_Y} return_delay=${RETURN_DELAY_SECONDS}`
+    `[${TAG}] create begin triggers=${parts.length} modules=${FIRST_LEVEL_INDEX}..${LAST_LEVEL_INDEX} prefab=${TRIGGER_PREFAB_ID} y=${TRIGGER_BOTTOM_Y}..${TRIGGER_TOP_Y} action=die_to_birth_rebirth`
   )
   let index = 0
   const createBatch = (): void => {

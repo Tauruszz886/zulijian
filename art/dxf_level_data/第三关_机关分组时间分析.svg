@@ -47,10 +47,12 @@
     <!-- Group G3: 3,7,11 -->
     <rect x="154" y="163.28125" width="132" height="94.53125" class="g3"/>
     <rect x="330" y="163.28125" width="132" height="94.53125" class="g3"/>
-    <rect x="506" y="163.28125" width="132" height="94.53125" class="g3"/>
+    <rect x="517" y="163.28125" width="110" height="94.53125" class="g3"/>
     <text x="220" y="217" text-anchor="middle" class="label">3</text>
     <text x="396" y="217" text-anchor="middle" class="label">7</text>
     <text x="572" y="217" text-anchor="middle" class="label">11</text>
+    <text x="650" y="198" class="tiny">11 / ID 1032584478</text>
+    <text x="650" y="214" class="tiny">QR_第03关_dxf_84C_24x17_1875</text>
 
     <!-- Group G2: 4,8,12 -->
     <rect x="154" y="292.1875" width="132" height="94.53125" class="g2"/>

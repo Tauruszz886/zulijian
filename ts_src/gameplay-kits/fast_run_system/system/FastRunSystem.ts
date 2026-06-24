@@ -4,12 +4,12 @@ import {
   type FastRunComponentOptions,
   type FastRunGroundOptions,
   type FastRunObstacleOptions,
-} from "./FastRunComponent"
+} from "../component/FastRunComponent"
 import {
   FastRunTestDashboard,
   resolveFastRunTestModeOptions,
   type FastRunSystemTestModeOptions,
-} from "./FastRunTestDashboard"
+} from "../dashboard/FastRunTestDashboard"
 
 export type FastRunComponentConfig = Omit<FastRunComponentOptions, "role">
 
@@ -58,7 +58,8 @@ export class FastRunSystem {
   private readonly componentDefaults: FastRunComponentConfig
   private readonly components: FastRunComponentRegistryEntry[] = []
   private readonly testMode: FastRunSystemTestModeOptions
-  private readonly tickSeconds: number
+  private readonly tickSeconds: Fixed
+  private readonly tickFrames: integer
   private readonly logger: (this: void, msg: string) => void
   private enabled = false
   private dashboardRoleId: RoleID | null = null
@@ -68,6 +69,8 @@ export class FastRunSystem {
     this.componentDefaults = {
       tickSeconds:
         options?.tickSeconds !== undefined ? options.tickSeconds : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.tickSeconds,
+      tickFrames:
+        options?.tickFrames !== undefined ? options.tickFrames : (DEFAULT_FAST_RUN_COMPONENT_OPTIONS.tickFrames as integer),
       maxSpeed: options?.maxSpeed !== undefined ? options.maxSpeed : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.maxSpeed,
       initialSpeed:
         options?.initialSpeed !== undefined ? options.initialSpeed : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.initialSpeed,
@@ -131,6 +134,8 @@ export class FastRunSystem {
     this.testMode = resolveFastRunTestModeOptions(options?.testMode)
     this.tickSeconds =
       options?.tickSeconds !== undefined ? options.tickSeconds : DEFAULT_FAST_RUN_COMPONENT_OPTIONS.tickSeconds!
+    this.tickFrames =
+      options?.tickFrames !== undefined ? options.tickFrames : (DEFAULT_FAST_RUN_COMPONENT_OPTIONS.tickFrames as integer)
     this.logger = options?.logger !== undefined ? options.logger : defaultLogger
   }
 
@@ -152,14 +157,6 @@ export class FastRunSystem {
 
   isEnabled(): boolean {
     return this.enabled
-  }
-
-  enableDashboard(): void {
-    this.testMode.enabled = true
-    this.enableTestMode()
-    if (this.testDashboard !== null) {
-      this.testDashboard.setEnabled(true)
-    }
   }
 
   addComponent(role: Role, options?: FastRunComponentConfig): FastRunComponent {
@@ -237,31 +234,31 @@ export class FastRunSystem {
     return this.components[0].component
   }
 
-  getCurrentSpeed(): number {
+  getCurrentSpeed(): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.getCurrentSpeed() : 0
   }
 
-  getMaxSpeed(): number {
+  getMaxSpeed(): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.getMaxSpeed() : 0
   }
 
-  setMaxSpeed(speed: number): void {
+  setMaxSpeed(speed: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.setMaxSpeed(speed)
     this.updateDashboardValues()
   }
 
-  increaseMaxSpeed(delta: number): void {
+  increaseMaxSpeed(delta: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.increaseMaxSpeed(delta)
     this.updateDashboardValues()
   }
 
-  getGroundAcceleration(): number {
+  getGroundAcceleration(): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.getGroundAcceleration() : 0
   }
@@ -279,21 +276,21 @@ export class FastRunSystem {
     return ok
   }
 
-  setGroundAcceleration(groundAcceleration: number): void {
+  setGroundAcceleration(groundAcceleration: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.setGroundAcceleration(groundAcceleration)
     this.updateDashboardValues()
   }
 
-  increaseGroundAcceleration(delta: number): void {
+  increaseGroundAcceleration(delta: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.increaseGroundAcceleration(delta)
     this.updateDashboardValues()
   }
 
-  getGroundDeceleration(): number {
+  getGroundDeceleration(): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.getGroundDeceleration() : 0
   }
@@ -311,21 +308,21 @@ export class FastRunSystem {
     return ok
   }
 
-  setGroundDeceleration(groundDeceleration: number): void {
+  setGroundDeceleration(groundDeceleration: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.setGroundDeceleration(groundDeceleration)
     this.updateDashboardValues()
   }
 
-  increaseGroundDeceleration(delta: number): void {
+  increaseGroundDeceleration(delta: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.increaseGroundDeceleration(delta)
     this.updateDashboardValues()
   }
 
-  getAirAcceleration(): number {
+  getAirAcceleration(): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.getAirAcceleration() : 0
   }
@@ -343,21 +340,21 @@ export class FastRunSystem {
     return ok
   }
 
-  setAirAcceleration(airAcceleration: number): void {
+  setAirAcceleration(airAcceleration: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.setAirAcceleration(airAcceleration)
     this.updateDashboardValues()
   }
 
-  increaseAirAcceleration(delta: number): void {
+  increaseAirAcceleration(delta: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.increaseAirAcceleration(delta)
     this.updateDashboardValues()
   }
 
-  getAirDeceleration(): number {
+  getAirDeceleration(): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.getAirDeceleration() : 0
   }
@@ -375,14 +372,14 @@ export class FastRunSystem {
     return ok
   }
 
-  setAirDeceleration(airDeceleration: number): void {
+  setAirDeceleration(airDeceleration: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.setAirDeceleration(airDeceleration)
     this.updateDashboardValues()
   }
 
-  increaseAirDeceleration(delta: number): void {
+  increaseAirDeceleration(delta: Fixed): void {
     const component = this.getDashboardComponent()
     if (component === null) return
     component.increaseAirDeceleration(delta)
@@ -406,7 +403,7 @@ export class FastRunSystem {
     return component !== null ? component.isGrounded() : true
   }
 
-  calculateDashboardMaxAirMoveDistance(hangTimeSeconds: number, initialSpeed?: number): number {
+  calculateDashboardMaxAirMoveDistance(hangTimeSeconds: Fixed, initialSpeed?: Fixed): Fixed {
     const component = this.getDashboardComponent()
     return component !== null ? component.calculateMaxAirMoveDistance(hangTimeSeconds, initialSpeed) : 0
   }
@@ -440,13 +437,13 @@ export class FastRunSystem {
       getMaxSpeed: () => {
         return this.getMaxSpeed()
       },
-      setMaxSpeed: (speed: number) => {
+      setMaxSpeed: (speed: Fixed) => {
         this.setMaxSpeed(speed)
       },
       getGroundAcceleration: () => {
         return this.getGroundAcceleration()
       },
-      setGroundAcceleration: (groundAcceleration: number) => {
+      setGroundAcceleration: (groundAcceleration: Fixed) => {
         this.setGroundAcceleration(groundAcceleration)
       },
       getGroundAccelerationExpression: () => {
@@ -458,7 +455,7 @@ export class FastRunSystem {
       getGroundDeceleration: () => {
         return this.getGroundDeceleration()
       },
-      setGroundDeceleration: (groundDeceleration: number) => {
+      setGroundDeceleration: (groundDeceleration: Fixed) => {
         this.setGroundDeceleration(groundDeceleration)
       },
       getGroundDecelerationExpression: () => {
@@ -470,7 +467,7 @@ export class FastRunSystem {
       getAirAcceleration: () => {
         return this.getAirAcceleration()
       },
-      setAirAcceleration: (airAcceleration: number) => {
+      setAirAcceleration: (airAcceleration: Fixed) => {
         this.setAirAcceleration(airAcceleration)
       },
       getAirAccelerationExpression: () => {
@@ -482,7 +479,7 @@ export class FastRunSystem {
       getAirDeceleration: () => {
         return this.getAirDeceleration()
       },
-      setAirDeceleration: (airDeceleration: number) => {
+      setAirDeceleration: (airDeceleration: Fixed) => {
         this.setAirDeceleration(airDeceleration)
       },
       getAirDecelerationExpression: () => {
@@ -506,8 +503,8 @@ export class FastRunSystem {
       logger: this.logger,
     })
 
-    // 运行时 EUI 在 main.lua 刚加载时创建可能拿到句柄但不渲染；延迟到首帧后再创建。
-    LuaAPI.call_delay_time(math.tofixed(1), () => {
+    // 运行时 EUI 在 main.lua 刚加载时创建可能拿到句柄但不渲染；延迟一帧后再创建。
+    LuaAPI.call_delay_frame(1 as integer, () => {
       if (!this.enabled || this.testDashboard === null) return
       this.testDashboard.setEnabled(true)
     })
@@ -522,7 +519,7 @@ export class FastRunSystem {
   private updateDashboardLoop(): void {
     if (!this.enabled) return
     this.updateDashboardValues()
-    LuaAPI.call_delay_time(math.tofixed(this.tickSeconds), () => {
+    LuaAPI.call_delay_frame(this.tickFrames, () => {
       this.updateDashboardLoop()
     })
   }
